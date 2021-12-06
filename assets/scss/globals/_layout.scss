@@ -1,0 +1,142 @@
+@use "../util" as *;
+@use "../globals/variables" as *;
+
+// .container {
+//   padding: 0 rem(24);
+//   max-width: rem(1110);
+//   margin: 0 auto;
+
+//   @include breakpoint(large) {
+//     padding: 0;
+//     transform: translate(0, 0);
+//   }
+// }
+
+/* SCROLL BAR */
+::-webkit-scrollbar {
+  width: rem(7);
+  height: rem(7);
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: rgb(175, 175, 175);
+  border-radius: rem(10);
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: rgb(125, 125, 125);
+}
+
+/*  INPUT  */
+::-webkit-input-placeholder {
+  color: $dark100;
+  letter-spacing: 0.03ch;
+}
+
+input[type="email"]:focus,
+input[type="number"]:focus,
+input[type="search"]:focus,
+input[type="text"]:focus,
+input[type="tel"]:focus,
+input[type="url"]:focus,
+input[type="password"]:focus,
+input[type="file"]:focus,
+input[type="date"]:focus,
+textarea:focus {
+  border: 1px solid $primary;
+}
+
+input[disabled],
+select[disabled],
+textarea[disabled],
+input[readonly],
+select[readonly],
+textarea[readonly] {
+  cursor: not-allowed;
+}
+
+button {
+  outline: none;
+  border: none;
+  cursor: pointer;
+}
+
+hr {
+  border: solid rgba(0, 0, 0, 0.1);
+  border-width: 1px 0 0;
+  clear: both;
+  margin: rem(25) 0;
+  height: 0;
+}
+
+main {
+  width: calc(100% - 80px);
+  height: calc(100% - 70px);
+  margin-left: rem(80);
+  margin-top: rem(70);
+  display: flex;
+  justify-content: center;
+
+  @include breakpoint-down(medium) {
+    width: 100%;
+    height: 100%;
+    margin-left: 0;
+    margin-top: rem(64);
+  }
+}
+
+.content {
+  display: none;
+  position: relative;
+  width: 100%;
+  padding: rem(40);
+  overflow: hidden;
+
+  @include breakpoint-down(medium) {
+    // height: 100%;
+    padding: rem(30);
+  }
+
+  @include breakpoint-down(small) {
+    padding: rem(40);
+  }
+
+  &__header {
+    font-size: rem(14);
+    // margin-bottom: rem(2);
+
+    @include breakpoint-down(medium) {
+      display: none;
+    }
+  }
+}
+
+section {
+  height: 100%;
+
+  @include breakpoint-down(medium) {
+    height: auto;
+  }
+}
+
+.row {
+  @include flex-align-center;
+  gap: rem(14);
+
+  &--modal {
+    margin: rem(20) 0;
+  }
+}
+
+.column {
+  @include flex-center-all;
+  flex-direction: column;
+  gap: rem(20);
+}

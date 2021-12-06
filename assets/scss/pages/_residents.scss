@@ -1,0 +1,252 @@
+@use "../util" as *;
+@use "../globals/" as *;
+
+// TABLE
+
+.table {
+  &__row {
+    // margin-bottom: rem(34);
+    // position: relative;
+
+    &-img {
+      @include wh(rem(54));
+      // margin-right: rem(14);
+      border-radius: 50%;
+      position: relative;
+      overflow: hidden;
+
+      img {
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        object-fit: cover;
+      }
+    }
+
+    &-text {
+      cursor: pointer;
+    }
+
+    &-name {
+      font-size: rem(20);
+      font-weight: 600;
+      transition: 0.2s;
+
+      &:hover {
+        color: $primary;
+      }
+      @include breakpoint-down(small) {
+        font-size: rem(16);
+      }
+    }
+
+    &-sub {
+      font-size: rem(12);
+      color: $dark200;
+    }
+  }
+
+  &__action-buttons {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: rem(8);
+  }
+}
+
+.residents {
+  &__header-actions {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: rem(8);
+    width: 101%;
+  }
+}
+
+#residents {
+  &__filter-container {
+    display: flex;
+    justify-content: flex-end;
+  }
+}
+
+#add-resident,
+#export-resident {
+  white-space: nowrap;
+  p {
+    @include breakpoint-down(small) {
+      display: none;
+    }
+  }
+
+  .bx {
+    @include breakpoint-down(small) {
+      margin-right: 0;
+    }
+  }
+}
+
+.action {
+  &__cert,
+  &__view {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  &__cert {
+    @include breakpoint-down(medium) {
+      display: none;
+    }
+  }
+
+  &__view {
+    @include breakpoint-down(small) {
+      background: transparent;
+      color: $dark300;
+      width: rem(10);
+
+      &:hover {
+        color: lighten($dark300, 8);
+        background: transparent;
+      }
+
+      .bx {
+        font-size: rem(24);
+        margin-right: 0;
+      }
+    }
+  }
+}
+
+.profile {
+  &__img {
+    @include wh(rem(150));
+    position: relative;
+    background: $light400;
+    overflow: hidden;
+    border-radius: 50%;
+    margin-bottom: rem(10);
+
+    @include breakpoint-down(small) {
+      @include wh(rem(100));
+    }
+
+    img {
+      @include wh(100%);
+      position: absolute;
+      top: 0;
+      left: 0;
+      object-fit: cover;
+    }
+  }
+
+  &__name {
+    font-size: rem(28);
+    font-weight: 600;
+
+    @include breakpoint-down(medium) {
+      font-size: rem(22);
+    }
+  }
+}
+
+.profile-info {
+  &__list {
+    text-align: center;
+    margin: rem(30) 0 rem(40) 0;
+
+    &.newresident {
+      margin-top: 0;
+    }
+  }
+
+  &__item {
+    // padding: 0 rem(30);
+    display: inline-block;
+    margin: 0 rem(18) rem(10) 0;
+    padding-right: rem(18);
+    border-right: rem(1) $dark200 solid;
+
+    @include breakpoint-down(medium) {
+      // padding: 0 rem(10);
+      margin-right: rem(22);
+      padding-right: rem(22);
+    }
+
+    &:last-child {
+      border-right: none;
+    }
+
+    a {
+      color: $dark200;
+      font-size: rem(14);
+      transition: 300ms;
+
+      &:hover {
+        color: $dark400;
+        letter-spacing: rem(0.5);
+      }
+
+      @include breakpoint-down(medium) {
+        font-size: rem(12);
+      }
+    }
+
+    &--active {
+      a {
+        padding: rem(8);
+        border-radius: rem(8);
+        background: $light400;
+        color: $dark400;
+        letter-spacing: rem(0.5);
+      }
+    }
+  }
+
+  &__content {
+    width: 100%;
+    font-size: rem(15);
+    display: none;
+
+    @include breakpoint-down(medium) {
+      font-size: rem(14);
+    }
+  }
+
+  &__container {
+    @include flex-justify-center;
+  }
+
+  &__basic-info,
+  &__voting,
+  &__others,
+  &__emergency {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(rem(275), 1fr));
+    column-gap: rem(25);
+    row-gap: rem(20);
+  }
+}
+
+// .table {
+//   &__item {
+//     &-action {
+//       .button--dark {
+//         @include breakpoint-down(small) {
+//           background: transparent;
+//           color: $dark300;
+
+//           &:hover {
+//             color: lighten($dark300, 8);
+//           }
+
+//           i {
+//             font-size: rem(30);
+//           }
+//         }
+//       }
+//     }
+//   }
+// }

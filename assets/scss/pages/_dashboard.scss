@@ -1,0 +1,187 @@
+@use "../util" as *;
+@use "../globals/" as *;
+
+.dashboard {
+  &__logo {
+    display: none;
+    text-align: center;
+
+    @include breakpoint-down(medium) {
+      display: block;
+      margin-bottom: rem(30);
+    }
+
+    @include breakpoint-down(small) {
+      display: block;
+      margin-bottom: rem(40);
+    }
+
+    img {
+      width: rem(250);
+    }
+  }
+
+  &__cards-top {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: rem(30);
+    margin-bottom: rem(30);
+
+    @include breakpoint-down(medium) {
+      grid-template-columns: repeat(2, 2fr);
+      grid-gap: rem(30);
+    }
+
+    @include breakpoint-down(small) {
+      grid-template-columns: repeat(1, 1fr);
+      grid-gap: rem(40);
+      margin-bottom: rem(40);
+    }
+  }
+
+  &__card-top {
+    min-height: rem(150);
+    padding: rem(24);
+    background: $light100;
+    border-radius: rem(20);
+    box-shadow: $shadow;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    cursor: pointer;
+    transition: 0.1s;
+
+    &:hover {
+      background: $primary;
+
+      .dashboard__card-top {
+        &--value,
+        &--label,
+        &--icon i {
+          color: $light100;
+        }
+      }
+    }
+
+    @include breakpoint-down(small) {
+      height: rem(200);
+    }
+
+    &--value {
+      font-size: rem(40);
+      font-weight: 600;
+      color: $primary;
+
+      @include breakpoint-down(small) {
+        font-size: rem(48);
+      }
+    }
+
+    &--label {
+      font-size: rem(14);
+      font-weight: 500;
+      color: $dark200;
+      white-space: nowrap;
+
+      @include breakpoint-down(small) {
+        font-size: rem(18);
+      }
+    }
+
+    &--icon {
+      i {
+        font-size: rem(60);
+        color: $dark200;
+
+        @include breakpoint-down(small) {
+          font-size: rem(75);
+        }
+      }
+    }
+  }
+
+  &__cards-bottom {
+    display: grid;
+    grid-gap: rem(30);
+    // grid-template:
+    //   "grid1 grid1 grid3 grid3 grid3 grid3 grid3" rem(350)
+    //   "grid2 grid2 grid3 grid3 grid3 grid3 grid3" rem(350)
+    //   / [col-start] 1fr [col-2] 1fr [col-3] 1fr [col-4] 1fr [col-5] 1fr [col-6] 1fr [col-7] 1fr [col-end];
+
+    grid-template-columns: 30% 1fr;
+
+    @include breakpoint-down(medium) {
+      grid-template-columns: repeat(2, 1fr);
+
+      // grid-template:
+      //   "grid1 grid2" rem(400)
+      //   "grid3 grid3" rem(500)
+      //   / [col-start] 1fr [col-2] 1fr [col-end];
+    }
+
+    @include breakpoint-down(small) {
+      grid-template-columns: 1fr;
+
+      grid-gap: rem(40);
+      // grid-template:
+      //   "grid1" rem(350)
+      //   "grid2" rem(350)
+      //   "grid3" rem(700)
+      //   / [col-start] 1fr [col-end];
+      // display: flex;
+      // flex-direction: column;
+    }
+  }
+
+  &__card-bottom {
+    // position: relative;
+    max-height: rem(420);
+    background: $light100;
+    padding: rem(20) rem(10);
+    border-radius: rem(20);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: $shadow;
+
+    @include breakpoint-down(medium) {
+      max-height: rem(350);
+      padding: rem(10);
+    }
+
+    @include breakpoint-down(small) {
+      padding: rem(20);
+    }
+
+    &--card1,
+    &--card2 {
+      canvas {
+        max-height: 100%;
+      }
+    }
+  }
+
+  &__down-arrow {
+    font-size: rem(15);
+    position: absolute;
+    bottom: 3%;
+    left: 50%;
+    transform: translate(50%, 50%);
+
+    i {
+      color: $primary;
+    }
+
+    @include breakpoint-down(medium) {
+      display: none;
+    }
+  }
+
+  &__notes {
+    padding: rem(50) 0;
+    display: flex;
+    // flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+}
