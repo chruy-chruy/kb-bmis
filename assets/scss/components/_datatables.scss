@@ -126,7 +126,7 @@ $jqueryui: false !default;
 
 table.dataTable {
   width: 100% !important;
-  margin: rem(25) auto rem(12) auto;
+  margin: rem(25) auto rem(20) auto;
   clear: both;
   border-collapse: separate;
   border-spacing: 0;
@@ -494,8 +494,8 @@ table.dataTable td {
       display: inline-block;
       font-size: rem(14);
       min-width: 1em;
-      padding: 0.5em 1em;
-      margin-left: 2px;
+      padding: 0.25em 0.75em;
+      margin: 0 rem(4);
       text-align: center;
       text-decoration: none !important;
       cursor: pointer;
@@ -503,18 +503,14 @@ table.dataTable td {
 
       color: $dark200 !important;
       border: none !important;
+      border-radius: rem(5);
       background: none !important;
       letter-spacing: rem(0.5);
 
       &.current,
       &.current:hover {
-        color: $dark400 !important;
-        font-weight: 600;
-        border: none;
-        // @include gradient(
-        //   lighten($table-paging-button-active, 28%),
-        //   $table-paging-button-active
-        // );
+        color: $light100 !important;
+        background: $primary !important;
       }
 
       &.disabled,
@@ -527,25 +523,19 @@ table.dataTable td {
         box-shadow: none;
       }
 
+      &.disabled:hover {
+        color: $primary !important;
+      }
+
       &:hover {
-        color: $dark400 !important;
-        font-weight: 500;
-        border: none;
-        // @include gradient(
-        //   lighten($table-paging-button-hover, 28%),
-        //   $table-paging-button-hover
-        // );
+        color: $primary !important;
+        border: 1px solid $primary !important;
         background: none;
       }
 
       &:active {
         outline: none !important;
         color: $dark400 !important;
-
-        // @include gradient(
-        //   lighten($table-paging-button-hover, 10%),
-        //   darken($table-paging-button-hover, 2%)
-        // );
         box-shadow: none;
       }
     }
