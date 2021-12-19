@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="shortcut icon" href="/assets/img/north-logo.ico" type="image/x-icon">
+
+    <!--=============== BOX ICONS ===============-->
+    <link href="../../vendors/boxicons-2.0.9/css/boxicons.min.css" rel="stylesheet" />
+
+
+    <!--=============== JQUERY ===============-->
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.5.1.js"></script>  
+    
+    <!--=============== DATATABLES ===============-->
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.11.3/css/jquery.dataTables.css">
+    <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.11.3/js/jquery.dataTables.js"></script>
+
+    <!--=============== CSS ===============-->
+    <link rel="stylesheet" href="../../assets/css/style.css" />
+
+    <!--=============== MAIN JS ===============-->
+    <script src="../../assets/js/main.js" defer></script>
+
+    <title>Barangay Management System</title>
+  </head>
+  <body>
+
+    <!--=============== NAV ===============-->
+    <nav class="nav">
+      <span class="nav__close">
+        <i class='bx bx-x' ></i>
+      </span>
+      <ul class="nav__list">
+        <li class="nav__item">
+          <a href="../about/" class="nav__logo">
+            <!-- <i class="fas fa-th-large"></i> -->
+            <img src="../../assets/img/north-logo.png" alt="">
+            <span class="nav__logo-text">DAD. NORTH</span>
+          </a>
+        </li>
+        <li class="nav__item">
+          <a href="../dashboard/" class="nav__item-link">
+            <i class='bx bxs-dashboard'></i>
+            <span class="nav__item-text">Dashboard</span>
+          </a>
+        </li>
+        <li class="nav__item">
+          <a href="../residents/" class="nav__item-link">
+            <i class='bx bxs-group' ></i>
+              <span class="nav__item-text">Residents</span>
+          </a>
+        </li>
+        <li class="nav__item nav__item--active" id="nav-certificates">
+          <a href="#" class="nav__item-link">
+            <i class='bx bxs-file' ></i>
+            <span class="nav__item-text">Certificates</span>
+          </a>
+        </li>
+        <li class="nav__item">
+          <a href="../reports/" class="nav__item-link">
+            <i class='bx bxs-bar-chart-square' ></i>
+            <span class="nav__item-text">Reports</span>
+          </a>
+        </li>
+        <li class="nav__item">
+          <a href="../announcements/" class="nav__item-link">
+            <i class='bx bxs-megaphone' ></i>
+            <span class="nav__item-text">Announcements</span>
+          </a>
+        </li>
+        </li>
+        <li class="nav__item">
+          <a href="../archive/" class="nav__item-link">
+            <i class='bx bxs-archive' ></i>
+            <span class="nav__item-text">Archive</span>
+          </a>
+        </li>
+        </li>
+        <li class="nav__item">
+          <a href="../user-accounts/" class="nav__item-link">
+            <i class='bx bxs-user-circle' ></i>
+            <span class="nav__item-text">User Accounts</span>
+          </a>
+        </li>
+      </ul>
+    </nav>
+
+    <!--=============== HEADER ===============-->
+    <header class="header">
+      <span class="header__menu">
+        <i class='bx bx-menu' ></i>
+      </span>
+      <div class="header__title">
+        Certificates
+      </div>
+      <a href="#" class="header__img">
+        <img id="user" src="../../assets/img/user.jpg" alt="user" />
+      </a>
+      <div class="header__toggle">
+        <i class='bx bxs-down-arrow' ></i>
+      </div>
+      <div class="dropdown dropdown--user dropdown--user-show">
+        <ul>
+          <li class="dropdown__item">
+            <a href="#">
+              <i class='bx bxs-user-circle' ></i>
+              User Profile
+            </a>
+          </li>
+          <li class="dropdown__item">
+            <a href="#">
+              <i class='bx bx-exit' ></i>
+              Logout
+            </a>
+          </li>
+        </ul>
+      </div>
+    </header>
+
+
+    <main>
+
+        <div class="content" id="content-certificates">
+         
+            <section class="certificates">
+            
+            <div class="certificates__button-container">
+              <a href="#" class="button button--primary button--xl certificates__button" data-target="#modal-brgyclearance">
+                <i class='bx bxs-file'></i>
+                <p>BARANGAY CLEARANCE</p>
+              </a>
+              <a href="#" class="button button--dark button--xl certificates__button" data-target="#modal-busclearance">
+                <i class='bx bx-file'></i>
+                <p>BUSINESS CLEARANCE</p>
+              </a>
+            </div>
+    
+            <div class="modal__container modal-brgyclearance" id="modal-brgyclearance">
+              <div class="modal modal--md">
+                <div class="modal__header">
+                  <div class="modal__header-content">
+      
+                    <div class="modal__header-content--left">
+                      Barangay Clearance
+                    </div>
+      
+                    <div class="modal__header-content--right">
+                      <a href="#" class="modal__close">
+                        <i class='bx bx-x'></i>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+      
+                <div class="modal__body">
+                  <div class="modal__body-content">
+                    <table id="certificates-table" class="row-border">
+                      <thead>
+                          <tr>
+                              <th></th>
+                              <th></th>
+                              <th></th>
+                          </tr>
+                      </thead>
+                      <tbody>
+                          <tr>
+                              <td>
+                                <div class="table__row-img">
+                                  <img src="/assets/img/user.jpg" alt="">
+                                </div>
+                              </td>
+                              <td>
+                                <div class="table__row-text">
+                                <div class="table__row-name">
+                                  Juana Dela Cruz
+                                </div>
+                                <div class="table__row-sub">
+                                  00001
+                                </div>
+                                </div>
+                              </td>
+                              <td>
+                                <div class="table__action-buttons">
+                                <a href="#" class="button button--primary button--sm action__cert" id="action-cert">
+                                SELECT
+                                </a>
+                              </div>
+                              </td>
+                          </tr>
+                          <tr>
+                              <td>
+                                <div class="table__row-img">
+                                  <img src="/assets/img/user2.jpg" alt="">
+                                </div>
+                              </td>
+                              <td>
+                                <div class="table__row-text">
+                                <div class="table__row-name">
+                                  Jose Bonifacio
+                                </div>
+                                <div class="table__row-sub">
+                                  00002
+                                </div>
+                                </div>
+                              </td>
+                              <td>
+                                <div class="table__action-buttons">
+                                <a href="#" class="button button--primary button--sm action__cert">
+                                SELECT
+                                </a>
+                                
+                              </div>
+                              </td>
+                          </tr>
+                          <tr>
+                            
+                              <td>
+                                <div class="table__row-img">
+                                  <img src="/assets/img/user3.jpg" alt="">
+                                </div>
+                              </td>
+                              <td>
+                                <div class="table__row-text">
+                                <div class="table__row-name">
+                                  Andres Rizal
+                                </div>
+                                <div class="table__row-sub">
+                                  00003
+                                </div>
+                                </div>
+                              </td>
+                              <td>
+                                <div class="table__action-buttons">
+                                <a href="#" class="button button--primary button--sm action__cert">
+                                SELECT
+                                </a>
+                              </div>
+                              </td>
+                          </tr>
+                          <tr>
+                              <td>
+                                <div class="table__row-img">
+                                  <img src="/assets/img/user4.jpg" alt="">
+                                </div>
+                              </td>
+                              <td>
+                                <div class="table__row-text">
+                                <div class="table__row-name">
+                                  Bongbong Robredo
+                                </div>
+                                <div class="table__row-sub">
+                                  00004
+                                </div>
+                                </div>
+                              </td>
+                              <td>
+                                <div class="table__action-buttons">
+                                <a href="#" class="button button--primary button--sm action__cert">
+                                SELECT
+                                </a>
+                                
+                              </div>
+                              </td>
+                          </tr>
+                          <tr>
+                              <td>
+                                <div class="table__row-img">
+                                  <img src="/assets/img/user5.jpg" alt="">
+                                </div>
+                              </td>
+                              <td>
+                                <div class="table__row-text">
+                                <div class="table__row-name">
+                                  Bong Ong
+                                </div>
+                                <div class="table__row-sub">
+                                  00005
+                                </div>
+                                </div>
+                              </td>
+                              <td>
+                                <div class="table__action-buttons">
+                                <a href="#" class="button button--primary button--sm action__cert">
+                                SELECT
+                                </a>
+                              </div>
+                              </td>
+                          </tr>
+                      
+                      </tbody>
+                      </table>
+                  </div>
+                  </div>
+      
+               
+                
+              </div>
+            </div>
+           
+            <div class="modal__container modal-busclearance" id="modal-busclearance">
+              <div class="modal modal--md">
+                <div class="modal__header">
+                  <div class="modal__header-content">
+      
+                    <div class="modal__header-content--left">
+                      modal
+                    </div>
+      
+                    <div class="modal__header-content--right">
+                      <a href="#" class="modal__close">
+                        <i class='bx bx-x'></i>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+      
+                <div class="modal__body">
+                  <div class="modal__body-content">
+                    <h1>BUSINESS CLEARANCE</h1>
+                  </div>
+                  </div>
+      
+                <div class="modal__footer">
+                  <div class="modal__footer-content">
+                    <div class="modal__footer-content--left">
+                    </div>
+      
+                    <div class="modal__footer-content--right">
+                      <a href="#" class="button button--primary button--md">action</a>
+      
+                    </div>
+                  </div>
+                </div>
+                
+              </div>
+            </div>
+            
+    
+            </section>
+    
+          </div>
+
+  </main>
+</body>
+</html>

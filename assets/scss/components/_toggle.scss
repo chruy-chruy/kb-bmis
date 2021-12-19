@@ -47,6 +47,12 @@
       margin-left: 0;
     }
 
+    // &--off {
+    //   color: $dark400;
+    //   font-size: rem(13);
+    //   font-weight: 500;
+    // }
+
     &--light {
       color: $primary;
       font-size: rem(14);
@@ -56,6 +62,14 @@
     &--darken {
       color: $dark400;
       font-size: rem(13);
+      font-weight: 500;
+    }
+  }
+
+  &--active {
+    ~ .toggleswitch__indicator--on {
+      color: $primary;
+      font-size: rem(14);
       font-weight: 500;
     }
   }

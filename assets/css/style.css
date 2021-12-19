@@ -111,7 +111,6 @@ main {
 }
 
 .content {
-  display: none;
   position: relative;
   width: 100%;
   padding: 2.5rem;
@@ -405,7 +404,7 @@ ul {
 
 table.dataTable {
   width: 100% !important;
-  margin: 1.5625rem auto 0.75rem auto;
+  margin: 1.5625rem auto 1.25rem auto;
   clear: both;
   border-collapse: separate;
   border-spacing: 0;
@@ -671,21 +670,21 @@ table.dataTable td {
   display: inline-block;
   font-size: 0.875rem;
   min-width: 1em;
-  padding: 0.5em 1em;
-  margin-left: 2px;
+  padding: 0.25em 0.75em;
+  margin: 0 0.25rem;
   text-align: center;
   text-decoration: none !important;
   cursor: pointer;
   *cursor: hand;
   color: #707070 !important;
   border: none !important;
+  border-radius: 0.3125rem;
   background: none !important;
   letter-spacing: 0.03125rem;
 }
 .dataTables_wrapper .dataTables_paginate .paginate_button.current, .dataTables_wrapper .dataTables_paginate .paginate_button.current:hover {
-  color: #222 !important;
-  font-weight: 600;
-  border: none;
+  color: #fdfdfd !important;
+  background: #ef6a61 !important;
 }
 .dataTables_wrapper .dataTables_paginate .paginate_button.disabled, .dataTables_wrapper .dataTables_paginate .paginate_button.disabled:hover, .dataTables_wrapper .dataTables_paginate .paginate_button.disabled:active {
   cursor: default;
@@ -694,10 +693,12 @@ table.dataTable td {
   background: transparent;
   box-shadow: none;
 }
+.dataTables_wrapper .dataTables_paginate .paginate_button.disabled:hover {
+  color: #ef6a61 !important;
+}
 .dataTables_wrapper .dataTables_paginate .paginate_button:hover {
-  color: #222 !important;
-  font-weight: 500;
-  border: none;
+  color: #ef6a61 !important;
+  border: 1px solid #ef6a61 !important;
   background: none;
 }
 .dataTables_wrapper .dataTables_paginate .paginate_button:active {
@@ -939,7 +940,6 @@ table.dataTable td {
   color: #474747;
   margin-left: 0.625rem;
   letter-spacing: 0.03125rem;
-  display: none;
 }
 @media (max-width: 71.8125em) {
   .header__title {
@@ -1532,6 +1532,11 @@ table.dataTable td {
 .toggleswitch__indicator--darken {
   color: #222;
   font-size: 0.8125rem;
+  font-weight: 500;
+}
+.toggleswitch--active ~ .toggleswitch__indicator--on {
+  color: #ef6a61;
+  font-size: 0.875rem;
   font-weight: 500;
 }
 
