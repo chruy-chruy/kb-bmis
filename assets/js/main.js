@@ -17,6 +17,7 @@ $(document).ready(function () {
       },
     ],
   });
+
   $("#certificates-table").DataTable({
     dom: "ftpr",
     bSort: false,
@@ -27,102 +28,23 @@ $(document).ready(function () {
     },
   });
 
-  /*=============== DROPDOWN ===============*/
-  const headerToggle = document.querySelector(".header__toggle");
-  const dropdownUser = document.querySelector(".dropdown--user");
-
-  if (headerToggle) {
-    headerToggle.addEventListener("click", () => {
-      headerToggle.classList.toggle("header__toggle--rotate");
-      dropdownUser.classList.toggle("dropdown--user--show");
-    });
-  }
-
-  const certActions = document.querySelectorAll(
-    "table tbody td .table__action-buttons .action__cert"
-  );
-  const certDropdowns = document.querySelectorAll(
-    "table tbody td .table__action-buttons .dropdown"
-  );
-
-  certActions.forEach(function (certAction, certAction_index) {
-    certAction.addEventListener("click", function () {
-      certDropdowns.forEach(function (certDropdown, certDropdown_index) {
-        if (certDropdown_index == certAction_index) {
-          certDropdown.classList.toggle("dropdown--cert--show");
-        }
-      });
-    });
+  $("#announcements-table").DataTable({
+    dom: "ftpr",
+    bSort: false,
+    pageLength: 10,
+    // scrollX: true,
+    language: {
+      search: "_INPUT_",
+      searchPlaceholder: "Search",
+    },
+    columnDefs: [
+      {
+        targets: [0, 1],
+        visible: false,
+        searchable: true,
+      },
+    ],
   });
-
-  // export dropdown
-  const exportBtn = document.querySelector("#export-resident"),
-    dropdownExport = document.querySelector(".dropdown--export");
-
-  if (exportBtn) {
-    exportBtn.addEventListener("click", () => {
-      dropdownExport.classList.toggle("dropdown--export--show");
-    });
-  }
-
-  // hide dropdown
-  const dropdownLink = document.querySelectorAll(
-    "table tbody td .table__action-buttons .dropdown ul li a"
-  );
-
-  function hideDropdown() {
-    // When we click on each dropdown link, we remove the show class
-    dropdownUser.classList.remove("dropdown--user--show");
-    headerToggle.classList.remove("header__toggle--rotate");
-    certDropdowns.forEach(function (dropdown) {
-      dropdown.classList.remove("dropdown--cert--show");
-    });
-  }
-  dropdownLink.forEach((x) => x.addEventListener("click", hideDropdown));
-
-  /*=============== MODALS ===============*/
-
-  const modalBtns = document.querySelectorAll("[data-target]");
-  const closeBtns = document.querySelectorAll(".modal__close");
-  const yesCancelBtns = document.querySelectorAll(".modal__yes-cancel");
-  const noCancelBtns = document.querySelectorAll(".modal__no-cancel");
-  const modals = document.querySelectorAll(".modal__container");
-
-  modalBtns.forEach((modalBtn) => {
-    modalBtn.addEventListener("click", () => {
-      document
-        .querySelector(modalBtn.dataset.target)
-        .classList.add("modal--show");
-      // overlay.classList.add("active");
-    });
-  });
-
-  closeBtns.forEach((closeBtn) => {
-    closeBtn.addEventListener("click", () => {
-      const modalContainer = closeBtn.closest(".modal__container");
-      modalContainer.classList.remove("modal--show");
-    });
-  });
-
-  noCancelBtns.forEach((noCancelBtn) => {
-    noCancelBtn.addEventListener("click", () => {
-      const modalContainer = noCancelBtn.closest(".modal__container");
-      modalContainer.classList.remove("modal--show");
-    });
-  });
-
-  yesCancelBtns.forEach((yesCancelBtn) => {
-    yesCancelBtn.addEventListener("click", () => {
-      const modals = document.querySelectorAll(".modal__container");
-      modals.forEach((modal) => modal.classList.remove("modal--show"));
-    });
-  });
-
-  window.onclick = function (e) {
-    if (e.target.classList.contains("modal__container")) {
-      e.target.classList.remove("modal--show");
-    }
-  };
 
   /*=============== RESIDENTS DROPDOWN FILTER ===============*/
   const wtable = $("#residents-table").DataTable();
@@ -140,6 +62,113 @@ $(document).ready(function () {
     document.querySelector(".dataTables_filter input").focus();
   };
 });
+
+/*=============== DROPDOWN ===============*/
+// const headerToggle = document.querySelector(".header__toggle");
+// const dropdownUser = document.querySelector(".dropdown--user");
+
+// if (headerToggle) {
+//   headerToggle.addEventListener("click", () => {
+//     headerToggle.classList.toggle("header__toggle--rotate");
+//     dropdownUser.classList.toggle("dropdown--user--show");
+//   });
+// }
+
+// const certActions = document.querySelectorAll(
+//   "table tbody td .table__action-buttons .action__cert"
+// );
+// const certDropdowns = document.querySelectorAll(
+//   "table tbody td .table__action-buttons .dropdown"
+// );
+
+// certActions.forEach(function (certAction, certAction_index) {
+//   certAction.addEventListener("click", function () {
+//     certDropdowns.forEach(function (certDropdown, certDropdown_index) {
+//       if (certDropdown_index == certAction_index) {
+//         certDropdown.classList.toggle("dropdown--cert--show");
+//       }
+//     });
+//   });
+// });
+
+// // export dropdown
+// const exportBtn = document.querySelector("#export-resident"),
+//   dropdownExport = document.querySelector(".dropdown--export");
+
+// if (exportBtn) {
+//   exportBtn.addEventListener("click", () => {
+//     dropdownExport.classList.toggle("dropdown--export--show");
+//   });
+// }
+
+// // hide dropdown
+// const dropdownLink = document.querySelectorAll(
+//   "table tbody td .table__action-buttons .dropdown ul li a"
+// );
+
+// function hideDropdown() {
+//   // When we click on each dropdown link, we remove the show class
+//   dropdownUser.classList.remove("dropdown--user--show");
+//   headerToggle.classList.remove("header__toggle--rotate");
+//   certDropdowns.forEach(function (dropdown) {
+//     dropdown.classList.remove("dropdown--cert--show");
+//   });
+// }
+// dropdownLink.forEach((x) => x.addEventListener("click", hideDropdown));
+
+const dropdownBtns = document.querySelectorAll("[data-dropdown-target]");
+// const dropdowns = document.querySelectorAll(".dropdown");
+
+dropdownBtns.forEach((dropdownBtn) => {
+  dropdownBtn.addEventListener("click", () => {
+    const dropdownTarget = document.querySelector(
+      dropdownBtn.dataset.dropdownTarget
+    );
+    dropdownTarget.classList.toggle("dropdown--show");
+  });
+});
+
+/*=============== MODALS ===============*/
+
+const modalBtns = document.querySelectorAll("[data-target]");
+const closeBtns = document.querySelectorAll(".modal__close");
+const yesCancelBtns = document.querySelectorAll(".modal__yes-cancel");
+const noCancelBtns = document.querySelectorAll(".modal__no-cancel");
+const modals = document.querySelectorAll(".modal__container");
+
+modalBtns.forEach((modalBtn) => {
+  modalBtn.addEventListener("click", () => {
+    const modalTarget = document.querySelector(modalBtn.dataset.target);
+    modalTarget.classList.add("modal--show");
+  });
+});
+
+closeBtns.forEach((closeBtn) => {
+  closeBtn.addEventListener("click", () => {
+    const modalContainer = closeBtn.closest(".modal__container");
+    modalContainer.classList.remove("modal--show");
+  });
+});
+
+noCancelBtns.forEach((noCancelBtn) => {
+  noCancelBtn.addEventListener("click", () => {
+    const modalContainer = noCancelBtn.closest(".modal__container");
+    modalContainer.classList.remove("modal--show");
+  });
+});
+
+yesCancelBtns.forEach((yesCancelBtn) => {
+  yesCancelBtn.addEventListener("click", () => {
+    const modals = document.querySelectorAll(".modal__container");
+    modals.forEach((modal) => modal.classList.remove("modal--show"));
+  });
+});
+
+window.onclick = function (e) {
+  if (e.target.classList.contains("modal__container")) {
+    e.target.classList.remove("modal--show");
+  }
+};
 
 // /*==================== REMOVE MENU MOBILE ====================*/
 // const navLink = document.querySelectorAll(".nav__item a");
@@ -266,7 +295,7 @@ function profileFooterActions() {
     viewprofileInput.disabled = true;
   });
 
-  editBtn.style.display = "block";
+  editBtn.style.display = "flex";
   footer.style.display = "none";
   headerText.innerHTML = "View Profile";
 }
@@ -275,45 +304,3 @@ loginBtn.addEventListener("click", toggleEnable);
 loginBtn.addEventListener("click", hideShowBtns);
 saveBtn.addEventListener("click", profileFooterActions);
 cancelBtn.addEventListener("click", profileFooterActions);
-
-/*=============== TOGGLE SWITCH ===============*/
-const toggleswitches = document.querySelectorAll(".toggleswitch");
-const ons = document.querySelectorAll(".toggleswitch__indicator--on");
-const offs = document.querySelectorAll(".toggleswitch__indicator--off");
-
-toggleswitches.forEach((toggleswitch) => {
-  toggleswitch.addEventListener("click", () => {
-    if (toggleswitch.checked) {
-      offs.forEach((off) =>
-        off.classList.remove("toggleswitch__indicator--darken")
-      );
-      ons.forEach((on) => on.classList.add("toggleswitch__indicator--light"));
-    } else {
-      ons.forEach((on) =>
-        on.classList.remove("toggleswitch__indicator--light")
-      );
-      offs.forEach((off) =>
-        off.classList.add("toggleswitch__indicator--darken")
-      );
-    }
-  });
-});
-
-// toggleswitches.forEach((toggleswitch) => {
-//   toggleswitch.addEventListener("click", () => {
-//     if (toggleswitch.checked) {
-//       const on = toggleswitch.closest(".toggleswitch__indicator--on");
-//       on.classList.add("toggleswitch__indicator--light");
-
-//       const off = toggleswitch.closest(".toggleswitch__indicator--off");
-//       off.classList.remove("toggleswitch__indicator--darken");
-//     } else {
-//       const off = toggleswitch.closest(".toggleswitch__indicator--off");
-//       off.classList.add("toggleswitch__indicator--darken");
-
-//       const on = toggleswitch.closest(".toggleswitch__indicator--on");
-//       on.classList.remove("toggleswitch__indicator--light");
-//     }
-
-//   });
-// });

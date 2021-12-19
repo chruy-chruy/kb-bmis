@@ -154,8 +154,13 @@
 
 .profile-info {
   &__list {
+    position: relative;
     text-align: center;
     margin: rem(30) 0 rem(40) 0;
+    border-radius: rem(14);
+    box-shadow: $shadow;
+    height: rem(35);
+    @include flex-center-all;
 
     &.newresident {
       margin-top: 0;
@@ -163,44 +168,73 @@
   }
 
   &__item {
-    // padding: 0 rem(30);
-    display: inline-block;
-    margin: 0 rem(18) rem(10) 0;
-    padding-right: rem(18);
-    border-right: rem(1) $dark200 solid;
+    @include flex-center-all;
+    height: 100%;
+    // @include set-bg($primary);
+    padding: 0 rem(14);
+    color: $dark200;
+    font-size: rem(14);
+    transition: 100ms;
+    cursor: pointer;
+
+    &:first-child {
+      border-top-left-radius: rem(14);
+      border-bottom-left-radius: rem(14);
+    }
+    &:last-child {
+      border-top-right-radius: rem(14);
+      border-bottom-right-radius: rem(14);
+    }
+
+    &:hover {
+      font-weight: 500;
+      color: $dark400;
+    }
 
     @include breakpoint-down(medium) {
-      // padding: 0 rem(10);
-      margin-right: rem(22);
-      padding-right: rem(22);
+      font-size: rem(12);
     }
 
-    &:last-child {
-      border-right: none;
+    @include breakpoint-down(small) {
+      font-size: rem(11);
+      line-height: rem(12);
     }
 
-    a {
-      color: $dark200;
-      font-size: rem(14);
-      transition: 300ms;
+    // @include breakpoint-down(medium) {
+    //   // padding: 0 rem(10);
+    //   margin-right: rem(22);
+    //   padding-right: rem(22);
+    // }
 
-      &:hover {
-        color: $dark400;
-        letter-spacing: rem(0.5);
-      }
+    // &:last-child {
+    //   border-right: none;
+    // }
 
-      @include breakpoint-down(medium) {
-        font-size: rem(12);
-      }
-    }
+    // a {
+    //   color: $dark200;
+    //   font-size: rem(14);
+    //   transition: 300ms;
+
+    //   &:hover {
+    //     color: $dark400;
+    //     letter-spacing: rem(0.5);
+    //   }
+
+    //   @include breakpoint-down(medium) {
+    //     font-size: rem(12);
+    //   }
+    // }
 
     &--active {
-      a {
-        padding: rem(8);
-        border-radius: rem(8);
-        background: $light400;
-        color: $dark400;
-        letter-spacing: rem(0.5);
+      // padding: rem(8) rem(14);
+      // border-radius: rem(8);
+      // background: $light400;
+      // color: $dark400;
+      // letter-spacing: rem(0.5);
+      @include set-bg($primary);
+
+      &:hover {
+        color: $light100;
       }
     }
   }

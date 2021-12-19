@@ -97,10 +97,10 @@
       <a href="#" class="header__img">
         <img id="user" src="../../assets/img/user.jpg" alt="user" />
       </a>
-      <div class="header__toggle">
+      <div class="header__toggle" data-dropdown-target="#dropdown-user">
         <i class='bx bxs-down-arrow' ></i>
       </div>
-      <div class="dropdown dropdown--user dropdown--user-show">
+      <div class="dropdown dropdown--user" id="dropdown-user">
         <ul>
           <li class="dropdown__item">
             <a href="#">
@@ -144,12 +144,12 @@
                           <i class='bx bx-plus'></i>
                           <p>ADD NEW</p>
                         </a>
-                        <a href="#" class="button button--dark button--md" id="export-resident">
+                        <a href="#" class="button button--dark button--md" id="export-resident" data-dropdown-target="#dropdown-export">
                           <i class='bx bxs-file-export' ></i>
                           <p>EXPORT</p>
                         </a>
     
-                        <div class="dropdown dropdown--export">
+                        <div class="dropdown dropdown--export" id="dropdown-export">
                           <ul>
                             <li class="dropdown__item">
                               <a href="#">
@@ -192,12 +192,12 @@
                       </td>
                       <td>
                         <div class="table__action-buttons">
-                        <a href="#" class="button button--primary button--sm action__cert" id="action-cert">
+                        <a href="#" class="button button--primary button--sm action__cert" id="action-cert" data-dropdown-target="#dropdown-cert">
                         <i class='bx bxs-file-blank' ></i>
                         CERTIFICATE
                         </a>
     
-                        <div class="dropdown dropdown--cert">
+                        <div class="dropdown dropdown--cert" id="dropdown-cert">
                           <ul>
                             <li class="dropdown__item">
                               <a href="#" class="link-brgycert">
@@ -554,27 +554,19 @@
     
                         <ul class="profile-info__list viewprofile">
                           <li class="profile-info__item profile-info__item--active">
-                            <a href="#">
                               Basic Information
-                            </a>
                           </li>
     
                           <li class="profile-info__item">
-                            <a href="#">
                               Voting
-                            </a>
                           </li>
     
                           <li class="profile-info__item">
-                            <a href="#">
                               Others
-                            </a>
                           </li>
     
                           <li class="profile-info__item">
-                            <a href="#">
                               For Emergency
-                            </a>
                           </li>
     
                         </ul>
@@ -813,8 +805,8 @@
                              <label for="resident-outsidePH">Outside of the Philippines?</label>
                               <div class="input__inner">
                                 <div class="toggleswitch__wrapper">
-                                  <label class="toggleswitch__indicator toggleswitch__indicator--off toggleswitch__indicator--darken">No</label>
                                   <input type="checkbox" unchecked id="" class="toggleswitch toggleswitch--resident-profile input-viewprofile">
+                                  <label class="toggleswitch__indicator toggleswitch__indicator--off">No</label>
                                   <label class="toggleswitch__indicator toggleswitch__indicator--on">Yes</label>
                                 </div>
                               </div>
@@ -828,8 +820,8 @@
                              <label for="resident-seniorcitizen">Senior Citizen?</label>
                               <div class="input__inner">
                                 <div class="toggleswitch__wrapper">
-                                  <label class="toggleswitch__indicator toggleswitch__indicator--off">No</label>
                                   <input type="checkbox" unchecked id="" class="toggleswitch toggleswitch--resident-profile input-viewprofile">
+                                  <label class="toggleswitch__indicator toggleswitch__indicator--off">No</label>
                                   <label class="toggleswitch__indicator toggleswitch__indicator--on">Yes</label>
                                 </div>
                               </div>
@@ -843,8 +835,8 @@
                              <label for="resident-PWD">Person with Disability?</label>
                               <div class="input__inner">
                                 <div class="toggleswitch__wrapper">
-                                  <label class="toggleswitch__indicator toggleswitch__indicator--off">No</label>
                                   <input type="checkbox" unchecked id="" class="toggleswitch toggleswitch--resident-profile input-viewprofile">
+                                  <label class="toggleswitch__indicator toggleswitch__indicator--off">No</label>
                                   <label class="toggleswitch__indicator toggleswitch__indicator--on">Yes</label>
                                 </div>
                               </div>
@@ -881,8 +873,8 @@
                              <label for="resident-4Ps">4Ps?</label>
                               <div class="input__inner">
                                 <div class="toggleswitch__wrapper">
-                                  <label class="toggleswitch__indicator toggleswitch__indicator--off">No</label>
                                   <input type="checkbox" unchecked id="" class="toggleswitch toggleswitch--resident-profile input-viewprofile">
+                                  <label class="toggleswitch__indicator toggleswitch__indicator--off">No</label>
                                   <label class="toggleswitch__indicator toggleswitch__indicator--on">Yes</label>
                                 </div>
                               </div>
@@ -896,8 +888,8 @@
                              <label for="resident-deceased">Deceased?</label>
                               <div class="input__inner">
                                 <div class="toggleswitch__wrapper">
-                                  <label class="toggleswitch__indicator toggleswitch__indicator--off">No</label>
                                   <input type="checkbox" unchecked id="" class="toggleswitch toggleswitch--resident-profile input-viewprofile">
+                                  <label class="toggleswitch__indicator toggleswitch__indicator--off">No</label>
                                   <label class="toggleswitch__indicator toggleswitch__indicator--on">Yes</label>
                                 </div>
                               </div>
@@ -930,8 +922,8 @@
                                  <label for="resident-deceased">Registered Voter?</label>
                                   <div class="input__inner">
                                     <div class="toggleswitch__wrapper">
+                                      <input type="checkbox" unchecked id="" class="toggleswitch toggleswitch--resident-profile input-viewprofile">
                                       <label class="toggleswitch__indicator toggleswitch__indicator--off">No</label>
-                                      <input type="checkbox" name="" id="" class="toggleswitch toggleswitch--resident-profile input-viewprofile">
                                       <label class="toggleswitch__indicator toggleswitch__indicator--on">Yes</label>
                                     </div>
                                   </div>
@@ -1702,7 +1694,6 @@
     
                   </section>
     
-              
             </div>
 
   </main>
