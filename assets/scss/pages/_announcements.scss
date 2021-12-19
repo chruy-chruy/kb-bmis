@@ -11,11 +11,14 @@
   }
 
   &__contacts {
-    margin-bottom: rem(20);
-
-    & > label {
+    margin-bottom: rem(30);
+  }
+  &__contacts,
+  &__message {
+    label {
       display: block;
       margin-bottom: rem(5);
+      font-size: rem(15);
     }
   }
 
@@ -53,10 +56,16 @@
 
   &__message {
     height: rem(400);
+    width: 100%;
   }
 }
 
 .message {
+  &__date-time {
+    font-size: rem(14);
+    color: $dark300;
+  }
+
   &__container {
     height: 100%;
   }
@@ -64,17 +73,27 @@
   &__field {
     height: 80%;
     margin-bottom: rem(20);
-    box-shadow: $shadow;
+    // box-shadow: $shadow;
 
     textarea {
       max-width: 100%;
       min-width: 100%;
       max-height: 100%;
       min-height: 100%;
+      background: $light300;
       outline: none;
       border: none;
       padding: rem(20);
       border-radius: rem(10);
+
+      &:focus {
+        border: rem(1) solid $primary;
+      }
     }
+  }
+
+  &__counter {
+    font-size: rem(14);
+    margin-left: auto;
   }
 }

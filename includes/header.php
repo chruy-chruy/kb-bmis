@@ -8,102 +8,121 @@
     <!--=============== BOX ICONS ===============-->
     <link href="../../vendors/boxicons-2.0.9/css/boxicons.min.css" rel="stylesheet" />
 
-
     <!--=============== JQUERY ===============-->
-    <script type="text/javascript" src="https://code.jquery.com/jquery-3.5.1.js"></script>  
+    <!-- <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>   -->
+    <script type="text/javascript" src="../../vendors/jquery.min.js"></script>  
     
     <!--=============== DATATABLES ===============-->
-    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.11.3/css/jquery.dataTables.css">
-    <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.11.3/js/jquery.dataTables.js"></script>
+    <!-- <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.11.3/css/jquery.dataTables.css">
+    <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.11.3/js/jquery.dataTables.js"></script> -->
+    <link rel="stylesheet" type="text/css" href="../../vendors/jquery.dataTables.min.css">
+    <script type="text/javascript" charset="utf8" src="../../vendors/jquery.dataTables.min.js"></script>
 
     <!--=============== CSS ===============-->
     <link rel="stylesheet" href="../../assets/css/style.css" />
 
     <!--=============== MAIN JS ===============-->
+    <?php if ($page == 'Dashboard'){echo '<script src="../../assets/js/charts.js" defer></script>';}?>
     <script src="../../assets/js/main.js" defer></script>
+    
 
-    <title>Barangay Management System</title>
+    <title>Barangay Management System | <?php echo $page;?></title>
   </head>
   <body>
 
-    <!--=============== NAV ===============-->
+  <!--=============== NAV ===============-->
     <nav class="nav">
       <span class="nav__close">
         <i class='bx bx-x' ></i>
       </span>
       <ul class="nav__list">
-        <li class="nav__item nav__item--active">
-          <a href="#" class="nav__logo">
-            <!-- <i class="fas fa-th-large"></i> -->
+
+
+        <li class="nav__item">
+          <a href="../dashboard/" class="nav__logo">
             <img src="../../assets/img/north-logo.png" alt="">
             <span class="nav__logo-text">DAD. NORTH</span>
           </a>
         </li>
-        <li class="nav__item">
+
+
+        <li class="nav__item <?php if ($page == 'Dashboard'){echo 'nav__item--active';}?>">
           <a href="../dashboard/" class="nav__item-link">
             <i class='bx bxs-dashboard'></i>
             <span class="nav__item-text">Dashboard</span>
           </a>
         </li>
-        <li class="nav__item">
+
+
+        <li class="nav__item <?php if ($page == 'Residents'){echo 'nav__item--active';}?>">
           <a href="../residents/" class="nav__item-link">
             <i class='bx bxs-group' ></i>
               <span class="nav__item-text">Residents</span>
           </a>
         </li>
-        <li class="nav__item" id="nav-certificates">
+
+
+        <li id="nav-certificates" class="nav__item <?php if ($page == 'Certificates'){echo 'nav__item--active';}?>">
           <a href="../certificates/" class="nav__item-link">
             <i class='bx bxs-file' ></i>
             <span class="nav__item-text">Certificates</span>
           </a>
         </li>
-        <li class="nav__item">
+
+
+        <li class="nav__item <?php if ($page == 'Reports'){echo 'nav__item--active';}?>">
           <a href="../reports/" class="nav__item-link">
             <i class='bx bxs-bar-chart-square' ></i>
             <span class="nav__item-text">Reports</span>
           </a>
         </li>
-        <li class="nav__item">
+
+
+        
+        <li class="nav__item <?php if ($page == 'Announcements'){echo 'nav__item--active';}?>">
           <a href="../announcements/" class="nav__item-link">
             <i class='bx bxs-megaphone' ></i>
             <span class="nav__item-text">Announcements</span>
           </a>
         </li>
+
+        
+        
+        <li class="nav__item <?php if ($page == 'Barangay Information'){echo 'nav__item--active';}?>">
+          <a href="../barangay-information" class="nav__item-link">
+          <i class='bx bxs-info-square'></i>
+            <span class="nav__item-text">Barangay Information</span>
+          </a>
         </li>
-        <li class="nav__item">
+
+
+        
+        <li class="nav__item <?php if ($page == 'Archive'){echo 'nav__item--active';}?>">
           <a href="../archive/" class="nav__item-link">
             <i class='bx bxs-archive' ></i>
             <span class="nav__item-text">Archive</span>
           </a>
         </li>
-        </li>
-        <li class="nav__item">
-          <a href="../user-accounts/" class="nav__item-link">
+
+
+        <li class="nav__item <?php if ($page == 'User Accounts'){echo 'nav__item--active';}?>">
+        <a href="../user-accounts/" class="nav__item-link">
             <i class='bx bxs-user-circle' ></i>
             <span class="nav__item-text">User Accounts</span>
           </a>
         </li>
-        <!-- <li class="nav__item">
-          <a href="#" class="nav__item-link" >
-            <img id="user" src="assets/img/user.jpg" alt="user" />
-            <span class="nav__item-text">Admin</span>
-          </a>
-        </li>
-        <li class="nav__item">
-          <a href="#" class="nav__item-link">
-            <i class='bx bxs-log-out' ></i>
-            <span class="nav__item-text">Logout</span>
-          </a>
-        </li> -->
+
       </ul>
     </nav>
 
-    <!--=============== HEADER ===============-->
+
+  <!--=============== HEADER ===============-->
     <header class="header">
       <span class="header__menu">
         <i class='bx bx-menu' ></i>
       </span>
       <div class="header__title">
+      <?php echo $headerTitle;?>
       </div>
       <a href="#" class="header__img">
         <img id="user" src="../../assets/img/user.jpg" alt="user" />
@@ -120,7 +139,7 @@
             </a>
           </li>
           <li class="dropdown__item">
-            <a href="#">
+            <a href="../../index.html">
               <i class='bx bx-exit' ></i>
               Logout
             </a>
@@ -128,23 +147,3 @@
         </ul>
       </div>
     </header>
-
-
-    <main>
-
-    <div class="content">
-    <div class="content__container">
-      <div class="content__header">
-        <h1>Mission, Vision & Officials</h1>
-      </div>
-      <h4>Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni odio aut necessitatibus aliquid accusantium dolorem unde mollitia iste vitae incidunt.</h4>
-    
-    <div class="content__footer">
-      qwerty
-    </div>
-    </div>
-    </div>
-
-  </main>
-</body>
-</html>

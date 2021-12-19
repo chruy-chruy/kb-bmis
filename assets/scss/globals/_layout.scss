@@ -1,17 +1,6 @@
 @use "../util" as *;
 @use "../globals/variables" as *;
 
-// .container {
-//   padding: 0 rem(24);
-//   max-width: rem(1110);
-//   margin: 0 auto;
-
-//   @include breakpoint(large) {
-//     padding: 0;
-//     transform: translate(0, 0);
-//   }
-// }
-
 /* SCROLL BAR */
 ::-webkit-scrollbar {
   width: rem(7);
@@ -49,8 +38,9 @@ input[type="url"]:focus,
 input[type="password"]:focus,
 input[type="file"]:focus,
 input[type="date"]:focus,
-textarea:focus {
-  border: 1px solid $primary;
+textarea:focus,
+select:focus {
+  border: rem(1) solid $primary;
 }
 
 input[disabled],
@@ -105,7 +95,7 @@ main {
   }
 
   @include breakpoint-down(small) {
-    padding: rem(40);
+    padding: rem(20);
   }
 
   &__header {
@@ -127,7 +117,8 @@ section {
 }
 
 .row {
-  @include flex-align-center;
+  @include flex-center-all;
+  width: 100%;
   gap: rem(14);
 
   &--modal {
@@ -139,4 +130,35 @@ section {
   @include flex-center-all;
   flex-direction: column;
   gap: rem(20);
+}
+
+.center {
+  @include flex-center-all;
+  flex-direction: column;
+
+  // & > div {
+  //   display: flex;
+  //   gap: rem(10);
+  // }
+}
+
+.left {
+  @include flex-center-all;
+
+  & > div {
+    margin-right: auto;
+    display: flex;
+    gap: rem(10);
+  }
+}
+
+.right {
+  @include flex-center-all;
+  width: 100%;
+
+  & > div {
+    margin-left: auto;
+    display: flex;
+    gap: rem(10);
+  }
 }

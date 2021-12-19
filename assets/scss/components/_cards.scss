@@ -17,6 +17,7 @@
     padding: rem(20);
     &-content {
       @include flex-center-all;
+      gap: rem(10);
 
       &--left {
         margin-right: auto;
@@ -38,6 +39,7 @@
   &__body {
     &-content {
       flex-direction: column;
+      // min-height: calc(100vh - 360px);
     }
   }
 
@@ -47,5 +49,9 @@
 
   &-margin-top {
     margin-top: rem(30);
+  }
+
+  &--announcements {
+    margin-bottom: rem(30);
   }
 }

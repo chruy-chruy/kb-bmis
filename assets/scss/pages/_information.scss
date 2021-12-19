@@ -1,0 +1,54 @@
+@use "../util" as *;
+@use "../globals/" as *;
+
+#brgy-officials,
+#sk-officials {
+  width: 100%;
+}
+
+// .information {
+//   &__tabs-item {
+//     display: inline-block;
+//     font-size: rem(12);
+//     padding: rem(8);
+//     border-radius: rem(8);
+//     background: $light400;
+//     color: $dark300;
+//     letter-spacing: rem(0.5);
+
+//     &:first-child {
+//       margin-right: rem(10);
+//     }
+//   }
+// }
+
+[data-tab-content] {
+  display: none;
+}
+
+.tab-content {
+  &--active[data-tab-content] {
+    display: block;
+  }
+}
+
+.tab {
+  display: inline-block;
+  margin-right: rem(16);
+  padding: rem(8);
+  font-size: rem(13);
+  transition: 400ms;
+  cursor: pointer;
+  letter-spacing: rem(0.2);
+
+  &:hover {
+    letter-spacing: rem(0.5);
+  }
+
+  &--active {
+    border-radius: rem(8);
+    background: $light400;
+    color: $dark300;
+    letter-spacing: rem(0.5);
+  }
+}

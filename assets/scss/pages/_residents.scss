@@ -21,6 +21,10 @@
         position: absolute;
         object-fit: cover;
       }
+
+      @include breakpoint-down(small) {
+        @include wh(rem(34));
+      }
     }
 
     &-text {
@@ -36,12 +40,12 @@
         color: $primary;
       }
       @include breakpoint-down(small) {
-        font-size: rem(16);
+        font-size: rem(13);
       }
     }
 
     &-sub {
-      font-size: rem(12);
+      font-size: rem(11);
       color: $dark200;
     }
   }
@@ -113,7 +117,7 @@
       }
 
       .bx {
-        font-size: rem(24);
+        font-size: rem(22);
         margin-right: 0;
       }
     }
@@ -127,7 +131,7 @@
     background: $light400;
     overflow: hidden;
     border-radius: 50%;
-    margin-bottom: rem(10);
+    margin-top: rem(20);
 
     @include breakpoint-down(small) {
       @include wh(rem(100));
@@ -139,6 +143,41 @@
       top: 0;
       left: 0;
       object-fit: cover;
+    }
+
+    &--edit-resident {
+      transition: 200ms;
+
+      img {
+        transition: 200ms;
+        // cursor: pointer;
+      }
+
+      a {
+        position: absolute;
+        display: none;
+      }
+
+      .bx {
+        margin: 0;
+      }
+
+      &:hover {
+        background: $dark400;
+
+        img {
+          filter: blur(rem(3));
+          opacity: 0.7;
+        }
+
+        a {
+          filter: opacity(1);
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+          display: flex;
+        }
+      }
     }
   }
 
@@ -154,87 +193,54 @@
 
 .profile-info {
   &__list {
-    position: relative;
     text-align: center;
     margin: rem(30) 0 rem(40) 0;
-    border-radius: rem(14);
-    box-shadow: $shadow;
-    height: rem(35);
-    @include flex-center-all;
 
     &.newresident {
       margin-top: 0;
+      // display: none;
     }
   }
 
   &__item {
-    @include flex-center-all;
-    height: 100%;
-    // @include set-bg($primary);
-    padding: 0 rem(14);
-    color: $dark200;
-    font-size: rem(14);
-    transition: 100ms;
-    cursor: pointer;
-
-    &:first-child {
-      border-top-left-radius: rem(14);
-      border-bottom-left-radius: rem(14);
-    }
-    &:last-child {
-      border-top-right-radius: rem(14);
-      border-bottom-right-radius: rem(14);
-    }
-
-    &:hover {
-      font-weight: 500;
-      color: $dark400;
-    }
+    // padding: 0 rem(30);
+    display: inline-block;
+    margin: 0 rem(18) rem(10) 0;
+    padding-right: rem(18);
+    border-right: rem(1) $dark200 solid;
 
     @include breakpoint-down(medium) {
-      font-size: rem(12);
+      // padding: 0 rem(10);
+      margin-right: rem(22);
+      padding-right: rem(22);
     }
 
-    @include breakpoint-down(small) {
-      font-size: rem(11);
-      line-height: rem(12);
+    &:last-child {
+      border-right: none;
     }
 
-    // @include breakpoint-down(medium) {
-    //   // padding: 0 rem(10);
-    //   margin-right: rem(22);
-    //   padding-right: rem(22);
-    // }
-
-    // &:last-child {
-    //   border-right: none;
-    // }
-
-    // a {
-    //   color: $dark200;
-    //   font-size: rem(14);
-    //   transition: 300ms;
-
-    //   &:hover {
-    //     color: $dark400;
-    //     letter-spacing: rem(0.5);
-    //   }
-
-    //   @include breakpoint-down(medium) {
-    //     font-size: rem(12);
-    //   }
-    // }
-
-    &--active {
-      // padding: rem(8) rem(14);
-      // border-radius: rem(8);
-      // background: $light400;
-      // color: $dark400;
-      // letter-spacing: rem(0.5);
-      @include set-bg($primary);
+    a {
+      color: $dark200;
+      font-size: rem(14);
+      transition: 300ms;
 
       &:hover {
-        color: $light100;
+        color: $dark400;
+        letter-spacing: rem(0.5);
+      }
+
+      @include breakpoint-down(medium) {
+        font-size: rem(12);
+      }
+    }
+
+    &--active {
+      a {
+        padding: rem(8);
+        border-radius: rem(8);
+        background: $light400;
+        color: $dark400;
+        letter-spacing: rem(0.5);
       }
     }
   }
