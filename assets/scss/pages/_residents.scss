@@ -21,6 +21,10 @@
         position: absolute;
         object-fit: cover;
       }
+
+      @include breakpoint-down(small) {
+        @include wh(rem(34));
+      }
     }
 
     &-text {
@@ -36,12 +40,12 @@
         color: $primary;
       }
       @include breakpoint-down(small) {
-        font-size: rem(16);
+        font-size: rem(13);
       }
     }
 
     &-sub {
-      font-size: rem(12);
+      font-size: rem(11);
       color: $dark200;
     }
   }
@@ -113,7 +117,7 @@
       }
 
       .bx {
-        font-size: rem(24);
+        font-size: rem(22);
         margin-right: 0;
       }
     }
@@ -127,7 +131,7 @@
     background: $light400;
     overflow: hidden;
     border-radius: 50%;
-    margin-bottom: rem(10);
+    margin-top: rem(20);
 
     @include breakpoint-down(small) {
       @include wh(rem(100));
@@ -139,6 +143,41 @@
       top: 0;
       left: 0;
       object-fit: cover;
+    }
+
+    &--edit-resident {
+      transition: 200ms;
+
+      img {
+        transition: 200ms;
+        // cursor: pointer;
+      }
+
+      a {
+        position: absolute;
+        display: none;
+      }
+
+      .bx {
+        margin: 0;
+      }
+
+      &:hover {
+        background: $dark400;
+
+        img {
+          filter: blur(rem(3));
+          opacity: 0.7;
+        }
+
+        a {
+          filter: opacity(1);
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+          display: flex;
+        }
+      }
     }
   }
 
@@ -159,6 +198,7 @@
 
     &.newresident {
       margin-top: 0;
+      // display: none;
     }
   }
 

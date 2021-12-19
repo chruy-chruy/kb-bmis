@@ -1,191 +1,300 @@
 @use "../util" as *;
 @use "../globals/" as *;
 
-@keyframes animatetop {
+// @keyframes animatetop {
+//   from {
+//     top: -300px;
+//     opacity: 0;
+//   }
+//   to {
+//     top: 0;
+//     opacity: 1;
+//   }
+// }
+
+// .modal {
+//   position: relative;
+//   flex-direction: column;
+//   background: $light100;
+//   border-radius: rem(20);
+//   box-shadow: $shadow;
+//   animation-name: animatetop;
+//   animation-duration: 0.4s;
+//   margin: 0 auto;
+
+//   &__container {
+//     position: fixed;
+//     @include wh(100%);
+//     padding-top: rem(30);
+//     left: 0;
+//     top: 0;
+//     overflow: auto;
+//     background-color: black;
+//     background-color: rgba(0, 0, 0, 0.7);
+//     // display: grid;
+//     // place-items: center;
+//     z-index: 2;
+//     display: none;
+//   }
+
+//   &--show {
+//     display: block;
+//   }
+
+//   &--sm {
+//     width: rem(500);
+
+//     .modal {
+//       &__header,
+//       &__footer,
+//       &__body {
+//         // width: 100%;
+//         padding: rem(14);
+
+//         &-content {
+//           @include flex-center-all;
+//           font-size: rem(15);
+
+//           &--left {
+//             margin-right: auto;
+//             display: flex;
+//             gap: rem(10);
+//           }
+//           &--right {
+//             margin-left: auto;
+//             display: flex;
+//             gap: rem(10);
+//           }
+//         }
+//       }
+
+//       &__body {
+//         padding: rem(30);
+//       }
+//     }
+//   }
+
+//   &--md {
+//     width: rem(800);
+
+//     .modal {
+//       &__header,
+//       &__footer,
+//       &__body {
+//         // width: 100%;
+//         padding: rem(16);
+
+//         &-content {
+//           @include flex-center-all;
+//           font-size: rem(16);
+
+//           &--left {
+//             margin-right: auto;
+//             display: flex;
+//             gap: rem(10);
+//           }
+//           &--right {
+//             margin-left: auto;
+//             display: flex;
+//             gap: rem(10);
+//           }
+//         }
+//       }
+
+//       &__body {
+//         padding: rem(40);
+//       }
+//     }
+//   }
+
+//   &--lg {
+//     width: 85%;
+
+//     .modal {
+//       &__header,
+//       &__footer,
+//       &__body {
+//         padding: rem(15);
+
+//         &-content {
+//           @include flex-center-all;
+//           font-size: rem(16);
+
+//           &--left {
+//             margin-right: auto;
+//             display: flex;
+//             gap: rem(10);
+//           }
+//           &--right {
+//             margin-left: auto;
+//             display: flex;
+//             gap: rem(10);
+//           }
+//         }
+//       }
+
+//       &__body {
+//         padding: rem(50) rem(50) rem(20);
+//       }
+//     }
+//   }
+
+//   &--full {
+//     width: 100%;
+//   }
+
+//   &__header,
+//   &__footer,
+//   &__body {
+//     width: 100%;
+//     padding: rem(20);
+//     &-content {
+//       @include flex-center-all;
+
+//       &--left {
+//         margin-right: auto;
+//         display: flex;
+//         gap: rem(10);
+//       }
+//       &--right {
+//         margin-left: auto;
+//         display: flex;
+//         gap: rem(10);
+//       }
+//     }
+//   }
+
+//   &__header {
+//     border-bottom: rem(0.5) solid rgba($dark100, 0.3);
+//   }
+
+//   &__body {
+//     &-content {
+//       flex-direction: column;
+//     }
+//   }
+
+//   &__footer {
+//     border-top: rem(0.5) solid rgba($dark100, 0.3);
+//   }
+
+//   &__close {
+//     font-size: rem(26);
+//     color: rgba($dark300, 0.8);
+//     transition: 400ms;
+
+//     &:hover {
+//       color: $dark400;
+//       transform: scale(1.25);
+//     }
+//   }
+// }
+
+//modal new
+@keyframes animateModal {
   from {
-    top: -300px;
+    // top: rem(-300);
     opacity: 0;
+    transform: scale(0);
   }
   to {
-    top: 0;
+    // top: 0;
     opacity: 1;
+    transform: scale(1);
   }
 }
 
 .modal {
-  position: relative;
-  flex-direction: column;
-  background: $light100;
-  border-radius: rem(20);
-  box-shadow: $shadow;
-  animation-name: animatetop;
-  animation-duration: 0.4s;
-  margin: 0 auto;
-
-  &__container {
+  &__wrapper {
     position: fixed;
-    @include wh(100%);
-    padding-top: rem(30);
     left: 0;
     top: 0;
-    overflow: auto;
-    background-color: black;
+    @include wh(100%);
+    padding: rem(20);
+    flex-wrap: wrap;
     background-color: rgba(0, 0, 0, 0.7);
-    // display: grid;
-    // place-items: center;
+    overflow: auto;
     z-index: 2;
     display: none;
+
+    &.modal--show {
+      display: block;
+    }
   }
 
-  &--show {
-    display: block;
-  }
+  &__window {
+    position: relative;
+    height: auto;
+    width: 90%;
+    padding: rem(20);
+    background: $light100;
+    border-radius: rem(20);
+    box-shadow: $shadow;
+    transition: 0.2s ease-in-out all;
+    margin: 0 auto;
+    animation-name: animateModal;
+    animation-duration: 400ms;
 
-  &--sm {
-    width: rem(500);
+    &--sm {
+      width: rem(500);
 
-    .modal {
-      &__header,
-      &__footer,
-      &__body {
-        // width: 100%;
-        padding: rem(14);
-
-        &-content {
-          @include flex-center-all;
-          font-size: rem(15);
-
-          &--left {
-            margin-right: auto;
-            display: flex;
-            gap: rem(10);
-          }
-          &--right {
-            margin-left: auto;
-            display: flex;
-            gap: rem(10);
-          }
-        }
+      @include breakpoint-down(medium) {
+        width: rem(400);
       }
 
-      &__body {
-        padding: rem(30);
+      @include breakpoint-down(small) {
+        width: 80%;
+      }
+    }
+
+    &--md {
+      width: rem(750);
+
+      @include breakpoint-down(medium) {
+        width: rem(500);
+      }
+
+      @include breakpoint-down(small) {
+        width: 80%;
       }
     }
   }
 
-  &--md {
-    width: rem(800);
-
-    .modal {
-      &__header,
-      &__footer,
-      &__body {
-        // width: 100%;
-        padding: rem(16);
-
-        &-content {
-          @include flex-center-all;
-          font-size: rem(16);
-
-          &--left {
-            margin-right: auto;
-            display: flex;
-            gap: rem(10);
-          }
-          &--right {
-            margin-left: auto;
-            display: flex;
-            gap: rem(10);
-          }
-        }
-      }
-
-      &__body {
-        padding: rem(40);
-      }
-    }
-  }
-
-  &--lg {
-    width: 85%;
-
-    .modal {
-      &__header,
-      &__footer,
-      &__body {
-        padding: rem(15);
-
-        &-content {
-          @include flex-center-all;
-          font-size: rem(16);
-
-          &--left {
-            margin-right: auto;
-            display: flex;
-            gap: rem(10);
-          }
-          &--right {
-            margin-left: auto;
-            display: flex;
-            gap: rem(10);
-          }
-        }
-      }
-
-      &__body {
-        padding: rem(50) rem(50) rem(20);
-      }
-    }
-  }
-
-  &--full {
-    width: 100%;
-  }
-
-  &__header,
-  &__footer,
   &__body {
     width: 100%;
-    padding: rem(20);
-    &-content {
-      @include flex-center-all;
-
-      &--left {
-        margin-right: auto;
-        display: flex;
-        gap: rem(10);
-      }
-      &--right {
-        margin-left: auto;
-        display: flex;
-        gap: rem(10);
-      }
-    }
+    @include flex-center-all;
+    flex-direction: column;
   }
 
   &__header {
-    border-bottom: rem(0.5) solid rgba($dark100, 0.3);
-  }
-
-  &__body {
-    &-content {
-      flex-direction: column;
-    }
+    @include flex-align-center;
+    justify-content: flex-end;
+    border-bottom: rem(2) solid rgba($dark100, 0.3);
+    justify-content: flex-end;
+    margin-bottom: rem(20);
+    padding-bottom: rem(20);
   }
 
   &__footer {
-    border-top: rem(0.5) solid rgba($dark100, 0.3);
+    @include flex-align-center;
+    justify-content: flex-end;
+    gap: rem(10);
+    border-top: rem(2) solid rgba($dark100, 0.3);
+    margin-top: rem(20);
+    padding-top: rem(20);
   }
 
   &__close {
+    background: transparent;
     font-size: rem(26);
+    margin-left: auto;
     color: rgba($dark300, 0.8);
-    transition: 400ms;
+    justify-self: flex-end;
+    transition: 200ms;
 
     &:hover {
       color: $dark400;
-      transform: scale(1.25);
+      transform: scale(1.15);
     }
   }
 }

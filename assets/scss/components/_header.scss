@@ -2,15 +2,12 @@
 @use "../globals/" as *;
 
 .header {
-  // display: none;
-
   position: fixed;
   top: 0;
-  // right: 0;
   width: calc(100% - 80px);
   height: rem(64);
   margin-left: rem(80);
-  padding: 0 rem(40);
+  padding: 0 rem(30);
   background: $light100;
   display: flex;
   align-items: center;
@@ -25,7 +22,7 @@
   }
 
   @include breakpoint-down(small) {
-    padding: rem(30) rem(40);
+    padding: rem(30) rem(20);
   }
 
   &__menu {

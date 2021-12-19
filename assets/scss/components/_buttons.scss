@@ -85,10 +85,8 @@
 
   &--primary-outline {
     color: $primary;
-    border: rem(1.5) solid $primary;
-    p {
-      color: $primary;
-    }
+    border: rem(2) solid $primary;
+
     &:hover {
       background: $primary;
       color: $light100;
@@ -100,10 +98,9 @@
   }
 
   &--dark-outline {
-    border: rem(1.5) solid $dark200;
-    p {
-      color: $dark200;
-    }
+    color: $dark200;
+    border: rem(2) solid $dark200;
+
     &:hover {
       background: $dark200;
       color: $light100;
@@ -164,7 +161,71 @@
     font-size: rem(18);
   }
 
+  &--icon {
+    padding: rem(6);
+    cursor: pointer;
+
+    .bx {
+      font-size: rem(45);
+      color: $dark200;
+      margin: 0;
+      transition: 300ms;
+
+      &:hover {
+        color: darken($dark200, 15);
+        transform: scale(1.05);
+      }
+
+      @include breakpoint-down(small) {
+        font-size: rem(30);
+      }
+    }
+
+    &-sm {
+      .bx {
+        font-size: rem(28);
+      }
+    }
+
+    &-primary {
+      .bx {
+        color: $primary;
+
+        &:hover {
+          color: darken($primary, 20);
+        }
+      }
+    }
+
+    &-light {
+      .bx {
+        color: $light100;
+
+        &:hover {
+          color: $light100;
+        }
+      }
+    }
+  }
+
   //   &--mg-rl {
   //     margin: 0 rem(8);
   //   }
+}
+
+.back-btn {
+  position: absolute;
+  top: rem(10);
+  left: rem(10);
+  transition: 300ms;
+
+  &:hover {
+    color: $primary;
+    letter-spacing: rem(1.5);
+  }
+}
+
+.camera-btn {
+  margin-top: rem(10);
+  margin-bottom: rem(30);
 }

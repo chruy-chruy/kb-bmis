@@ -1,0 +1,287 @@
+@use "components/buttons";
+@use "globals/fonts";
+@use "globals/typography";
+@use "globals/variables";
+@use "util" as *;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  width: auto;
+  height: auto;
+}
+
+body {
+  @include flex-center-all;
+  background: url("../../assets/img/bg.png") no-repeat center center fixed;
+}
+
+@page {
+  size: auto;
+  margin: 0;
+}
+
+.br {
+  display: block;
+
+  &--sm {
+    margin-bottom: rem(16);
+  }
+  &--md {
+    display: block;
+    margin-bottom: rem(28);
+  }
+
+  &--lg {
+    display: block;
+    margin-bottom: rem(36);
+  }
+}
+
+/* BARANGAY CLEARANCE */
+
+.certificate {
+  &__canvas {
+    @include flex-center-all;
+    position: relative;
+  }
+
+  &__header {
+    height: 1056px;
+    width: 815px;
+    // box-shadow: $shadow;
+  }
+
+  &__text {
+    position: absolute;
+    top: 21.5%;
+    padding: 0 0.75in;
+    width: 100%;
+
+    &--brgyclearance {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+
+      p {
+        text-align: justify;
+        font-family: Arial, Helvetica, sans-serif;
+        line-height: rem(30);
+        font-size: 0.95rem;
+      }
+
+      .certificate {
+        &__official {
+          display: flex;
+          flex-direction: column;
+          line-height: 1.1rem;
+          p {
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: rem(13.5);
+            line-height: rem(16);
+            font-weight: bold;
+          }
+
+          &-name {
+            /* color: #f64242; */
+            color: #ff0066;
+            font-family: arial black !important;
+            font-size: rem(20) !important;
+            line-height: rem(24) !important;
+          }
+        }
+
+        &__signature {
+          border-top: 1.75px solid black;
+          width: 7cm;
+          margin-top: rem(70);
+
+          p {
+            font-size: 0.8rem;
+            text-align: center;
+            line-height: 1rem;
+            padding: 3px 0 0 0;
+          }
+        }
+      }
+    }
+
+    &--businessclearance {
+      p {
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: rem(13);
+        line-height: rem(17.5);
+
+        .to {
+          margin-top: rem(16);
+        }
+      }
+
+      .indent {
+        margin-left: 0.64rem;
+      }
+
+      // .indent2 {
+      //   margin-left: 4.03rem;
+      // }
+
+      .certificate {
+        &__pink-block {
+          width: 100%;
+          height: rem(27);
+          padding: 0 0.75in;
+          border-bottom: #ff6699 rem(27) solid;
+          margin: rem(5) 0;
+          position: relative;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+
+          p {
+            font-size: rem(14);
+            font-weight: bold;
+            font-style: italic;
+            font-family: "Century Gothic", sans-serif;
+            position: absolute;
+            padding-top: rem(5.5);
+            top: 0;
+          }
+        }
+
+        &__text-center {
+          font-family: "Century Gothic", sans-serif;
+          font-size: 0.85rem;
+          text-align: center;
+          line-height: 1rem;
+
+          span {
+            font-weight: bold;
+          }
+        }
+
+        &__text-justify {
+          font-family: "Century Gothic", sans-serif;
+          font-size: 0.85rem;
+          text-align: justify;
+          line-height: 1rem;
+        }
+
+        &__text-pink {
+          font-size: 0.7rem;
+          font-family: "Lucida Fax";
+          font-style: italic;
+          font-weight: bold;
+          color: #ff0066;
+        }
+
+        &__thumbmark {
+          display: flex;
+          margin-top: 3rem;
+          position: absolute;
+          right: 0.75in;
+          bottom: rem(70);
+
+          p {
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 0.7rem;
+            font-weight: bold;
+            line-height: 1rem;
+          }
+
+          &-box {
+            border: rem(2) solid black;
+            height: 3cm;
+            width: 3cm;
+            margin-left: 2.4rem;
+            display: flex;
+            justify-content: center;
+            align-items: flex-end;
+          }
+        }
+
+        &__signature {
+          border-top: 1.75px solid black;
+          width: 7cm;
+          position: absolute;
+          right: 0.76in;
+          bottom: 0;
+
+          p {
+            font-size: 0.8rem;
+            text-align: center;
+            line-height: 1rem;
+            padding: 3px 0 0 0;
+          }
+        }
+      }
+    }
+  }
+
+  &__title {
+    color: #ff0066;
+    margin-bottom: rem(34);
+    font-size: rem(24);
+    text-align: center;
+    font-family: "Century Gothic", sans-serif;
+  }
+
+  &__thumbmark-box {
+    border: rem(2) solid black;
+    @include wh(3cm);
+    @include flex-justify-center;
+    align-items: flex-end;
+
+    p {
+      font-size: 0.7rem;
+      font-weight: bold;
+      font-family: Arial, Helvetica, sans-serif;
+      line-height: 1rem;
+    }
+  }
+
+  &__img {
+    @include wh(3cm);
+    display: flex;
+    justify-content: center;
+
+    img {
+      @include wh(3cm);
+    }
+  }
+
+  &__seal {
+    font-size: rem(13) !important;
+    font-style: italic !important;
+    // line-height: 0.9rem;
+  }
+
+  &__buttons {
+    @include flex-center-all;
+    gap: rem(10);
+    margin-top: rem(30);
+
+    &--business-clearance {
+      position: absolute;
+      width: 100%;
+      left: 0;
+      bottom: rem(-20);
+    }
+  }
+}
+
+.row {
+  display: flex;
+
+  &--space-between {
+    justify-content: space-between;
+    width: 100%;
+    align-items: flex-end;
+    margin-top: rem(70);
+  }
+
+  &--flex {
+    margin-top: rem(64);
+    gap: rem(24);
+  }
+}

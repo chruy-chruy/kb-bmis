@@ -94,18 +94,18 @@
   &__item {
     width: 100%;
 
-    &:nth-child(9) {
-      margin-top: auto;
+    // &:nth-child(9) {
+    //   margin-top: auto;
 
-      @include breakpoint-down(medium) {
-        display: none;
-      }
-    }
-    &:last-child {
-      @include breakpoint-down(medium) {
-        display: none;
-      }
-    }
+    //   @include breakpoint-down(medium) {
+    //     display: none;
+    //   }
+    // }
+    // &:last-child {
+    //   @include breakpoint-down(medium) {
+    //     display: none;
+    //   }
+    // }
 
     /*  A */
     &-link {
