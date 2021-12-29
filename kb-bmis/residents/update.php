@@ -1,49 +1,59 @@
  <!-- add resident to database -->
  <?php
 
-if(isset($_POST['btn_update'])){
+    if (isset($_POST['btn_update'])) {
 
-    include "../../db_conn.php";
-    $id = $_POST['id'];
-    $first_name = $_POST['first_name'];
-    $mid_name = $_POST['mid_name'];
-    $last_name = $_POST['last_name'];
-    $suffix = $_POST['suffix'];
-    $sex = $_POST['sex'];
-    $date_of_birth = $_POST['date_of_birth'];
-    $civil_status = $_POST['civil_status'];
-    $voter_status = $_POST['voter_status'];
-    $house_number = $_POST['house_number'];
-    $street = $_POST['street'];
-    $purok = $_POST['purok'];
-    $occupation = $_POST['occupation'];
-    $citizenship = $_POST['citizenship'];
-    $phone_number = $_POST['phone_number'];
-    $tel_number = $_POST['tel_number'];
-    $email = $_POST['email'];
-    $place_of_birth = $_POST['place_of_birth'];
-    $education_status = $_POST['education_status'];
-    $religion = $_POST['religion'];
-    $blood_type = $_POST['blood_type'];
-    $alien_status = $_POST['alien_status'];
-    $senior_status = $_POST['senior_status'];
-    $disability_status = $_POST['disability_status'];
-    $_4ps_status = $_POST['4ps_status'];
-    $type_disability = $_POST['type_disability'];
-    $deceased_status = $_POST['deceased_status'];
-    $date_of_death = $_POST['date_of_death'];
-    $voter_id = $_POST['voter_id'];
-    $precinct_number = $_POST['precinct_number'];
-    $national_id = $_POST['national_id'];
-    $vaccine_admin = $_POST['vaccine_admin'];
-    $emergency_person = $_POST['emergency_person'];
-    $relationship = $_POST['relationship'];
-    $emergency_address = $_POST['emergency_address'];
-    $emergency_contact = $_POST['emergency_contact'];
-    
+        include "../../db_conn.php";
+        $id = $_POST['id'];
+        $first_name = $_POST['first_name'];
+        $mid_name = $_POST['mid_name'];
+        $last_name = $_POST['last_name'];
+        $suffix = $_POST['suffix'];
+        $sex = $_POST['sex'];
+        $date_of_birth = $_POST['date_of_birth'];
+        $civil_status = $_POST['civil_status'];
+        $voter_status = $_POST['voter_status'];
+        $house_number = $_POST['house_number'];
+        $street = $_POST['street'];
+        $purok = $_POST['purok'];
+        $occupation = $_POST['occupation'];
+        $citizenship = $_POST['citizenship'];
+        $phone_number = $_POST['phone_number'];
+        $tel_number = $_POST['tel_number'];
+        $email = $_POST['email'];
+        $place_of_birth = $_POST['place_of_birth'];
+        $education_status = $_POST['education_status'];
+        $religion = $_POST['religion'];
+        $blood_type = $_POST['blood_type'];
+        $alien_status = $_POST['alien_status'];
+        $senior_status = $_POST['senior_status'];
+        $disability_status = $_POST['disability_status'];
+        $_4ps_status = $_POST['4ps_status'];
+        $type_disability = $_POST['type_disability'];
+        $deceased_status = $_POST['deceased_status'];
+        $date_of_death = $_POST['date_of_death'];
+        $voter_id = $_POST['voter_id'];
+        $precinct_number = $_POST['precinct_number'];
+        $national_id = $_POST['national_id'];
+        $vaccine_admin = $_POST['vaccine_admin'];
+        $emergency_person = $_POST['emergency_person'];
+        $relationship = $_POST['relationship'];
+        $emergency_address = $_POST['emergency_address'];
+        $emergency_contact = $_POST['emergency_contact'];
 
-    
-    $sql ="UPDATE `residents` SET 
+        $img = $_POST['image'];
+        $folderPath = "images/";
+        $owner_pic = $first_name . '_' . $last_name;
+        $image_parts = explode(";base64,", $img);
+        $image_type_aux = explode("image/", $image_parts[0]);
+        $image_type = $image_type_aux[1];
+        $image_base64 = base64_decode($image_parts[1]);
+        $fileName =  $owner_pic . '_' . time() .  '.png';
+
+        $file = $folderPath . $fileName;
+        file_put_contents($file, $image_base64);
+
+        $sql = "UPDATE `residents` SET 
     `first_name`='$first_name',
     `mid_name`= '$mid_name',
     `last_name`='$last_name',
@@ -78,13 +88,13 @@ if(isset($_POST['btn_update'])){
     `education_status`='$education_status',
     `place_of_birth`='$place_of_birth',
     `religion`='$religion',
-    `blood_type`='$blood_type'
+    `blood_type`='$blood_type',
+    `img_url`='$fileName'
     WHERE `id` = '$id'
     ";
 
-mysqli_query($conn,$sql);
-header("location:view-resident.php?id=$id");
+        mysqli_query($conn, $sql);
+        header("location:view-resident.php?id=$id");
+    }
 
-}
-              
-              ?>
+    ?>

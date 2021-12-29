@@ -99,13 +99,13 @@
                         <div class="dropdown dropdown--cert">
                           <ul>
                             <li class="dropdown__item">
-                              <a href="../certificates/brgy-clearance.php" class="link-brgycert">
+                              <a href="../certificates/brgy-clearance.php?id=<?php echo $row['id']?>" class="link-brgycert">
                                 <i class='bx bxs-user-circle' ></i>
                                 Barangay Clearance
                               </a>
                             </li>
                             <li class="dropdown__item">
-                              <a href="../certificates/business-clearance.php" class="link-busclearance" >
+                              <a href="../certificates/resident-business-clearance.php?id=<?php echo $row['id']?>" class="link-busclearance" >
                                 <i class='bx bx-exit' ></i>
                                 Business Clearance
                               </a>

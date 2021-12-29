@@ -39,187 +39,95 @@
                 </header>
                 <div class="modal__body">
                   <table id="modal-table" class="row-border">
-                    <thead>
-                        <tr>
-                            <th></th>
-                            <th></th>
-                            <th></th>
-                        </tr>
-                    </thead>
+                  <thead>
+                  <tr>
+                      <th></th>
+                      <th></th>
+                      <th></th>
+                      <th></th>
+                      <th></th>
+                      <th></th>
+                      <th>
+                        <div class="residents__header-actions">
+                          <div class="select__wrapper" id="residents__filter-container">
+                            <select class="select select--table" name="filter" id="residents__filter">
+                              <option value="">All</option>
+                              <option value="4Ps">4Ps</option>
+                              <option value="Person with Disability">Persons with Disability</option>
+                              <option value="Registered Voter">Registered Voters</option>
+                              <option value="Senior Citizen">Senior Citizens</option>
+                            </select>
+                          </div>
+                        <a href="new-resident.php" class="button button--primary button--md" data-target="#modal-newresident" id="add-resident">
+                          <i class='bx bx-plus'></i>
+                          <p>ADD NEW</p>
+                        </a>
+                        <a href="#" class="button button--dark button--md" id="export-resident">
+                          <i class='bx bxs-file-export' ></i>
+                          <p>EXPORT</p>
+                        </a>
+    
+                        <div class="dropdown dropdown--export">
+                          <ul>
+                            <li class="dropdown__item">
+                              <a href="#">
+                                <i class='bx bxs-user-circle' ></i>
+                                Excel
+                              </a>
+                            </li>
+                            <li class="dropdown__item">
+                              <a href="#">
+                                <i class='bx bx-exit' ></i>
+                                PDF
+                              </a>
+                            </li>
+                          </ul>
+                        </div>
+    
+                    </div>
+    
+                      </th>
+                  </tr>
+              </thead>
                     <tbody>
-                        <tr>
-                            <td>
-                              <div class="table__row-img">
-                                <img src="../../assets/img/user.jpg" alt="">
-                              </div>
-                            </td>
-                            <td>
-                              <div class="table__row-text">
-                              <div class="table__row-name">
-                                Juana Dela Cruz
-                              </div>
-                              <div class="table__row-sub">
-                                00001
-                              </div>
-                              </div>
-                            </td>
-                            <td>
-                              <div class="table__action-buttons">
-                              <a href="brgy-clearance.php" class="button button--primary button--sm action__cert" id="action-cert">
-                              SELECT
-                              </a>
-                            </div>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                              <div class="table__row-img">
-                                <img src="../../assets/img/user.jpg" alt="">
-                              </div>
-                            </td>
-                            <td>
-                              <div class="table__row-text">
-                              <div class="table__row-name">
-                                Juana Dela Cruz
-                              </div>
-                              <div class="table__row-sub">
-                                00001
-                              </div>
-                              </div>
-                            </td>
-                            <td>
-                              <div class="table__action-buttons">
-                              <a href="brgy-clearance.php" class="button button--primary button--sm action__cert" id="action-cert">
-                              SELECT
-                              </a>
-                            </div>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                              <div class="table__row-img">
-                                <img src="../../assets/img/user.jpg" alt="">
-                              </div>
-                            </td>
-                            <td>
-                              <div class="table__row-text">
-                              <div class="table__row-name">
-                                Juana Dela Cruz
-                              </div>
-                              <div class="table__row-sub">
-                                00001
-                              </div>
-                              </div>
-                            </td>
-                            <td>
-                              <div class="table__action-buttons">
-                              <a href="brgy-clearance.php" class="button button--primary button--sm action__cert" id="action-cert">
-                              SELECT
-                              </a>
-                            </div>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                              <div class="table__row-img">
-                                <img src="../../assets/img/user2.jpg" alt="">
-                              </div>
-                            </td>
-                            <td>
-                              <div class="table__row-text">
-                              <div class="table__row-name">
-                                Jose Bonifacio
-                              </div>
-                              <div class="table__row-sub">
-                                00002
-                              </div>
-                              </div>
-                            </td>
-                            <td>
-                              <div class="table__action-buttons">
-                              <a href="#" class="button button--primary button--sm action__cert">
-                              SELECT
-                              </a>
-                              
-                            </div>
-                            </td>
-                        </tr>
-                        <tr>
-                          
-                            <td>
-                              <div class="table__row-img">
-                                <img src="../../assets/img/user3.jpg" alt="">
-                              </div>
-                            </td>
-                            <td>
-                              <div class="table__row-text">
-                              <div class="table__row-name">
-                                Andres Rizal
-                              </div>
-                              <div class="table__row-sub">
-                                00003
-                              </div>
-                              </div>
-                            </td>
-                            <td>
-                              <div class="table__action-buttons">
-                              <a href="#" class="button button--primary button--sm action__cert">
-                              SELECT
-                              </a>
-                            </div>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                              <div class="table__row-img">
-                                <img src="../../assets/img/user4.jpg" alt="">
-                              </div>
-                            </td>
-                            <td>
-                              <div class="table__row-text">
-                              <div class="table__row-name">
-                                Bongbong Robredo
-                              </div>
-                              <div class="table__row-sub">
-                                00004
-                              </div>
-                              </div>
-                            </td>
-                            <td>
-                              <div class="table__action-buttons">
-                              <a href="#" class="button button--primary button--sm action__cert">
-                              SELECT
-                              </a>
-                              
-                            </div>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                              <div class="table__row-img">
-                                <img src="../../assets/img/user5.jpg" alt="">
-                              </div>
-                            </td>
-                            <td>
-                              <div class="table__row-text">
-                              <div class="table__row-name">
-                                Bong Ong
-                              </div>
-                              <div class="table__row-sub">
-                                00005
-                              </div>
-                              </div>
-                            </td>
-                            <td>
-                              <div class="table__action-buttons">
-                              <a href="#" class="button button--primary button--sm action__cert">
-                              SELECT
-                              </a>
-                            </div>
-                            </td>
-                        </tr>
-                    
-                    </tbody>
+
+
+              <?php    
+                
+                $squery =  mysqli_query($conn,"select * from residents");
+                while ($row = mysqli_fetch_array($squery)){
+                
+                ?>
+                  <tr>
+                      <td>
+                        <div class="table__row-img">
+                          <img src="../../assets/img/user.jpg" alt="">
+                        </div>
+                      </td>
+                      <td>
+                        <div class="table__row-text">
+                        <div class="table__row-name">
+                        <?php echo $row['first_name']?>  <?php echo $row['mid_name']?>  <?php echo $row['last_name']?>
+                        </div>
+                        <div class="table__row-sub">
+                        <?php echo $row['id']?>
+                        </div>
+                        </div>
+                      </td>
+                      <td>
+                        <div class="table__action-buttons">
+                        <a href="brgy-clearance.php?id=<?php echo $row['id']?>" class="button button--primary button--sm action__cert" id="action-cert">
+                        <i class='bx bxs-file-blank' ></i>
+                        Generate
+                        </a>
+                      </div>
+                      </td>
+                  </tr>
+                
+              <?php 
+              }
+              ?>
+              </tbody>
                     </table>
                 </div>
               </section>

@@ -9,5 +9,8 @@
       "savePathSegmentKeys": null,
       "savePathReplaceSegmentsWith": null
     }
-  ]
+  ],
+  "[php]": {
+    "editor.defaultFormatter": "bmewburn.vscode-intelephense-client"
+  }
 }
