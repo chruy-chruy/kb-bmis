@@ -10,12 +10,12 @@ $voterQuery = mysqli_query($conn, "SELECT COUNT(id) as voters FROM `residents` W
 $countVoters = mysqli_fetch_array($voterQuery);
 
 // total barangay clearance sales
-$salesQuery = mysqli_query($conn, "SELECT SUM(sale) as brgySales FROM `barangay_clearance`");
+$salesQuery = mysqli_query($conn, "SELECT SUM(price) as brgySales FROM `barangay_clearance`");
 $total_sales = mysqli_fetch_array($salesQuery);
 
 // total bs clearance sales
-// $salesQuery = mysqli_query($conn, "SELECT SUM(sale) as brgySales FROM `barangay_clearance`");
-// $total_sales = mysqli_fetch_array($salesQuery);
+// $bsSalesQuery = mysqli_query($conn, "SELECT SUM(price) as businessSales FROM `business_clearance`");
+// $total_bs_sales = mysqli_fetch_array($bsSalesQuery);
 
 
 
