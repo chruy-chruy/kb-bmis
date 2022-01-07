@@ -1,15 +1,15 @@
 <?php
 include "../../db_conn.php"; ?>
-<?php
-$id = $_GET["id"];
-$squery = mysqli_query($conn, "select * from residents where id = $id");
-while ($row = mysqli_fetch_array($squery)) { ?>
+
 
 <?php
-    $headerTitle = 'View';
-    $page = 'Residents';
-    require_once "../../includes/header.php";
-    ?>
+$headerTitle = 'View';
+$page = 'Residents';
+require_once "../../includes/header.php";
+?>
+
+
+
 
 <main>
     <div class="content">
@@ -23,19 +23,29 @@ while ($row = mysqli_fetch_array($squery)) { ?>
             <div class="card__body">
                 <div class="card__body-content">
                     <div class="profile__img profile__img--viewprofile">
-                        <img src="images/<?php echo $row["img_url"]; ?>" alt="">
+
+                        <?php
+                        $archive_id = $_GET['residents_archive_id'];
+                        $query =  mysqli_query($conn, "select * from residents_archive where residents_archive_id = $archive_id");
+                        while ($row = mysqli_fetch_array($query)) {
+                        ?>
+
+                        <img src="../residents/images/<?php echo $row["img_url"]; ?>" alt="">
                     </div>
 
+
+
                     <div class="profile__name profile__name--viewprofile">
-                        <?php echo $row["first_name"]; ?>
+
+                        <?php echo $row['first_name']; ?>
                         <?php echo $row["mid_name"]; ?>
                         <?php echo $row["last_name"]; ?>
                         <?php echo $row["suffix"]; ?>
                     </div>
 
                     <div class="row">
-                        <a href="../archive/controllers/resident-restore.php"
-                            class="button button--primary button--sm modal-trigger">
+                        <a href="#" class="button button--primary button--sm modal-trigger"
+                            data-modal-id="modal-editprofile">
                             <i class='bx bxs-edit' data-modal-id="modal-editprofile"></i>
                             Restore</a>
                         <a href="#" class="button button--dark button--sm modal-trigger" data-modal-id="modal-delete">
@@ -652,11 +662,15 @@ while ($row = mysqli_fetch_array($squery)) { ?>
             </button>
         </header>
         <div class="modal__body">
-            Are you sure you want to delete <?php echo $row["first_name"]; ?> <?php echo $row["mid_name"]; ?>
+            Are you sure you want to permanently delete <?php echo $row["first_name"]; ?>
+            <?php echo $row["mid_name"]; ?>
             <?php echo $row["last_name"]; ?>?
+
+
         </div>
         <footer class="modal__footer">
-            <a href="delete.php?id=<?php echo $row["id"]; ?>" class="button button--danger button--md">Delete</a>
+            <a href="controllers/resident-delete.php?residents_archive_id=<?php echo $row["residents_archive_id"]; ?>"
+                class="button button--danger button--md">Delete</a>
             <a href="#" class="button button--dark button--md modal__cancel close">Cancel</a>
 
         </footer>
@@ -692,8 +706,9 @@ while ($row = mysqli_fetch_array($squery)) { ?>
             </div>
         </div>
         <footer class="modal__footer">
-            <a href="edit-resident.php?id=<?php echo $row["id"]; ?>" class="button button--primary button--md"
-                id="login-editprofile">Login</a>
+            <a href="controllers/resident-restore.php?residents_archive_id=<?php echo $row['residents_archive_id'] ?>"
+                class="
+                button button--primary button--md" id="login-editprofile">Login</a>
             <a href="#" class="button button--dark button--md modal__cancel close">Cancel</a>
 
         </footer>
@@ -701,8 +716,8 @@ while ($row = mysqli_fetch_array($squery)) { ?>
 </div>
 
 
-
-<?php }
+<?php
+                        }
 ?>
 
 

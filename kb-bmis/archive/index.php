@@ -12,7 +12,7 @@ require_once "../../includes/header.php";
 
             <div class="group-29">
                 <div class="group-21">
-                    <button class="overlap-group" onclick="document.location='resident-archive.php'">
+                    <button class="overlap-group btn" onclick="document.location='resident-archive.php'">
                         <img class="fa-solid-house-user" src="../../assets/img/fa-solid-house-user.svg" />
 
                     </button>
