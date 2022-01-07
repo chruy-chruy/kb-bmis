@@ -4,6 +4,7 @@ $headerTitle = 'Resident Archive';
 include "../../db_conn.php";
 require_once "../../includes/header.php";
 ?>
+
 <main>
 
     <div class="content">
@@ -38,8 +39,9 @@ require_once "../../includes/header.php";
                                         <option value="Senior Citizen">Senior Citizens</option>
                                     </select>
                                 </div>
-                                <a href="new-resident.php" class="button button--primary button--md"
-                                    data-target="#modal-newresident" id="add-resident">
+                                <a href="controllers/resident-empty-archive.php"
+                                    class="button button--primary button--md" data-target="#modal-newresident"
+                                    id="add-resident">
                                     <i class='bx bx-trash'></i>
                                     <p>EMPTY ARCHIVE</p>
                                 </a>
@@ -56,10 +58,11 @@ require_once "../../includes/header.php";
 
                     <?php
 
-                    $squery =  mysqli_query($conn, "select * from residents");
+                    $squery =  mysqli_query($conn, "select * from residents_archive");
                     while ($row = mysqli_fetch_array($squery)) {
 
                     ?>
+
                     <tr>
                         <td><?php echo $row['4ps_status'] ?></td>
                         <td><?php echo $row['disability_status'] ?></td>
@@ -77,14 +80,13 @@ require_once "../../includes/header.php";
                                     <?php echo $row['last_name'] ?>
                                 </div>
                                 <div class="table__row-sub">
-                                    <?php echo $row['id'] ?>
+                                    <?php echo $row['resident_id'] ?>
                                 </div>
                             </div>
                         </td>
                         <td>
                             <div class="table__action-buttons">
-
-                                <a href="view-resident.php?id=<?php echo $row['id'] ?>"
+                                <a href="view-resident.php?residents_archive_id=<?php echo $row['residents_archive_id'] ?>"
                                     class="button button--dark button--sm action__view" data-target="#modal-viewprofile"
                                     id="action-view">
                                     <i class='bx bxs-show'></i>
