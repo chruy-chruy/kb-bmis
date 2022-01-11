@@ -3,7 +3,7 @@ $page = 'Reports';
 $headerTitle = 'Reports';
 include "../../db_conn.php";
 require_once "../../includes/header.php";
-include "brgy-clearance-queries.php";
+include "queries/monthly-data.php";
 
 ?>
 
@@ -36,9 +36,9 @@ include "brgy-clearance-queries.php";
                         </div>
 
                         <div class="card__header-content--right">
-                            <a href="1mo.php" style="background-color:tomato">1 week</a>
-                            <a href="1mo.php" style="background-color:tomato">1 month</a>
-                            <a href="1mo.php" style="background-color:tomato">1 year</a>
+                            <a href="weekly-reports.php" style="background-color:tomato">Last 7 days</a>
+                            <a href="graph-reports.php" style="background-color:tomato">1 month</a>
+                            <a href="yearly-reports.php" style="background-color:tomato">1 year</a>
                         </div>
 
                     </div>
