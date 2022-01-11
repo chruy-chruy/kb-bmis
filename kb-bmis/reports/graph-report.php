@@ -3,6 +3,8 @@ $page = 'Reports';
 $headerTitle = 'Reports';
 include "../../db_conn.php";
 require_once "../../includes/header.php";
+include "brgy-clearance-queries.php";
+
 ?>
 
 <main>
@@ -34,8 +36,9 @@ require_once "../../includes/header.php";
                         </div>
 
                         <div class="card__header-content--right">
-
-
+                            <a href="1mo.php" style="background-color:tomato">1 week</a>
+                            <a href="1mo.php" style="background-color:tomato">1 month</a>
+                            <a href="1mo.php" style="background-color:tomato">1 year</a>
                         </div>
 
                     </div>
@@ -43,7 +46,12 @@ require_once "../../includes/header.php";
 
                 <div class="card__body">
                     <div class="card__body-content">
-
+                        <div class="graph">
+                            <h1>Barangay Clearance Sales</h1>
+                            <canvas id="brgy-month"></canvas>
+                            <h1>Business Clearance Sales</h1>
+                            <canvas id="bs-month"></canvas>
+                        </div>
                     </div>
                 </div>
 
@@ -58,7 +66,9 @@ require_once "../../includes/header.php";
 </main>
 
 <!--=============== MODALS ===============-->
+<script src="https://cdn.jsdelivr.net/npm/chart.js@3.5.1/dist/chart.min.js"></script>
 
+<?php include "charts/month-charts.php"; ?>
 
 </body>
 

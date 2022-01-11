@@ -53,7 +53,7 @@ include "data-dashboard.php";
 
                 <div class="dashboard__card-top">
                     <div>
-                        <div class="dashboard__card-top--value">₱6542</div>
+                        <div class="dashboard__card-top--value">₱<?php echo $total_bs_sales['businessSales']; ?></div>
                         <div class="dashboard__card-top--label">Business Clearance Total Sales</div>
                     </div>
 
