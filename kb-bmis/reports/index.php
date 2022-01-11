@@ -22,7 +22,7 @@ require_once "../../includes/header.php";
                         <div class="card__header-content--left">
 
                             <ul class="reports__tabs-list">
-                                <a href="graph-report.php">
+                                <a href="graph-reports.php">
                                     <li class="reports__tabs-item">
                                         Graphical View
                                     </li>
@@ -155,7 +155,7 @@ $(document).ready(function() {
     $('#resTable').dataTable({
         dom: 'Bfrtip',
         buttons: [
-            'copy', 'csv', 'excel', 'pdf', 'print'
+            'csv', 'excel', 'pdf', 'print'
         ],
         "bLengthChange": false,
         "bInfo": false,

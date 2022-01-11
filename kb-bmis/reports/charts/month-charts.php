@@ -23,10 +23,8 @@ const myChart3 = new Chart(chart3, {
 
         ],
         datasets: [{
-            label: "Population by Purok",
+            label: "Barangay Clearance Sales",
             data: [
-
-
                 <?php echo $janBrgy['total']; ?>,
                 <?php echo $febBrgy['total2']; ?>,
                 <?php echo $marBrgy['total3']; ?>,
@@ -47,6 +45,16 @@ const myChart3 = new Chart(chart3, {
         }, ],
     },
     options: {
+        scales: {
+            y: {
+                ticks: {
+                    // Include a dollar sign in the ticks
+                    callback: function(value, index, values) {
+                        return '₱' + value;
+                    }
+                }
+            }
+        },
         responsive: true,
 
     },
@@ -74,9 +82,20 @@ const myChart6 = new Chart(chart6, {
 
         ],
         datasets: [{
-            label: "Population by Purok",
+            label: "Barangay Clearance Sales",
             data: [
-
+                <?php echo $janBs['bstotal']; ?>,
+                <?php echo $febBs['bstotal2']; ?>,
+                <?php echo $marBs['bstotal3']; ?>,
+                <?php echo $aprBs['bstotal4']; ?>,
+                <?php echo $mayBs['bstotal5']; ?>,
+                <?php echo $junBs['bstotal6']; ?>,
+                <?php echo $julBs['bstotal7']; ?>,
+                <?php echo $augBs['bstotal8']; ?>,
+                <?php echo $sepBs['bstotal9']; ?>,
+                <?php echo $octBs['bstotal10']; ?>,
+                <?php echo $novBs['bstotal11']; ?>,
+                <?php echo $decBs['bstotal12']; ?>
 
             ],
             backgroundColor: [
@@ -86,6 +105,16 @@ const myChart6 = new Chart(chart6, {
         }, ],
     },
     options: {
+        scales: {
+            y: {
+                ticks: {
+                    // Include a dollar sign in the ticks
+                    callback: function(value, index, values) {
+                        return '₱' + value;
+                    }
+                }
+            }
+        },
         responsive: true,
 
     },
