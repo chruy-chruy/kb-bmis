@@ -1,5 +1,6 @@
 <?php
 
+
 // number of population
 $populationSql = "SELECT * FROM residents";
 $populationQuery = $conn->query($populationSql);
@@ -14,8 +15,8 @@ $salesQuery = mysqli_query($conn, "SELECT SUM(price) as brgySales FROM `barangay
 $total_sales = mysqli_fetch_array($salesQuery);
 
 // total bs clearance sales
-// $bsSalesQuery = mysqli_query($conn, "SELECT SUM(price) as businessSales FROM `business_clearance`");
-// $total_bs_sales = mysqli_fetch_array($bsSalesQuery);
+$bsSalesQuery = mysqli_query($conn, "SELECT SUM(price) as businessSales FROM `business_clearance`");
+$total_bs_sales = mysqli_fetch_array($bsSalesQuery);
 
 
 
@@ -23,11 +24,7 @@ $total_sales = mysqli_fetch_array($salesQuery);
 // SQL FOR AGE GROUP// 
 $age_group =  mysqli_query(
     $conn,
-    "SELECT CASE WHEN TIMESTAMPDIFF(YEAR, date_of_birth, CURDATE()) <= 12   THEN 'child'
-     ELSE 'Others'
-        END AS age,
-        COUNT(*) as childcnt FROM residents
-        GROUP BY age ASC"
+    "SELECT COUNT(id) AS child FROM residents where TIMESTAMPDIFF(YEAR, date_of_birth, CURDATE()) <= 12"
 );
 
 $age_group_count = mysqli_fetch_array($age_group);
@@ -35,42 +32,23 @@ $age_group_count = mysqli_fetch_array($age_group);
 
 $age_group2 =  mysqli_query(
     $conn,
-    "SELECT CASE WHEN TIMESTAMPDIFF(YEAR, date_of_birth, CURDATE()) BETWEEN 13 and  18 THEN 'adolescent'
-     ELSE 'Others'
-        END AS age,
-        COUNT(*) as adolescentcnt FROM residents
-        GROUP BY age ASC"
-
+    "SELECT COUNT(id) AS adolescent FROM residents where TIMESTAMPDIFF(YEAR, date_of_birth, CURDATE()) BETWEEN 13 and 18"
 );
 
 $age_group_count2 = mysqli_fetch_array($age_group2);
 
 
-
-
 $age_group3 =  mysqli_query(
     $conn,
-    "SELECT CASE WHEN TIMESTAMPDIFF(YEAR, date_of_birth, CURDATE())  BETWEEN 19 and 59 THEN 'adult'
-         ELSE 'Others'
-            END AS age,
-            COUNT(*) as adultcnt FROM residents
-            GROUP BY age ASC"
-
+    "SELECT COUNT(id) AS adult FROM residents where TIMESTAMPDIFF(YEAR, date_of_birth, CURDATE()) BETWEEN 19 and 59"
 );
 
 $age_group_count3 = mysqli_fetch_array($age_group3);
 
 
-
-
 $age_group4 =  mysqli_query(
     $conn,
-    "SELECT CASE WHEN TIMESTAMPDIFF(YEAR, date_of_birth, CURDATE()) >= 60 THEN 'senior'
-             ELSE 'Others'
-                END AS age,
-                COUNT(*) as srcnt FROM residents
-                GROUP BY age DESC"
-
+    "SELECT COUNT(id) AS senior FROM residents where TIMESTAMPDIFF(YEAR, date_of_birth, CURDATE()) >= 60"
 );
 
 $age_group_count4 = mysqli_fetch_array($age_group4);

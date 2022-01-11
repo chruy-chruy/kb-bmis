@@ -4,11 +4,13 @@ $headerTitle = 'Official Archive';
 include "../../db_conn.php";
 require_once "../../includes/header.php";
 ?>
+
 <main>
 
     <div class="content">
         <section class="archive">
             <!-- BUTANG LANG DIRI ☺ -->
+
             <a href="index.php" class="button button--md back-btn">
                 <i class='bx bx-left-arrow-circle'></i>
                 Back
@@ -17,6 +19,7 @@ require_once "../../includes/header.php";
             <table id="residents-table" class="row-border">
                 <thead>
                     <tr>
+
                         <th></th>
                         <th></th>
                         <th></th>
@@ -24,7 +27,9 @@ require_once "../../includes/header.php";
                         <th></th>
                         <th></th>
                         <th>
+
                             <div class="residents__header-actions">
+
                                 <div class="select__wrapper" id="residents__filter-container">
                                     <select class="select select--table" name="filter" id="residents__filter">
                                         <option value="">All</option>
@@ -34,29 +39,11 @@ require_once "../../includes/header.php";
                                         <option value="Senior Citizen">Senior Citizens</option>
                                     </select>
                                 </div>
-                                <a href="new-resident.php" class="button button--primary button--md"
-                                    data-target="#modal-newresident" id="add-resident">
-                                    <i class='bx bx-trash'></i>
-                                    <p>EMPTY ARCHIVE</p>
-                                </a>
+                                <a href="#" class="button button--primary button--sm modal-trigger"
+                                    data-modal-id="modal-delete">
+                                    <i class='bx bxs-trash' data-modal-id="modal-delete"></i>
+                                    Delete All </a>
 
-
-                                <div class="dropdown dropdown--export">
-                                    <ul>
-                                        <li class="dropdown__item">
-                                            <a href="#">
-                                                <i class='bx bxs-user-circle'></i>
-                                                Excel
-                                            </a>
-                                        </li>
-                                        <li class="dropdown__item">
-                                            <a href="#">
-                                                <i class='bx bx-exit'></i>
-                                                PDF
-                                            </a>
-                                        </li>
-                                    </ul>
-                                </div>
 
                             </div>
 
@@ -65,44 +52,49 @@ require_once "../../includes/header.php";
                 </thead>
                 <tbody>
 
-                    <td>
-                        <div class="table__action-buttons">
-                            <a href="#" class="button button--primary button--sm action__cert" id="action-cert">
-                                <i class='bx bxs-file-blank'></i>
-                                CERTIFICATE
-                            </a>
+                    <?php
 
-                            <div class="dropdown dropdown--cert">
-                                <ul>
-                                    <li class="dropdown__item">
-                                        <a href="../certificates/brgy-clearance.php?id=<?php echo $row['id'] ?>"
-                                            class="link-brgycert">
-                                            <i class='bx bxs-user-circle'></i>
-                                            Barangay Clearance
-                                        </a>
-                                    </li>
-                                    <li class="dropdown__item">
-                                        <a href="../certificates/resident-business-clearance.php?id=<?php echo $row['id'] ?>"
-                                            class="link-busclearance">
-                                            <i class='bx bx-exit'></i>
-                                            Business Clearance
-                                        </a>
-                                    </li>
-                                </ul>
+                    $squery =  mysqli_query($conn, "select * from residents_archive");
+                    while ($row = mysqli_fetch_array($squery)) {
+
+                    ?>
+
+                    <tr>
+                        <td><?php echo $row['4ps_status'] ?></td>
+                        <td><?php echo $row['disability_status'] ?></td>
+                        <td><?php echo $row['voter_status'] ?></td>
+                        <td><?php echo $row['senior_status'] ?></td>
+                        <td>
+                            <div class="table__row-img">
+                                <img src="../../assets/img/user.jpg" alt="">
                             </div>
-
-
-                            <a href="view-resident.php?id=<?php echo $row['id'] ?>"
-                                class="button button--dark button--sm action__view" data-target="#modal-viewprofile"
-                                id="action-view">
-                                <i class='bx bxs-show'></i>
-                                <p>VIEW</p>
-                            </a>
-                        </div>
-                    </td>
+                        </td>
+                        <td>
+                            <div class="table__row-text">
+                                <div class="table__row-name">
+                                    <?php echo $row['first_name'] ?> <?php echo $row['mid_name'] ?>
+                                    <?php echo $row['last_name'] ?>
+                                </div>
+                                <div class="table__row-sub">
+                                    <?php echo $row['resident_id'] ?>
+                                </div>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="table__action-buttons">
+                                <a href="view-resident.php?residents_archive_id=<?php echo $row['residents_archive_id'] ?>"
+                                    class="button button--dark button--sm action__view" data-target="#modal-viewprofile"
+                                    id="action-view">
+                                    <i class='bx bxs-show'></i>
+                                    <p>VIEW</p>
+                                </a>
+                            </div>
+                        </td>
                     </tr>
 
-
+                    <?php
+                    }
+                    ?>
                 </tbody>
             </table>
 
@@ -112,141 +104,30 @@ require_once "../../includes/header.php";
 
 </main>
 
-<!--=============== MODALS ===============-->
 
+
+<!--=============== MODALS ===============-->
+<div class="modal__wrapper" id="modal-delete">
+    <section class="modal__window modal__window--md">
+        <header class="modal__header">
+            <h3>Delete Profile</h3>
+            <button type="button" class="modal__close close" aria-label="Close modal window">
+                <i class='bx bx-x'></i>
+            </button>
+        </header>
+        <div class="modal__body">
+            Are you sure you want to empty archive?
+
+
+        </div>
+        <footer class="modal__footer">
+            <a href="controllers/resident-empty-archive.php" class="button button--danger button--md">Delete All</a>
+            <a href="#" class="button button--dark button--md modal__cancel close">Cancel</a>
+
+        </footer>
+    </section>
+</div>
 
 </body>
 
 </html>
-
-
-<style>
-:root {
-    --primary-color: #ee5252;
-    --white-color: #f7f6fb;
-    --red-color: #d41e21;
-    --green-color: #63924d;
-    --blue-color: #01497c;
-}
-
-
-.group-29 {
-
-    display: flex;
-    flex-wrap: wrap;
-    height: 90%;
-    width: 98%;
-    justify-content: center;
-    align-items: center;
-    margin-bottom: 100px;
-}
-
-.group-21 {
-    position: relative;
-    display: flex;
-    justify-content: center;
-    min-width: 502px;
-    height: 382px;
-    align-items: center;
-    margin-right: 10px;
-}
-
-.group-26 {
-    position: relative;
-    display: flex;
-    justify-content: center;
-    min-width: 502px;
-    height: 382px;
-    align-items: center;
-
-}
-
-
-.group-27 {
-    position: relative;
-    display: flex;
-    justify-content: center;
-    min-width: 502px;
-    height: 382px;
-    align-items: flex-start;
-    color: white;
-    margin-right: 10px;
-}
-
-.group-28 {
-    position: relative;
-    display: flex;
-    justify-content: center;
-    min-width: 502px;
-    height: 382px;
-    align-items: flex-start;
-    /* background-color: black; */
-    /* margin-bottom: 20px; */
-}
-
-.overlap-group {
-    align-items: center;
-    justify-content: center;
-    background-color: var(--primary-color);
-    border-radius: 44px;
-    display: flex;
-    position: relative;
-    height: 343px;
-    padding: 50px 0;
-    width: 400px;
-    margin-top: 3%;
-    color: white;
-    text-align: center;
-    text-decoration: none;
-    border: none;
-}
-
-.group-21 :hover {
-    background-color: var(--green-color);
-}
-
-.group-26 :hover {
-    background-color: var(--green-color);
-}
-
-.group-27 :hover {
-    background-color: var(--green-color);
-}
-
-
-.group-28 :hover {
-    background-color: var(--green-color);
-}
-
-/* .official-archive{
-      position: absolute;
-      top: 80%;
-      left: 40%;
-  } */
-
-
-.group-21 h1 {
-    position: absolute;
-
-    top: 80%;
-    left: 38%;
-}
-
-.group-26 h1 {
-    position: absolute;
-    top: 80%;
-    left: 36.5%;
-}
-
-.group-27 h1 {
-    position: absolute;
-    top: 80%;
-    left: 42%;
-}
-
-.group-28 h1 {
-    position: absolute;
-    top: 80%;
-    left: 44%;
-}
-</style>

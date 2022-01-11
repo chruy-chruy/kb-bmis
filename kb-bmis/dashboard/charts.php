@@ -11,10 +11,10 @@ const myChart = new Chart(ctx, {
             label: "# of Votes",
             data: [
 
-                <?php echo $age_group_count['childcnt']; ?>,
-                <?php echo $age_group_count2['adolescentcnt']; ?>,
-                <?php echo $age_group_count3['adultcnt']; ?>,
-                <?php echo $age_group_count4['srcnt']; ?>
+                <?php echo $age_group_count['child']; ?>,
+                <?php echo $age_group_count2['adolescent']; ?>,
+                <?php echo $age_group_count3['adult']; ?>,
+                <?php echo $age_group_count4['senior']; ?>
             ],
             backgroundColor: [
                 "rgba(255, 99, 132, 1)",
