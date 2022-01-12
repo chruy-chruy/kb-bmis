@@ -10,11 +10,12 @@ require_once "../../includes/header.php";
     <div class="content">
         <section class="archive">
             <!-- BUTANG LANG DIRI ☺ -->
-
+            <div class="row">
             <a href="index.php" class="button button--md back-btn">
                 <i class='bx bx-left-arrow-circle'></i>
                 Back
             </a>
+            </div>
 
             <table id="residents-table" class="row-border">
                 <thead>

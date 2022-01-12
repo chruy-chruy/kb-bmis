@@ -17,18 +17,19 @@ if (isset($_POST['btn_save'])) {
   $new_date_issued_day = date("jS", strtotime($date_issued));
   $new_date_issued_month_year = date("F Y", strtotime($date_issued));
   $new_cedula_date = date("F j, Y", strtotime($cedula_date));
+  $price = $_POST['price'];
+  $pic = $_POST['pic'];
 
-
-  $img = $_POST['image'];
-  $folderPath = "images/";
-  $owner_pic = $name;
-  $image_parts = explode(";base64,", $img);
-  $image_type_aux = explode("image/", $image_parts[0]);
-  $image_type = $image_type_aux[1];
-  $image_base64 = base64_decode($image_parts[1]);
-  $fileName =  $owner_pic . '_' . time() .  '.png';
-  $file = $folderPath . $fileName;
-  file_put_contents($file, $image_base64);
+  // $img = $_POST['image'];
+  // $folderPath = "images/";
+  // $owner_pic = $name;
+  // $image_parts = explode(";base64,", $img);
+  // $image_type_aux = explode("image/", $image_parts[0]);
+  // $image_type = $image_type_aux[1];
+  // $image_base64 = base64_decode($image_parts[1]);
+  // $fileName =  $owner_pic . '_' . time() .  '.png';
+  // $file = $folderPath . $fileName;
+  // file_put_contents($file, $image_base64);
 
 
   $sql = "INSERT INTO `barangay_clearance`
@@ -41,7 +42,8 @@ if (isset($_POST['btn_save'])) {
     `cedula_number`, 
     `cedula_place`, 
     `cedula_date`, 
-    `img_url`) 
+    `img_url`, 
+    `price`) 
 VALUES 
 (
     '$res_id',
@@ -52,13 +54,12 @@ VALUES
     '$cedula_number',
     '$cedula_issued_at',
     '$cedula_date',
-    '$file'
+    '$pic',
+    '$price'
 )
 ";
 
   mysqli_query($conn, $sql);
-
-
 
 
 ?>
@@ -138,7 +139,7 @@ VALUES
 
             <div class="row row--flex">
                 <div class="certificate__img">
-                    <img src="<?php echo $file ?>" alt="" />
+                    <img src="../../residents/images/<?php echo $pic ?>" alt="" />
                 </div>
 
                 <div class="certificate__thumbmark-box">

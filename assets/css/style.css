@@ -80,7 +80,9 @@ textarea[readonly] {
   cursor: not-allowed;
 }
 
-button {
+button,
+input[type=submit],
+input[type=button] {
   outline: none;
   border: none;
   cursor: pointer;
@@ -1488,6 +1490,69 @@ table.dataTable td {
   }
 }
 
+.loader-wrapper {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: #fdfdfd;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 2000;
+}
+
+.loader {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Loader circles */
+.loader > span {
+  background: #ef6a61;
+  border-radius: 50%;
+  margin: 5rem 0.5rem;
+  -webkit-animation: bouncingLoader 0.5s infinite alternate;
+          animation: bouncingLoader 0.5s infinite alternate;
+}
+
+.loader > span:nth-child(2) {
+  -webkit-animation-delay: 0.1s;
+          animation-delay: 0.1s;
+}
+
+.loader > span:nth-child(3) {
+  -webkit-animation-delay: 0.2s;
+          animation-delay: 0.2s;
+}
+
+/* Define the animation called bouncingLoader. */
+@-webkit-keyframes bouncingLoader {
+  from {
+    width: 0.1rem;
+    height: 0.1rem;
+    transform: translate3d(0);
+  }
+  to {
+    width: 1rem;
+    height: 1rem;
+    transform: translate3d(0, -1rem, 0);
+  }
+}
+@keyframes bouncingLoader {
+  from {
+    width: 0.1rem;
+    height: 0.1rem;
+    transform: translate3d(0);
+  }
+  to {
+    width: 1rem;
+    height: 1rem;
+    transform: translate3d(0, -1rem, 0);
+  }
+}
 .select {
   background-color: #f1f1f1;
   color: #222;
@@ -1692,6 +1757,10 @@ table.dataTable td {
   width: 100%;
 }
 
+.message {
+  width: 100%;
+  overflow-wrap: break-word;
+}
 .message__date-time {
   font-size: 0.875rem;
   color: #474747;
@@ -2191,28 +2260,29 @@ table.dataTable td {
   -o-object-fit: cover;
      object-fit: cover;
 }
-.profile__img--edit-resident {
-  transition: 200ms;
+.profile__img--change {
+  background: rgba(34, 34, 34, 0.5);
+  transition: 300ms;
 }
-.profile__img--edit-resident img {
-  transition: 200ms;
+.profile__img--change img {
+  transition: 300ms;
 }
-.profile__img--edit-resident a {
+.profile__img--change a {
   position: absolute;
   display: none;
 }
-.profile__img--edit-resident .bx {
+.profile__img--change .bx {
   margin: 0;
+  color: #fdfdfd;
+  transition: 200ms;
 }
-.profile__img--edit-resident:hover {
-  background: #222;
+.profile__img--change .bx:hover {
+  transform: scale(1.2);
 }
-.profile__img--edit-resident:hover img {
-  filter: blur(0.1875rem);
-  opacity: 0.7;
+.profile__img--change:hover img {
+  mix-blend-mode: multiply;
 }
-.profile__img--edit-resident:hover a {
-  filter: opacity(1);
+.profile__img--change:hover a {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);

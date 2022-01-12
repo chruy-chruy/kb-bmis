@@ -23,19 +23,22 @@ while ($row = mysqli_fetch_array($squery)) { ?>
 
             <div class="card__body">
               <div class="card__body-content">
-                <div class="profile__img profile__img" id="profile">
-                  <img src="images/<?php echo $row["img_url"]; ?>" alt="">
+              <div class="profile__img profile__img--change">
+                  <img src="../residents/images/<?php echo $row['img_url'] ?>" name="default" alt="">
+                  <!-- <a href="#" class="button button--sm button--dark-outline camera-btn modal-trigger input--light300 input-viewprofile" data-modal-id="modal-camera" onclick="open_cam()">
+                            <i class='bx bx-camera' data-modal-id="modal-camera"></i>
+                            Open Camera
+                          </a> -->
+
+                  <a href="#" class="button button--icon-sm modal-trigger" data-modal-id="modal-camera" onclick="open_cam()">
+                    <i class='bx bx-camera' data-modal-id="modal-camera"></i>
+                  </a>
                 </div>
 
-                <div class="row">
-                  <a href="#" class="button  button--sm button--dark-outline button--icon-sm modal-trigger" data-modal-id="modal-change-picture">
-                    <i class='bx bx-edit' data-modal-id="modal-change-picture"></i>
-                  </a>
-                  <a href="#" class="button button--sm button--dark-outline camera-btn modal-trigger" data-modal-id="modal-camera" onclick="open_cam()">
-                    <i class='bx bx-camera' data-modal-id="modal-camera"></i>
-                    Open Camera
-                  </a>
-                </div>
+                <!-- <div class="row">
+                  
+                  
+                </div> -->
 
                 <!-- <div class="row">
                             <a href="#" class="button button--sm button--dark-outline camera-btn modal-trigger" data-modal-id="modal-change-picture">
@@ -167,7 +170,27 @@ while ($row = mysqli_fetch_array($squery)) { ?>
                       <div class="input__wrapper">
                         <label for="resident-purok">Purok</label>
                         <div class="input__inner">
-                          <input type="text" name="purok" class="input--light300" value="<?php echo $row['purok'] ?>" required>
+                          <!-- <input type="text" name="purok" class="input--light300" value="<?php echo $row['purok'] ?>" required> -->
+                        
+                          <div class="select__wrapper">
+                          <select name="purok" id="" class="select select--resident-profile" required>
+                              <option selected value="<?php echo $row['purok'] ?>" hidden><?php echo $row['purok'] ?></option>
+                                        <option value="Purok 1">Purok 1</option>
+                                        <option value="Purok 2">Purok 2</option>
+                                        <option value="Purok 3">Purok 3</option>
+                                        <option value="Purok 4">Purok 4</option>
+                                        <option value="Purok 5">Purok 5</option>
+                                        <option value="Purok 6">Purok 6</option>
+                                        <option value="Purok 7">Purok 7</option>
+                                        <option value="Purok 8">Purok 8</option>
+                                        <option value="Purok 9">Purok 9</option>
+                                        <option value="Purok 10">Purok 10</option>
+                                        <option value="Purok 11">Purok 11</option>
+                                        <option value="Purok 12">Purok 12</option>
+                                        <option value="Purok 13">Purok 13</option>
+                                        </select>
+                                        </div>
+
                         </div>
                       </div>
                     </div>
@@ -579,7 +602,7 @@ while ($row = mysqli_fetch_array($squery)) { ?>
   </div>
 
 
-  <div class="modal__wrapper" id="modal-change-picture">
+  <!-- <div class="modal__wrapper" id="modal-change-picture">
     <section class="modal__window modal__window--sm">
       <header class="modal__header">
         <h3>Change Picture</h3>
@@ -595,13 +618,14 @@ while ($row = mysqli_fetch_array($squery)) { ?>
             </div>
           </div>
         </div>
+        
       </div>
       <footer class="modal__footer">
         <a href="#" class="button button--primary button--md modal__yes-cancel">Upload</a>
         <a href="#" class="button button--dark button--md close">Cancel</a>
       </footer>
     </section>
-  </div>
+  </div> -->
 
 
   <div class="modal__wrapper" id="modal-camera">
@@ -630,9 +654,9 @@ while ($row = mysqli_fetch_array($squery)) { ?>
       </div>
 
       <footer class="modal__footer">
-        <input type=button class="button button--primary button--md modal__yes-cancel" value="Capture" onClick="take_snapshot()">
-        <input type=button class="button button--primary button--md modal__yes-cancel close" value="Submit" onClick="submit_snap()">
-        <input type=button value="cancel" class="button button--dark button--md modal__yes-cancel close" onClick="exit_webcam()">
+        <input type="button" value="Capture" class="button button--primary button--md "onClick="take_snapshot()"/>
+        <input type ="button" value="Submit" class="button button--primary button--md close" onClick="submit_snap()"/>
+        <input type="button" value="Cancel" class="button button--dark button--md close" onClick="exit_webcam()"/>
       </footer>
       </form>
     </section>
@@ -642,38 +666,9 @@ while ($row = mysqli_fetch_array($squery)) { ?>
 ?>
 
 <!-- Configure a few settings and attach camera -->
-<script language="JavaScript">
-  Webcam.set({
-    width: 490,
-    height: 390,
-    image_format: 'jpeg',
-    jpeg_quality: 60
-  });
-
-  function open_cam() {
-    Webcam.attach('#my_camera');
-  }
-
-
-
-  function take_snapshot() {
-    Webcam.snap(function(data_uri) {
-      $(".image-tag").val(data_uri);
-      document.getElementById('results').innerHTML = '<img src="' + data_uri + '"/>';
-    });
-  }
-
-  function submit_snap() {
-
-    document.getElementById('profile').innerHTML = document.getElementById('results').innerHTML;
-    Webcam.reset();
-  }
-
-  function exit_webcam() {
-    document.getElementById('results').innerHTML = '<img src=""/>';
-    Webcam.reset();
-  }
-</script>
+<!-- <script language="JavaScript">
+  
+</script> -->
 </body>
 
 </html>

@@ -3,6 +3,8 @@
   $headerTitle = 'Certificates';
   include "../../db_conn.php";
   require_once "../../includes/header.php";
+  include "../../includes/preloader.php";
+
 ?>
 
 
@@ -101,7 +103,7 @@
                   <tr>
                       <td>
                         <div class="table__row-img">
-                          <img src="../../assets/img/user.jpg" alt="">
+                        <img src="../residents/images/<?php echo $row["img_url"]; ?>" alt="">
                         </div>
                       </td>
                       <td>
