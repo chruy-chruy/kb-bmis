@@ -19,18 +19,15 @@ require_once "../../includes/header.php";
             <div class="card__body">
               <div class="card__body-content">
                 <div class="profile__img profile__img" id="profile">
-                  <img src="../../assets/img/default-img.svg" alt="">
+                  <img src="images/default-img.svg" alt="">
                   <input type="hidden" name="default" value="default-img.svg">
                 </div>
 
                 <div class="row">
-                  <a href="#" class="button  button--sm button--dark-outline button--icon-sm modal-trigger" data-modal-id="modal-change-picture">
+                  <a href="#" class="button button--icon button--sm button--dark-outline button--icon-sm modal-trigger" data-modal-id="modal-change-picture">
                     <i class='bx bx-edit' data-modal-id="modal-change-picture"></i>
                   </a>
-                  <a href="#" class="button button--sm button--dark-outline camera-btn modal-trigger" data-modal-id="modal-camera" onclick="open_cam()">
-                    <i class='bx bx-camera' data-modal-id="modal-camera"></i>
-                    Open Camera
-                  </a>
+                 
                 </div>
 
                 <ul class="profile-info__list newresident">
@@ -524,7 +521,14 @@ require_once "../../includes/header.php";
             <input type="file" class="input--light300">
           </div>
         </div>
+
+        
       </div>
+--- or ---
+      <a href="#" class="button button--md button--light camera-btn modal-trigger" data-modal-id="modal-camera" onclick="open_cam()">
+                    <i class='bx bx-camera' data-modal-id="modal-camera"></i>
+                    Open Camera
+                  </a>
     </div>
     <footer class="modal__footer">
       <a href="#" class="button button--dark button--md close">Cancel</a>

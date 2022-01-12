@@ -3,6 +3,8 @@
   $headerTitle = 'Barangay Information';
   include "../../db_conn.php";
   require_once "../../includes/header.php";
+  include "../../includes/preloader.php";
+
 ?>
 
 

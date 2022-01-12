@@ -173,9 +173,32 @@ while ($row = mysqli_fetch_array($squery)) { ?>
                                 <div class="input__wrapper">
                                     <label for="resident-purok">Purok</label>
                                     <div class="input__inner">
-                                        <input disabled name="purok" type="text"
+
+                                        <!-- <input disabled name="purok" type="text"
                                             class="input--light300 input-viewprofile"
-                                            value="<?php echo $row['purok'] ?>">
+                                            value="<?php echo $row['purok'] ?>"> -->
+
+                                        <div class="select__wrapper">
+                                        <select disabled name="purok" name="civil_status" id=""
+                                                class="select select--resident-profile input-viewprofile">
+                                                <option value="<?php echo $row['purok'] ?>" selected disabled>
+                                                    <?php echo $row['purok'] ?></option>
+                                        <option value="Purok 1">Purok 1</option>
+                                        <option value="Purok 2">Purok 2</option>
+                                        <option value="Purok 3">Purok 3</option>
+                                        <option value="Purok 4">Purok 4</option>
+                                        <option value="Purok 5">Purok 5</option>
+                                        <option value="Purok 6">Purok 6</option>
+                                        <option value="Purok 7">Purok 7</option>
+                                        <option value="Purok 8">Purok 8</option>
+                                        <option value="Purok 9">Purok 9</option>
+                                        <option value="Purok 10">Purok 10</option>
+                                        <option value="Purok 11">Purok 11</option>
+                                        <option value="Purok 12">Purok 12</option>
+                                        <option value="Purok 13">Purok 13</option>
+                                        </select>
+                                        </div>
+                        
                                     </div>
                                 </div>
                             </div>

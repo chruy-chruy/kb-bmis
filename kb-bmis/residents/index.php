@@ -4,6 +4,7 @@
   $headerTitle = 'Residents';
   include "../../db_conn.php";
   require_once "../../includes/header.php";
+  include "../../includes/preloader.php";
 ?>
 
     <main>
@@ -76,7 +77,7 @@
                     <td><?php echo $row['senior_status']?></td>
                       <td>
                         <div class="table__row-img">
-                          <img src="../../assets/img/user.jpg" alt="">
+                        <img src="images/<?php echo $row["img_url"]; ?>" alt="">
                         </div>
                       </td>
                       <td>
@@ -91,10 +92,10 @@
                       </td>
                       <td>
                         <div class="table__action-buttons">
-                        <a href="#" class="button button--primary button--sm action__cert" id="action-cert">
+                        <button class="button button--primary button--sm action__cert" id="action-cert">
                         <i class='bx bxs-file-blank' ></i>
                         CERTIFICATE
-                        </a>
+                </button>
     
                         <div class="dropdown dropdown--cert">
                           <ul>

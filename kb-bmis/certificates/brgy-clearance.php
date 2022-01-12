@@ -31,8 +31,16 @@ require_once "../../includes/header.php";
             <form id="" action="generate/brgy-clearance.php" method="post">
               <div class="card__body-content">
 
-                <div class="profile__img">
+                <div class="profile__img profile__img--change">
                   <img src="../residents/images/<?php echo $row['img_url'] ?>" name="default" alt="">
+                  <!-- <a href="#" class="button button--sm button--dark-outline camera-btn modal-trigger input--light300 input-viewprofile" data-modal-id="modal-camera" onclick="open_cam()">
+                            <i class='bx bx-camera' data-modal-id="modal-camera"></i>
+                            Open Camera
+                          </a> -->
+
+                  <a href="#" class="button button--icon-sm modal-trigger" data-modal-id="modal-camera" onclick="open_cam()">
+                    <i class='bx bx-camera' data-modal-id="modal-camera"></i>
+                  </a>
                 </div>
 
 
@@ -135,7 +143,7 @@ require_once "../../includes/header.php";
                       </div>
                     </div>
 
-                    <div class="certificates-info__container">
+                    <!-- <div class="certificates-info__container">
                       <div class="input__wrapper">
                         <label>Valid Picture</label>
                         <div class="input__inner">
@@ -145,7 +153,7 @@ require_once "../../includes/header.php";
                           </a>
                         </div>
                       </div>
-                    </div>
+                    </div> -->
 
                     <div class="profile__img" id="profile">
                       <img src="../residents/images/<?php echo $row['img_url'] ?>" name="default" alt="">
@@ -235,16 +243,17 @@ require_once "../../includes/header.php";
     </div>
 
     <footer class="modal__footer">
-      <input type=button class="button button--primary button--md modal__yes-cancel" value="Capture" onClick="take_snapshot()">
-      <input type=button class="button button--primary button--md modal__yes-cancel close" value="Submit" onClick="submit_snap()">
-      <input type=button value="cancel" class="button button--dark button--md modal__yes-cancel close" onClick="exit_webcam()">
+      <input type="button" value="Capture" class="button button--primary button--md modal__yes-cancel" onClick="take_snapshot()"/>
+      <input type="button" value="Submit" class="button button--primary button--md modal__yes-cancel close" onClick="submit_snap()"/>
+      <input type="button" value="Cancel" class="button button--dark button--md modal__yes-cancel close" onClick="exit_webcam()"/>
     </footer>
     </form>
   </section>
 </div>
 
 <!-- Configure a few settings and attach camera -->
-<script language="JavaScript">
+
+<!-- <script language="JavaScript">
   Webcam.set({
     width: 490,
     height: 390,
@@ -275,7 +284,7 @@ require_once "../../includes/header.php";
     document.getElementById('results').innerHTML = '<img src=""/>';
     Webcam.reset();
   }
-</script>
+</script> -->
 </body>
 
 </html>
