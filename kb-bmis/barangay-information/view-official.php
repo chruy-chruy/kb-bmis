@@ -33,7 +33,7 @@ while ($row = mysqli_fetch_array($squery)) {
             </div>
 
             <div class="row">
-              <a href="edit-official.php?id=<?php echo $id; ?>&resident_id=<?php echo $resident_id; ?>" class="button button--primary button--sm modal-trigger" data-modal-id="modal-editprofile">
+              <a href="#" class="button button--primary button--sm modal-trigger" data-modal-id="modal-editprofile">
                 <i class='bx bxs-edit' data-modal-id="modal-editprofile"></i>
                 Edit</a>
               <a href="#" class="button button--dark button--sm modal-trigger" data-modal-id="modal-delete">
@@ -223,7 +223,7 @@ while ($row = mysqli_fetch_array($squery)) {
         Are you sure you want to delete <?php echo $row["first_name"]; ?> <?php echo $row["mid_name"]; ?> <?php echo $row["last_name"]; ?>?
       </div>
       <footer class="modal__footer">
-        <a href="delete-official.php?id=<?php echo $id; ?>&resident_id=<?php echo $row["id"]; ?>" class="button button--danger button--md">Delete</a>
+        <a href="delete-official.php?resident_id=<?php echo $row["id"]; ?>&id=<?php echo $id; ?>&position=<?php echo $row["occupation"] ?>" class="button button--danger button--md">Delete</a>
         <a href="#" class="button button--dark button--md modal__cancel close">Cancel</a>
 
       </footer>
@@ -257,7 +257,7 @@ while ($row = mysqli_fetch_array($squery)) {
       </div>
     </div>
     <footer class="modal__footer">
-      <a href="edit-official.php" class="button button--primary button--md" id="login-editprofile">Login</a>
+      <a href="edit-official.php?resident_id=<?php echo $resident_id; ?>" class="button button--primary button--md" id="login-editprofile">Login</a>
       <a href="#" class="button button--dark button--md modal__cancel close">Cancel</a>
 
     </footer>

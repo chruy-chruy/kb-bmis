@@ -94,6 +94,7 @@ mysqli_query($conn, "INSERT INTO `residents_archive` (
             '$fetch[img_url]' )");
 
 mysqli_query($conn, "DELETE FROM `residents` WHERE id = $id");
+mysqli_query($conn, "DELETE FROM `officials` WHERE `resident_id` = '$id'");
 header("location:index.php");
 
 ?>
