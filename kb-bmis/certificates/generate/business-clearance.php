@@ -1,4 +1,5 @@
 <?php
+include "../../../db_conn.php";
 
 $name = $_POST['name'];
 $bus_location = $_POST['bus_location'];
@@ -7,8 +8,29 @@ $date_issued = $_POST['date_issued'];
 $clearance_number = $_POST['clearance_number'];
 $bus_type = $_POST['bus_type'];
 $date = date("F j, Y", strtotime($date_issued));
+$price = $_POST['price'];
 
+$sql = "INSERT INTO `business_clearance`
+(
+  `name`, 
+  `location`, 
+  `bus_name`, 
+  `date_issued`, 
+  `clearance_number`, 
+  `bus_type`, 
+  `price`) 
+VALUES 
+(
+  '$name',
+  '$bus_location',
+  '$bus_name',
+  '$date_issued',
+  '$clearance_number',
+  '$bus_type',
+  '$price'
+)";
 
+mysqli_query($conn, $sql);
 
 ?>
 
@@ -68,7 +90,7 @@ $date = date("F j, Y", strtotime($date_issued));
         located at
         <span class="br br--sm"></span>
 
-        <span class="certificate__purok">PUROK
+        <span class="certificate__purok">
           <?php echo $bus_location  ?>, BARANGAY DADIANGAS NORTH
           <br />
           GENERAL SANTOS CITY</span>

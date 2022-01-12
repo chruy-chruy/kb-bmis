@@ -33,6 +33,7 @@ require_once "../../includes/header.php";
 
                 <div class="profile__img profile__img--change">
                   <img src="../residents/images/<?php echo $row['img_url'] ?>" name="default" alt="">
+<<<<<<< Updated upstream
                   <!-- <a href="#" class="button button--sm button--dark-outline camera-btn modal-trigger input--light300 input-viewprofile" data-modal-id="modal-camera" onclick="open_cam()">
                             <i class='bx bx-camera' data-modal-id="modal-camera"></i>
                             Open Camera
@@ -41,6 +42,9 @@ require_once "../../includes/header.php";
                   <a href="#" class="button button--icon-sm modal-trigger" data-modal-id="modal-camera" onclick="open_cam()">
                     <i class='bx bx-camera' data-modal-id="modal-camera"></i>
                   </a>
+=======
+                  <input type="hidden" name="pic" value="<?php echo $row['img_url'] ?>" />
+>>>>>>> Stashed changes
                 </div>
 
 
@@ -111,6 +115,17 @@ require_once "../../includes/header.php";
                         </div>
                       </div>
                     </div>
+
+
+                    <div class="certificates-info__container">
+                      <div class="input__wrapper">
+                        <label>Price</label>
+                        <div class="input__inner">
+                          <input name="price" type="text" class="input--light300 input-viewprofile" value="">
+                        </div>
+                      </div>
+                    </div>
+
                   </section>
 
                   <hr style="margin-top: 12px;">
@@ -158,7 +173,7 @@ require_once "../../includes/header.php";
                     <div class="profile__img" id="profile">
                       <img src="../residents/images/<?php echo $row['img_url'] ?>" name="default" alt="">
                     </div>
-
+ -->
 
                   </section>
 
