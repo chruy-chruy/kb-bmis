@@ -33,7 +33,7 @@ require_once "../../includes/header.php";
 
                 <div class="profile__img profile__img--change">
                   <img src="../residents/images/<?php echo $row['img_url'] ?>" name="default" alt="">
-<<<<<<< Updated upstream
+
                   <!-- <a href="#" class="button button--sm button--dark-outline camera-btn modal-trigger input--light300 input-viewprofile" data-modal-id="modal-camera" onclick="open_cam()">
                             <i class='bx bx-camera' data-modal-id="modal-camera"></i>
                             Open Camera
@@ -42,15 +42,16 @@ require_once "../../includes/header.php";
                   <a href="#" class="button button--icon-sm modal-trigger" data-modal-id="modal-camera" onclick="open_cam()">
                     <i class='bx bx-camera' data-modal-id="modal-camera"></i>
                   </a>
-=======
-                  <input type="hidden" name="pic" value="<?php echo $row['img_url'] ?>" />
->>>>>>> Stashed changes
+
                 </div>
 
 
 
                 <div class="profile__name" style="margin-bottom: 30px;">
                   <?php echo $row['first_name'] ?> <?php echo $row['mid_name'] ?> <?php echo $row['last_name'] ?> <?php echo $row['suffix'] ?>
+
+                  <input type="hidden" name="pic" value="<?php echo $row['img_url'] ?>" />
+
                 </div>
 
                 <div class="certificates-info__content">
@@ -169,12 +170,6 @@ require_once "../../includes/header.php";
                         </div>
                       </div>
                     </div> -->
-
-                    <div class="profile__img" id="profile">
-                      <img src="../residents/images/<?php echo $row['img_url'] ?>" name="default" alt="">
-                    </div>
- -->
-
                   </section>
 
 
@@ -258,9 +253,9 @@ require_once "../../includes/header.php";
     </div>
 
     <footer class="modal__footer">
-      <input type="button" value="Capture" class="button button--primary button--md modal__yes-cancel" onClick="take_snapshot()"/>
-      <input type="button" value="Submit" class="button button--primary button--md modal__yes-cancel close" onClick="submit_snap()"/>
-      <input type="button" value="Cancel" class="button button--dark button--md modal__yes-cancel close" onClick="exit_webcam()"/>
+      <input type="button" value="Capture" class="button button--primary button--md modal__yes-cancel" onClick="take_snapshot()" />
+      <input type="button" value="Submit" class="button button--primary button--md modal__yes-cancel close" onClick="submit_snap()" />
+      <input type="button" value="Cancel" class="button button--dark button--md modal__yes-cancel close" onClick="exit_webcam()" />
     </footer>
     </form>
   </section>
