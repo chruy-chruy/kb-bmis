@@ -80,7 +80,9 @@ textarea[readonly] {
   cursor: not-allowed;
 }
 
-button {
+button,
+input[type=submit],
+input[type=button] {
   outline: none;
   border: none;
   cursor: pointer;
