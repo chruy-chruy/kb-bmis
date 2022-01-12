@@ -39,9 +39,7 @@ require_once "../../includes/header.php";
                             Open Camera
                           </a> -->
 
-                  <a href="#" class="button button--icon-sm modal-trigger" data-modal-id="modal-camera" onclick="open_cam()">
-                    <i class='bx bx-camera' data-modal-id="modal-camera"></i>
-                  </a>
+
 
                 </div>
 

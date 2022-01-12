@@ -2,7 +2,7 @@
 <?php
 include "../../db_conn.php";
 $receipients = $_POST['receipients'];
- $message = $_POST['message'];
+$message = $_POST['message'];
 
 //  $variabele = array();
 // $squery = mysqli_query($conn, "select phone_number from residents");
@@ -20,8 +20,8 @@ $receipients = $_POST['receipients'];
 
 
 $sql = "INSERT INTO `announcements`(
-    `message`,
- `receipients`)
+`message`,
+`receipients`)
 VALUES (
     '$message',
  '$receipients'

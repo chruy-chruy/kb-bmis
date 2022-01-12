@@ -27,7 +27,7 @@ require_once "../../includes/header.php";
                   <a href="#" class="button button--icon button--sm button--dark-outline button--icon-sm modal-trigger" data-modal-id="modal-change-picture">
                     <i class='bx bx-edit' data-modal-id="modal-change-picture"></i>
                   </a>
-                 
+
                 </div>
 
                 <ul class="profile-info__list newresident">
@@ -522,16 +522,16 @@ require_once "../../includes/header.php";
           </div>
         </div>
 
-        
+
       </div>
---- or ---
+      --- or ---
       <a href="#" class="button button--md button--light camera-btn modal-trigger" data-modal-id="modal-camera" onclick="open_cam()">
-                    <i class='bx bx-camera' data-modal-id="modal-camera"></i>
-                    Open Camera
-                  </a>
+        <i class='bx bx-camera' data-modal-id="modal-camera"></i>
+        Open Camera
+      </a>
     </div>
     <footer class="modal__footer">
-      <a href="#" class="button button--dark button--md close">Cancel</a>
+      <a href="#" class="button button--dark button--md close" id="close-modal">Cancel</a>
     </footer>
   </section>
 </div>
@@ -562,8 +562,7 @@ require_once "../../includes/header.php";
     </div>
 
     <footer class="modal__footer">
-      <input type=button class="button button--primary button--md modal__yes-cancel" value="Capture" onClick="take_snapshot()">
-      <input type=button class="button button--primary button--md modal__yes-cancel close" value="Submit" onClick="submit_snap()">
+      <input type=button class="button button--primary button--md modal__yes-cancel close" value="Submit" onClick="take_snapshot()">
       <input type=button value="cancel" class="button button--dark button--md modal__yes-cancel close" onClick="exit_webcam()">
     </footer>
     </form>
@@ -589,13 +588,10 @@ require_once "../../includes/header.php";
     Webcam.snap(function(data_uri) {
       $(".image-tag").val(data_uri);
       document.getElementById('results').innerHTML = '<img src="' + data_uri + '"/>';
+      document.getElementById('profile').innerHTML = document.getElementById('results').innerHTML;
+      Webcam.reset();
+      document.getElementById('close-modal').click();
     });
-  }
-
-  function submit_snap() {
-
-    document.getElementById('profile').innerHTML = document.getElementById('results').innerHTML;
-    Webcam.reset();
   }
 
   function exit_webcam() {

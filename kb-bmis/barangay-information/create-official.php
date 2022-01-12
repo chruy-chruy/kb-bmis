@@ -31,4 +31,9 @@ mysqli_query($conn, $sql);
 $sql2 = "UPDATE `residents` SET `occupation`='$off_position' WHERE `id` = '$id'";
 mysqli_query($conn, $sql2);
 
+if ($off_position == 'Barangay Secretary') {
+    $sql3 = "UPDATE `users` SET `name`='$off_name' WHERE `role` = '$off_position'";
+}
+mysqli_query($conn, $sql3);
+
 header("location:index.php");
