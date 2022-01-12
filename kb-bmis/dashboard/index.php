@@ -27,7 +27,7 @@ include "data-dashboard.php";
                 <div class="dashboard__card-top">
                     <div>
                         <div class="dashboard__card-top--value"><?php echo $countPopulation ?></div>
-                        <div class="dashboard__card-top--label">Population</div>
+                        <div class="dashboard__card-top--label">Total Population</div>
                     </div>
 
                     <span class="dashboard__card-top--icon"><i class='bx bx-group'></i></span>
@@ -44,7 +44,7 @@ include "data-dashboard.php";
 
                 <div class="dashboard__card-top">
                     <div>
-                        <div class="dashboard__card-top--value">₱<?php echo $total_sales['brgySales']; ?></div>
+                        <div class="dashboard__card-top--value">₱<?php echo $total_sales['brgySales']; ?>.00</div>
                         <div class="dashboard__card-top--label">Barangay Clearance Total Sales</div>
                     </div>
 
@@ -53,7 +53,8 @@ include "data-dashboard.php";
 
                 <div class="dashboard__card-top">
                     <div>
-                        <div class="dashboard__card-top--value">₱<?php echo $total_bs_sales['businessSales']; ?></div>
+                        <div class="dashboard__card-top--value">₱<?php echo $total_bs_sales['businessSales']; ?>.00
+                        </div>
                         <div class="dashboard__card-top--label">Business Clearance Total Sales</div>
                     </div>
 
