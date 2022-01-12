@@ -33,20 +33,20 @@ require_once "../../includes/header.php";
 
                             <div class="profile__img profile__img--change">
                                 <img src="../residents/images/<?php echo $row['img_url'] ?>" name="default" alt="">
-                                <<<<<<< Updated upstream <!-- <a href="#"
+                                <!-- <a href="#"
                                     class="button button--sm button--dark-outline camera-btn modal-trigger input--light300 input-viewprofile"
                                     data-modal-id="modal-camera" onclick="open_cam()">
                                     <i class='bx bx-camera' data-modal-id="modal-camera"></i>
                                     Open Camera
                                     </a> -->
 
-                                    <a href="#" class="button button--icon-sm modal-trigger"
-                                        data-modal-id="modal-camera" onclick="open_cam()">
-                                        <i class='bx bx-camera' data-modal-id="modal-camera"></i>
-                                    </a>
-                                    =======
-                                    <input type="hidden" name="pic" value="<?php echo $row['img_url'] ?>" />
-                                    >>>>>>> Stashed changes
+                                <a href="#" class="button button--icon-sm modal-trigger" data-modal-id="modal-camera"
+                                    onclick="open_cam()">
+                                    <i class='bx bx-camera' data-modal-id="modal-camera"></i>
+                                </a>
+
+                                <input type="hidden" name="pic" value="<?php echo $row['img_url'] ?>" />
+
                             </div>
 
 
@@ -189,7 +189,7 @@ require_once "../../includes/header.php";
                                         <img src="../residents/images/<?php echo $row['img_url'] ?>" name="default"
                                             alt="">
                                     </div>
-                                    -->
+
 
                                 </section>
 

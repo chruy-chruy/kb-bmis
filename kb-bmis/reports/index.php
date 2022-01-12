@@ -22,7 +22,7 @@ include "../../includes/preloader.php";
                         <div class="card__header-content--left">
 
                             <ul class="reports__tabs-list">
-                                <a href="graph-reports.php">
+                                <a href="weekly-reports.php">
                                     <li class="reports__tabs-item">
                                         Graphical View
                                     </li>
@@ -75,7 +75,7 @@ include "../../includes/preloader.php";
                                     <th>ID</th>
                                     <th>Date Issued</th>
                                     <th>Name</th>
-                                    <th>Name</th>
+                                    <th>Address</th>
                                     <th>Purpose</th>
                                     <th>Amount</th>
                                     <th></th>
