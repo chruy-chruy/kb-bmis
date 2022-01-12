@@ -75,6 +75,8 @@ include "../../includes/preloader.php";
                                     <th>ID</th>
                                     <th>Date Issued</th>
                                     <th>Name</th>
+                                    <th>Name</th>
+                                    <th>Purpose</th>
                                     <th>Amount</th>
                                     <th></th>
                                 </tr>
@@ -96,7 +98,9 @@ include "../../includes/preloader.php";
                                 <td><?php echo $row['id'] ?></td>
                                 <td><?php echo $row['date_issued'] ?></td>
                                 <td><?php echo $row['name'] ?></td>
-                                <td><?php echo $row['price'] ?></td>
+                                <td><?php echo $row['address'] ?></td>
+                                <td><?php echo $row['purpose'] ?></td>
+                                <td>₱<?php echo $row['price'] ?>.00</td>
 
                                 <td></td>
                             </tr>

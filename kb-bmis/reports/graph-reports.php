@@ -21,7 +21,7 @@ include "queries/monthly-data.php";
                         <div class="card__header-content--left">
 
                             <ul class="reports__tabs-list">
-                                <a href="graph-report.php">
+                                <a href="graph-reports.php">
                                     <li class="reports__tabs-item">
                                         Graphical View
                                     </li>
