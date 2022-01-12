@@ -28,7 +28,7 @@ include "../../includes/preloader.php";
                 <div class="dashboard__card-top">
                     <div>
                         <div class="dashboard__card-top--value"><?php echo $countPopulation ?></div>
-                        <div class="dashboard__card-top--label">Population</div>
+                        <div class="dashboard__card-top--label">Total Population</div>
                     </div>
 
                     <span class="dashboard__card-top--icon"><i class='bx bx-group'></i></span>
@@ -56,7 +56,7 @@ include "../../includes/preloader.php";
                     <div>
                         <div class="dashboard__card-top--value">₱<?php echo $total_bs_sales['businessSales']; ?></div>
                         <div class="dashboard__card-top--label">Business Clearance Sales</div>
-     
+
                     </div>
 
                     <span class="dashboard__card-top--icon"><i class='bx bxs-file'></i></span>
