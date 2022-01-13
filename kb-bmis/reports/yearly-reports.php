@@ -13,6 +13,12 @@ include "queries/yearly-data.php";
 
         <section class="reports">
 
+            <div class="row">
+                <a href="index.php" class="button button--md back-btn">
+                    <i class='bx bx-left-arrow-circle'></i>
+                    Back
+                </a>
+            </div>
 
             <div class="card">
                 <div class="card__header">
@@ -23,12 +29,17 @@ include "queries/yearly-data.php";
                             <ul class="reports__tabs-list">
                                 <a href="weekly-reports.php">
                                     <li class="reports__tabs-item">
-                                        Graphical View
+                                        Last 7 Days
                                     </li>
                                 </a>
-                                <a href="index.php">
+                                <a href="monthly-reports.php">
                                     <li class="reports__tabs-item">
-                                        Table View
+                                        Monthly
+                                    </li>
+                                </a>
+                                <a href="yearly-reports.php">
+                                    <li class="reports__tabs-item">
+                                        Yearly
                                     </li>
                                 </a>
                             </ul>
@@ -36,9 +47,7 @@ include "queries/yearly-data.php";
                         </div>
 
                         <div class="card__header-content--right">
-                            <a href="weekly-reports.php" style="background-color:tomato">Last 7 days</a>
-                            <a href="monthly-reports.php" style="background-color:tomato">1 month</a>
-                            <a href="yearly-reports.php" style="background-color:tomato">1 year</a>
+
                         </div>
 
                     </div>
