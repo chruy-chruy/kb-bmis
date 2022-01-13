@@ -21,7 +21,7 @@ include "queries/yearly-data.php";
                         <div class="card__header-content--left">
 
                             <ul class="reports__tabs-list">
-                                <a href="graph-report.php">
+                                <a href="weekly-reports.php">
                                     <li class="reports__tabs-item">
                                         Graphical View
                                     </li>
@@ -37,7 +37,7 @@ include "queries/yearly-data.php";
 
                         <div class="card__header-content--right">
                             <a href="weekly-reports.php" style="background-color:tomato">Last 7 days</a>
-                            <a href="graph-reports.php" style="background-color:tomato">1 month</a>
+                            <a href="monthly-reports.php" style="background-color:tomato">1 month</a>
                             <a href="yearly-reports.php" style="background-color:tomato">1 year</a>
                         </div>
 

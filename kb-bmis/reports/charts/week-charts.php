@@ -1,80 +1,51 @@
 <script>
 /*=============== CHARTS ===============*/
-
-// CHART 2
-const chart2 = document.getElementById("brgy-week")
-const myChart2 = new Chart(chart2, {
-    type: "bar",
-    data: {
-        labels: [
-            "Monday",
-            "Tuesday",
-            "Wednesday",
-            "Thursday",
-            "Friday",
-            "Saturday",
-            "Sunday",
-
+//scratch
+// setup
+const chartdata = {
+    labels: date,
+    datasets: [{
+        label: '# of Votes',
+        data: sales,
+        backgroundColor: [
+            'rgba(255, 99, 132, 0.2)',
+            'rgba(54, 162, 235, 0.2)',
+            'rgba(255, 206, 86, 0.2)',
+            'rgba(75, 192, 192, 0.2)',
+            'rgba(153, 102, 255, 0.2)',
+            'rgba(255, 159, 64, 0.2)'
         ],
-        datasets: [{
-            label: "Population by Purok",
-            data: [
-
-
-                <?php echo $prk7_count['prk7Count']; ?>,
-                <?php echo $prk8_count['prk8Count']; ?>,
-                <?php echo $prk9_count['prk9Count']; ?>,
-                <?php echo $prk10_count['prk10Count']; ?>,
-                <?php echo $prk11_count['prk11Count']; ?>,
-                <?php echo $prk12_count['prk12Count']; ?>,
-                <?php echo $prk13_count['prk13Count']; ?>
-            ],
-            backgroundColor: [
-                "#ef6a61",
-                //
-            ],
-        }, ],
-    },
-    options: {
-        responsive: true,
-
-    },
-});
-
-
-
-
-// CHART 2
-const chart5 = document.getElementById("bs-week")
-const myChart5 = new Chart(chart5, {
-    type: "bar",
-    data: {
-        labels: [
-            "Monday",
-            "Tuesday",
-            "Wednesday",
-            "Thursday",
-            "Friday",
-            "Saturday",
-            "Sunday",
-
+        borderColor: [
+            'rgba(255, 99, 132, 1)',
+            'rgba(54, 162, 235, 1)',
+            'rgba(255, 206, 86, 1)',
+            'rgba(75, 192, 192, 1)',
+            'rgba(153, 102, 255, 1)',
+            'rgba(255, 159, 64, 1)'
         ],
-        datasets: [{
-            label: "Population by Purok",
-            data: [
+        borderWidth: 1
+    }]
+};
 
-
-
-            ],
-            backgroundColor: [
-                "#ef6a61",
-                //
-            ],
-        }, ],
-    },
+// config
+const config = {
+    type: 'bar',
+    chartdata,
     options: {
-        responsive: true,
+        scales: {
+            y: {
+                beginAtZero: true
+            }
+        }
+    }
+};
 
-    },
-});
+
+
+// render
+const brgyWeek = new Chart(
+
+    document.getElementById('brgy-week'), config
+
+);
 </script>

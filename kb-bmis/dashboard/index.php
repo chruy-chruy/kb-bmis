@@ -45,7 +45,7 @@ include "../../includes/preloader.php";
 
                 <div class="dashboard__card-top">
                     <div>
-                        <div class="dashboard__card-top--value">₱<?php echo $total_sales['brgySales']; ?></div>
+                        <div class="dashboard__card-top--value">₱<?php echo $total_sales['brgySales']; ?>.00</div>
                         <div class="dashboard__card-top--label">Barangay Clearance Sales</div>
                     </div>
 
@@ -54,7 +54,8 @@ include "../../includes/preloader.php";
 
                 <div class="dashboard__card-top">
                     <div>
-                        <div class="dashboard__card-top--value">₱<?php echo $total_bs_sales['businessSales']; ?></div>
+                        <div class="dashboard__card-top--value">₱<?php echo $total_bs_sales['businessSales']; ?>.00
+                        </div>
                         <div class="dashboard__card-top--label">Business Clearance Sales</div>
 
                     </div>
