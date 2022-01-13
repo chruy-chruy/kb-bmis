@@ -45,8 +45,8 @@ require_once "../../includes/header.php";
 
                     <div class="row">
                         <a href="#" class="button button--primary button--sm modal-trigger"
-                            data-modal-id="modal-editprofile">
-                            <i class='bx bxs-edit' data-modal-id="modal-editprofile"></i>
+                            data-modal-id="modal-restore">
+                            <i class='bx bxs-edit' data-modal-id="modal-restore"></i>
                             Restore</a>
                         <a href="#" class="button button--dark button--sm modal-trigger" data-modal-id="modal-delete">
                             <i class='bx bxs-trash' data-modal-id="modal-delete"></i>
@@ -678,42 +678,28 @@ require_once "../../includes/header.php";
 </div>
 
 
-<div class="modal__wrapper" id="modal-editprofile">
-    <section class="modal__window modal__window--sm">
+
+<div class="modal__wrapper" id="modal-restore">
+    <section class="modal__window modal__window--md">
         <header class="modal__header">
-            <h3>Login</h3>
+            <h3>Restore Profile</h3>
             <button type="button" class="modal__close close" aria-label="Close modal window">
                 <i class='bx bx-x'></i>
             </button>
         </header>
         <div class="modal__body">
-            <div class="input__wrapper input__wrapper--block input__wrapper--login">
-                <div class="input__inner--with-leading-icon input__inner">
-                    <i class="bx bxs-user-circle input__icon input__icon--leading"></i>
-                    <input name="first_name" type="text" class="input--light300 input--login" value=""
-                        placeholder="Username" />
-                </div>
-                <div class="input__message"></div>
-            </div>
-
-            <div class="input__wrapper input__wrapper--block input__wrapper--login">
-                <div class="input__inner--with-leading-icon input__inner">
-                    <i class="bx bxs-lock input__icon input__icon--leading"></i>
-                    <input name="first_name" type="password" class="input--light300 input--login" value=""
-                        placeholder="Password" />
-                </div>
-                <div class="input__message"></div>
-            </div>
+            Are you sure you want to restore <?php echo $row["first_name"]; ?> <?php echo $row["mid_name"]; ?>
+            <?php echo $row["last_name"]; ?>?
         </div>
         <footer class="modal__footer">
             <a href="controllers/resident-restore.php?residents_archive_id=<?php echo $row['residents_archive_id'] ?>"
-                class="
-                button button--primary button--md" id="login-editprofile">Login</a>
+                class="button button--danger button--md">Restore</a>
             <a href="#" class="button button--dark button--md modal__cancel close">Cancel</a>
 
         </footer>
     </section>
 </div>
+
 
 
 <?php
