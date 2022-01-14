@@ -28,7 +28,7 @@ include "../../includes/preloader.php";
             <tr>
               <td>
                 <div class="table__row-img">
-                  <img src="../../assets/img/user2.jpg" alt="">
+                  <img src="../../assets/img/admin.png" alt="">
                 </div>
               </td>
               <td>
