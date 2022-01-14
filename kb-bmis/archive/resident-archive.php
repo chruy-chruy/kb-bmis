@@ -3,6 +3,7 @@ $page = 'Archive';
 $headerTitle = 'Resident Archive';
 include "../../db_conn.php";
 require_once "../../includes/header.php";
+include "../../includes/preloader.php";
 ?>
 
 <main>
@@ -11,10 +12,10 @@ require_once "../../includes/header.php";
         <section class="archive">
             <!-- BUTANG LANG DIRI ☺ -->
             <div class="row">
-            <a href="index.php" class="button button--md back-btn">
-                <i class='bx bx-left-arrow-circle'></i>
-                Back
-            </a>
+                <a href="index.php" class="button button--md back-btn">
+                    <i class='bx bx-left-arrow-circle'></i>
+                    Back
+                </a>
             </div>
 
             <table id="residents-table" class="row-border">
@@ -67,7 +68,7 @@ require_once "../../includes/header.php";
                         <td><?php echo $row['senior_status'] ?></td>
                         <td>
                             <div class="table__row-img">
-                                <img src="../../assets/img/user.jpg" alt="">
+                                <img src="../residents/images/<?php echo $row["img_url"]; ?>" alt="">
                             </div>
                         </td>
                         <td>

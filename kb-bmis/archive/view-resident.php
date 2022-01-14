@@ -6,6 +6,7 @@ include "../../db_conn.php"; ?>
 $headerTitle = 'View';
 $page = 'Residents';
 require_once "../../includes/header.php";
+include "../../includes/preloader.php";
 ?>
 
 
