@@ -69,7 +69,7 @@ include "../../includes/preloader.php";
           <label>Receipients</label>
           <div class="input__inner">
             <div class="select__wrapper select__wrapper--announcements">
-              <select name="receipients" id="" class="select select--announcements input-viewprofile input-viewprofile">
+              <select required name="receipients" id="" class="select select--announcements input-viewprofile input-viewprofile">
                 <option value="" disabled selected>Select</option>
                 <option value="All Residents">All residents</option>
                 <option value="Barangay Officials">Barangay Officials</option>
@@ -96,7 +96,7 @@ include "../../includes/preloader.php";
           <label>Message</label>
           <div class="message__container">
             <div class="message__field">
-              <textarea name="message" id="" placeholder="Type your message here"></textarea>
+              <textarea required name="message" id="" placeholder="Type your message here"></textarea>
             </div>
 
             <div>

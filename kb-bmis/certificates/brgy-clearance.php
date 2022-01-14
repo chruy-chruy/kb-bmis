@@ -37,12 +37,7 @@ require_once "../../includes/header.php";
                                     <input type="hidden" name="pic" value="<?php echo $row['img_url'] ?>" />
 
 
-
-
-
                                 </div>
-
-
 
                             </div>
                             <!-- <a href="#" class="button button--icon-sm modal-trigger" data-modal-id="modal-camera" onclick="open_cam()">
