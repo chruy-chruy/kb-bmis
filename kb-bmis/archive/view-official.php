@@ -3,6 +3,7 @@ $headerTitle = 'View';
 $page = 'Barangay Information';
 require_once "../../includes/header.php";
 include "../../db_conn.php";
+include "../../includes/preloader.php";
 $resident_id = $_GET['resident_id'];
 $id = $_GET['officials_archive_id'];
 $squery =  mysqli_query($conn, "select * from residents where id = $resident_id");
@@ -56,9 +57,13 @@ while ($row = mysqli_fetch_array($squery)) {
                         </li>
 
                     </ul>
+                    <?php } ?>
 
                     <div class="profile-info__content viewprofile" style="display: block;">
 
+                        <?php
+                        $posQuery = mysqli_query($conn, "SELECT * FROM `officials_archive` WHERE officials_archive_id = $id");
+                        $officialPos = mysqli_fetch_array($posQuery);  ?>
 
                         <section class="profile-info__basic-info">
 
@@ -67,20 +72,20 @@ while ($row = mysqli_fetch_array($squery)) {
                                 <div class="input__wrapper">
                                     <label for="official-position">Position</label>
                                     <div class="input__inner">
-                                        <div class="select__wrapper">
-                                            <select disabled name="off_position" name="civil_status" id=""
-                                                class="select select--resident-profile input-viewprofile">
-                                                <option value="<?php echo $row['occupation'] ?>" selected disabled>
-                                                </option>
-                                                <option value="Barangay Chairman">Barangay Chairman</option>
-                                                <option value="Barangay Councilor">Barangay Councilor</option>
-                                                <option value="Barangay Secretary">Barangay Secretary</option>
-                                                <option value="Barangay Treasurer">Barangay Treasurer</option>
-                                            </select>
-                                        </div>
+                                        <input disabled name="occupation" type="text"
+                                            class="input--light300 input-viewprofile"
+                                            value="<?php echo $officialPos['off_position'] ?>">
                                     </div>
                                 </div>
                             </div>
+
+
+
+                            <?php
+                            $squery =  mysqli_query($conn, "select * from residents where id = $resident_id");
+                            while ($row = mysqli_fetch_array($squery)) {
+
+                            ?>
 
                             <div class="profile-info__container">
                                 <div class="input__wrapper">
@@ -234,6 +239,15 @@ while ($row = mysqli_fetch_array($squery)) {
     </div>
 </main>
 
+<?php } ?>
+
+
+<?php
+$offquery =  mysqli_query($conn, "SELECT * FROM `officials_archive` WHERE officials_archive_id = $id");
+while ($row = mysqli_fetch_array($offquery)) {
+
+?>
+
 
 <!--=============== MODALS ===============-->
 <div class="modal__wrapper" id="modal-delete">
@@ -245,9 +259,11 @@ while ($row = mysqli_fetch_array($squery)) {
             </button>
         </header>
         <div class="modal__body">
-            Are you sure you want to delete <?php echo $row["first_name"]; ?> <?php echo $row["mid_name"]; ?>
-            <?php echo $row["last_name"]; ?>?
+            Are you sure you want to delete <?php echo $row["off_name"]; ?>?
         </div>
+
+
+
         <footer class="modal__footer">
             <a href="controllers/official-delete.php?officials_archive_id=<?php echo $row["officials_archive_id"]; ?>"
                 class="button button--danger button--md">Delete</a>
@@ -267,9 +283,9 @@ while ($row = mysqli_fetch_array($squery)) {
             </button>
         </header>
         <div class="modal__body">
-            Are you sure you want to restore <?php echo $row["first_name"]; ?> <?php echo $row["mid_name"]; ?>
-            <?php echo $row["last_name"]; ?>?
+            Are you sure you want to restore <?php echo $row["off_name"]; ?>?
         </div>
+
         <footer class="modal__footer">
             <a href="controllers/official-restore.php?officials_archive_id=<?php echo $row["officials_archive_id"]; ?>"
                 class="button button--danger button--md">Restore</a>
@@ -278,10 +294,11 @@ while ($row = mysqli_fetch_array($squery)) {
         </footer>
     </section>
 </div>
+
+
+
+
 <?php } ?>
-
-
-
 
 
 </body>
