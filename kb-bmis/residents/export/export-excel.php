@@ -10,10 +10,10 @@ function filterData(&$str){
 } 
  
 // Excel file name for download 
-$fileName = "Residents_" . date('Y-m-d') . ".xls"; 
+$fileName = "Residents-" . date('Y-m-d') . ".xls"; 
  
 // Column names 
-$fields = array('ID', 'FIRST NAME', 'MIDDLE NAME','LAST NAME', 'SUFFIX','GENDER','DATE OF BIRTH', 'HOUSE NUMBER', 'STREET', 'PUROK', 'PHONE NUMBER', 'EMAIL',  'OCCUPATION'); 
+$fields = array('ID', 'FIRST NAME', 'MIDDLE NAME','LAST NAME', 'SUFFIX','GENDER','DATE OF BIRTH', 'ADDRESS', 'PHONE NUMBER', 'EMAIL',  'OCCUPATION'); 
  
 // Display column names as first row 
 $excelData = implode("\t", array_values($fields)) . "\n"; 
@@ -23,8 +23,8 @@ $query = $conn->query("SELECT * FROM residents ORDER BY id ASC");
 if($query->num_rows > 0){ 
     // Output each row of the data 
     while($row = $query->fetch_assoc()){ 
-       
-        $lineData = array($row['id'], $row['first_name'], $row['mid_name'], $row['last_name'], $row['suffix'], $row['sex'] , $row['date_of_birth'],  $row['house_number'], $row['street'], $row['purok'], $row['phone_number'], $row['email'], $row['occupation']); 
+        $address  = $row['house_number'] ." ". $row['street'] ." ". $row['purok'];
+        $lineData = array($row['id'], $row['first_name'], $row['mid_name'], $row['last_name'], $row['suffix'], $row['sex'] , $row['date_of_birth'], $address, $row['phone_number'], $row['email'], $row['occupation']); 
         array_walk($lineData, 'filterData'); 
         $excelData .= implode("\t", array_values($lineData)) . "\n"; 
     } 
