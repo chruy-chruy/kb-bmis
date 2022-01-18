@@ -12,7 +12,7 @@ include "../../includes/preloader.php";
     <section class="announcements">
       <a href="#" class="button button--md button--primary modal-trigger" style="margin-bottom: 20px; margin-left: auto;" data-modal-id="modal-sendmessage">
         <i class='bx bxs-megaphone' data-modal-id="modal-sendmessage"></i>
-        Send an announcement
+        Create announcement
       </a>
 
       <table id="officials-table" class="row-border">
@@ -34,7 +34,7 @@ include "../../includes/preloader.php";
               <td>
                 <div class="table__row-text">
                   <div class="table__row-name">
-                    Receipients: <strong><?php echo $row["receipients"]; ?></strong>
+                    Recipients: <strong><?php echo $row["receipients"]; ?></strong>
                   </div>
                   <div class="table__row-sub">
                     <div class="message__date-time"><?php echo date("F j Y \(l\)", strtotime($row["date"])); ?> - <?php echo date("g:i A", strtotime($row["time"])); ?></div>
@@ -72,7 +72,7 @@ include "../../includes/preloader.php";
       </header>
       <div class="modal__body" style="align-items: flex-start; padding: 0 20px;">
         <div class="announcements__contacts">
-          <label>Receipients</label>
+          <label>Recipients</label>
           <div class="input__inner">
             <div class="select__wrapper select__wrapper--announcements">
               <select required name="receipients" id="" class="select select--announcements input-viewprofile input-viewprofile">
@@ -86,7 +86,7 @@ include "../../includes/preloader.php";
               </select>
             </div>
           </div>
-          <!-- <label for="">Receipients</label> -->
+          <!-- <label for="">Recipients</label> -->
           <!-- <div class="announcements__radio">
               <input type="radio" class="announcements__radio-input" checked name="radio" id="all-residents">
               <label for="all-residents" class="announcements__radio-label">All residents</label>

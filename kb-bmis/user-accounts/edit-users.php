@@ -25,7 +25,7 @@ if ($role == "Barangay Secretary") {
                         <div class="card__body">
                             <div class="card__body-content">
                                 <div class="profile__img profile__img--viewprofile">
-                                    <img src="../../assets/img/user.jpg" alt="">
+                                    <img src="../../assets/img/<?php echo $row["first_name"]; ?>" alt="">
                                 </div>
 
                                 <div class="profile__name profile__name--viewprofile">
@@ -166,7 +166,7 @@ if ($role == "Admin") {
                         <div class="card__body">
                             <div class="card__body-content">
                                 <div class="profile__img profile__img--viewprofile">
-                                    <img src="../../assets/img/user.jpg" alt="">
+                                    <img src="../../assets/img/admin.png" alt="">
                                 </div>
 
                                 <div class="profile__name profile__name--viewprofile">
