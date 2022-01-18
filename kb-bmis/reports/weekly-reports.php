@@ -6,7 +6,7 @@ require_once "../../includes/header.php";
 
 
 ?>
-<script type="text/javascript" src="../../assets/js/chart.js"></script>
+
 <main>
 
     <div class="content">
@@ -78,7 +78,7 @@ require_once "../../includes/header.php";
 
 
 <script src="https://cdn.jsdelivr.net/npm/chart.js@3.5.1/dist/chart.min.js"></script>
-
+<script type="text/javascript" src="../../assets/js/chart.js"></script>
 <!-- -->
 
 </body>

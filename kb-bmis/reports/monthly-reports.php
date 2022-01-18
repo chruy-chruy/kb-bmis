@@ -3,7 +3,7 @@ $page = 'Reports';
 $headerTitle = 'Reports';
 include "../../db_conn.php";
 require_once "../../includes/header.php";
-include "queries/monthly-data.php";
+
 
 ?>
 
@@ -74,10 +74,10 @@ include "queries/monthly-data.php";
 
 </main>
 
-<!--=============== MODALS ===============-->
+<!--=============== js ===============-->
 <script src="https://cdn.jsdelivr.net/npm/chart.js@3.5.1/dist/chart.min.js"></script>
+<script type="text/javascript" src="../../assets/js/chart.js"></script>
 
-<?php include "charts/month-charts.php"; ?>
 
 </body>
 
