@@ -407,18 +407,22 @@ function open_cam() {
 }
 
 function take_snapshot() {
-  Webcam.snap(function (data_uri) {
+  Webcam.snap(function(data_uri) {
     $(".image-tag").val(data_uri);
-    document.getElementById("results").innerHTML =
-      '<img src="' + data_uri + '"/>';
+    document.getElementById('results').innerHTML = '<img src="' + data_uri + '"/>';
+    document.getElementById('profile').innerHTML = document.getElementById('results').innerHTML;
+    Webcam.reset();
+    jQuery(function(){
+      jQuery('#close-modal').click();
+   });
   });
 }
 
-function submit_snap() {
-  document.getElementById("profile").innerHTML =
-    document.getElementById("results").innerHTML;
-  Webcam.reset();
-}
+// function submit_snap() {
+//   document.getElementById("profile").innerHTML =
+//     document.getElementById("results").innerHTML;
+//   Webcam.reset();
+// }
 
 function exit_webcam() {
   document.getElementById("results").innerHTML = '<img src=""/>';

@@ -23,7 +23,7 @@ if ($role == "Barangay Secretary") {
           <div class="card__body">
             <div class="card__body-content">
               <div class="profile__img profile__img--viewprofile">
-                <img src="../../assets/img/user.jpg" alt="">
+                <img src="../residents/images/<?php echo $row["img_url"]; ?>" alt="">
               </div>
 
               <div class="profile__name profile__name--viewprofile">
@@ -99,24 +99,6 @@ if ($role == "Barangay Secretary") {
 
 
     <!--=============== MODALS ===============-->
-    <div class="modal__wrapper" id="modal-delete">
-      <section class="modal__window modal__window--md">
-        <header class="modal__header">
-          <h3>Delete Profile</h3>
-          <button type="button" class="modal__close close" aria-label="Close modal window">
-            <i class='bx bx-x'></i>
-          </button>
-        </header>
-        <div class="modal__body">
-          Are you sure you want to delete <?php echo $row["first_name"]; ?> <?php echo $row["mid_name"]; ?> <?php echo $row["last_name"]; ?>?
-        </div>
-        <footer class="modal__footer">
-          <a href="delete.php?id=<?php echo $row["id"]; ?>" class="button button--danger button--md">Delete</a>
-          <a href="#" class="button button--dark button--md modal__cancel close">Cancel</a>
-
-        </footer>
-      </section>
-    </div>
 
 
     <div class="modal__wrapper" id="modal-editprofile">
@@ -179,7 +161,7 @@ if ($role == "Admin") {
           <div class="card__body">
             <div class="card__body-content">
               <div class="profile__img profile__img--viewprofile">
-                <img src="../../assets/img/user.jpg" alt="">
+                <img src="../../assets/img/admin.png" alt="">
               </div>
 
               <div class="profile__name profile__name--viewprofile">
@@ -204,7 +186,7 @@ if ($role == "Admin") {
                     <div class="input__wrapper">
                       <label for="official-position">Position</label>
                       <div class="input__inner">
-                        <input disabled name="role" type="text" class="input--light300 input-viewprofile" value="<?php echo $row['role'] ?>">
+                        <input disabled name="role" type="text" class="input--light300 input-viewprofile" value=" <?php echo $row['role'] ?>">
                       </div>
                     </div>
                   </div>
@@ -243,30 +225,13 @@ if ($role == "Admin") {
 
 
     <!--=============== MODALS ===============-->
-    <div class="modal__wrapper" id="modal-delete">
-      <section class="modal__window modal__window--md">
-        <header class="modal__header">
-          <h3>Delete Profile</h3>
-          <button type="button" class="modal__close close" aria-label="Close modal window">
-            <i class='bx bx-x'></i>
-          </button>
-        </header>
-        <div class="modal__body">
-          Are you sure you want to delete <?php echo $row["first_name"]; ?> <?php echo $row["mid_name"]; ?> <?php echo $row["last_name"]; ?>?
-        </div>
-        <footer class="modal__footer">
-          <a href="delete.php?id=<?php echo $row["id"]; ?>" class="button button--danger button--md">Delete</a>
-          <a href="#" class="button button--dark button--md modal__cancel close">Cancel</a>
 
-        </footer>
-      </section>
-    </div>
 
 
     <div class="modal__wrapper" id="modal-editprofile">
       <section class="modal__window modal__window--sm">
         <header class="modal__header">
-          <h3>Login</h3>
+          <h3>Login <?php echo $row['user_name'] ?></h3>
           <button type="button" class="modal__close close" aria-label="Close modal window">
             <i class='bx bx-x'></i>
           </button>

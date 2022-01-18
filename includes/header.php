@@ -1,3 +1,13 @@
+<?php
+session_start();
+if (!isset($_SESSION['id'])) {
+    header("Location: ../../index.php");
+    exit();
+}
+include "../../db_conn.php";
+$role = $_SESSION['role'];
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -27,16 +37,16 @@
     <script src="../../assets/js/main.js" defer></script>
 
     <?php if ($page == 'Residents') {
-    echo '
+        echo '
     <script src="https://cdnjs.cloudflare.com/ajax/libs/webcamjs/1.0.25/webcam.min.js"></script>';
-  }
-  ?>
+    }
+    ?>
 
     <?php if ($page == 'Certificates') {
-    echo '
+        echo '
     <script src="https://cdnjs.cloudflare.com/ajax/libs/webcamjs/1.0.25/webcam.min.js"></script>';
-  }
-  ?>
+    }
+    ?>
 
     <title>Barangay Management System | <?php echo $page; ?></title>
 </head>
@@ -60,8 +70,8 @@
 
 
             <li class="nav__item <?php if ($page == 'Dashboard') {
-                              echo 'nav__item--active';
-                            } ?>">
+                                        echo 'nav__item--active';
+                                    } ?>">
                 <a href="../dashboard/" class="nav__item-link">
                     <i class='bx bxs-dashboard'></i>
                     <span class="nav__item-text">Dashboard</span>
@@ -70,8 +80,8 @@
 
 
             <li class="nav__item <?php if ($page == 'Residents') {
-                              echo 'nav__item--active';
-                            } ?>">
+                                        echo 'nav__item--active';
+                                    } ?>">
                 <a href="../residents/" class="nav__item-link">
                     <i class='bx bxs-group'></i>
                     <span class="nav__item-text">Residents</span>
@@ -80,8 +90,8 @@
 
 
             <li id="nav-certificates" class="nav__item <?php if ($page == 'Certificates') {
-                                                    echo 'nav__item--active';
-                                                  } ?>">
+                                                            echo 'nav__item--active';
+                                                        } ?>">
                 <a href="../certificates/" class="nav__item-link">
                     <i class='bx bxs-file'></i>
                     <span class="nav__item-text">Certificates</span>
@@ -90,8 +100,8 @@
 
 
             <li class="nav__item <?php if ($page == 'Reports') {
-                              echo 'nav__item--active';
-                            } ?>">
+                                        echo 'nav__item--active';
+                                    } ?>">
                 <a href="../reports/" class="nav__item-link">
                     <i class='bx bxs-bar-chart-square'></i>
                     <span class="nav__item-text">Reports</span>
@@ -101,8 +111,8 @@
 
 
             <li class="nav__item <?php if ($page == 'Announcements') {
-                              echo 'nav__item--active';
-                            } ?>">
+                                        echo 'nav__item--active';
+                                    } ?>">
                 <a href="../announcements/" class="nav__item-link">
                     <i class='bx bxs-megaphone'></i>
                     <span class="nav__item-text">Announcements</span>
@@ -112,8 +122,8 @@
 
 
             <li class="nav__item <?php if ($page == 'Barangay Information') {
-                              echo 'nav__item--active';
-                            } ?>">
+                                        echo 'nav__item--active';
+                                    } ?>">
                 <a href="../barangay-information" class="nav__item-link">
                     <i class='bx bxs-info-square'></i>
                     <span class="nav__item-text">Barangay Information</span>
@@ -123,23 +133,26 @@
 
 
             <li class="nav__item <?php if ($page == 'Archive') {
-                              echo 'nav__item--active';
-                            } ?>">
+                                        echo 'nav__item--active';
+                                    } ?>">
                 <a href="../archive/" class="nav__item-link">
                     <i class='bx bxs-archive'></i>
                     <span class="nav__item-text">Archive</span>
                 </a>
             </li>
 
+            <?php if ($role == 'Admin') { ?>
 
-            <li class="nav__item <?php if ($page == 'User Accounts') {
-                              echo 'nav__item--active';
-                            } ?>">
-                <a href="../user-accounts/" class="nav__item-link">
-                    <i class='bx bxs-user-circle'></i>
-                    <span class="nav__item-text">User Accounts</span>
-                </a>
-            </li>
+                <li class="nav__item <?php if ($page == 'User Accounts') {
+                                            echo 'nav__item--active';
+                                        } ?>">
+                    <a href="../user-accounts/" class="nav__item-link">
+                        <i class='bx bxs-user-circle'></i>
+                        <span class="nav__item-text">User Accounts</span>
+                    </a>
+                </li>
+
+            <?php } ?>
 
         </ul>
     </nav>
@@ -154,21 +167,38 @@
             <?php echo $headerTitle; ?>
         </div>
         <a href="#" class="header__img">
-            <img id="user" src="../../assets/img/user.jpg" alt="user" />
+
+            <?php
+            if ($role == 'Admin') {
+            ?>
+                <img src="../../assets/img/admin.png" alt="user" />
+            <?php
+            } ?>
+
+            <?php
+            if ($role == 'Barangay Secretary') {
+                $sql = mysqli_query($conn, "SELECT * FROM residents WHERE occupation = '$role'");
+                while ($row = mysqli_fetch_array($sql)) { ?>
+                    <img src="../residents/images/<?php echo $row['img_url'] ?>" alt="user" />
+            <?php
+                }
+            } ?>
+
         </a>
+        <h3><?php echo $role ?></h3>
         <div class="header__toggle">
             <i class='bx bxs-down-arrow'></i>
         </div>
         <div class="dropdown dropdown--user dropdown--user-show">
             <ul>
                 <li class="dropdown__item">
-                    <a href="#">
+                    <a href="../user-accounts/view-user.php?role=<?php echo $role ?>">
                         <i class='bx bxs-user-circle'></i>
                         User Profile
                     </a>
                 </li>
                 <li class="dropdown__item">
-                    <a href="../../index.html">
+                    <a href="../../logout.php">
                         <i class='bx bx-exit'></i>
                         Logout
                     </a>
