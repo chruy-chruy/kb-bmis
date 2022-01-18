@@ -218,14 +218,14 @@ require_once "../../includes/header.php";
                           <div class="select__wrapper">
                             <select name="blood_type" id="" class="select select--resident-profile">
                               <option disabled selected>Select</option>
-                              <option value="a+">A+</option>
-                              <option value="a-">A-</option>
-                              <option value="b+">B+</option>
-                              <option value="b-">B-</option>
-                              <option value="o+">O+</option>
-                              <option value="o-">O-</option>
-                              <option value="ab+">AB+</option>
-                              <option value="ab-">AB-</option>
+                              <option value="A+">A+</option>
+                              <option value="A-">A-</option>
+                              <option value="B+">B+</option>
+                              <option value="B-">B-</option>
+                              <option value="O+">O+</option>
+                              <option value="O-">O-</option>
+                              <option value="AB+">AB+</option>
+                              <option value="AB-">AB-</option>
                             </select>
                           </div>
                         </div>

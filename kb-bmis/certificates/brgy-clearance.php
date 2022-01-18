@@ -148,7 +148,7 @@ require_once "../../includes/header.php";
 
                                     <div class="certificates-info__container">
                                         <div class="input__wrapper">
-                                            <label>Date Issued</label>
+                                            <label>Issued on</label>
                                             <div class="input__inner">
                                                 <input name="cedula_date" type="date" class="input--light300 input-viewprofile" value="" required="">
                                             </div>
