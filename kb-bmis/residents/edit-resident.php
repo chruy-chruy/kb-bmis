@@ -1,14 +1,15 @@
 <?php
 include "../../db_conn.php";
 $id = $_GET["id"];
-$squery = mysqli_query($conn, "select * from residents where id = $id");
-while ($row = mysqli_fetch_array($squery)) { ?>
+?>
 
-  <?php
-  $headerTitle = 'Edit';
-  $page = 'Residents';
-  require_once "../../includes/header.php";
-  ?>
+<?php
+$headerTitle = 'Edit';
+$page = 'Residents';
+require_once "../../includes/header.php";
+$squery = mysqli_query($conn, "select * from residents where id = $id");
+while ($row = mysqli_fetch_array($squery)) {
+?>
 
   <main>
     <div class="content">
@@ -23,7 +24,7 @@ while ($row = mysqli_fetch_array($squery)) { ?>
 
             <div class="card__body">
               <div class="card__body-content">
-              <div class="profile__img profile__img--change">
+                <div class="profile__img profile__img--change">
                   <img src="../residents/images/<?php echo $row['img_url'] ?>" name="default" alt="">
                   <!-- <a href="#" class="button button--sm button--dark-outline camera-btn modal-trigger input--light300 input-viewprofile" data-modal-id="modal-camera" onclick="open_cam()">
                             <i class='bx bx-camera' data-modal-id="modal-camera"></i>
@@ -171,25 +172,25 @@ while ($row = mysqli_fetch_array($squery)) { ?>
                         <label for="resident-purok">Purok</label>
                         <div class="input__inner">
                           <!-- <input type="text" name="purok" class="input--light300" value="<?php echo $row['purok'] ?>" required> -->
-                        
+
                           <div class="select__wrapper">
-                          <select name="purok" id="" class="select select--resident-profile" required>
+                            <select name="purok" id="" class="select select--resident-profile" required>
                               <option selected value="<?php echo $row['purok'] ?>" hidden><?php echo $row['purok'] ?></option>
-                                        <option value="Purok 1">Purok 1</option>
-                                        <option value="Purok 2">Purok 2</option>
-                                        <option value="Purok 3">Purok 3</option>
-                                        <option value="Purok 4">Purok 4</option>
-                                        <option value="Purok 5">Purok 5</option>
-                                        <option value="Purok 6">Purok 6</option>
-                                        <option value="Purok 7">Purok 7</option>
-                                        <option value="Purok 8">Purok 8</option>
-                                        <option value="Purok 9">Purok 9</option>
-                                        <option value="Purok 10">Purok 10</option>
-                                        <option value="Purok 11">Purok 11</option>
-                                        <option value="Purok 12">Purok 12</option>
-                                        <option value="Purok 13">Purok 13</option>
-                                        </select>
-                                        </div>
+                              <option value="Purok 1">Purok 1</option>
+                              <option value="Purok 2">Purok 2</option>
+                              <option value="Purok 3">Purok 3</option>
+                              <option value="Purok 4">Purok 4</option>
+                              <option value="Purok 5">Purok 5</option>
+                              <option value="Purok 6">Purok 6</option>
+                              <option value="Purok 7">Purok 7</option>
+                              <option value="Purok 8">Purok 8</option>
+                              <option value="Purok 9">Purok 9</option>
+                              <option value="Purok 10">Purok 10</option>
+                              <option value="Purok 11">Purok 11</option>
+                              <option value="Purok 12">Purok 12</option>
+                              <option value="Purok 13">Purok 13</option>
+                            </select>
+                          </div>
 
                         </div>
                       </div>
@@ -265,14 +266,14 @@ while ($row = mysqli_fetch_array($squery)) { ?>
                           <div class="select__wrapper">
                             <select name="blood_type" id="" class="select select--resident-profile">
                               <option selected hidden value="<?php echo $row['blood_type'] ?>"><?php echo $row['blood_type'] ?></option>
-                              <option value="a+">A+</option>
-                              <option value="a-">A-</option>
-                              <option value="b+">B+</option>
-                              <option value="b-">B-</option>
-                              <option value="o+">O+</option>
-                              <option value="o-">O-</option>
-                              <option value="ab+">AB+</option>
-                              <option value="ab-">AB-</option>
+                              <option value="A+">A+</option>
+                              <option value="A-">A-</option>
+                              <option value="B+">B+</option>
+                              <option value="B-">B-</option>
+                              <option value="O+">O+</option>
+                              <option value="O-">O-</option>
+                              <option value="AB+">AB+</option>
+                              <option value="AB-">AB-</option>
                             </select>
                           </div>
                         </div>
@@ -654,9 +655,9 @@ while ($row = mysqli_fetch_array($squery)) { ?>
       </div>
 
       <footer class="modal__footer">
-        <input type="button" value="Capture" class="button button--primary button--md "onClick="take_snapshot()"/>
-        <input type ="button" value="Submit" class="button button--primary button--md close" onClick="submit_snap()"/>
-        <input type="button" value="Cancel" class="button button--dark button--md close" onClick="exit_webcam()"/>
+        <input type="button" value="Capture" class="button button--primary button--md " onClick="take_snapshot()" />
+        <input type="button" value="Submit" class="button button--primary button--md close" onClick="submit_snap()" />
+        <input type="button" value="Cancel" class="button button--dark button--md close" onClick="exit_webcam()" />
       </footer>
       </form>
     </section>

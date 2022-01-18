@@ -83,7 +83,7 @@ include "../../includes/preloader.php";
               <td>
                 <div class="table__row-text">
                   <div class="table__row-name">
-                    <?php echo $row['first_name'] ?> <?php echo $row['mid_name'] ?> <?php echo $row['last_name'] ?>
+                    <?php echo $row['first_name'] ?> <?php echo $row['mid_name'] ?> <?php echo $row['last_name'] ?> <?php echo $row['suffix'] ?>
                   </div>
                   <div class="table__row-sub">
                     <?php echo $row['id'] ?>

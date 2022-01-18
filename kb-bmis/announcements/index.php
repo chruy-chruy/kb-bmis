@@ -8,50 +8,56 @@ include "../../includes/preloader.php";
 
 ?>
 <main>
-
   <div class="content">
     <section class="announcements">
       <a href="#" class="button button--md button--primary modal-trigger" style="margin-bottom: 20px; margin-left: auto;" data-modal-id="modal-sendmessage">
         <i class='bx bxs-megaphone' data-modal-id="modal-sendmessage"></i>
-        Send an announcement
+        Create announcement
       </a>
 
-      <!-- <div> -->
+      <table id="officials-table" class="row-border">
+        <thead>
+          <tr>
+            <th></th>
+            <th></th>
+            <th></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <?php
+            $squery =  mysqli_query($conn, "select * from announcements order by id desc");
+            while ($row = mysqli_fetch_array($squery)) {
+            ?>
+              <td>
+              </td>
+              <td>
+                <div class="table__row-text">
+                  <div class="table__row-name">
+                    Recipients: <strong><?php echo $row["receipients"]; ?></strong>
+                  </div>
+                  <div class="table__row-sub">
+                    <div class="message__date-time"><?php echo date("F j Y \(l\)", strtotime($row["date"])); ?> - <?php echo date("g:i A", strtotime($row["time"])); ?></div>
+                  </div>
+                </div>
+              </td>
+              <td>
+                <div class="table__action-buttons">
+                  <a href="view-announcement.php?id=<?php echo $row['id'] ?>" class="button button--primary button--sm action__cert" id="action-cert">
+                    VIEW
+                  </a>
+                </div>
+              </td>
 
-      <?php $squery = mysqli_query($conn, "select * from announcements order by id desc");
-      while ($row = mysqli_fetch_array($squery)) {
+          </tr>
+        <?php } ?>
 
-      ?>
-
-        <div class="card card--announcements">
-          <div class="card__header">
-            <div class="card__header-content">
-              <div class="card__header-content--left">
-                Receipients: <strong><?php echo $row["receipients"]; ?></strong>
-              </div>
-              <div class="card__header-content--right">
-                <a class="button button--icon button--icon-sm button--icon-primary modal-trigger" data-modal-id="modal-deletemessage">
-                  <i class='bx bx-trash' data-modal-id="modal-deletemessage"></i>
-                </a>
-              </div>
-            </div>
-          </div>
-
-          <div class="card__body">
-            <div class="card__body-content" style="align-items: flex-start; position:relative;">
-              <div class="message__date-time"><?php echo date("F j Y \(l\)", strtotime($row["date"])); ?> - <?php echo date("g:i A", strtotime($row["time"])); ?></div>
-              <div class="message">
-                <?php echo $row["message"]; ?>
-              </div>
-            </div>
-          </div>
-        </div>
-      <?php } ?>
-      <!-- </div> -->
-
-
+        </tbody>
+      </table>
+      <!-- brgy officials end -->
     </section>
   </div>
+
 
 </main>
 <form id="send_announcement" action="send.php" method="post" enctype="multipart/form-data" data-parsley-validate="">
@@ -66,10 +72,10 @@ include "../../includes/preloader.php";
       </header>
       <div class="modal__body" style="align-items: flex-start; padding: 0 20px;">
         <div class="announcements__contacts">
-          <label>Receipients</label>
+          <label>Recipients</label>
           <div class="input__inner">
             <div class="select__wrapper select__wrapper--announcements">
-              <select name="receipients" id="" class="select select--announcements input-viewprofile input-viewprofile">
+              <select required name="receipients" id="" class="select select--announcements input-viewprofile input-viewprofile">
                 <option value="" disabled selected>Select</option>
                 <option value="All Residents">All residents</option>
                 <option value="Barangay Officials">Barangay Officials</option>
@@ -80,7 +86,7 @@ include "../../includes/preloader.php";
               </select>
             </div>
           </div>
-          <!-- <label for="">Receipients</label> -->
+          <!-- <label for="">Recipients</label> -->
           <!-- <div class="announcements__radio">
               <input type="radio" class="announcements__radio-input" checked name="radio" id="all-residents">
               <label for="all-residents" class="announcements__radio-label">All residents</label>
@@ -96,7 +102,7 @@ include "../../includes/preloader.php";
           <label>Message</label>
           <div class="message__container">
             <div class="message__field">
-              <textarea name="message" id="" placeholder="Type your message here"></textarea>
+              <textarea required name="message" id="" placeholder="Type your message here"></textarea>
             </div>
 
             <div>
@@ -114,34 +120,6 @@ include "../../includes/preloader.php";
 </form>
 </section>
 </div>
+</body>
 
-
-<?php $squery = mysqli_query($conn, "select * from announcements");
-while ($row = mysqli_fetch_array($squery)) { ?>
-
-
-  <div class="modal__wrapper" id="modal-deletemessage">
-    <section class="modal__window modal__window--md">
-      <header class="modal__header">
-        <h3>Delete Message</h3>
-        <button type="button" class="modal__close close" aria-label="Close modal window">
-          <i class='bx bx-x'></i>
-        </button>
-      </header>
-      <div class="modal__body">
-        Are you sure you want to delete this message?
-      </div>
-
-      <footer class="modal__footer">
-        <a href="delete.php?id=<?php echo $row["id"]; ?>" class="button button--danger button--md">Delete</a>
-        <a href="#" class="button button--dark button--md modal__cancel close">Cancel</a>
-      <?php } ?>
-
-      </footer>
-    </section>
-  </div>
-
-
-  </body>
-
-  </html>
+</html>

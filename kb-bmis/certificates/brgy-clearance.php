@@ -37,12 +37,7 @@ require_once "../../includes/header.php";
                                     <input type="hidden" name="pic" value="<?php echo $row['img_url'] ?>" />
 
 
-
-
-
                                 </div>
-
-
 
                             </div>
                             <!-- <a href="#" class="button button--icon-sm modal-trigger" data-modal-id="modal-camera" onclick="open_cam()">
@@ -153,7 +148,7 @@ require_once "../../includes/header.php";
 
                                     <div class="certificates-info__container">
                                         <div class="input__wrapper">
-                                            <label>Date Issued</label>
+                                            <label>Issued on</label>
                                             <div class="input__inner">
                                                 <input name="cedula_date" type="date" class="input--light300 input-viewprofile" value="" required="">
                                             </div>

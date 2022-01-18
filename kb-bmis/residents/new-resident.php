@@ -218,14 +218,14 @@ require_once "../../includes/header.php";
                           <div class="select__wrapper">
                             <select name="blood_type" id="" class="select select--resident-profile">
                               <option disabled selected>Select</option>
-                              <option value="a+">A+</option>
-                              <option value="a-">A-</option>
-                              <option value="b+">B+</option>
-                              <option value="b-">B-</option>
-                              <option value="o+">O+</option>
-                              <option value="o-">O-</option>
-                              <option value="ab+">AB+</option>
-                              <option value="ab-">AB-</option>
+                              <option value="A+">A+</option>
+                              <option value="A-">A-</option>
+                              <option value="B+">B+</option>
+                              <option value="B-">B-</option>
+                              <option value="O+">O+</option>
+                              <option value="O-">O-</option>
+                              <option value="AB+">AB+</option>
+                              <option value="AB-">AB-</option>
                             </select>
                           </div>
                         </div>
@@ -510,7 +510,7 @@ require_once "../../includes/header.php";
   <section class="modal__window modal__window--sm">
     <header class="modal__header">
       <h3>Change Picture</h3>
-      <button type="button" class="modal__close close" aria-label="Close modal window">
+      <button type="button" class="modal__close close" aria-label="Close modal window" id="close-modal">
         <i class='bx bx-x'></i>
       </button>
     </header>
@@ -562,14 +562,14 @@ require_once "../../includes/header.php";
     </div>
 
     <footer class="modal__footer">
-      <input type=button class="button button--primary button--md modal__yes-cancel close" value="Submit" onClick="take_snapshot()">
+      <input type=button value="Submit" class="button button--primary button--md modal__yes-cancel close" onClick="take_snapshot()">
       <input type=button value="cancel" class="button button--dark button--md modal__yes-cancel close" onClick="exit_webcam()">
     </footer>
     </form>
   </section>
 </div>
 
-<!-- Configure a few settings and attach camera -->
+<!-- Configure a few settings and attach camera
 <script language="JavaScript">
   Webcam.set({
     width: 490,
@@ -590,7 +590,6 @@ require_once "../../includes/header.php";
       document.getElementById('results').innerHTML = '<img src="' + data_uri + '"/>';
       document.getElementById('profile').innerHTML = document.getElementById('results').innerHTML;
       Webcam.reset();
-      document.getElementById('close-modal').click();
     });
   }
 
@@ -598,7 +597,7 @@ require_once "../../includes/header.php";
     document.getElementById('results').innerHTML = '<img src=""/>';
     Webcam.reset();
   }
-</script>
+</script> -->
 </body>
 
 </html>
