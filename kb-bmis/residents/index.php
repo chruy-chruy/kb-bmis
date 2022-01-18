@@ -44,13 +44,13 @@ include "../../includes/preloader.php";
                 <div class="dropdown dropdown--export">
                   <ul>
                     <li class="dropdown__item">
-                      <a href="#">
+                    <a href="#">
                         <i class='bx bxs-user-circle'></i>
                         Excel
                       </a>
                     </li>
                     <li class="dropdown__item">
-                      <a href="#">
+                    <a href="#">
                         <i class='bx bx-exit'></i>
                         PDF
                       </a>
