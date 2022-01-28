@@ -45,7 +45,7 @@ require_once "../../includes/header.php";
                                 </a> -->
 
 
-                            <div class="profile__name" style="margin-bottom: 30px;">
+                            <div class="profile__name" style="margin: 20px 0px 30px 0px;">
                                 <?php echo $row['first_name'] ?> <?php echo $row['mid_name'] ?>
                                 <?php echo $row['last_name'] ?> <?php echo $row['suffix'] ?>
                             </div>
@@ -116,7 +116,7 @@ require_once "../../includes/header.php";
 
                                     <div class="certificates-info__container">
                                         <div class="input__wrapper">
-                                            <label>Price</label>
+                                            <label>Amount</label>
                                             <div class="input__inner">
                                                 <input name="price" type="text" class="input--light300 input-viewprofile" value="">
                                             </div>
@@ -130,7 +130,7 @@ require_once "../../includes/header.php";
                                 <section class="certificates-info">
                                     <div class="certificates-info__container">
                                         <div class="input__wrapper">
-                                            <label>Resident Certificate No.</label>
+                                            <label>Cedula No.</label>
                                             <div class="input__inner">
                                                 <input name="cedula_number" type="number" class="input--light300 input-viewprofile" value="" required="" />
                                             </div>
@@ -139,7 +139,7 @@ require_once "../../includes/header.php";
 
                                     <div class="certificates-info__container">
                                         <div class="input__wrapper">
-                                            <label>Issued at</label>
+                                            <label>Cedula Issued at</label>
                                             <div class="input__inner">
                                                 <input name="cedula_address" type="text" class="input--light300 input-viewprofile" value="" required="">
                                             </div>
@@ -148,7 +148,7 @@ require_once "../../includes/header.php";
 
                                     <div class="certificates-info__container">
                                         <div class="input__wrapper">
-                                            <label>Issued on</label>
+                                            <label>Cedula Issued on</label>
                                             <div class="input__inner">
                                                 <input name="cedula_date" type="date" class="input--light300 input-viewprofile" value="" required="">
                                             </div>
@@ -166,7 +166,7 @@ require_once "../../includes/header.php";
                         </div>
                       </div>
                     </div> -->
-                                    <div class="card__footer">
+                                    <div class="certificates-info__container">
                                         <div class="card__footer-content">
                                             <div class="card__footer-content--right">
                                                 <button class="button button--primary button--md" name="btn_save">Generate</button>

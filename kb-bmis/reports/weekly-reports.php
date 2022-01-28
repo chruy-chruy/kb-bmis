@@ -56,10 +56,12 @@ require_once "../../includes/header.php";
                 </div>
 
                 <div class="card__body">
-                    <div class="card__body-content">
-                        <div class="graph">
+                    <div class="card__body-content" style="flex-direction: row;">
+                        <div class="graph" style=" width: 50%;">
                             <h1>Barangay Clearance Sales</h1>
                             <canvas id="brgy-week"></canvas>
+                        </div>
+                        <div class="graph1" style="width: 50%;">
                             <h1>Business Clearance Sales</h1>
                             <canvas id="bs-week"></canvas>
                         </div>

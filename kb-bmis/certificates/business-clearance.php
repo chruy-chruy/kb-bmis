@@ -29,9 +29,9 @@ require_once "../../includes/header.php";
                 <section class="certificates-info">
                   <div class="certificates-info__container">
                     <div class="input__wrapper">
-                      <label>Name</label>
+                      <label>Owner's Name</label>
                       <div class="input__inner">
-                        <input name="name" type="text" class="input--light300 input-viewprofile" value="">
+                        <input name="name" type="text" class="input--light300 input-viewprofile" value="" required>
                       </div>
                     </div>
                   </div>
@@ -40,16 +40,16 @@ require_once "../../includes/header.php";
                     <div class="input__wrapper">
                       <label>Business Location(Purok)</label>
                       <div class="input__inner">
-                        <input name="bus_location" type="text" class="input--light300 input-viewprofile" value="">
+                        <input name="bus_location" type="text" class="input--light300 input-viewprofile" value="" required>
                       </div>
                     </div>
                   </div>
 
                   <div class="certificates-info__container">
                     <div class="input__wrapper">
-                      <label>Business Name</label>
+                      <label>Trade Name</label>
                       <div class="input__inner">
-                        <input name="bus_name" type="text" class="input--light300 input-viewprofile" value="">
+                        <input name="bus_name" type="text" class="input--light300 input-viewprofile" value="" required>
                       </div>
                     </div>
                   </div>
@@ -67,7 +67,7 @@ require_once "../../includes/header.php";
                     <div class="input__wrapper">
                       <label>Clearance No.</label>
                       <div class="input__inner">
-                        <input name="clearance_number" type="text" class="input--light300 input-viewprofile" value="">
+                        <input name="clearance_number" type="text" class="input--light300 input-viewprofile" value="" required>
                       </div>
                     </div>
                   </div>
@@ -76,16 +76,16 @@ require_once "../../includes/header.php";
                     <div class="input__wrapper">
                       <label>Business Type</label>
                       <div class="input__inner">
-                        <input name="bus_type" type="text" class="input--light300 input-viewprofile" value="">
+                        <input name="bus_type" type="text" class="input--light300 input-viewprofile" value="" required>
                       </div>
                     </div>
                   </div>
 
                   <div class="certificates-info__container">
                     <div class="input__wrapper">
-                      <label>Price</label>
+                      <label>Amount</label>
                       <div class="input__inner">
-                        <input name="price" type="text" class="input--light300 input-viewprofile" value="">
+                        <input name="price" type="text" class="input--light300 input-viewprofile" value="" required>
                       </div>
                     </div>
                   </div>

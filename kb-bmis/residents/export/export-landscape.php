@@ -49,6 +49,14 @@ class PDF extends FPDF
     }
 
 
+function count()
+{
+    $sql = "SELECT COUNT(*) FROM residents";
+    $stmt = $this->connect()->query($sql);
+    $count = $stmt->fetchColumn();
+    print $count;
+}
+
     function DateRange()
     {
 
@@ -57,7 +65,7 @@ class PDF extends FPDF
 
         $this->SetFont('Montserrat-Bold', '', 10);
         $this->Cell(220);
-        $this->Cell(0, 0, 'Total Residents:',  0, 0);
+        $this->Cell(0, 0, 'Total Residents: ',  0, 0);
         $this->Ln(7);
     }
 
