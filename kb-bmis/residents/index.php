@@ -50,7 +50,7 @@ include "../../includes/preloader.php";
                       </a>
                     </li>
                     <li class="dropdown__item">
-                      <a href="export/export-landscape.php">
+                      <a href="export/export-pdf.php">
                         <i class='bx bx-exit'></i>
                         PDF
                       </a>

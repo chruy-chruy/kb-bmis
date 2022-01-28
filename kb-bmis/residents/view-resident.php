@@ -588,7 +588,7 @@ while ($row = mysqli_fetch_array($squery)) {
                 </button>
             </header>
             <div class="modal__body">
-                Are you sure you want to delete <?php echo $row["first_name"]; ?> <?php echo $row["mid_name"]; ?>
+                Are you sure you want to archive <?php echo $row["first_name"]; ?> <?php echo $row["mid_name"]; ?>
                 <?php echo $row["last_name"]; ?>?
                 <p>You can restore this in the Residents Archive.</p>
             </div>

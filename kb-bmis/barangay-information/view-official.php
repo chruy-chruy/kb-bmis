@@ -220,7 +220,7 @@ while ($row = mysqli_fetch_array($squery)) {
         </button>
       </header>
       <div class="modal__body">
-        Are you sure you want to delete <?php echo $row["first_name"]; ?> <?php echo $row["mid_name"]; ?> <?php echo $row["last_name"]; ?>?
+        Are you sure you want to archive <?php echo $row["first_name"]; ?> <?php echo $row["mid_name"]; ?> <?php echo $row["last_name"]; ?>?
       </div>
       <footer class="modal__footer">
         <a href="delete-official.php?resident_id=<?php echo $row["id"]; ?>&id=<?php echo $id; ?>&position=<?php echo $row["occupation"] ?>" class="button button--danger button--md">Delete</a>

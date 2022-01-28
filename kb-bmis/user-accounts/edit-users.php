@@ -67,7 +67,7 @@ if ($role == "Barangay Secretary") {
                                             <div class="input__wrapper">
                                                 <label for="resident-housenumber">Password</label>
                                                 <div class="input__inner">
-                                                    <input name="pass" type="text" class="input--light300 input-viewprofile" value="<?php echo $row['password'] ?>">
+                                                    <input name="pass" type="password" class="input--light300 input-viewprofile" value="<?php echo $row['password'] ?>">
                                                 </div>
                                             </div>
                                         </div>
@@ -205,7 +205,7 @@ if ($role == "Admin") {
                                             <div class="input__wrapper">
                                                 <label for="resident-housenumber">Password</label>
                                                 <div class="input__inner">
-                                                    <input name="pass" type="text" class="input--light300 input-viewprofile" value="<?php echo $row['password'] ?>">
+                                                    <input name="pass" type="password" class="input--light300 input-viewprofile" value="<?php echo $row['password'] ?>">
                                                 </div>
                                             </div>
                                         </div>
@@ -215,7 +215,7 @@ if ($role == "Admin") {
                                     <div class="card__footer">
                                         <div class="card__footer-content">
                                             <button class="button button--primary button--md" name="btn_update">Save</button>
-                                            <a href="#" ; class="button button--dark button--md modal-trigger" data-modal-id="modal-cancel">Cancel</a>
+                                            <a href="view-user.php?role=<?php echo $row['role'] ?>" ; class="button button--dark button--md modal-trigger" data-modal-id="modal-cancel">Cancel</a>
                                         </div>
                                     </div>
 

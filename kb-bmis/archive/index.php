@@ -52,7 +52,7 @@ include "../../includes/preloader.php";
         --primary-color: #ee5252;
         --white-color: #f7f6fb;
         --red-color: #d41e21;
-        --green-color: #63924d;
+        --dark-red-color: #d42216;
         --blue-color: #01497c;
     }
 
@@ -135,20 +135,20 @@ include "../../includes/preloader.php";
     }
 
     .group-21 :hover {
-        background-color: var(--green-color);
+        background-color: var( --dark-red-color);
     }
 
     .group-26 :hover {
-        background-color: var(--green-color);
+        background-color: var( --dark-red-color);
     }
 
     .group-27 :hover {
-        background-color: var(--green-color);
+        background-color: var( --dark-red-color);
     }
 
 
     .group-28 :hover {
-        background-color: var(--green-color);
+        background-color: var( --dark-red-color);
     }
 
     /* .official-archive{

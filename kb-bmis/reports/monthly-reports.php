@@ -13,11 +13,13 @@ require_once "../../includes/header.php";
 
         <section class="reports">
 
-            <div class="row">
-                <a href="index.php" class="button button--md back-btn">
-                    <i class='bx bx-left-arrow-circle'></i>
-                    Back
-                </a>
+        <div class="left">
+                <div>
+                    <a href="index.php" class="button button--md back-btn" style="position: relative; margin-bottom:14px; margin-left:-15px;">
+                        <i class='bx bx-left-arrow-circle'></i>
+                        Back
+                    </a>
+                </div>
             </div>
 
             <div class="card">
@@ -54,10 +56,12 @@ require_once "../../includes/header.php";
                 </div>
 
                 <div class="card__body">
-                    <div class="card__body-content">
-                        <div class="graph">
+                    <div class="card__body-content" style="flex-direction: row;">
+                        <div class="graph" style=" width: 50%;">
                             <h1>Barangay Clearance Sales</h1>
                             <canvas id="brgy-month"></canvas>
+                        </div>
+                        <div class="graph1" style="width: 50%;">
                             <h1>Business Clearance Sales</h1>
                             <canvas id="bs-month"></canvas>
                         </div>

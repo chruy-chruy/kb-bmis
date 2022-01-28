@@ -78,7 +78,7 @@ if ($role == "Barangay Secretary") {
                     <div class="input__wrapper">
                       <label for="resident-housenumber">Password</label>
                       <div class="input__inner">
-                        <input disabled name="house_number" type="text" class="input--light300 input-viewprofile" value="<?php echo $row['password'] ?>">
+                        <input disabled name="house_number" type="password" class="input--light300 input-viewprofile" value="<?php echo $row['password'] ?>">
                       </div>
                     </div>
                   </div>
@@ -204,7 +204,7 @@ if ($role == "Admin") {
                     <div class="input__wrapper">
                       <label for="resident-housenumber">Password</label>
                       <div class="input__inner">
-                        <input disabled name="pass" type="text" class="input--light300 input-viewprofile" value="<?php echo $row['password'] ?>">
+                        <input disabled name="pass" type="password" class="input--light300 input-viewprofile" value="<?php echo $row['password'] ?>">
                       </div>
                     </div>
                   </div>
