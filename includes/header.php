@@ -171,7 +171,7 @@ $role = $_SESSION['role'];
             <?php
             if ($role == 'Admin') {
             ?>
-                <img src="../../assets/img/admin.png" alt="user" />
+                <img src="../../assets/img/admin.svg" alt="user" />
             <?php
             } ?>
 
@@ -185,7 +185,7 @@ $role = $_SESSION['role'];
             } ?>
 
         </a>
-        <h3><?php echo $role ?></h3>
+        <div class="header__role"> <?php echo $role ?></div>
         <div class="header__toggle">
             <i class='bx bxs-down-arrow'></i>
         </div>

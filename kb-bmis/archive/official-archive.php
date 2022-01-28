@@ -13,134 +13,94 @@ include "../../includes/preloader.php";
     <div class="content">
         <section class="barangay-information">
 
-            <a href="index.php" class="button button--md back-btn">
-                <i class='bx bx-left-arrow-circle'></i>
-                Back
-            </a>
-            <div class="card">
-
-
-                <div class="card__header">
-                    <div class="card__header-content">
-
-                        <div class="card__header-content--left">
-                            <h3>Officials</h3>
-                            <!-- <ul class="information__tabs-list">
-                  <li class="tab tab--active" data-tab-id="#brgy-officials">
-                    Barangay Officials
-                  </li>
-                  <li class="tab" data-tab-id="#sk-officials">
-                    SK Officials
-                  </li>
-                </ul> -->
-
-                        </div>
-
-                        <div class="card__header-content--right">
-                            <a href="#" class="button button--md button--primary modal-trigger"
-                                data-modal-id="modal-delete">
-                                <i class='bx bxs-trash' data-modal-id="modal-delete"></i>
-                                Delete All
-                            </a>
-
-                        </div>
-
-                    </div>
+            <div class="left">
+                <div>
+                    <a href="index.php" class="button button--md back-btn" style="position: relative; margin-bottom:14px; margin-left:-15px;">
+                        <i class='bx bx-left-arrow-circle'></i>
+                        Back
+                    </a>
                 </div>
-
-                <div class="card__body">
-                    <div class="card__body-content">
-
-                        <section class="brgy-officials" id="brgy-officials">
-                            <table id="officials-table" class="row-border">
-                                <thead>
-                                    <tr>
-                                        <th></th>
-                                        <th></th>
-                                        <th></th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr>
-                                        <?php
-                                        $squery =  mysqli_query($conn, "select * from officials_archive where off_position = 'Barangay Chairman'");
-                                        while ($row = mysqli_fetch_array($squery)) {
-                                        ?>
-                                        <td>
-                                            <div class="table__row-img">
-                                                <img src="../residents/images/<?php echo $row['img_url'] ?>" alt="">
-                                            </div>
-                                        </td>
-                                        <td>
-                                            <div class="table__row-text">
-                                                <div class="table__row-name">
-                                                    <?php echo $row['off_name'] ?>
-                                                </div>
-                                                <div class="table__row-sub">
-                                                    <?php echo $row['off_position'] ?>
-                                                </div>
-                                            </div>
-                                        </td>
-                                        <td>
-                                            <div class="table__action-buttons">
-                                                <a href="view-official.php?officials_archive_id=<?php echo $row['officials_archive_id'] ?>&resident_id=<?php echo $row['resident_id'] ?>"
-                                                    class="button button--primary button--sm action__cert"
-                                                    id="action-cert">
-                                                    VIEW
-                                                </a>
-                                            </div>
-                                        </td>
-                                        <?php } ?>
-                                    </tr>
-
-
-                                    <tr>
-                                        <?php
-                                        $squery =  mysqli_query($conn, "select * from officials_archive Where NOT off_position='Barangay Chairman'");
-                                        while ($row = mysqli_fetch_array($squery)) {
-                                        ?>
-                                        <td>
-                                            <div class="table__row-img">
-                                                <img src="../residents/images/<?php echo $row['img_url'] ?>" alt="">
-                                            </div>
-                                        </td>
-                                        <td>
-                                            <div class="table__row-text">
-                                                <div class="table__row-name">
-                                                    <?php echo $row['off_name'] ?>
-                                                </div>
-                                                <div class="table__row-sub">
-                                                    <?php echo $row['off_position'] ?>
-                                                </div>
-                                            </div>
-                                        </td>
-                                        <td>
-                                            <div class="table__action-buttons">
-                                                <a href="view-official.php?officials_archive_id=<?php echo $row['officials_archive_id'] ?>&resident_id=<?php echo $row['resident_id'] ?>"
-                                                    class="button button--primary button--sm action__cert"
-                                                    id="action-cert">
-                                                    VIEW
-                                                </a>
-                                            </div>
-                                        </td>
-
-                                    </tr>
-                                    <?php } ?>
-                                </tbody>
-                            </table>
-                            <!-- brgy officials end -->
-                        </section>
-
-
-                        <!-- officials end -->
-
-
-
-                    </div>
-                </div>
-
-                <!-- card end -->
             </div>
+
+            <table id="residents-table" class="row-border">
+                <thead>
+                    <tr>
+
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                        <th>
+
+                            <div class="residents__header-actions">
+
+                                <div class="select__wrapper" id="residents__filter-container">
+                                    <select class="select select--table" name="filter" id="residents__filter">
+                                        <option value="">All</option>
+                                        <option value="4Ps">4Ps</option>
+                                        <option value="Person with Disability">Persons with Disability</option>
+                                        <option value="Registered Voter">Registered Voters</option>
+                                        <option value="Senior Citizen">Senior Citizens</option>
+                                    </select>
+                                </div>
+                                <a href="#" class="button button--primary button--sm modal-trigger" data-modal-id="modal-delete">
+                                    <i class='bx bxs-trash' data-modal-id="modal-delete"></i>
+                                    Delete All </a>
+
+
+                            </div>
+
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+
+                    <?php
+
+                    $squery =  mysqli_query($conn, "select * from residents_archive");
+                    while ($row = mysqli_fetch_array($squery)) {
+
+                    ?>
+
+                        <tr>
+                            <td><?php echo $row['4ps_status'] ?></td>
+                            <td><?php echo $row['disability_status'] ?></td>
+                            <td><?php echo $row['voter_status'] ?></td>
+                            <td><?php echo $row['senior_status'] ?></td>
+                            <td>
+                                <div class="table__row-img">
+                                    <img src="../../assets/img/user.jpg" alt="">
+                                </div>
+                            </td>
+                            <td>
+                                <div class="table__row-text">
+                                    <div class="table__row-name">
+                                        <?php echo $row['first_name'] ?> <?php echo $row['mid_name'] ?>
+                                        <?php echo $row['last_name'] ?>
+                                    </div>
+                                    <div class="table__row-sub">
+                                        <?php echo $row['resident_id'] ?>
+                                    </div>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="table__action-buttons">
+                                    <a href="view-resident.php?residents_archive_id=<?php echo $row['residents_archive_id'] ?>" class="button button--dark button--sm action__view" data-target="#modal-viewprofile" id="action-view">
+                                        <i class='bx bxs-show'></i>
+                                        <p>VIEW</p>
+                                    </a>
+                                </div>
+                            </td>
+                        </tr>
+
+                    <?php
+                    }
+                    ?>
+                </tbody>
+            </table>
+
 
         </section>
     </div>

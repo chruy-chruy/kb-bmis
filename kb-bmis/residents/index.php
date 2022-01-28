@@ -44,13 +44,13 @@ include "../../includes/preloader.php";
                 <div class="dropdown dropdown--export">
                   <ul>
                     <li class="dropdown__item">
-                    <a href="export/export-excel.php">
+                      <a href="export/export-excel.php">
                         <i class='bx bxs-user-circle'></i>
                         Excel
                       </a>
                     </li>
                     <li class="dropdown__item">
-                    <a href="export/export-landscape.php">
+                      <a href="export/export-landscape.php">
                         <i class='bx bx-exit'></i>
                         PDF
                       </a>
@@ -83,7 +83,7 @@ include "../../includes/preloader.php";
               <td>
                 <div class="table__row-text">
                   <div class="table__row-name">
-                    <?php echo $row['first_name'] ?> <?php echo $row['mid_name'] ?> <?php echo $row['last_name'] ?> <?php echo $row['suffix'] ?>
+                    <?php echo $row['first_name'] ?> <?php echo $row['last_name'] ?> <?php echo $row['suffix'] ?>
                   </div>
                   <div class="table__row-sub">
                     <?php echo $row['id'] ?>

@@ -34,10 +34,10 @@ include "../../includes/preloader.php";
               <td>
                 <div class="table__row-text">
                   <div class="table__row-name">
-                    Recipients: <strong><?php echo $row["receipients"]; ?></strong>
+                    Recipients: <strong><?php echo $row["recipients"]; ?></strong>
                   </div>
                   <div class="table__row-sub">
-                    <div class="message__date-time"><?php echo date("F j Y \(l\)", strtotime($row["date"])); ?> - <?php echo date("g:i A", strtotime($row["time"])); ?></div>
+                    <div class="message__date-time"><?php echo date("l, F j Y", strtotime($row["date"])); ?> - <?php echo date("g:i A", strtotime($row["time"])); ?></div>
                   </div>
                 </div>
               </td>
@@ -75,7 +75,7 @@ include "../../includes/preloader.php";
           <label>Recipients</label>
           <div class="input__inner">
             <div class="select__wrapper select__wrapper--announcements">
-              <select required name="receipients" id="" class="select select--announcements input-viewprofile input-viewprofile">
+              <select required name="recipients" id="" class="select select--announcements input-viewprofile input-viewprofile">
                 <option value="" disabled selected>Select</option>
                 <option value="All Residents">All residents</option>
                 <option value="Barangay Officials">Barangay Officials</option>
