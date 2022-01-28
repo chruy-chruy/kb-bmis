@@ -3,7 +3,6 @@
 $page = 'login';
 $headerTitle = 'Login';
 include "db_conn.php";
-include "includes/preloader.php";
 ?>
 
 
@@ -53,7 +52,6 @@ include "includes/preloader.php";
                     <i class="bx bxs-user-rectangle input__icon input__icon--leading"></i>
                     <input name="username" type="text" class="input--light300 input--login" placeholder="Username" />
                 </div>
-                <div class="input__message"></div>
             </div>
 
             <div class="input__wrapper input__wrapper--block input__wrapper--login">
@@ -61,10 +59,9 @@ include "includes/preloader.php";
                     <i class="bx bxs-lock input__icon input__icon--leading"></i>
                     <input name="password" type="password" class="input--light300 input--login" placeholder="Password" />
                 </div>
-                <div class="input__message"></div>
             </div>
             <?php if (isset($_GET['error'])) { ?>
-                <p class="error"><?php echo $_GET['error']; ?></p>
+                <p class="error-message" style="margin-bottom: 15px;"><?php echo $_GET['error']; ?></p>
             <?php } ?>
             <button class="button button--primary button--block login__button">Login</button>
             <a href="" class="login__forgot-password"> Forgot password? </a>

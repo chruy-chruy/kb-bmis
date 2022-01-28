@@ -40,8 +40,8 @@
   }
 
   &__card-top {
-    min-height: rem(150);
-    padding: rem(24);
+    min-height: rem(130);
+    padding: rem(25);
     background: $light100;
     border-radius: rem(20);
     box-shadow: $shadow;
@@ -64,37 +64,37 @@
     }
 
     @include breakpoint-down(small) {
-      height: rem(200);
+      height: rem(155);
+    }
+
+    & > div{
+      margin-right: rem(12);
     }
 
     &--value {
-      font-size: rem(40);
+      font-size: rem(30);
       font-weight: 600;
       color: $primary;
-
-      @include breakpoint-down(small) {
-        font-size: rem(48);
-      }
     }
 
     &--label {
       font-size: rem(14);
       font-weight: 500;
       color: $dark200;
-      white-space: nowrap;
+      line-height: rem(16);
 
       @include breakpoint-down(small) {
-        font-size: rem(18);
+        font-size: rem(15);
       }
     }
 
     &--icon {
       i {
-        font-size: rem(60);
+        font-size: rem(45);
         color: $dark200;
 
         @include breakpoint-down(small) {
-          font-size: rem(75);
+          font-size: rem(50);
         }
       }
     }

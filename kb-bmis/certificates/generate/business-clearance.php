@@ -157,7 +157,7 @@ mysqli_query($conn, $sql);
           Print
         </button>
         <button class="button button--sm button--dark" id="back-btn" type="button">
-          <a href="../">Done</a>
+          <a style="color: #fdfdfd;" href="../">Back</a>
         </button>
       </div>
     </div>

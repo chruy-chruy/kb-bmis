@@ -119,6 +119,7 @@ section {
 }
 
 .row {
+  // position: relative;
   @include flex-center-all;
   width: 100%;
   gap: rem(14);
@@ -162,5 +163,14 @@ section {
     margin-left: auto;
     display: flex;
     gap: rem(10);
+  }
+}
+
+.error-message{
+  color: $danger;
+  font-size: rem(14);
+
+  @include breakpoint-down(medium){
+    font-size: rem(12.5);
   }
 }

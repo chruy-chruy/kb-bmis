@@ -418,11 +418,10 @@ function take_snapshot() {
   });
 }
 
-// function submit_snap() {
-//   document.getElementById("profile").innerHTML =
-//     document.getElementById("results").innerHTML;
-//   Webcam.reset();
-// }
+function submit_snap() {
+  document.getElementById("profile").innerHTML = document.getElementById("results").innerHTML;
+  Webcam.reset();
+}
 
 function exit_webcam() {
   document.getElementById("results").innerHTML = '<img src=""/>';

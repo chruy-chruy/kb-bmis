@@ -41,8 +41,7 @@ include "../../includes/preloader.php";
                                         <option value="Senior Citizen">Senior Citizens</option>
                                     </select>
                                 </div>
-                                <a href="#" class="button button--primary button--sm modal-trigger"
-                                    data-modal-id="modal-delete">
+                                <a href="#" class="button button--primary button--sm modal-trigger" data-modal-id="modal-delete">
                                     <i class='bx bxs-trash' data-modal-id="modal-delete"></i>
                                     Delete All </a>
 
@@ -61,38 +60,36 @@ include "../../includes/preloader.php";
 
                     ?>
 
-                    <tr>
-                        <td><?php echo $row['4ps_status'] ?></td>
-                        <td><?php echo $row['disability_status'] ?></td>
-                        <td><?php echo $row['voter_status'] ?></td>
-                        <td><?php echo $row['senior_status'] ?></td>
-                        <td>
-                            <div class="table__row-img">
-                                <img src="../residents/images/<?php echo $row["img_url"]; ?>" alt="">
-                            </div>
-                        </td>
-                        <td>
-                            <div class="table__row-text">
-                                <div class="table__row-name">
-                                    <?php echo $row['first_name'] ?> <?php echo $row['mid_name'] ?>
-                                    <?php echo $row['last_name'] ?>
+                        <tr>
+                            <td><?php echo $row['4ps_status'] ?></td>
+                            <td><?php echo $row['disability_status'] ?></td>
+                            <td><?php echo $row['voter_status'] ?></td>
+                            <td><?php echo $row['senior_status'] ?></td>
+                            <td>
+                                <div class="table__row-img">
+                                    <img src="../residents/images/<?php echo $row["img_url"]; ?>" alt="">
                                 </div>
-                                <div class="table__row-sub">
-                                    <?php echo $row['resident_id'] ?>
+                            </td>
+                            <td>
+                                <div class="table__row-text">
+                                    <div class="table__row-name">
+                                        <?php echo $row['first_name'] ?> <?php echo $row['mid_name'] ?>
+                                        <?php echo $row['last_name'] ?>
+                                    </div>
+                                    <div class="table__row-sub">
+                                        <?php echo $row['resident_id'] ?>
+                                    </div>
                                 </div>
-                            </div>
-                        </td>
-                        <td>
-                            <div class="table__action-buttons">
-                                <a href="view-resident.php?residents_archive_id=<?php echo $row['residents_archive_id'] ?>"
-                                    class="button button--dark button--sm action__view" data-target="#modal-viewprofile"
-                                    id="action-view">
-                                    <i class='bx bxs-show'></i>
-                                    <p>VIEW</p>
-                                </a>
-                            </div>
-                        </td>
-                    </tr>
+                            </td>
+                            <td>
+                                <div class="table__action-buttons">
+                                    <a href="view-resident.php?residents_archive_id=<?php echo $row['residents_archive_id'] ?>" class="button button--dark button--sm action__view" data-target="#modal-viewprofile" id="action-view">
+                                        <i class='bx bxs-show'></i>
+                                        <p>VIEW</p>
+                                    </a>
+                                </div>
+                            </td>
+                        </tr>
 
                     <?php
                     }

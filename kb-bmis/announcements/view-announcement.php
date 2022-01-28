@@ -26,7 +26,7 @@ $id = $_GET["id"];
                     <div class="card__header">
                         <div class="card__header-content">
                             <div class="card__header-content--left">
-                                Receipients: <strong><?php echo $row["receipients"]; ?></strong>
+                                Recipients: <strong><?php echo $row["recipients"]; ?></strong>
                             </div>
                             <div class="card__header-content--right">
                                 <a class="button button--icon button--icon-sm button--icon-primary modal-trigger" data-modal-id="modal-deletemessage">
@@ -38,7 +38,7 @@ $id = $_GET["id"];
 
                     <div class="card__body">
                         <div class="card__body-content" style="align-items: flex-start; position:relative;">
-                            <div class="message__date-time"><?php echo date("F j Y \(l\)", strtotime($row["date"])); ?> - <?php echo date("g:i A", strtotime($row["time"])); ?></div>
+                            <div class="message__date-time"><?php echo date("l, F j Y", strtotime($row["date"])); ?> - <?php echo date("g:i A", strtotime($row["time"])); ?></div>
                             <div class="message">
                                 <?php echo $row["message"]; ?>
                             </div>
