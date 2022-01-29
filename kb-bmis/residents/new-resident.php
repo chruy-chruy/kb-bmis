@@ -63,7 +63,7 @@ require_once "../../includes/header.php";
 
                     <div class="profile-info__container">
                       <div class="input__wrapper">
-                        <label for="resident-first-name">First Name <strong style="color:red;";>*</strong></label>
+                        <label for="resident-first-name">First Name <strong style="color:red;" ;>*</strong></label>
                         <div class="input__inner">
                           <input type="text" name="first_name" class="input--light300" required>
                         </div>
@@ -72,7 +72,7 @@ require_once "../../includes/header.php";
 
                     <div class="profile-info__container">
                       <div class="input__wrapper">
-                        <label for="resident-last-name">Last Name <strong style="color:red;";>*</strong></label>
+                        <label for="resident-last-name">Last Name <strong style="color:red;" ;>*</strong></label>
                         <div class="input__inner">
                           <input type="text" name="last_name" class="input--light300" required>
                         </div>
@@ -81,7 +81,7 @@ require_once "../../includes/header.php";
 
                     <div class="profile-info__container">
                       <div class="input__wrapper">
-                        <label for="resident-middle-name">Middle Name <strong style="color:red;";>*</strong></label>
+                        <label for="resident-middle-name">Middle Name <strong style="color:red;" ;>*</strong></label>
                         <div class="input__inner">
                           <input type="text" name="mid_name" class="input--light300" required>
                         </div>
@@ -99,7 +99,7 @@ require_once "../../includes/header.php";
 
                     <div class="profile-info__container">
                       <div class="input__wrapper">
-                        <label for="resident-gender">Gender <strong style="color:red;";>*</strong></label>
+                        <label for="resident-gender">Gender <strong style="color:red;" ;>*</strong></label>
                         <div class="input__inner">
                           <div class="select__wrapper">
                             <select name="sex" id="" class="select select--resident-profile" required>
@@ -114,7 +114,7 @@ require_once "../../includes/header.php";
 
                     <div class="profile-info__container">
                       <div class="input__wrapper">
-                        <label for="resident-birthday">Date of Birth <strong style="color:red;";>*</strong></label>
+                        <label for="resident-birthday">Date of Birth <strong style="color:red;" ;>*</strong></label>
                         <div class="input__inner">
                           <input type="date" name="date_of_birth" class="input--light300" value="" required>
                         </div>
@@ -123,7 +123,7 @@ require_once "../../includes/header.php";
 
                     <div class="profile-info__container">
                       <div class="input__wrapper">
-                        <label for="resident-housenumber">House Number <strong style="color:red;";>*</strong></label>
+                        <label for="resident-housenumber">House Number <strong style="color:red;" ;>*</strong></label>
                         <div class="input__inner">
                           <input type="text" name="house_number" class="input--light300" value="" required>
                         </div>
@@ -132,7 +132,7 @@ require_once "../../includes/header.php";
 
                     <div class="profile-info__container">
                       <div class="input__wrapper">
-                        <label for="resident-street">Street <strong style="color:red;";>*</strong></label>
+                        <label for="resident-street">Street <strong style="color:red;" ;>*</strong></label>
                         <div class="input__inner">
                           <input type="text" name="street" class="input--light300" value="" required>
                         </div>
@@ -141,7 +141,7 @@ require_once "../../includes/header.php";
 
                     <div class="profile-info__container">
                       <div class="input__wrapper">
-                        <label for="resident-purok">Purok <strong style="color:red;";>*</strong></label>
+                        <label for="resident-purok">Purok <strong style="color:red;" ;>*</strong></label>
                         <div class="input__inner">
                           <input type="text" name="purok" class="input--light300" value="" required>
                         </div>
@@ -150,7 +150,7 @@ require_once "../../includes/header.php";
 
                     <div class="profile-info__container">
                       <div class="input__wrapper">
-                        <label for="resident-birthplace">Place of Birth <strong style="color:red;";>*</strong></label>
+                        <label for="resident-birthplace">Place of Birth <strong style="color:red;" ;>*</strong></label>
                         <div class="input__inner">
                           <input type="text" name="place_of_birth" class="input--light300" value="" required>
                         </div>
@@ -159,16 +159,19 @@ require_once "../../includes/header.php";
 
                     <div class="profile-info__container">
                       <div class="input__wrapper">
-                        <label for="resident-civilstatus">Civil Status <strong style="color:red;";>*</strong></label>
+                        <label for="resident-civilstatus">Civil Status <strong style="color:red;" ;>*</strong></label>
                         <div class="input__inner">
                           <div class="select__wrapper">
                             <select name="civil_status" id="" class="select select--resident-profile" required>
                               <option disabled selected>Select</option>
                               <option value="Single">Single</option>
                               <option value="Married">Married</option>
-                              <option value="Divorced">Divorced</option>
-                              <option value="Separated">Separated</option>
                               <option value="Widowed">Widowed</option>
+                              <option value="Divorced">Divorced</option>
+                              <option value="Legally Separated">Legally Separated</option>
+                              <option value="Annulled">Annulled</option>
+                              <option value="Nullified">Nullified</option>
+                              <option value="Undisclosed">Undisclosed</option>
                             </select>
                           </div>
                         </div>
@@ -177,7 +180,7 @@ require_once "../../includes/header.php";
 
                     <div class="profile-info__container">
                       <div class="input__wrapper">
-                        <label for="resident-nationality">Nationality <strong style="color:red;";>*</strong></label>
+                        <label for="resident-nationality">Nationality <strong style="color:red;" ;>*</strong></label>
                         <div class="input__inner">
                           <input type="text" name="citizenship" class="input--light300" value="" required>
                         </div>
@@ -186,16 +189,32 @@ require_once "../../includes/header.php";
 
                     <div class="profile-info__container">
                       <div class="input__wrapper">
-                        <label for="resident-educationalattainment">Educational Attainment <strong style="color:red;";>*</strong></label>
+                        <label for="resident-educationalattainment">Educational Attainment <strong style="color:red;" ;>*</strong></label>
                         <div class="input__inner">
-                          <input type="text" name="education_status" class="input--light300" value="" required>
+                          <div class="select__wrapper">
+                            <select name="education_status" id="" class="select select--resident-profile" required>
+                              <option disabled selected>Select</option>
+                              <option value="No Grade Completed">No Grade Completed</option>
+                              <option value="Elementary Undergraduate">Elementary Undergraduate</option>
+                              <option value="Elementary Graduate">Elementary Graduate</option>
+                              <option value="Highschool Undergraduate">Highschool Undergraduate</option>
+                              <option value="Highschool Graduate">Highschool Graduate</option>
+                              <option value="College Undergraduate">College Undergraduate</option>
+                              <option value="College Graduate">College Graduate</option>
+                              <option value="Post Baccalaureate">Post Baccalaureate</option>
+                            </select>
+                          </div>
                         </div>
                       </div>
                     </div>
 
+
+
+
+
                     <div class="profile-info__container">
                       <div class="input__wrapper">
-                        <label for="resident-occupation">Occupation <strong style="color:red;";>*</strong></label>
+                        <label for="resident-occupation">Occupation <strong style="color:red;" ;>*</strong></label>
                         <div class="input__inner">
                           <input type="text" name="occupation" class="input--light300" value="" required>
                         </div>
@@ -206,7 +225,7 @@ require_once "../../includes/header.php";
                       <div class="input__wrapper">
                         <label for="resident-religion">Religion</label>
                         <div class="input__inner">
-                          <input type="text" name="religion" class="input--light300" value="" >
+                          <input type="text" name="religion" class="input--light300" value="">
                         </div>
                       </div>
                     </div>
@@ -226,6 +245,8 @@ require_once "../../includes/header.php";
                               <option value="O-">O-</option>
                               <option value="AB+">AB+</option>
                               <option value="AB-">AB-</option>
+                              <option value="RH-NULL">RH-NULL</option>
+                              <option value="Unknown">Unknown</option>
                             </select>
                           </div>
                         </div>
@@ -234,7 +255,7 @@ require_once "../../includes/header.php";
 
                     <div class="profile-info__container">
                       <div class="input__wrapper">
-                        <label for="resident-contactnumber">Phone Number <strong style="color:red;";>*</strong></label>
+                        <label for="resident-contactnumber">Phone Number <strong style="color:red;" ;>*</strong></label>
                         <div class="input__inner">
                           <input type="tel" name="phone_number" class="input--light300" value="" required>
                         </div>
@@ -332,6 +353,9 @@ require_once "../../includes/header.php";
                       </div>
                     </div>
 
+
+
+
                     <div class="profile-info__container">
                       <div class="input__wrapper">
                         <label for="resident-deceased">Deceased?</label>
@@ -426,7 +450,7 @@ require_once "../../includes/header.php";
 
                     <div class="profile-info__container">
                       <div class="input__wrapper">
-                        <label for="resident-emergencyperson">Emergency Person <strong style="color:red;";>*</strong></label>
+                        <label for="resident-emergencyperson">Emergency Person <strong style="color:red;" ;>*</strong></label>
                         <div class="input__inner">
                           <input type="text" name="emergency_person" class="input--light300" required>
                         </div>
@@ -435,7 +459,7 @@ require_once "../../includes/header.php";
 
                     <div class="profile-info__container viewprofile">
                       <div class="input__wrapper">
-                        <label for="resident-emergencyrelationship">Relationship <strong style="color:red;";>*</strong></label>
+                        <label for="resident-emergencyrelationship">Relationship <strong style="color:red;" ;>*</strong></label>
                         <div class="input__inner">
                           <input type="text" name="relationship" class="input--light300" required>
                         </div>
@@ -444,7 +468,7 @@ require_once "../../includes/header.php";
 
                     <div class="profile-info__container">
                       <div class="input__wrapper">
-                        <label for="resident-emergencyaddress">Emergency Address <strong style="color:red;";>*</strong></label>
+                        <label for="resident-emergencyaddress">Emergency Address <strong style="color:red;" ;>*</strong></label>
                         <div class="input__inner">
                           <input type="text" name="emergency_address" class="input--light300" required>
                         </div>
@@ -453,9 +477,9 @@ require_once "../../includes/header.php";
 
                     <div class="profile-info__container">
                       <div class="input__wrapper">
-                        <label for="resident-emergencycontact">Emergency Contact <strong style="color:red;";>*</strong></label>
+                        <label for="resident-emergencycontact">Emergency Contact <strong style="color:red;" ;>*</strong></label>
                         <div class="input__inner">
-                          <input type="text" name="emergency_contact" class="input--light300" required> 
+                          <input type="text" name="emergency_contact" class="input--light300" required>
                         </div>
                       </div>
                     </div>
@@ -490,7 +514,7 @@ require_once "../../includes/header.php";
 <div class="modal__wrapper" id="modal-cancel">
   <section class="modal__window modal__window--md">
     <header class="modal__header">
-      <h3>Login</h3>
+      <h3>Cancel</h3>
       <button type="button" class="modal__close close" aria-label="Close modal window">
         <i class='bx bx-x'></i>
       </button>

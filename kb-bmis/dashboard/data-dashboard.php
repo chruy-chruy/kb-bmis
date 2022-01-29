@@ -11,11 +11,11 @@ $voterQuery = mysqli_query($conn, "SELECT COUNT(id) as voters FROM `residents` W
 $countVoters = mysqli_fetch_array($voterQuery);
 
 // total barangay clearance sales
-$salesQuery = mysqli_query($conn, "SELECT SUM(price) as brgySales FROM `barangay_clearance`");
+$salesQuery = mysqli_query($conn, "SELECT SUM(price) as brgySales FROM `barangay_clearance` WHERE YEAR(date_issued) = '2022'");
 $total_sales = mysqli_fetch_array($salesQuery);
 
 // total bs clearance sales
-$bsSalesQuery = mysqli_query($conn, "SELECT SUM(price) as businessSales FROM `business_clearance`");
+$bsSalesQuery = mysqli_query($conn, "SELECT SUM(price) as businessSales FROM `business_clearance` WHERE YEAR(date_issued) = '2022'");
 $total_bs_sales = mysqli_fetch_array($bsSalesQuery);
 
 

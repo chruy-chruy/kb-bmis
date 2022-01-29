@@ -18,6 +18,7 @@ $role = $_SESSION['role'];
 
     <!--=============== BOX ICONS ===============-->
     <link href="../../vendors/boxicons-2.0.9/css/boxicons.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
 
     <!--=============== JQUERY ===============-->
     <!-- <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>   -->
@@ -121,12 +122,12 @@ $role = $_SESSION['role'];
 
 
 
-            <li class="nav__item <?php if ($page == 'Barangay Information') {
+            <li class="nav__item <?php if ($page == 'Barangay Officials') {
                                         echo 'nav__item--active';
                                     } ?>">
-                <a href="../barangay-information" class="nav__item-link">
+                <a href="../barangay-officials" class="nav__item-link">
                     <i class='bx bxs-info-square'></i>
-                    <span class="nav__item-text">Barangay Information</span>
+                    <span class="nav__item-text">Barangay Officials</span>
                 </a>
             </li>
 

@@ -171,7 +171,7 @@ $(document).ready(function () {
             var chartdata = {
                 labels: bsmonth,
                 datasets: [{
-                    label: 'Barangay Clearance Monthly Sales',
+                    label: 'Business Clearance Monthly Sales',
                     backgroundColor: "#ef6a61",
                     data: bsmonthsales,
                 }]
@@ -272,7 +272,7 @@ $(document).ready(function () {
             var chartdata = {
                 labels: bsYear,
                 datasets: [{
-                    label: 'Barangay Clearance Monthly Sales',
+                    label: 'Business Clearance Monthly Sales',
                     backgroundColor: "#ef6a61",
                     data: bsYearsales,
                 }]

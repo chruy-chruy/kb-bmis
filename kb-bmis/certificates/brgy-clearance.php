@@ -97,15 +97,6 @@ require_once "../../includes/header.php";
 
                                     <div class="certificates-info__container">
                                         <div class="input__wrapper">
-                                            <label>Purpose</label>
-                                            <div class="input__inner">
-                                                <input name="purpose" type="text" class="input--light300 input-viewprofile" value="" required="">
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <div class="certificates-info__container">
-                                        <div class="input__wrapper">
                                             <label>Date Issued</label>
                                             <div class="input__inner">
                                                 <input name="date_issued" type="date" class="input--light300 input-viewprofile" value="<?php echo date('Y-m-d'); ?>">
@@ -113,10 +104,21 @@ require_once "../../includes/header.php";
                                         </div>
                                     </div>
 
+                                    <div class="certificates-info__container">
+                                        <div class="input__wrapper">
+                                            <label>Purpose <strong style="color:red;";>*</strong></label>
+                                            <div class="input__inner">
+                                                <input name="purpose" type="text" class="input--light300 input-viewprofile" value="" required="">
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                  
+
 
                                     <div class="certificates-info__container">
                                         <div class="input__wrapper">
-                                            <label>Amount</label>
+                                            <label>Amount <strong style="color:red;";>*</strong></label>
                                             <div class="input__inner">
                                                 <input name="price" type="text" class="input--light300 input-viewprofile" value="">
                                             </div>
@@ -125,12 +127,12 @@ require_once "../../includes/header.php";
 
                                 </section>
 
-                                <hr style="margin-top: 12px;">
+                                <!-- <hr style="margin-top: 12px;"> -->
 
-                                <section class="certificates-info">
+                                <section class="certificates-info" style="margin-top: 10px;">
                                     <div class="certificates-info__container">
                                         <div class="input__wrapper">
-                                            <label>Cedula No.</label>
+                                            <label>Cedula No. <strong style="color:red;";>*</strong></label>
                                             <div class="input__inner">
                                                 <input name="cedula_number" type="number" class="input--light300 input-viewprofile" value="" required="" />
                                             </div>
@@ -139,7 +141,7 @@ require_once "../../includes/header.php";
 
                                     <div class="certificates-info__container">
                                         <div class="input__wrapper">
-                                            <label>Cedula Issued at</label>
+                                            <label>Cedula Issued at <strong style="color:red;";>*</strong></label>
                                             <div class="input__inner">
                                                 <input name="cedula_address" type="text" class="input--light300 input-viewprofile" value="" required="">
                                             </div>
@@ -148,7 +150,7 @@ require_once "../../includes/header.php";
 
                                     <div class="certificates-info__container">
                                         <div class="input__wrapper">
-                                            <label>Cedula Issued on</label>
+                                            <label>Cedula Issued on <strong style="color:red;";>*</strong></label>
                                             <div class="input__inner">
                                                 <input name="cedula_date" type="date" class="input--light300 input-viewprofile" value="" required="">
                                             </div>
@@ -166,14 +168,23 @@ require_once "../../includes/header.php";
                         </div>
                       </div>
                     </div> -->
-                                    <div class="certificates-info__container">
+
+                    </section>
+      
+
+                             <div class="card__footer">
+                                    
                                         <div class="card__footer-content">
                                             <div class="card__footer-content--right">
                                                 <button class="button button--primary button--md" name="btn_save">Generate</button>
                                                 <a href="#" ; class="button button--dark button--md modal-trigger" data-modal-id="modal-cancel">Cancel</a>
                                             </div>
                                         </div>
-                                    </div>
+                                
+                            </div>
+
+
+
                                 </section>
 
 
@@ -198,6 +209,7 @@ require_once "../../includes/header.php";
 <div class="modal__wrapper" id="modal-cancel">
     <section class="modal__window modal__window--sm">
         <header class="modal__header">
+        <h3>Cancel</h3>
             <button type="button" class="modal__close close" aria-label="Close modal window">
                 <i class='bx bx-x'></i>
             </button>

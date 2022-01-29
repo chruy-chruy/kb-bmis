@@ -1,7 +1,7 @@
 <?php
 
-$page = 'Barangay Information';
-$headerTitle = 'Barangay Information';
+$page = 'Barangay Officials';
+$headerTitle = 'Barangay Officials';
 include "../../db_conn.php";
 require_once "../../includes/header.php";
 include "../../includes/preloader.php";

@@ -66,7 +66,7 @@ include "../../includes/preloader.php";
         <tbody>
           <?php
 
-          $squery =  mysqli_query($conn, "select * from residents");
+          $squery =  mysqli_query($conn, "select * from residents ORDER BY id DESC");
           while ($row = mysqli_fetch_array($squery)) {
 
           ?>
@@ -86,7 +86,7 @@ include "../../includes/preloader.php";
                     <?php echo $row['first_name'] ?> <?php echo $row['last_name'] ?> <?php echo $row['suffix'] ?>
                   </div>
                   <div class="table__row-sub">
-                    <?php echo $row['id'] ?>
+                    
                   </div>
                 </div>
               </td>

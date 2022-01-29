@@ -228,7 +228,21 @@ while ($row = mysqli_fetch_array($squery)) {
                                     <div class="input__wrapper">
                                         <label for="resident-educationalattainment">Educational Attainment</label>
                                         <div class="input__inner">
-                                            <input disabled name="education_status" type="text" class="input--light300 input-viewprofile" value="<?php echo $row['education_status'] ?>">
+                                            <div class="select__wrapper">
+                                                <select disabled name="education_status" name="education_status" id="" class="select select--resident-profile input-viewprofile" required>
+                                                    <option value="<?php echo $row['education_status'] ?>" selected disabled>
+                                                        <?php echo $row['education_status'] ?></option>
+
+                                                    <option value="No Grade Completed">No Grade Completed</option>
+                                                    <option value="Elementary Undergraduate">Elementary Undergraduate</option>
+                                                    <option value="Elementary Graduate">Elementary Graduate</option>
+                                                    <option value="Highschool Undergraduate">Highschool Undergraduate</option>
+                                                    <option value="Highschool Graduate">Highschool Graduate</option>
+                                                    <option value="College Undergraduate">College Undergraduate</option>
+                                                    <option value="College Graduate">College Graduate</option>
+                                                    <option value="Post Baccalaureate">Post Baccalaureate</option>
+                                                </select>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>

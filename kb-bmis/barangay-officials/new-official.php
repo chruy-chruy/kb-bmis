@@ -1,6 +1,6 @@
 <?php
 $headerTitle = 'Add New Official';
-$page = 'Barangay Information';
+$page = 'Barangay Officials';
 require_once "../../includes/header.php";
 include "../../db_conn.php";
 $id = $_GET["id"];
