@@ -1,6 +1,6 @@
 <?php
 $headerTitle = 'View';
-$page = 'Barangay Information';
+$page = 'Barangay Officials';
 require_once "../../includes/header.php";
 include "../../db_conn.php";
 $resident_id = $_GET['resident_id'];

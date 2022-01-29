@@ -9,13 +9,11 @@ $(document).ready(function () {
       search: "_INPUT_",
       searchPlaceholder: "Search",
     },
-    columnDefs: [
-      {
-        targets: [0, 1, 2, 3],
-        visible: false,
-        searchable: true,
-      },
-    ],
+    columnDefs: [{
+      targets: [0, 1, 2, 3],
+      visible: false,
+      searchable: true,
+    }, ],
   });
 
   $("#modal-table").DataTable({
@@ -407,14 +405,14 @@ function open_cam() {
 }
 
 function take_snapshot() {
-  Webcam.snap(function(data_uri) {
+  Webcam.snap(function (data_uri) {
     $(".image-tag").val(data_uri);
     document.getElementById('results').innerHTML = '<img src="' + data_uri + '"/>';
     document.getElementById('profile').innerHTML = document.getElementById('results').innerHTML;
     Webcam.reset();
-    jQuery(function(){
+    jQuery(function () {
       jQuery('#close-modal').click();
-   });
+    });
   });
 }
 
@@ -426,4 +424,17 @@ function submit_snap() {
 function exit_webcam() {
   document.getElementById("results").innerHTML = '<img src=""/>';
   Webcam.reset();
+}
+
+
+
+function showPwd(id, el) {
+  let x = document.getElementById(id);
+  if (x.type === "password") {
+    x.type = "text";
+    el.className = 'fa fa-eye-slash showpwd';
+  } else {
+    x.type = "password";
+    el.className = 'fa fa-eye showpwd';
+  }
 }

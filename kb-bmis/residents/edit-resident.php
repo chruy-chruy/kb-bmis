@@ -91,7 +91,7 @@ while ($row = mysqli_fetch_array($squery)) {
 
                     <div class="profile-info__container">
                       <div class="input__wrapper">
-                        <label for="resident-first-name">First Name</label>
+                        <label for="resident-first-name">First Name <strong style="color:red;" ;>*</strong></label>
                         <div class="input__inner">
                           <input type="text" name="first_name" class="input--light300" required value="<?php echo $row['first_name'] ?>">
                         </div>
@@ -100,7 +100,7 @@ while ($row = mysqli_fetch_array($squery)) {
 
                     <div class="profile-info__container">
                       <div class="input__wrapper">
-                        <label for="resident-last-name">Last Name</label>
+                        <label for="resident-last-name">Last Name <strong style="color:red;" ;>*</strong></label>
                         <div class="input__inner">
                           <input type="text" name="last_name" class="input--light300" required value="<?php echo $row['last_name'] ?>">
                         </div>
@@ -109,7 +109,7 @@ while ($row = mysqli_fetch_array($squery)) {
 
                     <div class="profile-info__container">
                       <div class="input__wrapper">
-                        <label for="resident-middle-name">Middle Name</label>
+                        <label for="resident-middle-name">Middle Name <strong style="color:red;" ;>*</strong></label>
                         <div class="input__inner">
                           <input type="text" name="mid_name" class="input--light300" required value="<?php echo $row['mid_name'] ?>">
                         </div>
@@ -127,7 +127,7 @@ while ($row = mysqli_fetch_array($squery)) {
 
                     <div class="profile-info__container">
                       <div class="input__wrapper">
-                        <label for="resident-gender">Gender</label>
+                        <label for="resident-gender">Gender <strong style="color:red;" ;>*</strong></label>
                         <div class="input__inner">
                           <div class="select__wrapper">
                             <select name="sex" id="" class="select select--resident-profile" required>
@@ -142,7 +142,7 @@ while ($row = mysqli_fetch_array($squery)) {
 
                     <div class="profile-info__container">
                       <div class="input__wrapper">
-                        <label for="resident-birthday">Date of Birth</label>
+                        <label for="resident-birthday">Date of Birth <strong style="color:red;" ;>*</strong></label>
                         <div class="input__inner">
                           <input type="date" name="date_of_birth" class="input--light300" value="<?php echo $row['date_of_birth'] ?>" required>
                         </div>
@@ -151,7 +151,7 @@ while ($row = mysqli_fetch_array($squery)) {
 
                     <div class="profile-info__container">
                       <div class="input__wrapper">
-                        <label for="resident-housenumber">House Number</label>
+                        <label for="resident-housenumber">House Number <strong style="color:red;" ;>*</strong></label>
                         <div class="input__inner">
                           <input type="text" name="house_number" class="input--light300" value="<?php echo $row['house_number'] ?>" required>
                         </div>
@@ -160,7 +160,7 @@ while ($row = mysqli_fetch_array($squery)) {
 
                     <div class="profile-info__container">
                       <div class="input__wrapper">
-                        <label for="resident-street">Street</label>
+                        <label for="resident-street">Street <strong style="color:red;" ;>*</strong></label>
                         <div class="input__inner">
                           <input type="text" name="street" class="input--light300" value="<?php echo $row['street'] ?>" required>
                         </div>
@@ -169,7 +169,7 @@ while ($row = mysqli_fetch_array($squery)) {
 
                     <div class="profile-info__container">
                       <div class="input__wrapper">
-                        <label for="resident-purok">Purok</label>
+                        <label for="resident-purok">Purok <strong style="color:red;" ;>*</strong></label>
                         <div class="input__inner">
                           <!-- <input type="text" name="purok" class="input--light300" value="<?php echo $row['purok'] ?>" required> -->
 
@@ -198,7 +198,7 @@ while ($row = mysqli_fetch_array($squery)) {
 
                     <div class="profile-info__container">
                       <div class="input__wrapper">
-                        <label for="resident-birthplace">Place of Birth</label>
+                        <label for="resident-birthplace">Place of Birth <strong style="color:red;" ;>*</strong></label>
                         <div class="input__inner">
                           <input type="text" name="place_of_birth" class="input--light300" value="<?php echo $row['place_of_birth'] ?>" required>
                         </div>
@@ -207,16 +207,19 @@ while ($row = mysqli_fetch_array($squery)) {
 
                     <div class="profile-info__container">
                       <div class="input__wrapper">
-                        <label for="resident-civilstatus">Civil Status</label>
+                        <label for="resident-civilstatus">Civil Status <strong style="color:red;" ;>*</strong></label>
                         <div class="input__inner">
                           <div class="select__wrapper">
                             <select name="civil_status" id="" class="select select--resident-profile" required>
                               <option selected value="<?php echo $row['civil_status'] ?>" hidden><?php echo $row['civil_status'] ?></option>
-                              <option value="single">Single</option>
-                              <option value="married">Married</option>
-                              <option value="divorced">Divorced</option>
-                              <option value="separated">Separated</option>
-                              <option value="widowed">Widowed</option>
+                              <option value="Single">Single</option>
+                              <option value="Married">Married</option>
+                              <option value="Widowed">Widowed</option>
+                              <option value="Divorced">Divorced</option>
+                              <option value="Legally Separated">Legally Separated</option>
+                              <option value="Annulled">Annulled</option>
+                              <option value="Nullified">Nullified</option>
+                              <option value="Undisclosed">Undisclosed</option>
                             </select>
                           </div>
                         </div>
@@ -225,7 +228,7 @@ while ($row = mysqli_fetch_array($squery)) {
 
                     <div class="profile-info__container">
                       <div class="input__wrapper">
-                        <label for="resident-nationality">Nationality</label>
+                        <label for="resident-nationality">Nationality <strong style="color:red;" ;>*</strong></label>
                         <div class="input__inner">
                           <input type="text" name="citizenship" class="input--light300" value="<?php echo $row['citizenship'] ?>">
                         </div>
@@ -234,16 +237,28 @@ while ($row = mysqli_fetch_array($squery)) {
 
                     <div class="profile-info__container">
                       <div class="input__wrapper">
-                        <label for="resident-educationalattainment">Educational Attainment</label>
+                        <label for="resident-educationalattainment">Educational Attainment <strong style="color:red;" ;>*</strong></label>
                         <div class="input__inner">
-                          <input type="text" name="education_status" class="input--light300" value="<?php echo $row['education_status'] ?>">
+                          <div class="select__wrapper">
+                            <select name="education_status" id="" class="select select--resident-profile" required>
+                              <option selected value="<?php echo $row['education_status'] ?>" hidden><?php echo $row['education_status'] ?></option>
+                              <option value="No Grade Completed">No Grade Completed</option>
+                              <option value="Elementary Undergraduate">Elementary Undergraduate</option>
+                              <option value="Elementary Graduate">Elementary Graduate</option>
+                              <option value="Highschool Undergraduate">Highschool Undergraduate</option>
+                              <option value="Highschool Graduate">Highschool Graduate</option>
+                              <option value="College Undergraduate">College Undergraduate</option>
+                              <option value="College Graduate">College Graduate</option>
+                              <option value="Post Baccalaureate">Post Baccalaureate</option>
+                            </select>
+                          </div>
                         </div>
                       </div>
                     </div>
 
                     <div class="profile-info__container">
                       <div class="input__wrapper">
-                        <label for="resident-occupation">Occupation</label>
+                        <label for="resident-occupation">Occupation <strong style="color:red;" ;>*</strong></label>
                         <div class="input__inner">
                           <input type="text" name="occupation" class="input--light300" value="<?php echo $row['occupation'] ?>">
                         </div>
@@ -282,7 +297,7 @@ while ($row = mysqli_fetch_array($squery)) {
 
                     <div class="profile-info__container">
                       <div class="input__wrapper">
-                        <label for="resident-contactnumber">Phone Number</label>
+                        <label for="resident-contactnumber">Phone Number <strong style="color:red;" ;>*</strong></label>
                         <div class="input__inner">
                           <input type="tel" name="phone_number" class="input--light300" value="<?php echo $row['phone_number'] ?>">
                         </div>
@@ -522,7 +537,7 @@ while ($row = mysqli_fetch_array($squery)) {
 
                     <div class="profile-info__container">
                       <div class="input__wrapper">
-                        <label for="resident-emergencyperson">Emergency Person</label>
+                        <label for="resident-emergencyperson">Emergency Person <strong style="color:red;" ;>*</strong></label>
                         <div class="input__inner">
                           <input type="text" name="emergency_person" class="input--light300" value="<?php echo $row['emergency_person'] ?>">
                         </div>
@@ -531,7 +546,7 @@ while ($row = mysqli_fetch_array($squery)) {
 
                     <div class="profile-info__container viewprofile">
                       <div class="input__wrapper">
-                        <label for="resident-emergencyrelationship">Relationship</label>
+                        <label for="resident-emergencyrelationship">Relationship <strong style="color:red;" ;>*</strong></label>
                         <div class="input__inner">
                           <input type="text" name="relationship" class="input--light300" value="<?php echo $row['relationship'] ?>">
                         </div>
@@ -540,7 +555,7 @@ while ($row = mysqli_fetch_array($squery)) {
 
                     <div class="profile-info__container">
                       <div class="input__wrapper">
-                        <label for="resident-emergencyaddress">Emergency Address</label>
+                        <label for="resident-emergencyaddress">Emergency Address <strong style="color:red;" ;>*</strong></label>
                         <div class="input__inner">
                           <input type="text" name="emergency_address" class="input--light300" value="<?php echo $row['emergency_address'] ?>">
                         </div>
@@ -549,7 +564,7 @@ while ($row = mysqli_fetch_array($squery)) {
 
                     <div class="profile-info__container">
                       <div class="input__wrapper">
-                        <label for="resident-emergencycontact">Emergency Contact</label>
+                        <label for="resident-emergencycontact">Emergency Contact <strong style="color:red;" ;>*</strong></label>
                         <div class="input__inner">
                           <input type="text" name="emergency_contact" class="input--light300" value="<?php echo $row['emergency_address'] ?>">
                         </div>

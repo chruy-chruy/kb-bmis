@@ -78,7 +78,9 @@ if ($role == "Barangay Secretary") {
                     <div class="input__wrapper">
                       <label for="resident-housenumber">Password</label>
                       <div class="input__inner">
-                        <input disabled name="house_number" type="password" class="input--light300 input-viewprofile" value="<?php echo $row['password'] ?>">
+                        <input disabled name="house_number" id="passwd" type="password" class="input--light300 input-viewprofile" value="<?php echo $row['password'] ?>">
+                        <i class="fa fa-eye showpwd" style="margin: 15px 0px 0px -30px; cursor: pointer;" onClick="showPwd('passwd', this)"> </i>
+
                       </div>
                     </div>
                   </div>
@@ -204,7 +206,8 @@ if ($role == "Admin") {
                     <div class="input__wrapper">
                       <label for="resident-housenumber">Password</label>
                       <div class="input__inner">
-                        <input disabled name="pass" type="password" class="input--light300 input-viewprofile" value="<?php echo $row['password'] ?>">
+                        <input disabled name="pass" id="passwd" type="password" class="input--light300 input-viewprofile" value="<?php echo $row['password'] ?>">
+                        <i class="fa fa-eye showpwd" style="margin: 15px 0px 0px -30px; cursor: pointer;" onClick="showPwd('passwd', this)"> </i>
                       </div>
                     </div>
                   </div>

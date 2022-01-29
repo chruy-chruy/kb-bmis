@@ -205,7 +205,9 @@ if ($role == "Admin") {
                                             <div class="input__wrapper">
                                                 <label for="resident-housenumber">Password</label>
                                                 <div class="input__inner">
-                                                    <input name="pass" type="password" class="input--light300 input-viewprofile" value="<?php echo $row['password'] ?>">
+
+                                                    <input name="pass" type="password" id="passwd" class="input--light300 input-viewprofile" value="<?php echo $row['password'] ?>">
+                                                    <i class="fa fa-eye showpwd" style="margin: 15px 0px 0px -30px; cursor: pointer;" onClick="showPwd('passwd', this)"> </i>
                                                 </div>
                                             </div>
                                         </div>

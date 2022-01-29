@@ -21,7 +21,7 @@
               </button>
 
               
-              <a href="business-clearance.php" class="button button--dark button--xl certificates__button">
+              <a href="business-clearance.php" class="button button--primary button--xl certificates__button">
                 <i class='bx bx-file'></i>
                 <p>BUSINESS CLEARANCE</p>
               </a>
