@@ -45,7 +45,7 @@ include "../../includes/preloader.php";
                                 </div>
                                 <a href="#" class="button button--primary button--sm modal-trigger" data-modal-id="modal-delete">
                                     <i class='bx bxs-trash' data-modal-id="modal-delete"></i>
-                                   Empty Archive </a>
+                                    Empty Archive </a>
 
 
                             </div>
@@ -57,7 +57,7 @@ include "../../includes/preloader.php";
 
                     <?php
 
-                    $squery =  mysqli_query($conn, "select * from residents_archive");
+                    $squery =  mysqli_query($conn, "select * from residents_archive ORDER BY residents_archive_id desc ");
                     while ($row = mysqli_fetch_array($squery)) {
 
                     ?>
@@ -69,7 +69,7 @@ include "../../includes/preloader.php";
                             <td><?php echo $row['senior_status'] ?></td>
                             <td>
                                 <div class="table__row-img">
-                                    <img src="../residents/images/<?php echo $row["img_url"]; ?>" alt="">
+                                    <img src="../archive/images/<?php echo $row["img_url"]; ?>" alt="">
                                 </div>
                             </td>
                             <td>
@@ -79,7 +79,7 @@ include "../../includes/preloader.php";
                                         <?php echo $row['last_name'] ?>
                                     </div>
                                     <div class="table__row-sub">
-                                       
+
                                     </div>
                                 </div>
                             </td>

@@ -85,6 +85,22 @@ if (isset($_REQUEST['residents_archive_id'])) {
 				'$fetch[blood_type]',
 				'$fetch[img_url]')");
 
+
+	$fetchImage = $fetch["img_url"];
+	/* Path of source file */
+	$filePath = '../images/' . $fetchImage;
+
+	$directory = '../../residents/images/';
+	$destinationFilePath = $directory . $fetchImage;
+
+	if (!is_dir($directory)) {
+		/* Directory does not exist, so lets create it. */
+		mkdir($directory, 0755);
+	}
+
+	!rename($filePath, $destinationFilePath);
+
+
 	mysqli_query($conn, "DELETE FROM `residents_archive` WHERE `residents_archive_id` = '$residents_archive_id'");
 	header('location:../resident-archive.php');
 }
