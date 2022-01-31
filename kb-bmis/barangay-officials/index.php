@@ -32,8 +32,8 @@ include "../../includes/preloader.php";
 
             <div class="card__header-content--right">
               <a href="#" class="button button--md button--primary modal-trigger" data-modal-id="modal-newofficial">
-                <i class='bx bx-user-plus' data-modal-id="modal-newofficial"></i>
-                Add New
+                <i class='bx bx-user-plus bx-sm' data-modal-id="modal-newofficial"></i>
+                ADD NEW
               </a>
 
             </div>

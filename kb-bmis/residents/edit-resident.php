@@ -602,6 +602,7 @@ while ($row = mysqli_fetch_array($squery)) {
   <div class="modal__wrapper" id="modal-cancel">
     <section class="modal__window modal__window--sm">
       <header class="modal__header">
+        <h3>Cancel</h3>
         <button type="button" class="modal__close close" aria-label="Close modal window">
           <i class='bx bx-x'></i>
         </button>
