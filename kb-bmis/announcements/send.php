@@ -32,7 +32,7 @@ if (isset($_POST['btn_save'])) {
 
     $ch = curl_init();
     $parameters = array(
-        'apikey' => '', //API KEY 
+        'apikey' => '96d6238852e5a8483c56a1dcd12f17f5', //API KEY 
         'number' => $_POST['recipients'],
         'message' => $_POST['message'],
         'sendername' => 'SEMAPHORE'

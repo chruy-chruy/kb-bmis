@@ -49,6 +49,20 @@ $role = $_SESSION['role'];
     }
     ?>
 
+    <?php if ($page == 'Reports') {
+        echo '
+        <script src="https://cdn.datatables.net/buttons/2.0.1/js/dataTables.buttons.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.1.3/jszip.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/pdfmake.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/vfs_fonts.js"></script>
+        <script src="https://cdn.datatables.net/buttons/2.0.1/js/buttons.html5.min.js"></script>
+        <script src="https://cdn.datatables.net/buttons/2.0.1/js/buttons.print.min.js"></script>
+        <script src="../../assets/js/brgy-pdf.js" type="text/javascript"></script>
+        <script src="../../assets/js/business-pdf.js" type="text/javascript"></script>
+        ';
+    }
+    ?>
+
     <title>Barangay Management System | <?php echo $page; ?></title>
 </head>
 
@@ -126,7 +140,7 @@ $role = $_SESSION['role'];
                                         echo 'nav__item--active';
                                     } ?>">
                 <a href="../barangay-officials" class="nav__item-link">
-                    <i class='bx bxs-info-square'></i>
+                    <i class='bx bxs-building-house'></i>
                     <span class="nav__item-text">Barangay Officials</span>
                 </a>
             </li>
@@ -148,7 +162,7 @@ $role = $_SESSION['role'];
                                             echo 'nav__item--active';
                                         } ?>">
                     <a href="../user-accounts/" class="nav__item-link">
-                        <i class='bx bxs-user-circle'></i>
+                        <i class='bx bxs-user-rectangle'></i>
                         <span class="nav__item-text">User Accounts</span>
                     </a>
                 </li>

@@ -568,15 +568,15 @@ include "../../includes/preloader.php";
 <div class="modal__wrapper" id="modal-delete">
     <section class="modal__window modal__window--md">
         <header class="modal__header">
+            <i class='bx bxs-trash bx-sm' style="margin-right: 10px;"></i>
             <h3>Delete Profile</h3>
             <button type="button" class="modal__close close" aria-label="Close modal window">
                 <i class='bx bx-x'></i>
             </button>
         </header>
         <div class="modal__body">
-            Are you sure you want to permanently delete <?php echo $row["first_name"]; ?>
-            <?php echo $row["mid_name"]; ?>
-            <?php echo $row["last_name"]; ?>?
+            <p> Are you sure you want to permanently delete "<?php echo $row["first_name"]; ?> <?php echo $row["mid_name"]; ?>
+                <?php echo $row["last_name"]; ?><?php echo $row["suffix"]; ?>"?</p>
 
 
         </div>
