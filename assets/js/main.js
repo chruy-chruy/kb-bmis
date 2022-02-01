@@ -175,22 +175,22 @@ document.body.addEventListener("keyup", (keyEvent) => {
 });
 
 // NEW TABS
-const tabs = document.querySelectorAll("[data-tab-id]");
-const tabContents = document.querySelectorAll("[data-tab-content]");
+// const tabs = document.querySelectorAll("[data-tab-id]");
+// const tabContents = document.querySelectorAll("[data-tab-content]");
 
-tabs.forEach((tab) => {
-  tab.addEventListener("click", () => {
-    const target = document.querySelector(tab.dataset.tabId);
-    tabContents.forEach((tabContent) => {
-      tabContent.classList.remove("tab-content--active");
-    });
-    tabs.forEach((tab) => {
-      tab.classList.remove("tab--active");
-    });
-    tab.classList.add("tab--active");
-    target.classList.add("tab-content--active");
-  });
-});
+// tabs.forEach((tab) => {
+//   tab.addEventListener("click", () => {
+//     const target = document.querySelector(tab.dataset.tabId);
+//     tabContents.forEach((tabContent) => {
+//       tabContent.classList.remove("tab-content--active");
+//     });
+//     tabs.forEach((tab) => {
+//       tab.classList.remove("tab--active");
+//     });
+//     tab.classList.add("tab--active");
+//     target.classList.add("tab-content--active");
+//   });
+// });
 
 // /*==================== REMOVE MENU MOBILE ====================*/
 // const navLink = document.querySelectorAll(".nav__item a");
@@ -260,6 +260,38 @@ newProfileTabs.forEach(function (newProfileTab, newProfileTab_index) {
     });
   });
 });
+
+/*===============REPORTS TABS ===============*/
+
+
+const tabs = document.querySelectorAll(
+  ".tab"
+);
+const tabContents = document.querySelectorAll(
+  ".tabContent"
+);
+
+tabs.forEach(function (tab, tab_index) {
+  tab.addEventListener("click", function () {
+    tabs.forEach(function (tab) {
+      tab.classList.remove("tab--active");
+    });
+
+    tab.classList.add("tab--active");
+
+    tabContents.forEach(function (
+      tabContent,
+      tabContent_index
+    ) {
+      if (tabContent_index == tab_index) {
+        tabContent.style.display = "grid";
+      } else {
+        tabContent.style.display = "none";
+      }
+    });
+  });
+});
+
 /*==================== SHOW MENU ====================*/
 const nav = document.querySelector(".nav"),
   menu = document.querySelector(".header__menu"),

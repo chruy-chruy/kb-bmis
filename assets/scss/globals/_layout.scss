@@ -139,10 +139,11 @@ section {
   @include flex-center-all;
   flex-direction: column;
 
-  // & > div {
-  //   display: flex;
-  //   gap: rem(10);
-  // }
+  &--row{
+  @include flex-center-all;
+
+  flex-direction: row;
+  }
 }
 
 .left {

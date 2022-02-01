@@ -18,7 +18,8 @@ require_once "../../includes/header.php";
 
             <div class="card__body">
               <div class="card__body-content">
-                <div class="profile__img profile__img" id="profile">
+
+                <!-- <div class="profile__img profile__img" id="profile">
                   <img src="images/default-img.svg" alt="">
                   <input type="hidden" name="default" value="default-img.svg">
                 </div>
@@ -28,6 +29,15 @@ require_once "../../includes/header.php";
                     <i class='bx bx-edit' data-modal-id="modal-change-picture"></i>
                   </a>
 
+                </div> -->
+
+                <div class="profile__img profile__img--change" id="profile">
+                  <img src="../residents/images/default-img.svg" alt="">
+                  <input type="hidden" name="default" value="default-img.svg">
+
+                  <a href="#" class="button button--icon-sm modal-trigger" data-modal-id="modal-camera" onclick="open_cam()">
+                    <i class='bx bx-camera' data-modal-id="modal-camera"></i>
+                  </a>
                 </div>
 
                 <ul class="profile-info__list newresident">
@@ -424,14 +434,6 @@ require_once "../../includes/header.php";
                 <div class="profile-info__content newresident">
                   <section class="profile-info__others">
 
-                    <div class="profile-info__container">
-                      <div class="input__wrapper">
-                        <label for="resident-nattionalID">National ID</label>
-                        <div class="input__inner">
-                          <input type="text" name="national_id" class="input--light300">
-                        </div>
-                      </div>
-                    </div>
 
                     <div class="profile-info__container">
                       <div class="input__wrapper">
@@ -548,7 +550,7 @@ require_once "../../includes/header.php";
 
 
       </div>
-      --- or ---
+      or
       <a href="#" class="button button--md button--light camera-btn modal-trigger" data-modal-id="modal-camera" onclick="open_cam()">
         <i class='bx bx-camera' data-modal-id="modal-camera"></i>
         Open Camera
@@ -570,24 +572,18 @@ require_once "../../includes/header.php";
     </header>
 
     <div class="modal__body">
-      <div class="row">
-        <div class="col-md-6">
-          <div id="my_camera"></div>
-          <br />
-          <input type="hidden" name="image" class="image-tag">
-        </div>
-        <div class="col-md-6">
-          <div id="results"></div>
-        </div>
-        <div class="col-md-12 text-center">
-          <br />
-        </div>
+      <div class="center">
+        <div id="my_camera"></div>
+        <input type="hidden" name="image" class="image-tag">
+
+        <div id="results"></div>
+
       </div>
     </div>
 
     <footer class="modal__footer">
-      <input type=button value="Submit" class="button button--primary button--md modal__yes-cancel close" onClick="take_snapshot()">
-      <input type=button value="cancel" class="button button--dark button--md modal__yes-cancel close" onClick="exit_webcam()">
+      <input type=button value="Submit" class="button button--primary button--md" onClick="take_snapshot()">
+      <input type=button value="cancel" class="button button--dark button--md close" onClick="exit_webcam()">
     </footer>
     </form>
   </section>

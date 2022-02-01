@@ -29,7 +29,7 @@ require_once "../../includes/header.php";
                 <section class="certificates-info">
                   <div class="certificates-info__container">
                     <div class="input__wrapper">
-                      <label>Owner's Name <strong style="color:red;";>*</strong></label>
+                      <label>Owner's Name <strong style="color:red;" ;>*</strong></label>
                       <div class="input__inner">
                         <input name="name" type="text" class="input--light300 input-viewprofile" value="" required>
                       </div>
@@ -38,7 +38,7 @@ require_once "../../includes/header.php";
 
                   <div class="certificates-info__container">
                     <div class="input__wrapper">
-                      <label>Business Location (Purok) <strong style="color:red;";>*</strong></label>
+                      <label>Business Location (Purok) <strong style="color:red;" ;>*</strong></label>
                       <div class="input__inner">
                         <input name="bus_location" type="text" class="input--light300 input-viewprofile" value="" required>
                       </div>
@@ -47,17 +47,17 @@ require_once "../../includes/header.php";
 
                   <div class="certificates-info__container">
                     <div class="input__wrapper">
-                      <label>Trade/Business Name <strong style="color:red;";>*</strong></label>
+                      <label>Trade/Business Name <strong style="color:red;" ;>*</strong></label>
                       <div class="input__inner">
                         <input name="bus_name" type="text" class="input--light300 input-viewprofile" value="" required>
                       </div>
                     </div>
                   </div>
 
-                
+
                   <div class="certificates-info__container">
                     <div class="input__wrapper">
-                      <label>Receipt No. <strong style="color:red;";>*</strong></label>
+                      <label>Receipt No. <strong style="color:red;" ;>*</strong></label>
                       <div class="input__inner">
                         <input name="clearance_number" type="text" class="input--light300 input-viewprofile" value="" required>
                       </div>
@@ -66,7 +66,7 @@ require_once "../../includes/header.php";
 
                   <div class="certificates-info__container">
                     <div class="input__wrapper">
-                      <label>Business Type <strong style="color:red;";>*</strong></label>
+                      <label>Business Type <strong style="color:red;" ;>*</strong></label>
                       <div class="input__inner">
                         <input name="bus_type" type="text" class="input--light300 input-viewprofile" value="" required>
                       </div>
@@ -75,7 +75,7 @@ require_once "../../includes/header.php";
 
                   <div class="certificates-info__container">
                     <div class="input__wrapper">
-                      <label>Amount <strong style="color:red;";>*</strong></label>
+                      <label>Amount <strong style="color:red;" ;>*</strong></label>
                       <div class="input__inner">
                         <input name="price" type="text" class="input--light300 input-viewprofile" value="" required>
                       </div>
@@ -130,7 +130,7 @@ require_once "../../includes/header.php";
 <div class="modal__wrapper" id="modal-cancel">
   <section class="modal__window modal__window--sm">
     <header class="modal__header">
-    <h3>Cancel</h3>
+      <h3>Cancel</h3>
       <button type="button" class="modal__close close" aria-label="Close modal window">
         <i class='bx bx-x'></i>
       </button>
@@ -139,7 +139,7 @@ require_once "../../includes/header.php";
       Are you sure you want to cancel?
     </div>
     <footer class="modal__footer">
-      <a href="../certificates/" class="button button--primary button--md modal__yes-cancel">Yes</a>
+      <a href="#" class="button button--primary button--md modal__yes-cancel" onclick="history.back();">Yes</a>
       <a href="#" class="button button--dark button--md close">No</a>
 
     </footer>

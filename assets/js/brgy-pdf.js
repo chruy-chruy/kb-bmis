@@ -15,7 +15,11 @@ $(document).ready(function () {
     $('#brgyTbl').DataTable({
         "ordering": false,
         "pageLength": 25,
-        dom: 'Blrtip',
+        dom: 'Bftpr',
+        language: {
+            search: "_INPUT_",
+            searchPlaceholder: "Search",
+          },
         buttons: [{
             extend: 'pdfHtml5',
             title: "Barangay Clearance-" + titleDate,
