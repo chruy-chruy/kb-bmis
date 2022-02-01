@@ -16,7 +16,7 @@ if (!$conn) {
 //query to get data from the table
 $query = sprintf("SELECT DATE(date_issued) as bsDate, SUM(price) as bsweeksales
 FROM business_clearance
-WHERE date(date_issued) > DATE_SUB(NOW(), INTERVAL 1 WEEK) AND MONTH(date_issued) = MONTH(CURDATE()) AND
+WHERE date(date_issued) > DATE_SUB(NOW(), INTERVAL 1 WEEK) AND
 YEAR(date_issued) = YEAR(CURDATE())
 GROUP BY DAYNAME(date_issued) ORDER BY (date_issued)");
 

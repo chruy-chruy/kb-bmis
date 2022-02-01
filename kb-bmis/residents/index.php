@@ -86,7 +86,7 @@ include "../../includes/preloader.php";
                     <?php echo $row['first_name'] ?> <?php echo $row['last_name'] ?> <?php echo $row['suffix'] ?>
                   </div>
                   <div class="table__row-sub">
-                    
+
                   </div>
                 </div>
               </td>

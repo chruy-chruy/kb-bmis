@@ -11,26 +11,17 @@ include "../../includes/preloader.php";
     <div class="content">
         <section class="archive">
 
-            <div class="group-29">
-                <div class="group-21">
-                    <button class="overlap-group btn" onclick="document.location='resident-archive.php'">
-                        <img class="fa-solid-house-user" src="../../assets/img/fa-solid-house-user.svg" />
-
-                    </button>
-
+            <div class="center--row" style="gap: 50px;">
+                <a href="resident-archive.php" class="button button--primary button--xl certificates__button modal-trigger" data-modal-id="modal-brgyclearance">
+                    <i class='bx bxs-group'></i>
+                    <p>RESIDENTS</p>
+                </a>
 
 
-                </div>
-
-                <div class="group-26">
-                    <button class="overlap-group" onclick="document.location='official-archive.php'">
-                        <img class="fa-soliduser-tie" src="../../assets/img/fa-solid-user-tie.svg" />
-
-
-                    </button>
-                </div>
-
-
+                <a href="official-archive.php" class="button button--primary button--xl certificates__button">
+                    <i class='bx bx-user-voice'></i>
+                    <p>BARANGAY OFFICIALS</p>
+                </a>
             </div>
 
 
@@ -135,20 +126,20 @@ include "../../includes/preloader.php";
     }
 
     .group-21 :hover {
-        background-color: var( --dark-red-color);
+        background-color: var(--dark-red-color);
     }
 
     .group-26 :hover {
-        background-color: var( --dark-red-color);
+        background-color: var(--dark-red-color);
     }
 
     .group-27 :hover {
-        background-color: var( --dark-red-color);
+        background-color: var(--dark-red-color);
     }
 
 
     .group-28 :hover {
-        background-color: var( --dark-red-color);
+        background-color: var(--dark-red-color);
     }
 
     /* .official-archive{

@@ -511,14 +511,6 @@ while ($row = mysqli_fetch_array($squery)) {
                 <div class="profile-info__content newresident">
                   <section class="profile-info__others">
 
-                    <div class="profile-info__container">
-                      <div class="input__wrapper">
-                        <label for="resident-nattionalID">National ID</label>
-                        <div class="input__inner">
-                          <input type="text" name="national_id" class="input--light300" value="<?php echo $row['national_id'] ?>">
-                        </div>
-                      </div>
-                    </div>
 
                     <div class="profile-info__container">
                       <div class="input__wrapper">

@@ -251,7 +251,7 @@
       width: rem(750);
 
       @include breakpoint-down(medium) {
-        width: rem(500);
+        width: rem(550);
       }
 
       @include breakpoint-down(small) {
