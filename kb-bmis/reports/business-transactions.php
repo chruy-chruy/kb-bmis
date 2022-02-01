@@ -106,7 +106,7 @@ include "../../includes/preloader.php";
                                             <td><?php echo $row['name'] ?></td>
                                             <td><?php echo $row['bus_name'] ?></td>
                                             <td><?php echo $row['bus_type'] ?></td>
-                                            <td>₱<?php echo $row['price'] ?>.00</td>
+                                            <td>₱<?php echo $row['price'] ?></td>
 
 
                                         </tr>
