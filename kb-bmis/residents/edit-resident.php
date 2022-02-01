@@ -575,8 +575,8 @@ while ($row = mysqli_fetch_array($squery)) {
 
             <div class="card__footer">
               <div class="card__footer-content">
-                <button class="button button--primary button--md" name="btn_update">Save</button>
-                <a href="#" ; class="button button--dark button--md modal-trigger" data-modal-id="modal-cancel">Cancel</a>
+                <button class="button button--primary button--md" name="btn_update">SAVE</button>
+                <a href="#" ; class="button button--dark button--md modal-trigger" data-modal-id="modal-cancel">CANCEL</a>
               </div>
             </div>
 
@@ -603,8 +603,8 @@ while ($row = mysqli_fetch_array($squery)) {
         Are you sure you want to cancel?
       </div>
       <footer class="modal__footer">
-        <a href="index.php" class="button button--primary button--md modal__yes-cancel">Yes</a>
-        <a href="#" class="button button--dark button--md close">No</a>
+        <a href="index.php" class="button button--primary button--md modal__yes-cancel">YES</a>
+        <a href="#" class="button button--dark button--md close">NO</a>
 
       </footer>
     </section>

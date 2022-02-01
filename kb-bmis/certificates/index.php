@@ -16,13 +16,13 @@ include "../../includes/preloader.php";
 
       <div class="center--row" style="gap: 50px;">
         <button href="#" class="button button--primary button--xl certificates__button modal-trigger" data-modal-id="modal-brgyclearance">
-          <i class='bx bxs-file' data-modal-id="modal-brgyclearance"></i>
+          <i class='bx bx-file' data-modal-id="modal-brgyclearance"></i>
           <p data-modal-id="modal-brgyclearance">BARANGAY CLEARANCE</p>
         </button>
 
 
         <a href="business-clearance.php" class="button button--primary button--xl certificates__button">
-          <i class='bx bx-file'></i>
+          <i class='bx bxs-file'></i>
           <p>BUSINESS CLEARANCE</p>
         </a>
       </div>

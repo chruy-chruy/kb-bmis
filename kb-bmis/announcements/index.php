@@ -12,7 +12,7 @@ include "../../includes/preloader.php";
     <section class="announcements">
       <a href="#" class="button button--md button--primary modal-trigger" style="margin-bottom: 20px; margin-left: auto;" data-modal-id="modal-sendmessage">
         <i class='bx bxs-megaphone' data-modal-id="modal-sendmessage"></i>
-        Create announcement
+        CREATE ANNOUNCEMENT
       </a>
 
       <table id="officials-table" class="row-border">
@@ -114,7 +114,7 @@ include "../../includes/preloader.php";
       <footer class="modal__footer">
         <button class="button button--md button--primary send-btn" name="btn_save"><i class='bx bx-send'></i>
           SEND</button>
-        <a href="#" class="button button--dark button--md modal__cancel close">Cancel</a>
+        <a href="#" class="button button--dark button--md modal__cancel close">CANCEL</a>
       </footer>
   </div>
 </form>
