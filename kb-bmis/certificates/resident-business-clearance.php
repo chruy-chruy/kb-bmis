@@ -138,6 +138,7 @@ while ($row = mysqli_fetch_array($squery)) {
   <div class="modal__wrapper" id="modal-cancel">
     <section class="modal__window modal__window--sm">
       <header class="modal__header">
+        <h3>Cancel</h3>
         <button type="button" class="modal__close close" aria-label="Close modal window">
           <i class='bx bx-x'></i>
         </button>
@@ -146,8 +147,8 @@ while ($row = mysqli_fetch_array($squery)) {
         Are you sure you want to cancel?
       </div>
       <footer class="modal__footer">
-        <a href="#" class="button button--primary button--md modal__yes-cancel" onclick="history.back();">Yes</a>
-        <a href="#" class="button button--dark button--md close">No</a>
+        <a href="#" class="button button--primary button--md modal__yes-cancel" onclick="history.back();">YES</a>
+        <a href="#" class="button button--dark button--md close">NO</a>
 
       </footer>
     </section>

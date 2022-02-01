@@ -39,8 +39,8 @@ while ($row = mysqli_fetch_array($squery)) {
                                 <i class='bx bxs-edit' data-modal-id="modal-editprofile"></i>
                                 Edit</a>
                             <a href="#" class="button button--dark button--sm modal-trigger" data-modal-id="modal-delete">
-                                <i class='bx bxs-archive' data-modal-id="modal-delete"></i>
-                                Archive</a></a>
+                                <i class='bx bxs-trash' data-modal-id="modal-delete"></i>
+                                Delete</a></a>
                         </div>
 
                         <ul class="profile-info__list viewprofile">
@@ -590,21 +590,21 @@ while ($row = mysqli_fetch_array($squery)) {
             <header class="modal__header">
                 <i class='bx bxs-archive bx-sm' style="color:#222; margin-right:10px;"></i>
 
-                <h3> Archive Profile</h3>
+                <h3> Delete Profile</h3>
                 <button type="button" class="modal__close close" aria-label="Close modal window">
                     <i class='bx bx-x'></i>
                 </button>
             </header>
             <div class="modal__body">
 
-                <p><strong> Are you sure you want to archive "<?php echo $row["first_name"]; ?> <?php echo $row["mid_name"]; ?>
+                <p><strong> Are you sure you want to delete "<?php echo $row["first_name"]; ?> <?php echo $row["mid_name"]; ?>
                         <?php echo $row["last_name"]; ?><?php echo $row["suffix"]; ?>"?</strong></p>
 
                 <p>You can restore this in the Residents Archive.</p>
             </div>
             <footer class="modal__footer">
-                <a href="delete.php?id=<?php echo $row["id"]; ?>" class="button button--danger button--md">Archive</a>
-                <a href="#" class="button button--dark button--md modal__cancel close">Cancel</a>
+                <a href="delete.php?id=<?php echo $row["id"]; ?>" class="button button--danger button--md">DELETE</a>
+                <a href="#" class="button button--dark button--md modal__cancel close">CANCEL</a>
 
             </footer>
         </section>
@@ -637,8 +637,8 @@ while ($row = mysqli_fetch_array($squery)) {
                 </div>
             </div>
             <footer class="modal__footer">
-                <a href="edit-resident.php?id=<?php echo $row["id"]; ?>" class="button button--primary button--md" id="login-editprofile">Login</a>
-                <a href="#" class="button button--dark button--md modal__cancel close">Cancel</a>
+                <a href="edit-resident.php?id=<?php echo $row["id"]; ?>" class="button button--primary button--md" id="login-editprofile">LOGIN</a>
+                <a href="#" class="button button--dark button--md modal__cancel close">CANCEL</a>
 
             </footer>
         </section>

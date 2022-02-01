@@ -64,8 +64,8 @@ $id = $_GET["id"];
         </div>
 
         <footer class="modal__footer">
-            <a href="delete.php?id=<?php echo $row["id"]; ?>" class="button button--danger button--md">Delete</a>
-            <a href="#" class="button button--dark button--md modal__cancel close">Cancel</a>
+            <a href="delete.php?id=<?php echo $row["id"]; ?>" class="button button--danger button--md">DELETE</a>
+            <a href="#" class="button button--dark button--md modal__cancel close">CANCEL</a>
         </footer>
     </section>
 </div>

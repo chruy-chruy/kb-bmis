@@ -108,7 +108,7 @@ $role = $_SESSION['role'];
                                                             echo 'nav__item--active';
                                                         } ?>">
                 <a href="../certificates/" class="nav__item-link">
-                    <i class='bx bxs-file'></i>
+                    <i class='bx bxs-file-blank'></i>
                     <span class="nav__item-text">Certificates</span>
                 </a>
             </li>
@@ -118,7 +118,7 @@ $role = $_SESSION['role'];
                                         echo 'nav__item--active';
                                     } ?>">
                 <a href="../reports/" class="nav__item-link">
-                    <i class='bx bxs-bar-chart-square'></i>
+                    <i class='bx bxs-bar-chart-alt-2'></i>
                     <span class="nav__item-text">Reports</span>
                 </a>
             </li>
@@ -140,7 +140,7 @@ $role = $_SESSION['role'];
                                         echo 'nav__item--active';
                                     } ?>">
                 <a href="../barangay-officials" class="nav__item-link">
-                    <i class='bx bxs-building-house'></i>
+                    <i class='bx bxs-user-voice'></i>
                     <span class="nav__item-text">Barangay Officials</span>
                 </a>
             </li>

@@ -496,8 +496,8 @@ require_once "../../includes/header.php";
 
             <div class="card__footer">
               <div class="card__footer-content">
-                <button class="button button--primary button--md" name="btn_save">Save</button>
-                <a href="#" ; class="button button--dark button--md modal-trigger" data-modal-id="modal-cancel">Cancel</a>
+                <button class="button button--primary button--md" name="btn_save">SAVE</button>
+                <a href="#" ; class="button button--dark button--md modal-trigger" data-modal-id="modal-cancel">CANCEL</a>
               </div>
 
               <!-- card end -->
@@ -525,8 +525,8 @@ require_once "../../includes/header.php";
       Are you sure you want to cancel?
     </div>
     <footer class="modal__footer">
-      <a href="index.php" class="button button--primary button--md modal__yes-cancel">Yes</a>
-      <a href="#" class="button button--dark button--md close">No</a>
+      <a href="index.php" class="button button--primary button--md modal__yes-cancel">YES</a>
+      <a href="#" class="button button--dark button--md close">NO</a>
 
     </footer>
   </section>
@@ -557,7 +557,7 @@ require_once "../../includes/header.php";
       </a>
     </div>
     <footer class="modal__footer">
-      <a href="#" class="button button--dark button--md close" id="close-modal">Cancel</a>
+      <a href="#" class="button button--dark button--md close" id="close-modal">CANCEL</a>
     </footer>
   </section>
 </div>
