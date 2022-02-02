@@ -12,6 +12,7 @@ while ($row = mysqli_fetch_array($squery)) {
 
   <main>
     <div class="content">
+
       <div class="card">
         <a href="index.php" class="button button--md back-btn">
           <i class='bx bx-left-arrow-circle'></i>

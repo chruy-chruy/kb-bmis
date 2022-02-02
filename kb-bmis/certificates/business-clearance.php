@@ -13,10 +13,10 @@ require_once "../../includes/header.php";
     <section class="certificates__info">
 
       <div class="card">
-        <a href="#" class="button button--md back-btn modal-trigger" data-modal-id="modal-cancel">
+        <button class="button button--md back-btn modal-trigger" data-modal-id="modal-cancel">
           <i class='bx bx-left-arrow-circle'></i>
           Back
-        </a>
+        </button>
 
 
         <div class="card__body" style="padding-top: 150px;">
@@ -29,7 +29,7 @@ require_once "../../includes/header.php";
                 <section class="certificates-info">
                   <div class="certificates-info__container">
                     <div class="input__wrapper">
-                      <label>Owner's Name <strong style="color:red;" ;>*</strong></label>
+                      <label>Owner's Name <strong style="color:red;">*</strong></label>
                       <div class="input__inner">
                         <input name="name" type="text" class="input--light300 input-viewprofile" value="" required>
                       </div>
@@ -38,7 +38,7 @@ require_once "../../includes/header.php";
 
                   <div class="certificates-info__container">
                     <div class="input__wrapper">
-                      <label>Business Location (Purok) <strong style="color:red;" ;>*</strong></label>
+                      <label>Business Location (Purok) <strong style="color:red;">*</strong></label>
                       <div class="input__inner">
                         <input name="bus_location" type="text" class="input--light300 input-viewprofile" value="" required>
                       </div>
@@ -47,7 +47,7 @@ require_once "../../includes/header.php";
 
                   <div class="certificates-info__container">
                     <div class="input__wrapper">
-                      <label>Trade/Business Name <strong style="color:red;" ;>*</strong></label>
+                      <label>Trade/Business Name <strong style="color:red;">*</strong></label>
                       <div class="input__inner">
                         <input name="bus_name" type="text" class="input--light300 input-viewprofile" value="" required>
                       </div>
@@ -57,7 +57,7 @@ require_once "../../includes/header.php";
 
                   <div class="certificates-info__container">
                     <div class="input__wrapper">
-                      <label>Receipt No. <strong style="color:red;" ;>*</strong></label>
+                      <label>Receipt No. <strong style="color:red;">*</strong></label>
                       <div class="input__inner">
                         <input name="clearance_number" type="text" class="input--light300 input-viewprofile" value="" required>
                       </div>
@@ -66,9 +66,25 @@ require_once "../../includes/header.php";
 
                   <div class="certificates-info__container">
                     <div class="input__wrapper">
-                      <label>Business Type <strong style="color:red;" ;>*</strong></label>
+                      <label>Business Type <strong style="color:red;">*</strong></label>
                       <div class="input__inner">
                         <input name="bus_type" type="text" class="input--light300 input-viewprofile" value="" required>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="certificates-info__container">
+                    <div class="input__wrapper">
+                      <label for="official-position">Business Size <strong style="color:red;">*</strong></label>
+                      <div class="input__inner">
+                        <div class="select__wrapper">
+                          <select name="off_position" name="civil_status" id="" class="select select--resident-profile input-viewprofile">
+                            <option disabled selected value="">Select</option>
+                            <option value="Small Scale Business">Small Scale Business</option>
+                            <option value="Medium Scale Business">Medium Scale Business</option>
+                            <option value="Large Scale Business">Large Scale Business</option>
+                          </select>
+                        </div>
                       </div>
                     </div>
                   </div>
@@ -105,7 +121,7 @@ require_once "../../includes/header.php";
           <div class="card__footer-content">
             <div class="card__footer-content--right">
               <button class="button button--primary button--md" name="btn_save">GENERATE</button>
-              <a href="#" ; class="button button--dark button--md modal-trigger" data-modal-id="modal-cancel">CANCEL</a>
+              <a class="button button--dark button--md modal-trigger" data-modal-id="modal-cancel">CANCEL</a>
             </div>
           </div>
         </div>
@@ -127,24 +143,9 @@ require_once "../../includes/header.php";
 </main>
 
 <!--=============== MODALS ===============-->
-<div class="modal__wrapper" id="modal-cancel">
-  <section class="modal__window modal__window--sm">
-    <header class="modal__header">
-      <h3>Cancel</h3>
-      <button type="button" class="modal__close close" aria-label="Close modal window">
-        <i class='bx bx-x'></i>
-      </button>
-    </header>
-    <div class="modal__body">
-      Are you sure you want to cancel?
-    </div>
-    <footer class="modal__footer">
-      <a href="#" class="button button--primary button--md modal__yes-cancel" onclick="history.back();">YES</a>
-      <a href="#" class="button button--dark button--md close">NO</a>
-
-    </footer>
-  </section>
-</div>
+<?php
+include "../../includes/modal-cancel.php";
+?>
 
 </body>
 

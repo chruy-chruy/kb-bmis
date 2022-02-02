@@ -15,7 +15,7 @@ include "../../includes/preloader.php";
         CREATE ANNOUNCEMENT
       </a>
 
-      <table id="officials-table" class="row-border">
+      <table id="users-table" class="row-border">
         <thead>
           <tr>
             <th></th>

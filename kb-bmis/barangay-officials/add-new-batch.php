@@ -40,7 +40,7 @@ $to = $_POST['to'];
                                     <i class='bx bx-plus'></i>
                                     <p>ADD NEW</p>
                                 </a>
-                                <a href="#" ; class="button button--dark button--md modal-trigger" data-modal-id="modal-cancel">Cancel</a>
+                                <a href="#" class="button button--dark button--md modal-trigger" data-modal-id="modal-cancel">Cancel</a>
                             </div>
 
                             <!-- card end -->
@@ -234,6 +234,12 @@ $to = $_POST['to'];
             </table>
         </div>
     </section>
+
+    <!-- modals -->
+    <?php
+    include "../../includes/modal-cancel.php";
+    ?>
+
 
 </div>
 

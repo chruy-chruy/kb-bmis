@@ -16,6 +16,22 @@ $(document).ready(function () {
     }, ],
   });
 
+  $("#residentArchive-table").DataTable({
+    dom: "ftpr",
+    bSort: false,
+    pageLength: 8,
+    // scrollX: true,
+    language: {
+      search: "_INPUT_",
+      searchPlaceholder: "Search",
+    },
+    columnDefs: [{
+      targets: [0, 1, 2, 3, 4],
+      visible: false,
+      searchable: true,
+    }, ],
+  });
+
   $("#modal-table").DataTable({
     dom: "ftpr",
     bSort: false,
@@ -46,6 +62,8 @@ $(document).ready(function () {
     },
   });
 
+  
+
   /*=============== RESIDENTS DROPDOWN FILTER ===============*/
   const wtable = $("#residents-table").DataTable();
   const select = document.querySelector("#residents__filter");
@@ -61,7 +79,27 @@ $(document).ready(function () {
     document.querySelector(".dataTables_filter input").value = option.value;
     document.querySelector(".dataTables_filter input").focus();
   };
+
+
+   /*=============== RESIDENTS ARCHIVE DROPDOWN FILTER ===============*/
+   const archiveTable = $("#residentArchive-table").DataTable();
+   const archiveSelect = document.querySelector("#residents__filter");
+ 
+   $(archiveSelect).on("change", function () {
+     const archiveOption = archiveSelect.options[archiveSelect.selectedIndex];
+     archiveTable.search(archiveOption.value).draw();
+   });
+ 
+   archiveSelect.onchange = function () {
+     const archiveOption = archiveSelect.options[archiveSelect.selectedIndex];
+ 
+     document.querySelector(".dataTables_filter input").value = archiveOption.value;
+     document.querySelector(".dataTables_filter input").focus();
+   };
+
 });
+
+ 
 
 /*=============== DROPDOWN ===============*/
 const headerToggle = document.querySelector(".header__toggle");

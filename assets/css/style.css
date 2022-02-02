@@ -80,6 +80,16 @@ textarea[readonly] {
   cursor: not-allowed;
 }
 
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input[type=number] {
+  -moz-appearance: textfield;
+}
+
 button,
 input[type=submit],
 input[type=button] {
@@ -235,6 +245,7 @@ a:active {
 
 a {
   color: #222;
+  cursor: pointer;
 }
 
 ul {
@@ -461,6 +472,7 @@ li {
   top: 0.625rem;
   left: 0.625rem;
   transition: 300ms;
+  background: transparent;
 }
 .back-btn:hover {
   color: #ef6a61;
@@ -1746,11 +1758,7 @@ table.dataTable td {
 
 .announcements {
   display: flex;
-  align-items: center;
-  flex-direction: column;
-}
-.announcements > div {
-  display: flex;
+  justify-content: center;
   flex-direction: column;
 }
 .announcements__contacts {
@@ -1829,6 +1837,12 @@ table.dataTable td {
 .message__counter {
   font-size: 0.875rem;
   margin-left: auto;
+}
+
+.archive {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
 }
 
 .certificates {
@@ -2125,6 +2139,12 @@ table.dataTable td {
   width: 100%;
 }
 
+.reports {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+
 .tabContent.reports {
   position: relative;
   display: grid;
@@ -2135,6 +2155,24 @@ table.dataTable td {
 .graph h1 {
   white-space: nowrap;
   margin-bottom: 0.625rem;
+}
+
+#reportForm {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.input-date-range {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: nowrap;
+  align-content: flex-start;
+}
+.input-date-range h4 {
+  margin: 0 1.25rem;
 }
 
 .table__row-img {

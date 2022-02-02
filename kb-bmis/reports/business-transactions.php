@@ -15,12 +15,9 @@ include "../../includes/preloader.php";
 
         <section class="reports">
 
-            <div class="row">
-                <a href="index.php" class="button button--md back-btn">
-                    <i class='bx bx-left-arrow-circle'></i>
-                    Back
-                </a>
-            </div>
+            <?php
+            include "../../includes/back-button.php";
+            ?>
 
             <div class="card">
                 <div class="card__header">
@@ -28,14 +25,15 @@ include "../../includes/preloader.php";
 
                         <div class="card__header-content--left">
 
-                            <ul class="reports__tabs-list">
+                            <ul class="tabs">
                                 <a href="brgy-transactions.php">
-                                    <li class="reports__tabs-item">
+                                    <li class="tab">
                                         Barangay Clearance
                                     </li>
                                 </a>
+
                                 <a href="business-transactions.php">
-                                    <li class="reports__tabs-item">
+                                    <li class="tab tab--active">
                                         Business Clearance
                                     </li>
                                 </a>
@@ -57,7 +55,8 @@ include "../../includes/preloader.php";
                                                                                     echo $_GET['to_date'];
                                                                                 } else {
                                                                                 } ?>">
-                                    <button type="Submit"> Filter </button>
+                                    <button type="Submit" class="button button--sm button--light" style="margin-left: 12px;">Filter</button>
+
 
                                 </div>
 
@@ -136,21 +135,7 @@ include "../../includes/preloader.php";
 
 <!--=============== CSS ===============-->
 
-<style>
-    .input-date-range {
-        position: relative;
-        display: flex;
-        justify-content: center;
-        margin: auto;
-        align-items: baseline;
-        flex-wrap: nowrap;
-        align-content: flex-start;
-    }
 
-    .input-date-range h4 {
-        margin: 20px 20px;
-    }
-</style>
 
 
 

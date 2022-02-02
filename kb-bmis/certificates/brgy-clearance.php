@@ -15,10 +15,10 @@ require_once "../../includes/header.php";
         <section class="certificates__info">
 
             <div class="card">
-                <a href="#" class="button button--md back-btn modal-trigger" data-modal-id="modal-cancel">
+                <button class="button button--md back-btn modal-trigger" data-modal-id="modal-cancel">
                     <i class='bx bx-left-arrow-circle'></i>
                     Back
-                </a>
+                </button>
                 <?php $id = $_GET["id"];
 
                 $squery = mysqli_query($conn, "select * from residents where id = $id");
@@ -178,7 +178,7 @@ require_once "../../includes/header.php";
                                     <div class="card__footer-content">
                                         <div class="card__footer-content--right">
                                             <button class="button button--primary button--md" name="btn_save">GENERATE</button>
-                                            <a href="#" ; class="button button--dark button--md modal-trigger" data-modal-id="modal-cancel">CANCEL</a>
+                                            <a class="button button--dark button--md modal-trigger" data-modal-id="modal-cancel">CANCEL</a>
                                         </div>
                                     </div>
 
@@ -207,88 +207,10 @@ require_once "../../includes/header.php";
 </main>
 
 <!--=============== MODALS ===============-->
-<div class="modal__wrapper" id="modal-cancel">
-    <section class="modal__window modal__window--sm">
-        <header class="modal__header">
-            <h3>Cancel</h3>
-            <button type="button" class="modal__close close" aria-label="Close modal window">
-                <i class='bx bx-x'></i>
-            </button>
-        </header>
-        <div class="modal__body">
-            Are you sure you want to cancel?
-        </div>
-        <footer class="modal__footer">
-            <a href="#" class="button button--primary button--md modal__yes-cancel" onclick="history.back();">YES</a>
-            <a href="#" class="button button--dark button--md close">NO</a>
+<?php
+                    include "../../includes/modal-cancel.php";
+?>
 
-        </footer>
-    </section>
-</div>
-<!-- 
-<div class="modal__wrapper" id="modal-camera">
-    <section class="modal__window modal__window--md">
-        <header class="modal__header">
-            <h3>Camera</h3>
-            <button type="button" class="modal__close close" aria-label="Close modal window" onClick="exit_webcam()">
-                <i class='bx bx-x'></i>
-            </button>
-        </header>
-
-        <div class="modal__body">
-            <div class="row">
-                <div class="col-md-6">
-                    <div id="my_camera"></div>
-                    <br />
-                    <input type="hidden" name="image" class="image-tag" required="">
-                </div>
-                <div class="col-md-6">
-                    <div id="results"></div>
-                </div>
-                <div class="col-md-12 text-center">
-                    <br />
-                </div>
-            </div>
-        </div>
-
-        <footer class="modal__footer">
-            <input type="button" value="Submit" class="button button--primary button--md modal__yes-cancel close" onClick="submit_snap()" />
-            <input type="button" value="Cancel" class="button button--dark button--md modal__yes-cancel close" onClick="exit_webcam()" />
-        </footer>
-
-    </section>
-</div> -->
-</form>
-
-<!-- Configure a few settings and attach camera -->
-<!-- <script language="JavaScript">
-    Webcam.set({
-        width: 490,
-        height: 390,
-        image_format: 'jpeg',
-        jpeg_quality: 100
-    });
-
-    function open_cam() {
-        Webcam.attach('#my_camera');
-    }
-
-
-
-    function submit_snap() {
-        Webcam.snap(function(data_uri) {
-            $(".image-tag").val(data_uri);
-            document.getElementById('results').innerHTML = '<img src="' + data_uri + '"/>';
-            document.getElementById('profile').innerHTML = document.getElementById('results').innerHTML;
-            Webcam.reset();
-        });
-    }
-
-    function exit_webcam() {
-        document.getElementById('results').innerHTML = '<img src=""/>';
-        Webcam.reset();
-    }
-</script> -->
 </body>
 
 </html>

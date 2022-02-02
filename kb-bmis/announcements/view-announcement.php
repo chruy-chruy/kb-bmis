@@ -9,11 +9,12 @@ $id = $_GET["id"];
 <main>
     <div class="content">
         <section class="announcements">
-            <a href="index.php" class="button button--md back-btn">
-                <i class='bx bx-left-arrow-circle'></i>
-                Back
-            </a>
-            <br>
+
+            <?php
+            include "../../includes/back-button.php";
+            ?>
+
+
 
             <!-- <div> -->
 

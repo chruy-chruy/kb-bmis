@@ -219,6 +219,7 @@
   top: rem(10);
   left: rem(10);
   transition: 300ms;
+  background: transparent;
 
   &:hover {
     color: $primary;

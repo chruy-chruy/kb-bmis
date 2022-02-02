@@ -485,15 +485,6 @@ include "../../includes/preloader.php";
 
                             <div class="profile-info__container">
                                 <div class="input__wrapper">
-                                    <label for="resident-nattionalID">National ID</label>
-                                    <div class="input__inner">
-                                        <input disabled name="national_id" type="text" class="input--light300 input-viewprofile" value="<?php echo $row['national_id'] ?>">
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="profile-info__container">
-                                <div class="input__wrapper">
                                     <label for="resident-vaccinesadministered">Vaccines Administered</label>
                                     <div class="input__inner">
                                         <input disabled name="vaccine_admin" type="text" class="input--light300 input-viewprofile" value="<?php echo $row['vaccine_admin'] ?>">

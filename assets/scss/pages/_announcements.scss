@@ -2,13 +2,13 @@
 @use "../globals/" as *;
 
 .announcements {
-  @include flex-align-center;
+  @include flex-justify-center;
   flex-direction: column;
 
-  & > div {
-    display: flex;
-    flex-direction: column;
-  }
+  // & > div {
+  //   display: flex;
+  //   flex-direction: column;
+  // }
 
   &__contacts {
     margin-bottom: rem(30);
