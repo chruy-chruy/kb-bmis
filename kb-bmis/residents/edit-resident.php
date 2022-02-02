@@ -25,7 +25,11 @@ while ($row = mysqli_fetch_array($squery)) {
             <div class="card__body">
               <div class="card__body-content">
                 <div class="profile__img profile__img--change">
-                  <img src="../residents/images/<?php echo $row['img_url'] ?>" name="default" alt="">
+                  <div id="profile">
+                    <img src="../residents/images/<?php echo $row['img_url'] ?>" alt="">
+                  </div>
+                  <div id="results"></div>
+                  <input type="hidden" name="orig_pic" value="<?php echo $row['img_url']; ?>">
                   <!-- <a href="#" class="button button--sm button--dark-outline camera-btn modal-trigger input--light300 input-viewprofile" data-modal-id="modal-camera" onclick="open_cam()">
                             <i class='bx bx-camera' data-modal-id="modal-camera"></i>
                             Open Camera
@@ -610,33 +614,6 @@ while ($row = mysqli_fetch_array($squery)) {
     </section>
   </div>
 
-
-  <!-- <div class="modal__wrapper" id="modal-change-picture">
-    <section class="modal__window modal__window--sm">
-      <header class="modal__header">
-        <h3>Change Picture</h3>
-        <button type="button" class="modal__close close" aria-label="Close modal window">
-          <i class='bx bx-x'></i>
-        </button>
-      </header>
-      <div class="modal__body">
-        <div class="row">
-          <div class="input__wrapper" style="margin: 10px 0;">
-            <div class="input__inner">
-              <input type="file" class="input--light300">
-            </div>
-          </div>
-        </div>
-        
-      </div>
-      <footer class="modal__footer">
-        <a href="#" class="button button--primary button--md modal__yes-cancel">Upload</a>
-        <a href="#" class="button button--dark button--md close">Cancel</a>
-      </footer>
-    </section>
-  </div> -->
-
-
   <div class="modal__wrapper" id="modal-camera">
     <section class="modal__window modal__window--md">
       <header class="modal__header">
@@ -654,7 +631,7 @@ while ($row = mysqli_fetch_array($squery)) {
             <input type="hidden" name="image" class="image-tag">
           </div>
           <div class="col-md-6">
-            <div id="results"></div>
+
           </div>
           <div class="col-md-12 text-center">
             <br />
@@ -663,8 +640,7 @@ while ($row = mysqli_fetch_array($squery)) {
       </div>
 
       <footer class="modal__footer">
-        <input type="button" value="Capture" class="button button--primary button--md " onClick="take_snapshot()" />
-        <input type="button" value="Submit" class="button button--primary button--md close" onClick="submit_snap()" />
+        <input type="button" value="Capture" class="button button--primary button--md close" onClick="take_snapshot()" />
         <input type="button" value="Cancel" class="button button--dark button--md close" onClick="exit_webcam()" />
       </footer>
       </form>

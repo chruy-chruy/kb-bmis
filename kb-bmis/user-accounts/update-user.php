@@ -9,7 +9,8 @@ if (isset($_POST['btn_update'])) {
 
     $sql = "UPDATE `users` SET
     `user_name`='$user',
-    `password`='$pass' ";
+    `password`='$pass' 
+    where `role` = '$role'";
 
     mysqli_query($conn, $sql);
     header("location:view-user.php?role=$role");

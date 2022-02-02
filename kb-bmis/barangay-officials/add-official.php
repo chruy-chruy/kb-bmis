@@ -52,7 +52,6 @@ while ($row = mysqli_fetch_array($squery)) {
 
                                 <section class="profile-info__basic-info">
                                     <input name="id" type="text" value="<?php echo $id ?>" hidden>
-                                    <input name="img_url" type="text" value="<?php echo $row['img_url'] ?>" hidden>
                                     <input name="off_name" type="text" value="<?php echo $row["first_name"] . " " . $row["mid_name"] . " " . $row["last_name"] . " " . $row["suffix"];  ?>" hidden>
 
 
@@ -62,7 +61,7 @@ while ($row = mysqli_fetch_array($squery)) {
                                             <div class="input__inner">
                                                 <div class="select__wrapper">
                                                     <select name="off_position" id="" class="select select--resident-profile input-viewprofile">
-                                                        <option value="Select" selected></option>
+                                                        <option value="Select"></option>
                                                         <option value="Barangay Chairman">Barangay Chairman</option>
                                                         <option value="Barangay Councilor">Barangay Councilor</option>
                                                         <option value="Barangay Secretary">Barangay Secretary</option>
@@ -200,39 +199,40 @@ while ($row = mysqli_fetch_array($squery)) {
                         </div>
 
                     </div>
+    </form>
 
-                </div>
-        </main>
-    <?php }
-    ?>
-
-
-    <!--=============== MODALS ===============-->
-    <div class="modal__wrapper" id="modal-cancel">
-        <section class="modal__window modal__window--md">
-            <header class="modal__header">
-                <h3>Delete Profile</h3>
-                <button type="button" class="modal__close close" aria-label="Close modal window">
-                    <i class='bx bx-x'></i>
-                </button>
-            </header>
-            <div class="modal__body">
-                Are you sure you want to cancel?
-            </div>
-            <footer class="modal__footer">
-                <a href="index.php" class="button button--danger button--md">Yes</a>
-                <a href="#" class="button button--dark button--md modal__cancel close">No</a>
-
-            </footer>
-        </section>
     </div>
+    </main>
+<?php }
+?>
+
+
+<!--=============== MODALS ===============-->
+<div class="modal__wrapper" id="modal-cancel">
+    <section class="modal__window modal__window--md">
+        <header class="modal__header">
+            <h3>Delete Profile</h3>
+            <button type="button" class="modal__close close" aria-label="Close modal window">
+                <i class='bx bx-x'></i>
+            </button>
+        </header>
+        <div class="modal__body">
+            Are you sure you want to cancel?
+        </div>
+        <footer class="modal__footer">
+            <a href="index.php" class="button button--danger button--md">Yes</a>
+            <a href="#" class="button button--dark button--md modal__cancel close">No</a>
+
+        </footer>
+    </section>
+</div>
 
 
 
 
 
 
-    </body>
+</body>
 
 
-    </html>
+</html>

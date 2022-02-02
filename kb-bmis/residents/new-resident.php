@@ -18,21 +18,12 @@ require_once "../../includes/header.php";
 
             <div class="card__body">
               <div class="card__body-content">
+                <div class="profile__img profile__img--change">
+                  <div id="profile">
+                    <img src="../residents/images/default-img.svg" alt="">
+                  </div>
+                  <div id="results"></div>
 
-                <!-- <div class="profile__img profile__img" id="profile">
-                  <img src="images/default-img.svg" alt="">
-                  <input type="hidden" name="default" value="default-img.svg">
-                </div>
-
-                <div class="row">
-                  <a href="#" class="button button--icon button--sm button--dark-outline button--icon-sm modal-trigger" data-modal-id="modal-change-picture">
-                    <i class='bx bx-edit' data-modal-id="modal-change-picture"></i>
-                  </a>
-
-                </div> -->
-
-                <div class="profile__img profile__img--change" id="profile">
-                  <img src="../residents/images/default-img.svg" alt="">
                   <input type="hidden" name="default" value="default-img.svg">
 
                   <a href="#" class="button button--icon-sm modal-trigger" data-modal-id="modal-camera" onclick="open_cam()">
@@ -514,7 +505,7 @@ require_once "../../includes/header.php";
 
 <!--=============== MODALS ===============-->
 <div class="modal__wrapper" id="modal-cancel">
-  <section class="modal__window modal__window--md">
+  <section class="modal__window modal__window--sm">
     <header class="modal__header">
       <h3>Cancel</h3>
       <button type="button" class="modal__close close" aria-label="Close modal window">
@@ -532,36 +523,6 @@ require_once "../../includes/header.php";
   </section>
 </div>
 
-<div class="modal__wrapper" id="modal-change-picture">
-  <section class="modal__window modal__window--sm">
-    <header class="modal__header">
-      <h3>Change Picture</h3>
-      <button type="button" class="modal__close close" aria-label="Close modal window" id="close-modal">
-        <i class='bx bx-x'></i>
-      </button>
-    </header>
-    <div class="modal__body">
-      <div class="row">
-        <div class="input__wrapper" style="margin: 10px 0;">
-          <div class="input__inner">
-            <input type="file" class="input--light300">
-          </div>
-        </div>
-
-
-      </div>
-      or
-      <a href="#" class="button button--md button--light camera-btn modal-trigger" data-modal-id="modal-camera" onclick="open_cam()">
-        <i class='bx bx-camera' data-modal-id="modal-camera"></i>
-        Open Camera
-      </a>
-    </div>
-    <footer class="modal__footer">
-      <a href="#" class="button button--dark button--md close" id="close-modal">CANCEL</a>
-    </footer>
-  </section>
-</div>
-
 <div class="modal__wrapper" id="modal-camera">
   <section class="modal__window modal__window--md">
     <header class="modal__header">
@@ -572,52 +533,30 @@ require_once "../../includes/header.php";
     </header>
 
     <div class="modal__body">
-      <div class="center">
-        <div id="my_camera"></div>
-        <input type="hidden" name="image" class="image-tag">
+      <div class="row">
+        <div class="col-md-6">
+          <div id="my_camera"></div>
+          <br />
+          <input type="hidden" name="image" class="image-tag">
+        </div>
+        <div class="col-md-6">
 
-        <div id="results"></div>
-
+        </div>
+        <div class="col-md-12 text-center">
+          <br />
+        </div>
       </div>
     </div>
 
     <footer class="modal__footer">
-      <input type=button value="Submit" class="button button--primary button--md" onClick="take_snapshot()">
-      <input type=button value="cancel" class="button button--dark button--md close" onClick="exit_webcam()">
+      <input type="button" value="Capture" class="button button--primary button--md close " onClick="take_snapshot()" />
+      <input type="button" value="Cancel" class="button button--dark button--md close" onClick="exit_webcam()" />
     </footer>
     </form>
   </section>
 </div>
 
-<!-- Configure a few settings and attach camera
-<script language="JavaScript">
-  Webcam.set({
-    width: 490,
-    height: 390,
-    image_format: 'jpeg',
-    jpeg_quality: 100
-  });
 
-  function open_cam() {
-    Webcam.attach('#my_camera');
-  }
-
-
-
-  function take_snapshot() {
-    Webcam.snap(function(data_uri) {
-      $(".image-tag").val(data_uri);
-      document.getElementById('results').innerHTML = '<img src="' + data_uri + '"/>';
-      document.getElementById('profile').innerHTML = document.getElementById('results').innerHTML;
-      Webcam.reset();
-    });
-  }
-
-  function exit_webcam() {
-    document.getElementById('results').innerHTML = '<img src=""/>';
-    Webcam.reset();
-  }
-</script> -->
 </body>
 
 </html>

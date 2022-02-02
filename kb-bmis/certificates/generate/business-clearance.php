@@ -124,18 +124,28 @@ mysqli_query($conn, $sql);
 
         <b><i>Records Verified by:</i></b>
         <span class="br br--md"></span>
+        <?php
+        $squery =  mysqli_query($conn, "SELECT * FROM `officials` WHERE off_position = 'Barangay Secretary'");
+        while ($row = mysqli_fetch_array($squery)) {
+        ?>
+          <b><?php echo strtoupper($row['off_name']);
+            } ?></b>
+          <br />
+          <span>Barangay Secretary</span>
+          <span class="br br--lg"></span>
 
-        <b>GRACE B. ALFANTA</b>
-        <br />
-        <span>Barangay Secretary</span>
-        <span class="br br--lg"></span>
+          <b><i>Approved by:</i></b>
+          <span class="br br--md"></span>
 
-        <b><i>Approved by:</i></b>
-        <span class="br br--md"></span>
+          <?php
+          $squery =  mysqli_query($conn, "SELECT * FROM `officials` WHERE off_position = 'Barangay Chairman'");
+          while ($row = mysqli_fetch_array($squery)) {
+          ?>
+            <b>HON. <?php echo strtoupper($row['off_name']);
+                  } ?></b>
 
-        <b>HON. RENIEL A. GONATO</b>
-        <br />
-        <span>Punong Barangay</span>
+            <br />
+            <span>Punong Barangay</span>
       </p>
 
       <div class="certificate__thumbmark">

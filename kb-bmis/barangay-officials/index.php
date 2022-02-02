@@ -56,7 +56,7 @@ include "../../includes/preloader.php";
                 <tbody>
                   <tr>
                     <?php
-                    $squery =  mysqli_query($conn, "select * from officials where off_position = 'Barangay Chairman'");
+                    $squery =  mysqli_query($conn, "select * from residents,officials where residents.occupation = 'Barangay Chairman' and officials.off_position = 'Barangay Chairman'; ");
                     while ($row = mysqli_fetch_array($squery)) {
                     ?>
                       <td>
@@ -87,7 +87,7 @@ include "../../includes/preloader.php";
 
                   <tr>
                     <?php
-                    $squery =  mysqli_query($conn, "select * from officials Where NOT off_position='Barangay Chairman'");
+                    $squery =  mysqli_query($conn, "select * from residents,officials where residents.occupation = officials.off_position and not residents.occupation = 'Barangay Chairman';");
                     while ($row = mysqli_fetch_array($squery)) {
                     ?>
                       <td>

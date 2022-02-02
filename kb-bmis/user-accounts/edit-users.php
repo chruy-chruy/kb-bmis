@@ -12,6 +12,7 @@ if ($role == "Barangay Secretary") {
     $squery =  mysqli_query($conn, "select * from residents,users where residents.occupation = '$role' and users.role = '$role'; ");
     while ($row = mysqli_fetch_array($squery)) { ?>
         <form id="add_residents" action="update-user.php" method="post" enctype="multipart/form-data" data-parsley-validate="">
+
             <main>
 
                 <div class="content">
@@ -25,7 +26,7 @@ if ($role == "Barangay Secretary") {
                         <div class="card__body">
                             <div class="card__body-content">
                                 <div class="profile__img profile__img--viewprofile">
-                                    <img src="../../assets/img/<?php echo $row["first_name"]; ?>" alt="">
+                                    <img src="../residents/images/<?php echo $row["img_url"]; ?>" alt="">
                                 </div>
 
                                 <div class="profile__name profile__name--viewprofile">

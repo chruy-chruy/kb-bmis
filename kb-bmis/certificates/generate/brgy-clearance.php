@@ -157,11 +157,18 @@ VALUES
 
                 <div class="row row--space-between">
                     <div class="certificate__official">
-                        <p class="certificate__official-name">HON. RENIEL A. GONATO</p>
+                        <?php
+                        $squery =  mysqli_query($conn, "SELECT * FROM `officials` WHERE off_position = 'Barangay Chairman'");
+                        while ($row = mysqli_fetch_array($squery)) {
+                        ?>
 
-                        <p>Punong Barangay</p>
-                        <p>Barangay Dadiangas North</p>
-                        <p>General Santos City</p>
+
+                            <p class="certificate__official-name">HON. <?php echo strtoupper($row['off_name']);
+                                                                    } ?></p>
+
+                            <p>Punong Barangay</p>
+                            <p>Barangay Dadiangas North</p>
+                            <p>General Santos City</p>
                     </div>
 
                     <p class="certificate__seal">Not valid without dry seal</p>

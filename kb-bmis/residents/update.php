@@ -40,6 +40,7 @@
         $relationship = $_POST['relationship'];
         $emergency_address = $_POST['emergency_address'];
         $emergency_contact = $_POST['emergency_contact'];
+        $orig_pic = $_POST['orig_pic'];
 
         $img = $_POST['image'];
         $folderPath = "images/";
@@ -53,7 +54,52 @@
         $file = $folderPath . $fileName;
         file_put_contents($file, $image_base64);
 
-        $sql = "UPDATE `residents` SET 
+
+        if (empty($img)) {
+            $sql = "UPDATE `residents` SET 
+    `first_name`='$first_name',
+    `mid_name`= '$mid_name',
+    `last_name`='$last_name',
+    `suffix`='$suffix',
+    `sex`='$sex',
+    `date_of_birth`='$date_of_birth',
+    `house_number`='$house_number',
+    `street`='$street',
+    `purok`='$purok',
+    `occupation`='$occupation',
+    `citizenship`='$citizenship',
+    `civil_status`='$civil_status',
+    `voter_status`='$voter_status',
+    `phone_number`='$phone_number',
+    `tel_number`='$tel_number',
+    `email`='$email',
+    `alien_status`='$alien_status',
+    `senior_status`='$senior_status',
+    `disability_status`='$disability_status',
+    `type_disability`='$type_disability',
+    `4ps_status`='$_4ps_status',
+    `deceased_status`='$deceased_status',
+    `voter_id`='$voter_id',
+    `precinct_number`='$precinct_number',
+    `national_id`='$national_id',
+    `vaccine_admin`='$vaccine_admin',
+    `emergency_person`='$emergency_person',
+    `relationship`='$relationship',
+    `emergency_address`='$emergency_address',
+    `emergency_contact`='$emergency_contact',
+    `date_of_death`='$date_of_death',
+    `education_status`='$education_status',
+    `place_of_birth`='$place_of_birth',
+    `religion`='$religion',
+    `blood_type`='$blood_type',
+    `img_url`='$orig_pic'
+    WHERE `id` = '$id'
+    ";
+
+            mysqli_query($conn, $sql);
+            header("location:view-resident.php?id=$id");
+        } else
+            $sql = "UPDATE `residents` SET 
     `first_name`='$first_name',
     `mid_name`= '$mid_name',
     `last_name`='$last_name',
