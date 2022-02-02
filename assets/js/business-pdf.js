@@ -1,16 +1,9 @@
-// pdfMake.fonts = {
-//     Montserrat: {
-//         normal: 'Montserrat-Regular.ttf',
-//         bold: 'Montserrat-Bold.ttf',
-//         italics: 'Montserrat-Black.ttf',
-//         bolditalics: 'Montserrat-Medium.ttf'
-//     }
-// };
-
 $(document).ready(function () {
 
+
+
     var now = new Date();
-    var titleDate = now.getFullYear() + '-' + (now.getMonth() + 1) + '-' + now.getDate()
+    var titleDate = now.getFullYear() + "-" + (now.getMonth() + 1) + "-" + now.getDate()
 
     $('#businessTbl').DataTable({
         "ordering": false,
@@ -20,21 +13,24 @@ $(document).ready(function () {
             search: "_INPUT_",
             searchPlaceholder: "Search",
         },
+
+
+
         buttons: [
+
 
             {
                 extend: 'excelHtml5',
                 autoFilter: true,
                 title: "Business Clearance Transaction Report",
-                sheetName: 'Business Clearance Sales'
+                sheetName: 'Businesss Clearance Sales'
             },
 
             {
-
-
                 extend: 'pdfHtml5',
-                title: "Business Clearance-" + titleDate,
+                title: "business-clearance-" + titleDate,
                 pageSize: 'A4',
+                // download: 'open',
                 exportOptions: {
                     search: 'applied',
                     order: 'applied',
@@ -45,12 +41,17 @@ $(document).ready(function () {
                     var rcout = doc.content[doc.content.length - 1].table.body.length - 1;
                     doc.content.splice(0, 1);
                     var now = new Date();
-                    var jsDate = now.getDate() + '/' + (now.getMonth() + 1) + '/' + now.getFullYear() + '  and Time:' + now.getHours() + ':' + now.getMinutes() + ':' + now.getSeconds();
+                    var jsDate = now.getDate() + '/' + (now.getMonth() + 1) + '/' + now.getFullYear() + ' Time: ' + now.getHours() + ':' + now.getMinutes() + ':' + now.getSeconds();
                     doc.pageMargins = [30, 90, 30, 30];
-                    // doc.defaultStyle.font = 'Montserrat';
-                    doc.defaultStyle.fontSize = 8;
 
-                    doc.styles.tableHeader.fontSize = 11;
+
+                    // doc.defaultStyle.font = 'Montserrat';
+                    doc.defaultStyle.fontSize = 9;
+
+                    doc.styles.tableHeader.fontSize = 12;
+
+
+
                     doc.styles.tableHeader.fillColor = '#c4574f'
                     doc.content[doc.content.length - 1].table.headerRows = 2;
 
@@ -61,15 +62,21 @@ $(document).ready(function () {
                         doc.content[doc.content.length - 1].table.body[(i + 1)][0] = {
                             text: obj[0].text,
                             style: [obj[0].style],
+                            alignment: 'center',
+
                             bold: true
                         };
                         doc.content[doc.content.length - 1].table.body[(i + 1)][3] = {
                             text: obj[3].text,
-                            style: [obj[3].style],
-                            alignment: 'left',
+                            style: [obj[3].style]
+
+                            // alignment: 'left',
                             // bold: obj[3].text > 60 ? true : false,
                             // fillColor: obj[3].text > 60 ? 'red' : null
                         };
+
+
+
 
 
                     }
@@ -92,12 +99,13 @@ $(document).ready(function () {
 
                                         },
                                         {
-                                            text: 'Business Clearance Transactions',
+                                            text: 'BUSINESS CLEARANCE TRANSACTIONS',
                                             alignment: 'center',
-                                            fontSize: 22,
+                                            fontSize: 18,
                                             bold: true,
-                                            width: 'auto',
-                                            margin: [8, 15, 0, 0]
+                                            margin: [-10, 20, 0, 0],
+                                            width: 'auto'
+
                                         }
                                     ],
 
@@ -147,10 +155,10 @@ $(document).ready(function () {
                         return '#aaa';
                     };
                     objLayout['paddingLeft'] = function (i) {
-                        return 5;
+                        return 10;
                     };
                     objLayout['paddingRight'] = function (i) {
-                        return 35;
+                        return 25;
                     };
                     doc.content[doc.content.length - 1].layout = objLayout;
 
