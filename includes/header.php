@@ -98,7 +98,7 @@ $role = $_SESSION['role'];
                                         echo 'nav__item--active';
                                     } ?>">
                 <a href="../residents/" class="nav__item-link">
-                    <i class='bx bxs-group'></i>
+                    <i class='bx bxs-id-card'></i>
                     <span class="nav__item-text">Residents</span>
                 </a>
             </li>
@@ -168,6 +168,15 @@ $role = $_SESSION['role'];
                 </li>
 
             <?php } ?>
+
+            <li class="nav__item <?php if ($page == 'Settings') {
+                                        echo 'nav__item--active';
+                                    } ?>">
+                <a href="../settings/" class="nav__item-link">
+                    <i class='bx bxs-cog'></i>
+                    <span class="nav__item-text">Settings</span>
+                </a>
+            </li>
 
         </ul>
     </nav>

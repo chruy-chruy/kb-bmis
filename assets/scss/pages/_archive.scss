@@ -1,0 +1,8 @@
+@use "../util" as *;
+@use "../globals/" as *;
+
+.archive {
+  @include flex-justify-center;
+  flex-direction: column;
+  // height: 80vh;
+}

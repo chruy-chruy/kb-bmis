@@ -1,27 +1,10 @@
 @use "../util" as *;
 @use "../globals/" as *;
 
-// .reports {
-//   // &__tabs-list {
-//   //   background: $light400;
-//   //   padding: rem(14) rem(20);
-//   //   border-radius: rem(8);
-//   // }
-
-//   &__tabs-item {
-//     display: inline-block;
-//     font-size: rem(12);
-//     padding: rem(8);
-//     border-radius: rem(8);
-//     background: $light400;
-//     color: $dark300;
-//     letter-spacing: rem(0.5);
-
-//     &:first-child {
-//       margin-right: rem(10);
-//     }
-//   }
-// }
+.reports {
+  @include flex-justify-center;
+  flex-direction: column;
+}
 
 
 .tabContent.reports{
@@ -36,6 +19,21 @@
   h1{
     white-space: nowrap;
     margin-bottom: rem(10);
+  }
+}
+
+#reportForm{
+  @include flex-center-all;
+}
+
+.input-date-range {
+  position: relative;
+  @include flex-center-all;
+  flex-wrap: nowrap;
+  align-content: flex-start;
+
+  h4{
+    margin: 0 rem(20);
   }
 }
 

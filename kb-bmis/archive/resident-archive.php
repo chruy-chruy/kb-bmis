@@ -20,10 +20,11 @@ include "../../includes/preloader.php";
                 </div>
             </div>
 
-            <table id="residents-table" class="row-border">
+            <table id="residentArchive-table" class="row-border">
                 <thead>
                     <tr>
 
+                        <th></th>
                         <th></th>
                         <th></th>
                         <th></th>
@@ -38,6 +39,7 @@ include "../../includes/preloader.php";
                                     <select class="select select--table" name="filter" id="residents__filter">
                                         <option value="">All</option>
                                         <option value="4Ps">4Ps</option>
+                                        <option value="Deceased">Deceased</option>
                                         <option value="Person with Disability">Persons with Disability</option>
                                         <option value="Registered Voter">Registered Voters</option>
                                         <option value="Senior Citizen">Senior Citizens</option>
@@ -67,6 +69,7 @@ include "../../includes/preloader.php";
                             <td><?php echo $row['disability_status'] ?></td>
                             <td><?php echo $row['voter_status'] ?></td>
                             <td><?php echo $row['senior_status'] ?></td>
+                            <td><?php echo $row['deceased_status'] ?></td>
                             <td>
                                 <div class="table__row-img">
                                     <img src="../archive/images/<?php echo $row["img_url"]; ?>" alt="">

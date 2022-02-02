@@ -13,18 +13,9 @@ require_once "../../includes/header.php";
 
         <section class="reports">
 
-
-
-
-
-            <div class="left" style=" margin-bottom:25px;">
-                <div>
-                    <a href="index.php" class="button button--md back-btn" style="position: relative; margin-left:-10px; padding:0;">
-                        <i class='bx bx-left-arrow-circle'></i>
-                        Back
-                    </a>
-                </div>
-            </div>
+            <?php
+            include "../../includes/back-button.php";
+            ?>
 
             <div class="card">
                 <div class="card__header">
