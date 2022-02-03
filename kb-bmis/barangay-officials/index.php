@@ -29,7 +29,9 @@ include "../../includes/preloader.php";
                 </ul> -->
 
             </div>
-
+            <?php if (isset($_GET['error'])) { ?>
+              <p class="error-message" style="margin-bottom: 15px;"><?php echo $_GET['error']; ?></p>
+            <?php } ?>
             <div class="card__header-content--right">
               <a href="#" class="button button--md button--primary modal-trigger" data-modal-id="modal-newofficial">
                 <i class='bx bx-user-plus bx-sm' data-modal-id="modal-newofficial"></i>
@@ -159,7 +161,7 @@ include "../../includes/preloader.php";
         </thead>
         <tbody>
           <?php
-          $squery =  mysqli_query($conn, "select * from residents");
+          $squery =  mysqli_query($conn, "select * from residents where not (residents.occupation = 'Barangay Chairman' OR  residents.occupation ='Barangay Secretary' OR   residents.occupation ='Barangay Treasurer')");
           while ($row = mysqli_fetch_array($squery)) {
 
           ?>

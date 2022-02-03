@@ -69,7 +69,7 @@ if ($recipients == 'All Residents') {
     $ch = curl_init();
     $parameters = array(
         'apikey' => '96d6238852e5a8483c56a1dcd12f17f5', //API KEY 
-        'number' => $contacts = implode(', ', $officials),
+        'number' => $contacts = implode(', ', $residents),
         'message' => $_POST['message'],
         'sendername' => 'SEMAPHORE'
     );
