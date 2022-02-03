@@ -72,7 +72,7 @@ include "../../includes/preloader.php";
                             <td><?php echo $row['deceased_status'] ?></td>
                             <td>
                                 <div class="table__row-img">
-                                    <img src="../archive/images/<?php echo $row["img_url"]; ?>" alt="">
+                                    <img src="../residents/images/<?php echo $row["img_url"]; ?>" alt="">
                                 </div>
                             </td>
                             <td>

@@ -62,7 +62,7 @@ $(document).ready(function () {
     },
   });
 
-  
+
 
   /*=============== RESIDENTS DROPDOWN FILTER ===============*/
   const wtable = $("#residents-table").DataTable();
@@ -81,25 +81,25 @@ $(document).ready(function () {
   };
 
 
-   /*=============== RESIDENTS ARCHIVE DROPDOWN FILTER ===============*/
-   const archiveTable = $("#residentArchive-table").DataTable();
-   const archiveSelect = document.querySelector("#residents__filter");
- 
-   $(archiveSelect).on("change", function () {
-     const archiveOption = archiveSelect.options[archiveSelect.selectedIndex];
-     archiveTable.search(archiveOption.value).draw();
-   });
- 
-   archiveSelect.onchange = function () {
-     const archiveOption = archiveSelect.options[archiveSelect.selectedIndex];
- 
-     document.querySelector(".dataTables_filter input").value = archiveOption.value;
-     document.querySelector(".dataTables_filter input").focus();
-   };
+  /*=============== RESIDENTS ARCHIVE DROPDOWN FILTER ===============*/
+  const archiveTable = $("#residentArchive-table").DataTable();
+  const archiveSelect = document.querySelector("#residents__filter");
+
+  $(archiveSelect).on("change", function () {
+    const archiveOption = archiveSelect.options[archiveSelect.selectedIndex];
+    archiveTable.search(archiveOption.value).draw();
+  });
+
+  archiveSelect.onchange = function () {
+    const archiveOption = archiveSelect.options[archiveSelect.selectedIndex];
+
+    document.querySelector(".dataTables_filter input").value = archiveOption.value;
+    document.querySelector(".dataTables_filter input").focus();
+  };
 
 });
 
- 
+
 
 /*=============== DROPDOWN ===============*/
 const headerToggle = document.querySelector(".header__toggle");
@@ -501,3 +501,32 @@ function showPwd(id, el) {
     el.className = 'fa fa-eye showpwd';
   }
 }
+
+$('#disabilities').change(function () {
+  $('#typedisabilities').prop("disabled", !this.checked);
+}).change()
+
+$('#deceased').change(function () {
+  $('#datedeceased').prop("disabled", !this.checked);
+}).change()
+
+$('#voter_stat').change(function () {
+  $('#voters_id').prop("disabled", !this.checked);
+  $('#precinct_no').prop("disabled", !this.checked);
+}).change()
+
+// age
+// $('#dob').on('input', function () {
+//   var empty = false;
+//   $('form > input, form > select').each(function () {
+//     if ($(this).val() == '') {
+//       empty = true;
+//     }
+//   });
+
+//   if (empty) {
+//     $('#').attr('disabled', 'disabled');
+//   } else {
+//     $('#').removeAttr('disabled');
+//   }
+// });

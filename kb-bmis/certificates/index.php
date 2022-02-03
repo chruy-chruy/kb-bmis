@@ -65,7 +65,7 @@ include "../../includes/preloader.php";
                           <?php echo $row['first_name'] ?> <?php echo $row['mid_name'] ?> <?php echo $row['last_name'] ?>
                         </div>
                         <div class="table__row-sub">
-                          <?php echo $row['id'] ?>
+
                         </div>
                       </div>
                     </td>

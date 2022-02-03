@@ -31,7 +31,7 @@ include "../../includes/preloader.php";
                         while ($row = mysqli_fetch_array($query)) {
                         ?>
 
-                            <img src="../archive/images/<?php echo $row["img_url"]; ?>" alt="">
+                            <img src="../residents/images/<?php echo $row["img_url"]; ?>" alt="">
                     </div>
 
 

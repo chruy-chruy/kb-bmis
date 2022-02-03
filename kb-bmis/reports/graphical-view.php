@@ -2,6 +2,7 @@
 $page = 'Reports';
 $headerTitle = 'Reports';
 include "../../db_conn.php";
+include "../reports/data/total-transactions.php";
 require_once "../../includes/header.php";
 
 
@@ -74,7 +75,34 @@ require_once "../../includes/header.php";
                 <div class="card__body">
                     <div class="card__body-content" style="height: 375px;">
 
+
+
+
                         <div class="tabContent reports">
+
+
+                            <div>
+                                <div>
+                                    <div class="dashboard__card-top--value"><?php echo $total_WeekBrgyClr['weeklyBrgyTotal'] ?></div>
+                                    <div class="dashboard__card-top--label">Barangay Clearance</div>
+                                </div>
+
+                                <span class="dashboard__card-top--icon"><i class='bx bx-file'></i></span>
+                            </div>
+
+                            <div>
+                                <div>
+                                    <div class="dashboard__card-top--value"><?php echo $total_WeekBusinessClr['weeklyBusTotal'] ?>
+                                    </div>
+                                    <div class="dashboard__card-top--label">Business Clearance</div>
+
+                                </div>
+
+                                <span class="dashboard__card-top--icon"><i class='bx bxs-file'></i></span>
+                            </div>
+
+
+
                             <div class="graph">
                                 <h1>Barangay Clearance Sales</h1>
                                 <canvas id="brgy-week"></canvas>
@@ -87,6 +115,29 @@ require_once "../../includes/header.php";
                         </div>
 
                         <div class="tabContent reports" style="display: none;">
+
+
+                            <div>
+                                <div>
+                                    <div class="dashboard__card-top--value"><?php echo $total_MonthBrgyClr['monthlyBrgyTotal'] ?></div>
+                                    <div class="dashboard__card-top--label">Barangay Clearance</div>
+                                </div>
+
+                                <span class="dashboard__card-top--icon"><i class='bx bx-file'></i></span>
+                            </div>
+
+                            <div>
+                                <div>
+                                    <div class="dashboard__card-top--value"><?php echo $total_MonthBusinessClr['monthlyBusTotal'] ?>
+                                    </div>
+                                    <div class="dashboard__card-top--label">Business Clearance</div>
+
+                                </div>
+
+                                <span class="dashboard__card-top--icon"><i class='bx bxs-file'></i></span>
+                            </div>
+
+
                             <div class="graph">
                                 <h1>Barangay Clearance Sales</h1>
                                 <canvas id="brgy-month"></canvas>
@@ -99,6 +150,29 @@ require_once "../../includes/header.php";
                         </div>
 
                         <div class="tabContent reports" style="display: none;">
+
+
+                            <div>
+                                <div>
+                                    <div class="dashboard__card-top--value"><?php echo $total_YearBrgyClr['yearlyBrgyTotal'] ?></div>
+                                    <div class="dashboard__card-top--label">Barangay Clearance</div>
+                                </div>
+
+                                <span class="dashboard__card-top--icon"><i class='bx bx-file'></i></span>
+                            </div>
+
+                            <div>
+                                <div>
+                                    <div class="dashboard__card-top--value"><?php echo $total_YearBusinessClr['yearlyBusTotal'] ?>
+                                    </div>
+                                    <div class="dashboard__card-top--label">Business Clearance</div>
+
+                                </div>
+
+                                <span class="dashboard__card-top--icon"><i class='bx bxs-file'></i></span>
+                            </div>
+
+
                             <div class="graph">
                                 <h1>Barangay Clearance Sales</h1>
                                 <canvas id="brgy-year"></canvas>

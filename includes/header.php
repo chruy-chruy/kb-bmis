@@ -216,7 +216,7 @@ $role = $_SESSION['role'];
         <div class="dropdown dropdown--user dropdown--user-show">
             <ul>
                 <li class="dropdown__item">
-                    <a href="../user-accounts/view-user.php?role=<?php echo $role ?>">
+                    <a href="../user-accounts/user-profile.php?role=<?php echo $role ?>">
                         <i class='bx bxs-user-circle'></i>
                         User Profile
                     </a>

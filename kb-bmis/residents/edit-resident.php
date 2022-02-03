@@ -374,13 +374,13 @@ while ($row = mysqli_fetch_array($squery)) {
                         <div class="input__inner">
                           <div class="toggleswitch__wrapper">
                             <?php if ($row['disability_status'] == "") { ?>
-                              <input name="disability_status" type="checkbox" unchecked id="" class="toggleswitch toggleswitch--resident-profile input-viewprofile" value="Person with Disability">
+                              <input name="disability_status" id="disabilities" type="checkbox" unchecked id="" class="toggleswitch toggleswitch--resident-profile input-viewprofile" value="Person with Disability">
                               <label class="toggleswitch__indicator toggleswitch__indicator--off">No</label>
                               <label class="toggleswitch__indicator toggleswitch__indicator--on">Yes</label>
                             <?php } ?>
 
                             <?php if ($row['disability_status'] == "Person with Disability") { ?>
-                              <input name="disability_status" type="checkbox" checked id="" class="toggleswitch toggleswitch--resident-profile input-viewprofile" value="Person with Disability">
+                              <input name="disability_status" id="disabilities" type="checkbox" checked id="" class="toggleswitch toggleswitch--resident-profile input-viewprofile" value="Person with Disability">
                               <label class="toggleswitch__indicator toggleswitch__indicator--off">No</label>
                               <label class="toggleswitch__indicator toggleswitch__indicator--on">Yes</label>
                             <?php } ?>
@@ -394,7 +394,7 @@ while ($row = mysqli_fetch_array($squery)) {
                         <label for="resident-disabilitytype">Type of Disability</label>
                         <div class="input__inner">
                           <div class="select__wrapper">
-                            <select name="type_disability" id="" class="select select--resident-profile">
+                            <select name="type_disability" id="typedisabilities" class="select select--resident-profile">
                               <option selected hidden value="<?php echo $row['type_disability'] ?>"><?php echo $row['type_disability'] ?></option>
                               <option value="Psychosocial Disability">Psychosocial Disability</option>
                               <option value="Mental Disability">Mental Disability</option>
@@ -437,13 +437,13 @@ while ($row = mysqli_fetch_array($squery)) {
                         <div class="input__inner">
                           <div class="toggleswitch__wrapper">
                             <?php if ($row['deceased_status'] == "") { ?>
-                              <input name="deceased_status" type="checkbox" unchecked id="" class="toggleswitch toggleswitch--resident-profile input-viewprofile" value="Deceased">
+                              <input name="deceased_status" id="deceased" type="checkbox" unchecked id="" class="toggleswitch toggleswitch--resident-profile input-viewprofile" value="Deceased">
                               <label class="toggleswitch__indicator toggleswitch__indicator--off">No</label>
                               <label class="toggleswitch__indicator toggleswitch__indicator--on">Yes</label>
                             <?php } ?>
 
                             <?php if ($row['deceased_status'] == "Deceased") { ?>
-                              <input name="deceased_status" type="checkbox" checked id="" class="toggleswitch toggleswitch--resident-profile input-viewprofile" value="Deceased">
+                              <input name="deceased_status" id="deceased" type="checkbox" checked id="" class="toggleswitch toggleswitch--resident-profile input-viewprofile" value="Deceased">
                               <label class="toggleswitch__indicator toggleswitch__indicator--off">No</label>
                               <label class="toggleswitch__indicator toggleswitch__indicator--on">Yes</label>
                             <?php } ?>
@@ -456,7 +456,7 @@ while ($row = mysqli_fetch_array($squery)) {
                       <div class="input__wrapper">
                         <label for="resident-deathdate">Date of Death</label>
                         <div class="input__inner">
-                          <input type="date" name="date_of_death" class="input--light300" value="<?php echo $row['date_of_death'] ?>">
+                          <input type="date" id="datedeceased" name="date_of_death" class="input--light300" value="<?php echo $row['date_of_death'] ?>">
                         </div>
                       </div>
                     </div>
