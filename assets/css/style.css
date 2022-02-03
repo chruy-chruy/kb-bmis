@@ -2147,9 +2147,7 @@ table.dataTable td {
 
 .tabContent.reports {
   position: relative;
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 3.125rem;
+  display: flex;
 }
 
 .graph h1 {
