@@ -6,23 +6,21 @@
   flex-direction: column;
 }
 
-
-.tabContent.reports{
+.tabContent.reports {
   position: relative;
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: rem(50);
+  display: flex;
+  // grid-template-columns: repeat(2, 1fr);
+  // gap: rem(50);
 }
 
-.graph{
-
-  h1{
+.graph {
+  h1 {
     white-space: nowrap;
     margin-bottom: rem(10);
   }
 }
 
-#reportForm{
+#reportForm {
   @include flex-center-all;
 }
 
@@ -32,8 +30,7 @@
   flex-wrap: nowrap;
   align-content: flex-start;
 
-  h4{
+  h4 {
     margin: 0 rem(20);
   }
 }
-
