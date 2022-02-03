@@ -10,13 +10,25 @@ $countPopulation = $populationQuery->num_rows;
 $voterQuery = mysqli_query($conn, "SELECT COUNT(id) as voters FROM `residents` WHERE `voter_status` =  'Registered Voter'");
 $countVoters = mysqli_fetch_array($voterQuery);
 
-// total barangay clearance sales
-$salesQuery = mysqli_query($conn, "SELECT SUM(price) as brgySales FROM `barangay_clearance` WHERE YEAR(date_issued) = '2022'");
-$total_sales = mysqli_fetch_array($salesQuery);
 
-// total bs clearance sales
-$bsSalesQuery = mysqli_query($conn, "SELECT SUM(price) as businessSales FROM `business_clearance` WHERE YEAR(date_issued) = '2022'");
-$total_bs_sales = mysqli_fetch_array($bsSalesQuery);
+// total barangay clearance per day
+$totalbrgyClrQuery = mysqli_query($conn, "SELECT COUNT(id) as brgyTotal FROM `barangay_clearance` WHERE date_issued = CURRENT_DATE");
+$total_brgyClr = mysqli_fetch_array($totalbrgyClrQuery);
+
+// total business clearance per day
+$totalbusinessClrQuery = mysqli_query($conn, "SELECT COUNT(id) as busTotal FROM `business_clearance` WHERE date_issued = CURRENT_DATE");
+$total_businessClr = mysqli_fetch_array($totalbusinessClrQuery);
+
+
+// total barangay clearance sales
+// $salesQuery = mysqli_query($conn, "SELECT SUM(price) as brgySales FROM `barangay_clearance` WHERE YEAR(date_issued) = '2022'");
+// $total_sales = mysqli_fetch_array($salesQuery);
+
+// // total bs clearance sales
+// $bsSalesQuery = mysqli_query($conn, "SELECT SUM(price) as businessSales FROM `business_clearance` WHERE YEAR(date_issued) = '2022'");
+// $total_bs_sales = mysqli_fetch_array($bsSalesQuery);
+
+
 
 
 

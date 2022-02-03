@@ -94,19 +94,19 @@ mysqli_query($conn, "INSERT INTO `residents_archive` (
             '$fetch[img_url]' )");
 
 
-$fetchImage = $fetch["img_url"];
-/* Path of source file */
-$filePath = 'images/' . $fetchImage;
+// $fetchImage = $fetch["img_url"];
+// /* Path of source file */
+// $filePath = 'images/' . $fetchImage;
 
-$directory = '../archive/images/';
-$destinationFilePath = '../archive/images/' . $fetchImage;
+// $directory = '../archive/images/';
+// $destinationFilePath = '../archive/images/' . $fetchImage;
 
-if (!is_dir($directory)) {
-    /* Directory does not exist, so lets create it. */
-    mkdir($directory, 0755);
-}
+// if (!is_dir($directory)) {
+//     /* Directory does not exist, so lets create it. */
+//     mkdir($directory, 0755);
+// }
 
-!rename($filePath, $destinationFilePath);
+// !rename($filePath, $destinationFilePath);
 
 mysqli_query($conn, "DELETE FROM `residents` WHERE id = $id");
 mysqli_query($conn, "DELETE FROM `officials` WHERE `resident_id` = '$id'");

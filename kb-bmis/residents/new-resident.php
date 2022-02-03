@@ -117,7 +117,7 @@ require_once "../../includes/header.php";
                       <div class="input__wrapper">
                         <label for="resident-birthday">Date of Birth <strong style="color:red;" ;>*</strong></label>
                         <div class="input__inner">
-                          <input type="date" name="date_of_birth" class="input--light300" value="" required>
+                          <input type="date" id="dob" name="date_of_birth" class="input--light300" value="" required>
                         </div>
                       </div>
                     </div>
@@ -312,7 +312,7 @@ require_once "../../includes/header.php";
                         <label for="resident-PWD">Person with Disability?</label>
                         <div class="input__inner">
                           <div class="toggleswitch__wrapper">
-                            <input type="checkbox" id="" name="disability_status" class="toggleswitch toggleswitch--resident-profile" value="Person with Disability">
+                            <input type="checkbox" id="disabilities" name="disability_status" class="toggleswitch toggleswitch--resident-profile" value="Person with Disability">
                             <label class="toggleswitch__indicator toggleswitch__indicator--off">No</label>
                             <label class="toggleswitch__indicator toggleswitch__indicator--on">Yes</label>
                           </div>
@@ -325,7 +325,7 @@ require_once "../../includes/header.php";
                         <label for="resident-disabilitytype">Type of Disability</label>
                         <div class="input__inner">
                           <div class="select__wrapper">
-                            <select name="type_disability" id="" class="select select--resident-profile">
+                            <select name="type_disability" id="typedisabilities" class="select select--resident-profile">
                               <option selected value="">Select</option>
                               <option value="Psychosocial Disability">Psychosocial Disability</option>
                               <option value="Mental Disability">Mental Disability</option>
@@ -362,7 +362,7 @@ require_once "../../includes/header.php";
                         <label for="resident-deceased">Deceased?</label>
                         <div class="input__inner">
                           <div class="toggleswitch__wrapper">
-                            <input type="checkbox" name="deceased_status" id="" class="toggleswitch toggleswitch--resident-profile" value="Deceased">
+                            <input type="checkbox" name="deceased_status" id="deceased" class="toggleswitch toggleswitch--resident-profile" value="Deceased">
                             <label class="toggleswitch__indicator toggleswitch__indicator--off">No</label>
                             <label class="toggleswitch__indicator toggleswitch__indicator--on">Yes</label>
                           </div>
@@ -374,7 +374,7 @@ require_once "../../includes/header.php";
                       <div class="input__wrapper">
                         <label for="resident-deathdate">Date of Death</label>
                         <div class="input__inner">
-                          <input type="date" name="date_of_death" class="input--light300">
+                          <input type="date" id="datedeceased" name="date_of_death" class="input--light300">
                         </div>
                       </div>
                     </div>
@@ -392,7 +392,7 @@ require_once "../../includes/header.php";
                         <label for="resident-deceased">Registered Voter?</label>
                         <div class="input__inner">
                           <div class="toggleswitch__wrapper">
-                            <input type="checkbox" name="voter_status" name="" id="" class="toggleswitch toggleswitch--resident-profile" value="Registered Voter">
+                            <input type="checkbox" name="voter_status" name="" id="voter_stat" class="toggleswitch toggleswitch--resident-profile" value="Registered Voter">
                             <label class="toggleswitch__indicator toggleswitch__indicator--off">No</label>
                             <label class="toggleswitch__indicator toggleswitch__indicator--on">Yes</label>
                           </div>
@@ -404,7 +404,7 @@ require_once "../../includes/header.php";
                       <div class="input__wrapper">
                         <label for="resident-votersID">Voter's ID</label>
                         <div class="input__inner">
-                          <input type="text" name="voter_id" class="input--light300">
+                          <input type="text" id="voters_id" name="voter_id" class="input--light300">
                         </div>
                       </div>
                     </div>
@@ -413,7 +413,7 @@ require_once "../../includes/header.php";
                       <div class="input__wrapper">
                         <label for="resident-precinctnumber">Precinct Number</label>
                         <div class="input__inner">
-                          <input type="text" name="precinct_number" class="input--light300">
+                          <input type="text" id="precinct_no" name="precinct_number" class="input--light300">
                         </div>
                       </div>
                     </div>

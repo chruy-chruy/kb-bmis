@@ -7,13 +7,22 @@ $(document).ready(function () {
 
     $('#businessTbl').DataTable({
         "ordering": false,
-        "pageLength": 25,
+        "pageLength": 15,
         dom: 'Bftpr',
         language: {
             search: "_INPUT_",
             searchPlaceholder: "Search",
         },
 
+        "fnDrawCallback": function () {
+            var table = $('#businessTbl').DataTable();
+            if (table.data().length === 0)
+                table.buttons('.buttons-html5').disable();
+            else
+                table.buttons('.buttons-html5').enable();
+
+
+        },
 
 
         buttons: [

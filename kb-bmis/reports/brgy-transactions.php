@@ -49,12 +49,12 @@ include "../../includes/preloader.php";
                                     <input type="date" name="from_date" value="<?php if (isset($_GET['from_date'])) {
                                                                                     echo $_GET['from_date'];
                                                                                 } else {
-                                                                                } ?>">
+                                                                                } ?>" required>
                                     <h4>TO</h4>
                                     <input type="date" name="to_date" value="<?php if (isset($_GET['to_date'])) {
                                                                                     echo $_GET['to_date'];
                                                                                 } else {
-                                                                                } ?>">
+                                                                                } ?>" required>
                                     <button type="Submit" class="button button--sm button--light" style="margin-left: 12px;">Filter</button>
 
                                 </div>
