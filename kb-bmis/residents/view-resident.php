@@ -35,8 +35,8 @@ while ($row = mysqli_fetch_array($squery)) {
                         </div>
 
                         <div class="row">
-                            <a href="#" class="button button--primary button--sm modal-trigger" data-modal-id="modal-editprofile">
-                                <i class='bx bxs-edit' data-modal-id="modal-editprofile"></i>
+                            <a href="edit-resident.php?id=<?php echo $row["id"]; ?>" class="button button--primary button--sm modal-trigger">
+                                <i class='bx bxs-edit'></i>
                                 Edit</a>
                             <a href="#" class="button button--dark button--sm modal-trigger" data-modal-id="modal-delete">
                                 <i class='bx bxs-trash' data-modal-id="modal-delete"></i>
@@ -298,7 +298,7 @@ while ($row = mysqli_fetch_array($squery)) {
 
                                 <div class="profile-info__container">
                                     <div class="input__wrapper">
-                                        <label for="resident-contactnumber">Tel Number</label>
+                                        <label for="resident-contactnumber">Tel. Number</label>
                                         <div class="input__inner">
                                             <input disabled name="tel_number" type="tel" class="input--light300 input-viewprofile" value="<?php echo $row['tel_number'] ?>">
                                         </div>
@@ -611,7 +611,7 @@ while ($row = mysqli_fetch_array($squery)) {
     </div>
 
 
-    <div class="modal__wrapper" id="modal-editprofile">
+    <!-- <div class="modal__wrapper" id="modal-editprofile">
         <section class="modal__window modal__window--sm">
             <header class="modal__header">
                 <h3>Login</h3>
@@ -642,7 +642,7 @@ while ($row = mysqli_fetch_array($squery)) {
 
             </footer>
         </section>
-    </div>
+    </div> -->
 
 
 

@@ -52,7 +52,7 @@ while ($row = mysqli_fetch_array($squery)) {
                               </a>
                             </div> -->
 
-                <div class="profile__name profile__name--viewprofile" style="margin-bottom: 30px;">
+                <div class="profile__name profile__name--viewprofile" style="margin-bottom: 0;">
                   <?php echo $row["first_name"]; ?>
                   <?php echo $row["mid_name"]; ?>
                   <?php echo $row["last_name"]; ?>
@@ -95,7 +95,7 @@ while ($row = mysqli_fetch_array($squery)) {
 
                     <div class="profile-info__container">
                       <div class="input__wrapper">
-                        <label for="resident-first-name">First Name <strong style="color:red;" ;>*</strong></label>
+                        <label for="resident-first-name">First Name <strong style="color:red;">*</strong></label>
                         <div class="input__inner">
                           <input type="text" name="first_name" class="input--light300" required value="<?php echo $row['first_name'] ?>">
                         </div>
@@ -104,18 +104,18 @@ while ($row = mysqli_fetch_array($squery)) {
 
                     <div class="profile-info__container">
                       <div class="input__wrapper">
-                        <label for="resident-last-name">Last Name <strong style="color:red;" ;>*</strong></label>
+                        <label for="resident-last-name">Last Name <strong style="color:red;">*</strong></label>
                         <div class="input__inner">
-                          <input type="text" name="last_name" class="input--light300" required value="<?php echo $row['last_name'] ?>">
+                          <input type="text" name="last_name" class="input--light300" required value="<?php echo $row['last_name'] ?>" pattern="[^0-9]*" oninvalid="this.setCustomValidity('Numbers are not allowed.')" onchange="try{setCustomValidity('')}catch(e){}" oninput="setCustomValidity(' ')">
                         </div>
                       </div>
                     </div>
 
                     <div class="profile-info__container">
                       <div class="input__wrapper">
-                        <label for="resident-middle-name">Middle Name <strong style="color:red;" ;>*</strong></label>
+                        <label for="resident-middle-name">Middle Name <strong style="color:red;">*</strong></label>
                         <div class="input__inner">
-                          <input type="text" name="mid_name" class="input--light300" required value="<?php echo $row['mid_name'] ?>">
+                          <input type="text" name="mid_name" class="input--light300" required value="<?php echo $row['mid_name'] ?>" pattern="[^0-9]*" oninvalid="this.setCustomValidity('Numbers are not allowed.')" onchange="try{setCustomValidity('')}catch(e){}" oninput="setCustomValidity(' ')">
                         </div>
                       </div>
                     </div>
@@ -124,14 +124,14 @@ while ($row = mysqli_fetch_array($squery)) {
                       <div class="input__wrapper">
                         <label for="resident-suffix">Suffix</label>
                         <div class="input__inner">
-                          <input type="text" name="suffix" class="input--light300" value="<?php echo $row['suffix'] ?>">
+                          <input type="text" name="suffix" class="input--light300" value="<?php echo $row['suffix'] ?>" pattern="[^0-9]*" oninvalid="this.setCustomValidity('Numbers are not allowed.')" onchange="try{setCustomValidity('')}catch(e){}" oninput="setCustomValidity(' ')" maxlength="3">
                         </div>
                       </div>
                     </div>
 
                     <div class="profile-info__container">
                       <div class="input__wrapper">
-                        <label for="resident-gender">Gender <strong style="color:red;" ;>*</strong></label>
+                        <label for="resident-gender">Gender <strong style="color:red;">*</strong></label>
                         <div class="input__inner">
                           <div class="select__wrapper">
                             <select name="sex" id="" class="select select--resident-profile" required>
@@ -146,7 +146,7 @@ while ($row = mysqli_fetch_array($squery)) {
 
                     <div class="profile-info__container">
                       <div class="input__wrapper">
-                        <label for="resident-birthday">Date of Birth <strong style="color:red;" ;>*</strong></label>
+                        <label for="resident-birthday">Date of Birth <strong style="color:red;">*</strong></label>
                         <div class="input__inner">
                           <input type="date" name="date_of_birth" class="input--light300" value="<?php echo $row['date_of_birth'] ?>" required>
                         </div>
@@ -155,16 +155,16 @@ while ($row = mysqli_fetch_array($squery)) {
 
                     <div class="profile-info__container">
                       <div class="input__wrapper">
-                        <label for="resident-housenumber">House Number <strong style="color:red;" ;>*</strong></label>
+                        <label for="resident-housenumber">House Number <strong style="color:red;">*</strong></label>
                         <div class="input__inner">
-                          <input type="text" name="house_number" class="input--light300" value="<?php echo $row['house_number'] ?>" required>
+                          <input type="number" name="house_number" class="input--light300" value="<?php echo $row['house_number'] ?>" required>
                         </div>
                       </div>
                     </div>
 
                     <div class="profile-info__container">
                       <div class="input__wrapper">
-                        <label for="resident-street">Street <strong style="color:red;" ;>*</strong></label>
+                        <label for="resident-street">Street <strong style="color:red;">*</strong></label>
                         <div class="input__inner">
                           <input type="text" name="street" class="input--light300" value="<?php echo $row['street'] ?>" required>
                         </div>
@@ -173,9 +173,8 @@ while ($row = mysqli_fetch_array($squery)) {
 
                     <div class="profile-info__container">
                       <div class="input__wrapper">
-                        <label for="resident-purok">Purok <strong style="color:red;" ;>*</strong></label>
+                        <label for="resident-purok">Purok <strong style="color:red;">*</strong></label>
                         <div class="input__inner">
-                          <!-- <input type="text" name="purok" class="input--light300" value="<?php echo $row['purok'] ?>" required> -->
 
                           <div class="select__wrapper">
                             <select name="purok" id="" class="select select--resident-profile" required>
@@ -202,7 +201,7 @@ while ($row = mysqli_fetch_array($squery)) {
 
                     <div class="profile-info__container">
                       <div class="input__wrapper">
-                        <label for="resident-birthplace">Place of Birth <strong style="color:red;" ;>*</strong></label>
+                        <label for="resident-birthplace">Place of Birth <strong style="color:red;">*</strong></label>
                         <div class="input__inner">
                           <input type="text" name="place_of_birth" class="input--light300" value="<?php echo $row['place_of_birth'] ?>" required>
                         </div>
@@ -211,7 +210,7 @@ while ($row = mysqli_fetch_array($squery)) {
 
                     <div class="profile-info__container">
                       <div class="input__wrapper">
-                        <label for="resident-civilstatus">Civil Status <strong style="color:red;" ;>*</strong></label>
+                        <label for="resident-civilstatus">Civil Status <strong style="color:red;">*</strong></label>
                         <div class="input__inner">
                           <div class="select__wrapper">
                             <select name="civil_status" id="" class="select select--resident-profile" required>
@@ -232,16 +231,16 @@ while ($row = mysqli_fetch_array($squery)) {
 
                     <div class="profile-info__container">
                       <div class="input__wrapper">
-                        <label for="resident-nationality">Nationality <strong style="color:red;" ;>*</strong></label>
+                        <label for="resident-nationality">Nationality <strong style="color:red;">*</strong></label>
                         <div class="input__inner">
-                          <input type="text" name="citizenship" class="input--light300" value="<?php echo $row['citizenship'] ?>">
+                          <input type="text" name="citizenship" class="input--light300" value="<?php echo $row['citizenship'] ?>" required pattern="[^0-9]*" oninvalid="this.setCustomValidity('Numbers are not allowed.')" onchange="try{setCustomValidity('')}catch(e){}" oninput="setCustomValidity(' ')">
                         </div>
                       </div>
                     </div>
 
                     <div class="profile-info__container">
                       <div class="input__wrapper">
-                        <label for="resident-educationalattainment">Educational Attainment <strong style="color:red;" ;>*</strong></label>
+                        <label for="resident-educationalattainment">Educational Attainment <strong style="color:red;">*</strong></label>
                         <div class="input__inner">
                           <div class="select__wrapper">
                             <select name="education_status" id="" class="select select--resident-profile" required>
@@ -262,9 +261,9 @@ while ($row = mysqli_fetch_array($squery)) {
 
                     <div class="profile-info__container">
                       <div class="input__wrapper">
-                        <label for="resident-occupation">Occupation <strong style="color:red;" ;>*</strong></label>
+                        <label for="resident-occupation">Occupation <strong style="color:red;">*</strong></label>
                         <div class="input__inner">
-                          <input type="text" name="occupation" class="input--light300" value="<?php echo $row['occupation'] ?>">
+                          <input type="text" name="occupation" class="input--light300" value="<?php echo $row['occupation'] ?>" required pattern="[^0-9]*" oninvalid="this.setCustomValidity('Numbers are not allowed.')" onchange="try{setCustomValidity('')}catch(e){}" oninput="setCustomValidity(' ')">
                         </div>
                       </div>
                     </div>
@@ -273,7 +272,7 @@ while ($row = mysqli_fetch_array($squery)) {
                       <div class="input__wrapper">
                         <label for="resident-religion">Religion</label>
                         <div class="input__inner">
-                          <input type="text" name="religion" class="input--light300" value="<?php echo $row['religion'] ?>">
+                          <input type="text" name="religion" class="input--light300" value="<?php echo $row['religion'] ?>" pattern="[^0-9]*" oninvalid="this.setCustomValidity('Numbers are not allowed.')" onchange="try{setCustomValidity('')}catch(e){}" oninput="setCustomValidity(' ')">
                         </div>
                       </div>
                     </div>
@@ -293,6 +292,8 @@ while ($row = mysqli_fetch_array($squery)) {
                               <option value="O-">O-</option>
                               <option value="AB+">AB+</option>
                               <option value="AB-">AB-</option>
+                              <option value="RH-NULL">RH-NULL</option>
+                              <option value="Unknown">Unknown</option>
                             </select>
                           </div>
                         </div>
@@ -301,18 +302,18 @@ while ($row = mysqli_fetch_array($squery)) {
 
                     <div class="profile-info__container">
                       <div class="input__wrapper">
-                        <label for="resident-contactnumber">Phone Number <strong style="color:red;" ;>*</strong></label>
+                        <label for="resident-contactnumber">Phone Number <strong style="color:red;">*</strong></label>
                         <div class="input__inner">
-                          <input type="tel" name="phone_number" class="input--light300" value="<?php echo $row['phone_number'] ?>">
+                          <input type="text" name="phone_number" class="input--light300" value="<?php echo $row['phone_number'] ?>" required pattern="09[^a-zA-ZÀ-ž]{9}" title="09XXXXXXXXX" maxlength="11">
                         </div>
                       </div>
                     </div>
 
                     <div class="profile-info__container">
                       <div class="input__wrapper">
-                        <label for="resident-contactnumber">Tel Number</label>
+                        <label for="resident-contactnumber">Tel. Number</label>
                         <div class="input__inner">
-                          <input type="tel" name="tel_number" class="input--light300" value="<?php echo $row['tel_number'] ?>">
+                          <input type="text" name="tel_number" class="input--light300" value="<?php echo $row['tel_number'] ?>" pattern="[^a-zA-ZÀ-ž]*" oninvalid="this.setCustomValidity('Alphabets are not allowed.')" onchange="try{setCustomValidity('')}catch(e){}" oninput="setCustomValidity(' ')">
                         </div>
                       </div>
                     </div>
@@ -533,36 +534,36 @@ while ($row = mysqli_fetch_array($squery)) {
 
                     <div class="profile-info__container">
                       <div class="input__wrapper">
-                        <label for="resident-emergencyperson">Emergency Person <strong style="color:red;" ;>*</strong></label>
+                        <label for="resident-emergencyperson">Emergency Person <strong style="color:red;">*</strong></label>
                         <div class="input__inner">
-                          <input type="text" name="emergency_person" class="input--light300" value="<?php echo $row['emergency_person'] ?>">
+                          <input type="text" name="emergency_person" class="input--light300" value="<?php echo $row['emergency_person'] ?>" required>
                         </div>
                       </div>
                     </div>
 
                     <div class="profile-info__container viewprofile">
                       <div class="input__wrapper">
-                        <label for="resident-emergencyrelationship">Relationship <strong style="color:red;" ;>*</strong></label>
+                        <label for="resident-emergencyrelationship">Relationship <strong style="color:red;">*</strong></label>
                         <div class="input__inner">
-                          <input type="text" name="relationship" class="input--light300" value="<?php echo $row['relationship'] ?>">
+                          <input type="text" name="relationship" class="input--light300" value="<?php echo $row['relationship'] ?>" required pattern="[^0-9]*" oninvalid="this.setCustomValidity('Numbers are not allowed.')" onchange="try{setCustomValidity('')}catch(e){}" oninput="setCustomValidity(' ')">
                         </div>
                       </div>
                     </div>
 
                     <div class="profile-info__container">
                       <div class="input__wrapper">
-                        <label for="resident-emergencyaddress">Emergency Address <strong style="color:red;" ;>*</strong></label>
+                        <label for="resident-emergencyaddress">Emergency Address <strong style="color:red;">*</strong></label>
                         <div class="input__inner">
-                          <input type="text" name="emergency_address" class="input--light300" value="<?php echo $row['emergency_address'] ?>">
+                          <input type="text" name="emergency_address" class="input--light300" value="<?php echo $row['emergency_address'] ?>" required>
                         </div>
                       </div>
                     </div>
 
                     <div class="profile-info__container">
                       <div class="input__wrapper">
-                        <label for="resident-emergencycontact">Emergency Contact <strong style="color:red;" ;>*</strong></label>
+                        <label for="resident-emergencycontact">Emergency Contact <strong style="color:red;">*</strong></label>
                         <div class="input__inner">
-                          <input type="text" name="emergency_contact" class="input--light300" value="<?php echo $row['emergency_address'] ?>">
+                          <input type="text" name="emergency_contact" class="input--light300" value="<?php echo $row['emergency_contact'] ?>" required pattern="09[^a-zA-ZÀ-ž]{9}" title="09XXXXXXXXX" maxlength="11">
                         </div>
                       </div>
                     </div>
@@ -580,7 +581,7 @@ while ($row = mysqli_fetch_array($squery)) {
             <div class="card__footer">
               <div class="card__footer-content">
                 <button class="button button--primary button--md" name="btn_update">SAVE</button>
-                <a href="#" ; class="button button--dark button--md modal-trigger" data-modal-id="modal-cancel">CANCEL</a>
+                <a href="#" class="button button--dark button--md modal-trigger" data-modal-id="modal-cancel">CANCEL</a>
               </div>
             </div>
 

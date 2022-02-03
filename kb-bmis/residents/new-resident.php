@@ -64,7 +64,7 @@ require_once "../../includes/header.php";
 
                     <div class="profile-info__container">
                       <div class="input__wrapper">
-                        <label for="resident-first-name">First Name <strong style="color:red;" ;>*</strong></label>
+                        <label for="resident-first-name">First Name <strong style="color:red;">*</strong></label>
                         <div class="input__inner">
                           <input type="text" name="first_name" class="input--light300" required>
                         </div>
@@ -73,18 +73,18 @@ require_once "../../includes/header.php";
 
                     <div class="profile-info__container">
                       <div class="input__wrapper">
-                        <label for="resident-last-name">Last Name <strong style="color:red;" ;>*</strong></label>
+                        <label for="resident-last-name">Last Name <strong style="color:red;">*</strong></label>
                         <div class="input__inner">
-                          <input type="text" name="last_name" class="input--light300" required>
+                          <input type="text" name="last_name" class="input--light300" required pattern="[^0-9]*" oninvalid="this.setCustomValidity('Numbers are not allowed.')" onchange="try{setCustomValidity('')}catch(e){}" oninput="setCustomValidity(' ')">
                         </div>
                       </div>
                     </div>
 
                     <div class="profile-info__container">
                       <div class="input__wrapper">
-                        <label for="resident-middle-name">Middle Name <strong style="color:red;" ;>*</strong></label>
+                        <label for="resident-middle-name">Middle Name <strong style="color:red;">*</strong></label>
                         <div class="input__inner">
-                          <input type="text" name="mid_name" class="input--light300" required>
+                          <input type="text" name="mid_name" class="input--light300" required pattern="[^0-9]*" oninvalid="this.setCustomValidity('Numbers are not allowed.')" onchange="try{setCustomValidity('')}catch(e){}" oninput="setCustomValidity(' ')">
                         </div>
                       </div>
                     </div>
@@ -93,14 +93,14 @@ require_once "../../includes/header.php";
                       <div class="input__wrapper">
                         <label for="resident-suffix">Suffix</label>
                         <div class="input__inner">
-                          <input type="text" name="suffix" class="input--light300">
+                          <input type="text" name="suffix" class="input--light300" pattern="[^0-9]*" oninvalid="this.setCustomValidity('Numbers are not allowed.')" onchange="try{setCustomValidity('')}catch(e){}" oninput="setCustomValidity(' ')" maxlength="3">
                         </div>
                       </div>
                     </div>
 
                     <div class="profile-info__container">
                       <div class="input__wrapper">
-                        <label for="resident-gender">Gender <strong style="color:red;" ;>*</strong></label>
+                        <label for="resident-gender">Gender <strong style="color:red;">*</strong></label>
                         <div class="input__inner">
                           <div class="select__wrapper">
                             <select name="sex" id="" class="select select--resident-profile" required>
@@ -115,7 +115,7 @@ require_once "../../includes/header.php";
 
                     <div class="profile-info__container">
                       <div class="input__wrapper">
-                        <label for="resident-birthday">Date of Birth <strong style="color:red;" ;>*</strong></label>
+                        <label for="resident-birthday">Date of Birth <strong style="color:red;">*</strong></label>
                         <div class="input__inner">
                           <input type="date" id="dob" name="date_of_birth" class="input--light300" value="" required>
                         </div>
@@ -124,34 +124,55 @@ require_once "../../includes/header.php";
 
                     <div class="profile-info__container">
                       <div class="input__wrapper">
-                        <label for="resident-housenumber">House Number <strong style="color:red;" ;>*</strong></label>
+                        <label for="resident-housenumber">House Number <strong style="color:red;">*</strong></label>
                         <div class="input__inner">
-                          <input type="text" name="house_number" class="input--light300" value="" required>
+                          <input type="number" name="house_number" class="input--light300" value="" required>
                         </div>
                       </div>
                     </div>
 
                     <div class="profile-info__container">
                       <div class="input__wrapper">
-                        <label for="resident-street">Street <strong style="color:red;" ;>*</strong></label>
+                        <label for="resident-street">Street <strong style="color:red;">*</strong></label>
                         <div class="input__inner">
                           <input type="text" name="street" class="input--light300" value="" required>
                         </div>
                       </div>
                     </div>
 
+
                     <div class="profile-info__container">
                       <div class="input__wrapper">
-                        <label for="resident-purok">Purok <strong style="color:red;" ;>*</strong></label>
+                        <label for="resident-purok">Purok <strong style="color:red;">*</strong></label>
                         <div class="input__inner">
-                          <input type="text" name="purok" class="input--light300" value="" required>
+                          <!-- <input type="text" name="purok" class="input--light300" value="<?php echo $row['purok'] ?>" required> -->
+
+                          <div class="select__wrapper">
+                            <select name="purok" id="" class="select select--resident-profile" required>
+                              <option selected value="" disabled>Select</option>
+                              <option value="Purok 1">Purok 1</option>
+                              <option value="Purok 2">Purok 2</option>
+                              <option value="Purok 3">Purok 3</option>
+                              <option value="Purok 4">Purok 4</option>
+                              <option value="Purok 5">Purok 5</option>
+                              <option value="Purok 6">Purok 6</option>
+                              <option value="Purok 7">Purok 7</option>
+                              <option value="Purok 8">Purok 8</option>
+                              <option value="Purok 9">Purok 9</option>
+                              <option value="Purok 10">Purok 10</option>
+                              <option value="Purok 11">Purok 11</option>
+                              <option value="Purok 12">Purok 12</option>
+                              <option value="Purok 13">Purok 13</option>
+                            </select>
+                          </div>
+
                         </div>
                       </div>
                     </div>
 
                     <div class="profile-info__container">
                       <div class="input__wrapper">
-                        <label for="resident-birthplace">Place of Birth <strong style="color:red;" ;>*</strong></label>
+                        <label for="resident-birthplace">Place of Birth <strong style="color:red;">*</strong></label>
                         <div class="input__inner">
                           <input type="text" name="place_of_birth" class="input--light300" value="" required>
                         </div>
@@ -160,7 +181,7 @@ require_once "../../includes/header.php";
 
                     <div class="profile-info__container">
                       <div class="input__wrapper">
-                        <label for="resident-civilstatus">Civil Status <strong style="color:red;" ;>*</strong></label>
+                        <label for="resident-civilstatus">Civil Status <strong style="color:red;">*</strong></label>
                         <div class="input__inner">
                           <div class="select__wrapper">
                             <select name="civil_status" id="" class="select select--resident-profile" required>
@@ -181,16 +202,16 @@ require_once "../../includes/header.php";
 
                     <div class="profile-info__container">
                       <div class="input__wrapper">
-                        <label for="resident-nationality">Nationality <strong style="color:red;" ;>*</strong></label>
+                        <label for="resident-nationality">Nationality <strong style="color:red;">*</strong></label>
                         <div class="input__inner">
-                          <input type="text" name="citizenship" class="input--light300" value="" required>
+                          <input type="text" name="citizenship" class="input--light300" value="" required pattern="[^0-9]*" oninvalid="this.setCustomValidity('Numbers are not allowed.')" onchange="try{setCustomValidity('')}catch(e){}" oninput="setCustomValidity(' ')">
                         </div>
                       </div>
                     </div>
 
                     <div class="profile-info__container">
                       <div class="input__wrapper">
-                        <label for="resident-educationalattainment">Educational Attainment <strong style="color:red;" ;>*</strong></label>
+                        <label for="resident-educationalattainment">Educational Attainment <strong style="color:red;">*</strong></label>
                         <div class="input__inner">
                           <div class="select__wrapper">
                             <select name="education_status" id="" class="select select--resident-profile" required>
@@ -215,9 +236,9 @@ require_once "../../includes/header.php";
 
                     <div class="profile-info__container">
                       <div class="input__wrapper">
-                        <label for="resident-occupation">Occupation <strong style="color:red;" ;>*</strong></label>
+                        <label for="resident-occupation">Occupation <strong style="color:red;">*</strong></label>
                         <div class="input__inner">
-                          <input type="text" name="occupation" class="input--light300" value="" required>
+                          <input type="text" name="occupation" class="input--light300" value="" required pattern="[^0-9]*" oninvalid="this.setCustomValidity('Numbers are not allowed.')" onchange="try{setCustomValidity('')}catch(e){}" oninput="setCustomValidity(' ')">
                         </div>
                       </div>
                     </div>
@@ -226,7 +247,7 @@ require_once "../../includes/header.php";
                       <div class="input__wrapper">
                         <label for="resident-religion">Religion</label>
                         <div class="input__inner">
-                          <input type="text" name="religion" class="input--light300" value="">
+                          <input type="text" name="religion" class="input--light300" value="" pattern="[^0-9]*" oninvalid="this.setCustomValidity('Numbers are not allowed.')" onchange="try{setCustomValidity('')}catch(e){}" oninput="setCustomValidity(' ')">
                         </div>
                       </div>
                     </div>
@@ -256,18 +277,18 @@ require_once "../../includes/header.php";
 
                     <div class="profile-info__container">
                       <div class="input__wrapper">
-                        <label for="resident-contactnumber">Phone Number <strong style="color:red;" ;>*</strong></label>
+                        <label for="resident-contactnumber">Phone Number <strong style="color:red;">*</strong></label>
                         <div class="input__inner">
-                          <input type="tel" name="phone_number" class="input--light300" value="" required>
+                          <input type="text" name="phone_number" class="input--light300" value="" required pattern="09[^a-zA-ZÀ-ž]{9}" title="09XXXXXXXXX" maxlength="11">
                         </div>
                       </div>
                     </div>
 
                     <div class="profile-info__container">
                       <div class="input__wrapper">
-                        <label for="resident-contactnumber">Tel Number</label>
+                        <label for="resident-contactnumber">Tel. Number</label>
                         <div class="input__inner">
-                          <input type="tel" name="tel_number" class="input--light300" value="">
+                          <input type="text" name="tel_number" class="input--light300" value="" pattern="[^a-zA-ZÀ-ž]*" oninvalid="this.setCustomValidity('Alphabets are not allowed.')" onchange="try{setCustomValidity('')}catch(e){}" oninput="setCustomValidity(' ')">
                         </div>
                       </div>
                     </div>
@@ -443,7 +464,7 @@ require_once "../../includes/header.php";
 
                     <div class="profile-info__container">
                       <div class="input__wrapper">
-                        <label for="resident-emergencyperson">Emergency Person <strong style="color:red;" ;>*</strong></label>
+                        <label for="resident-emergencyperson">Emergency Person <strong style="color:red;">*</strong></label>
                         <div class="input__inner">
                           <input type="text" name="emergency_person" class="input--light300" required>
                         </div>
@@ -452,16 +473,16 @@ require_once "../../includes/header.php";
 
                     <div class="profile-info__container viewprofile">
                       <div class="input__wrapper">
-                        <label for="resident-emergencyrelationship">Relationship <strong style="color:red;" ;>*</strong></label>
+                        <label for="resident-emergencyrelationship">Relationship <strong style="color:red;">*</strong></label>
                         <div class="input__inner">
-                          <input type="text" name="relationship" class="input--light300" required>
+                          <input type="text" name="relationship" class="input--light300" required pattern="[^0-9]*" oninvalid="this.setCustomValidity('Numbers are not allowed.')" onchange="try{setCustomValidity('')}catch(e){}" oninput="setCustomValidity(' ')">
                         </div>
                       </div>
                     </div>
 
                     <div class="profile-info__container">
                       <div class="input__wrapper">
-                        <label for="resident-emergencyaddress">Emergency Address <strong style="color:red;" ;>*</strong></label>
+                        <label for="resident-emergencyaddress">Emergency Address <strong style="color:red;">*</strong></label>
                         <div class="input__inner">
                           <input type="text" name="emergency_address" class="input--light300" required>
                         </div>
@@ -470,9 +491,9 @@ require_once "../../includes/header.php";
 
                     <div class="profile-info__container">
                       <div class="input__wrapper">
-                        <label for="resident-emergencycontact">Emergency Contact <strong style="color:red;" ;>*</strong></label>
+                        <label for="resident-emergencycontact">Emergency Contact <strong style="color:red;">*</strong></label>
                         <div class="input__inner">
-                          <input type="text" name="emergency_contact" class="input--light300" required>
+                          <input type="text" name="emergency_contact" class="input--light300" required pattern="09[^a-zA-ZÀ-ž]{9}" title="09XXXXXXXXX" maxlength="11">
                         </div>
                       </div>
                     </div>
@@ -488,7 +509,7 @@ require_once "../../includes/header.php";
             <div class="card__footer">
               <div class="card__footer-content">
                 <button class="button button--primary button--md" name="btn_save">SAVE</button>
-                <a href="#" ; class="button button--dark button--md modal-trigger" data-modal-id="modal-cancel">CANCEL</a>
+                <a href="#" class="button button--dark button--md modal-trigger" data-modal-id="modal-cancel">CANCEL</a>
               </div>
 
               <!-- card end -->
