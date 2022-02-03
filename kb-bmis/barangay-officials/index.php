@@ -161,7 +161,7 @@ include "../../includes/preloader.php";
         </thead>
         <tbody>
           <?php
-          $squery =  mysqli_query($conn, "select * from residents where not (residents.occupation = 'Barangay Chairman' OR  residents.occupation ='Barangay Secretary' OR   residents.occupation ='Barangay Treasurer')");
+          $squery =  mysqli_query($conn, "select * from residents where not (residents.occupation = 'Barangay Chairman' OR residents.occupation ='Barangay Secretary' OR residents.occupation ='Barangay Treasurer' OR residents.occupation ='Barangay Councilor' OR residents.occupation ='SK Chairperson' OR residents.occupation ='SK Councilor')");
           while ($row = mysqli_fetch_array($squery)) {
 
           ?>
