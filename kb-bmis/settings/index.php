@@ -20,50 +20,58 @@ include "../../includes/preloader.php";
 
 
                     <h3 style="position: absolute; top: 40px; left: 40px;">Clearance Price Settings</h3>
+                    <?php if (isset($_GET['msg'])) { ?>
+                        <p class="error-message" style="margin-bottom: 15px;"><?php echo $_GET['msg']; ?></p>
+                    <?php } ?>
 
 
                     <div class="certificates-info__content">
 
-                        <form id="" action="generate/business-clearance.php" method="post">
+                        <form id="" action="update-settings.php" method="post">
+
                             <section class="certificates-info">
-                                <div class="certificates-info__container">
-                                    <div class="input__wrapper">
-                                        <label>Barangay Clearance Fee</label>
-                                        <div class="input__inner">
-                                            <input type="number" class="input--light300 input-viewprofile" value="" required>
+                                <?php
+                                $squery =  mysqli_query($conn, "SELECT * FROM `settings`");
+                                while ($row = mysqli_fetch_array($squery)) {
+                                ?>
+                                    <div class="certificates-info__container">
+                                        <div class="input__wrapper">
+                                            <label>Barangay Clearance Fee: <?php echo $row['barangay_clearance_fee'] ?></label>
+                                            <div class="input__inner">
+                                                <input name="barangay_clearance_fee" type="number" class="input--light300 input-viewprofile" value="" required>
+                                            </div>
                                         </div>
                                     </div>
-                                </div>
 
-                                <div class="certificates-info__container">
-                                    <div class="input__wrapper">
-                                        <label>Small Scale Business Fee</label>
-                                        <div class="input__inner">
-                                            <input type="number" class="input--light300 input-viewprofile" value="" required>
+                                    <div class="certificates-info__container">
+                                        <div class="input__wrapper">
+                                            <label>Small Scale Business Fee: <?php echo $row['small_scale_fee'] ?></label>
+                                            <div class="input__inner">
+                                                <input name="small_scale_fee" type="number" class="input--light300 input-viewprofile" value="" required>
+                                            </div>
                                         </div>
                                     </div>
-                                </div>
 
-                                <div class="certificates-info__container">
-                                    <div class="input__wrapper">
-                                        <label>Medium Scale Business Fee</label>
-                                        <div class="input__inner">
-                                            <input type="number" class="input--light300 input-viewprofile" value="" required>
+                                    <div class="certificates-info__container">
+                                        <div class="input__wrapper">
+                                            <label>Medium Scale Business Fee: <?php echo $row['medium_scale_fee'] ?></label>
+                                            <div class="input__inner">
+                                                <input name="medium_scale_fee" type="number" class="input--light300 input-viewprofile" value="" required>
+                                            </div>
                                         </div>
                                     </div>
-                                </div>
 
 
-                                <div class="certificates-info__container">
-                                    <div class="input__wrapper">
-                                        <label>Large Scale Business Fee</label>
-                                        <div class="input__inner">
-                                            <input type="number" class="input--light300 input-viewprofile" value="" required>
+                                    <div class="certificates-info__container">
+                                        <div class="input__wrapper">
+                                            <label>Large Scale Business Fee: <?php echo $row['large_scale_fee'] ?></label>
+                                            <div class="input__inner">
+                                                <input name="large_scale_fee" type="number" class="input--light300 input-viewprofile" value="" required>
+                                            </div>
                                         </div>
                                     </div>
-                                </div>
 
-
+                                <?php } ?>
                             </section>
                     </div>
 

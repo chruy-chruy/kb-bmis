@@ -104,28 +104,31 @@ require_once "../../includes/header.php";
                                             </div>
                                         </div>
                                     </div>
-
-                                    <div class="certificates-info__container">
-                                        <div class="input__wrapper">
-                                            <label>Purpose <strong style="color:red;" ;>*</strong></label>
-                                            <div class="input__inner">
-                                                <input name="purpose" type="text" class="input--light300 input-viewprofile" value="" required="">
-                                            </div>
+                                <?php } ?>
+                                <div class="certificates-info__container">
+                                    <div class="input__wrapper">
+                                        <label>Purpose <strong style="color:red;" ;>*</strong></label>
+                                        <div class="input__inner">
+                                            <input name="purpose" type="text" class="input--light300 input-viewprofile" value="" required="">
                                         </div>
                                     </div>
+                                </div>
 
 
 
-
+                                <?php
+                                $squery =  mysqli_query($conn, "SELECT * FROM `settings`");
+                                while ($row = mysqli_fetch_array($squery)) {
+                                ?>
                                     <div class="certificates-info__container">
                                         <div class="input__wrapper">
                                             <label>Amount <strong style="color:red;" ;>*</strong></label>
                                             <div class="input__inner">
-                                                <input name="price" type="text" class="input--light300 input-viewprofile" value="">
+                                                <input name="price" type="text" class="input--light300 input-viewprofile" value="<?php echo $row['barangay_clearance_fee'] ?>">
                                             </div>
                                         </div>
                                     </div>
-
+                                <?php } ?>
                                 </section>
 
                                 <!-- <hr style="margin-top: 12px;"> -->
@@ -208,10 +211,9 @@ require_once "../../includes/header.php";
 
 <!--=============== MODALS ===============-->
 <?php
-                    include "../../includes/modal-cancel.php";
+include "../../includes/modal-cancel.php";
 ?>
 
 </body>
 
 </html>
-<?php } ?>
