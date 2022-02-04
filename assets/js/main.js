@@ -62,6 +62,15 @@ $(document).ready(function () {
     },
   });
 
+  $("#reports-table").DataTable({
+    dom: "ftpr",
+    bSort: false,
+    pageLength: 8,
+    language: {
+      search: "_INPUT_",
+      searchPlaceholder: "Search",
+    },
+  });
 
 
   /*=============== RESIDENTS DROPDOWN FILTER ===============*/

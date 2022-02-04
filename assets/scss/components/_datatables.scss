@@ -176,6 +176,68 @@ $jqueryui: false !default;
   }
 }
 
+#reports-bsnclr-table, #reports-brgyclr-table{
+  
+  &.dataTable{
+
+    td:nth-child(2) {
+      width: auto;
+    }
+
+    thead{
+      text-align: left;
+
+      th, td{
+        padding: rem(18) 0 !important;
+      }
+    }
+
+    tbody{
+      td{
+        padding: rem(18) 0 !important;
+
+      }
+    }
+  }
+
+  &_wrapper {
+    width: 100% !important;
+
+    
+    .dt-buttons {
+      float: right !important;
+      display: flex;
+      gap: rem(8);
+      margin-bottom: rem(18);
+  }
+  }
+
+  box-shadow: none;
+
+  &_filter {
+    input {
+      width: 100%;
+      height: rem(54);
+      background: $light100;
+      margin-left: none;
+      font-size: rem(16);
+      letter-spacing: rem(0.5);
+      color: $dark300;
+      outline: none;
+      border-radius: rem(10);
+      border: 1px solid #ccc;
+      padding: rem(10) rem(18);
+      box-shadow: none;
+    }
+
+    input:focus {
+      border: rem(1) solid $primary;
+    }
+  }
+
+  
+}
+
 table.dataTable {
   width: 100% !important;
   margin: rem(25) auto rem(20) auto;

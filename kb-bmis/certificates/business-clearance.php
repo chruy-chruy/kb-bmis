@@ -19,7 +19,7 @@ require_once "../../includes/header.php";
         </button>
 
 
-        <div class="card__body" style="padding-top: 150px;">
+        <div class="card__body" style="padding-top: 100px;">
           <div class="card__body-content">
 
 
@@ -91,9 +91,9 @@ require_once "../../includes/header.php";
 
                   <div class="certificates-info__container">
                     <div class="input__wrapper">
-                      <label>Amount <strong style="color:red;" ;>*</strong></label>
+                      <label>Amount</label>
                       <div class="input__inner">
-                        <input name="price" type="text" class="input--light300 input-viewprofile" value="" required>
+                        <input name="price" type="text" class="input--light300 input-viewprofile" value="">
                       </div>
                     </div>
                   </div>

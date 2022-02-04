@@ -212,21 +212,22 @@
   &__item {
     // padding: 0 rem(30);
     display: inline-block;
-    margin: 0 rem(18) rem(10) 0;
-    padding-right: rem(18);
-    border-right: rem(1) $dark200 solid;
+    margin: 0 rem(14) rem(14) 0;
+    padding-right: rem(14);
+    // border-right: rem(1) $dark200 solid;
 
     @include breakpoint-down(medium) {
       // padding: 0 rem(10);
-      margin-right: rem(22);
-      padding-right: rem(22);
+      margin-right: rem(18);
+      padding-right: rem(18);
     }
 
     &:last-child {
       border-right: none;
     }
 
-    a {
+    span {
+      cursor: pointer;
       color: $dark200;
       font-size: rem(14);
       transition: 300ms;
@@ -242,10 +243,10 @@
     }
 
     &--active {
-      a {
-        padding: rem(8);
+      span {
+        padding: rem(8) rem(10);
         border-radius: rem(8);
-        background: $light400;
+        background: darken($light400, 3);
         color: $dark400;
         letter-spacing: rem(0.5);
       }

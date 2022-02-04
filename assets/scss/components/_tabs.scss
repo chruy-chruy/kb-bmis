@@ -13,6 +13,7 @@ justify-content: center;
     margin-right: rem(16);
     padding: rem(8);
     font-size: rem(13);
+    color: $dark200;
     transition: 400ms;
     cursor: pointer;
     letter-spacing: rem(0.2);
@@ -24,7 +25,7 @@ justify-content: center;
     &--active {
       border-radius: rem(8);
       background: darken($light400, 5);
-      color: $dark300;
+      color: $dark400;
       letter-spacing: rem(0.5);
     }
   }

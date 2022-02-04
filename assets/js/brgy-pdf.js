@@ -5,7 +5,7 @@ $(document).ready(function () {
     var now = new Date();
     var titleDate = now.getFullYear() + "-" + (now.getMonth() + 1) + "-" + now.getDate()
 
-    $('#brgyTbl').DataTable({
+    $('#reports-brgyclr-table').DataTable({
         "ordering": false,
         "pageLength": 15,
         dom: 'Bftpr',
@@ -15,7 +15,7 @@ $(document).ready(function () {
         },
 
         "fnDrawCallback": function () {
-            var table = $('#brgyTbl').DataTable();
+            var table = $('#reports-brgyclr-table').DataTable();
             if (table.data().length === 0)
                 table.buttons('.buttons-html5').disable();
             else
@@ -32,7 +32,8 @@ $(document).ready(function () {
                 extend: 'excelHtml5',
                 autoFilter: true,
                 title: "Barangay Clearance Transaction Report",
-                sheetName: 'Barangay Clearance Sales'
+                sheetName: 'Barangay Clearance Sales',
+                className: 'button button--dark button--md'
             },
 
             {
@@ -40,6 +41,7 @@ $(document).ready(function () {
                 title: "barangay-clearance-" + titleDate,
                 pageSize: 'A4',
                 // download: 'open',
+                className: 'button button--dark button--md',
                 exportOptions: {
                     search: 'applied',
                     order: 'applied',

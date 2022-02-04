@@ -122,9 +122,9 @@ require_once "../../includes/header.php";
                                 ?>
                                     <div class="certificates-info__container">
                                         <div class="input__wrapper">
-                                            <label>Amount <strong style="color:red;" ;>*</strong></label>
+                                            <!-- <label>Amount</label> -->
                                             <div class="input__inner">
-                                                <input name="price" type="text" class="input--light300 input-viewprofile" value="<?php echo $row['barangay_clearance_fee'] ?>">
+                                                <input hidden name="price" type="text" class="input--light300 input-viewprofile" value="<?php echo $row['barangay_clearance_fee'] ?>">
                                             </div>
                                         </div>
                                     </div>

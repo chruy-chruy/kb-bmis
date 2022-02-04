@@ -96,7 +96,11 @@
     }
 
     i {
-      font-size: rem(14);
+      font-size: rem(11);
+    }
+
+    @include breakpoint-down(medium) {
+      margin-left: rem(4);
     }
   }
 }

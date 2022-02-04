@@ -327,7 +327,7 @@ li {
 }
 .button--primary-outline {
   color: #ef6a61;
-  border: 0.125rem solid #ef6a61;
+  border: 0.0625rem solid #ef6a61;
 }
 .button--primary-outline:hover {
   background: #ef6a61;
@@ -338,7 +338,7 @@ li {
 }
 .button--dark-outline {
   color: #707070;
-  border: 0.125rem solid #707070;
+  border: 0.0625rem solid #707070;
 }
 .button--dark-outline:hover {
   background: #707070;
