@@ -55,7 +55,7 @@ include "../../includes/preloader.php";
                                                                                     echo $_GET['to_date'];
                                                                                 } else {
                                                                                 } ?>" required>
-                                    <button type="Submit" class="button button--sm button--light" style="margin-left: 12px;">Filter</button>
+                                    <button type="Submit" class="button button--sm button--primary" style="margin-left: 12px;">Filter</button>
 
                                 </div>
 
@@ -73,7 +73,7 @@ include "../../includes/preloader.php";
 
                     <div class="card__body-content">
 
-                        <table id="brgyTbl" class="row-border">
+                        <table id="reports-brgyclr-table">
                             <thead>
                                 <tr>
                                     <th>Cedula No.</th>

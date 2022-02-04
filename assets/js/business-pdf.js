@@ -5,7 +5,7 @@ $(document).ready(function () {
     var now = new Date();
     var titleDate = now.getFullYear() + "-" + (now.getMonth() + 1) + "-" + now.getDate()
 
-    $('#businessTbl').DataTable({
+    $('#reports-bsnclr-table').DataTable({
         "ordering": false,
         "pageLength": 15,
         dom: 'Bftpr',
@@ -15,7 +15,7 @@ $(document).ready(function () {
         },
 
         "fnDrawCallback": function () {
-            var table = $('#businessTbl').DataTable();
+            var table = $('#reports-bsnclr-table').DataTable();
             if (table.data().length === 0)
                 table.buttons('.buttons-html5').disable();
             else
@@ -32,13 +32,15 @@ $(document).ready(function () {
                 extend: 'excelHtml5',
                 autoFilter: true,
                 title: "Business Clearance Transaction Report",
-                sheetName: 'Businesss Clearance Sales'
+                sheetName: 'Businesss Clearance Sales',
+                className: 'button button--dark button--md'
             },
 
             {
                 extend: 'pdfHtml5',
                 title: "business-clearance-" + titleDate,
                 pageSize: 'A4',
+                className: 'button button--dark button--md',
                 // download: 'open',
                 exportOptions: {
                     search: 'applied',

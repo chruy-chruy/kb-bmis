@@ -17,18 +17,6 @@ include "../../includes/preloader.php";
         <div class="card__header">
           <div class="card__header-content">
 
-            <div class="card__header-content--left">
-              <h3>Officials</h3>
-              <!-- <ul class="information__tabs-list">
-                  <li class="tab tab--active" data-tab-id="#brgy-officials">
-                    Barangay Officials
-                  </li>
-                  <li class="tab" data-tab-id="#sk-officials">
-                    SK Officials
-                  </li>
-                </ul> -->
-
-            </div>
             <?php if (isset($_GET['error'])) { ?>
               <p class="error-message" style="margin-bottom: 15px;"><?php echo $_GET['error']; ?></p>
             <?php } ?>

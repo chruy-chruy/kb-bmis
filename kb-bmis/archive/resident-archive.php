@@ -45,7 +45,7 @@ include "../../includes/preloader.php";
                                         <option value="Senior Citizen">Senior Citizens</option>
                                     </select>
                                 </div>
-                                <a href="#" class="button button--primary button--sm modal-trigger" data-modal-id="modal-delete">
+                                <a href="#" class="button button--primary button--md modal-trigger" data-modal-id="modal-delete" style="white-space: nowrap;">
                                     <i class='bx bxs-trash' data-modal-id="modal-delete"></i>
                                     Empty Archive </a>
 
@@ -88,8 +88,8 @@ include "../../includes/preloader.php";
                             </td>
                             <td>
                                 <div class="table__action-buttons">
-                                    <a href="view-resident.php?residents_archive_id=<?php echo $row['residents_archive_id'] ?>" class="button button--dark button--sm action__view" data-target="#modal-viewprofile" id="action-view">
-                                        <i class='bx bxs-show'></i>
+                                    <a href="view-resident.php?residents_archive_id=<?php echo $row['residents_archive_id'] ?>" class="button button--primary button--sm" data-target="#modal-viewprofile" id="action-view">
+                                        <!-- <i class='bx bxs-show'></i> -->
                                         <p>VIEW</p>
                                     </a>
                                 </div>

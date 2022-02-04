@@ -16,4 +16,4 @@ $sql = "UPDATE `settings` SET
 mysqli_query($conn, $sql);
 
 
-header("location:./?msg= Save Changes Succesful");
+header("location:./?msg=Changes saved.");

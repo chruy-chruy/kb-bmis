@@ -36,7 +36,7 @@ include "../../includes/preloader.php";
                                 ?>
                                     <div class="certificates-info__container">
                                         <div class="input__wrapper">
-                                            <label>Barangay Clearance Fee: <?php echo $row['barangay_clearance_fee'] ?></label>
+                                            <label>Barangay Clearance Fee: <span class="settings__cert-price">₱<?php echo $row['barangay_clearance_fee'] ?></span></label>
                                             <div class="input__inner">
                                                 <input name="barangay_clearance_fee" type="number" class="input--light300 input-viewprofile" value="" required>
                                             </div>
@@ -45,7 +45,7 @@ include "../../includes/preloader.php";
 
                                     <div class="certificates-info__container">
                                         <div class="input__wrapper">
-                                            <label>Small Scale Business Fee: <?php echo $row['small_scale_fee'] ?></label>
+                                            <label>Small Scale Business Fee: <span class="settings__cert-price">₱<?php echo $row['small_scale_fee'] ?></span></label>
                                             <div class="input__inner">
                                                 <input name="small_scale_fee" type="number" class="input--light300 input-viewprofile" value="" required>
                                             </div>
@@ -54,7 +54,7 @@ include "../../includes/preloader.php";
 
                                     <div class="certificates-info__container">
                                         <div class="input__wrapper">
-                                            <label>Medium Scale Business Fee: <?php echo $row['medium_scale_fee'] ?></label>
+                                            <label>Medium Scale Business Fee: <span class="settings__cert-price">₱<?php echo $row['medium_scale_fee'] ?></span></label>
                                             <div class="input__inner">
                                                 <input name="medium_scale_fee" type="number" class="input--light300 input-viewprofile" value="" required>
                                             </div>
@@ -64,7 +64,7 @@ include "../../includes/preloader.php";
 
                                     <div class="certificates-info__container">
                                         <div class="input__wrapper">
-                                            <label>Large Scale Business Fee: <?php echo $row['large_scale_fee'] ?></label>
+                                            <label>Large Scale Business Fee: <span class="settings__cert-price">₱<?php echo $row['large_scale_fee'] ?></span></label>
                                             <div class="input__inner">
                                                 <input name="large_scale_fee" type="number" class="input--light300 input-viewprofile" value="" required>
                                             </div>

@@ -4,19 +4,73 @@
 .reports {
   @include flex-justify-center;
   flex-direction: column;
+
+  &__card{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: rem(20) rem(30);
+    border: rem(1) $primary solid;
+    border-radius: rem(20);
+    transition: 0.1s;
+    cursor: pointer;
+
+    &:hover{
+      background: $primary;
+
+
+      .reports__card{
+      &--value,&--label,&--icon{
+        color: $light100;
+      }
+    }
+    }
+
+    &--value{
+      font-size: rem(40);
+      font-weight: 600;
+      color: $primary;
+
+    }
+
+    &--label{
+      font-size: rem(16);
+      font-weight: 500;
+      color: $dark300;
+    }
+
+    &--icon{
+      @include flex-center-all;
+      color: $dark200;
+      font-size: rem(60);
+    }
+  }
 }
 
 .tabContent.reports {
   position: relative;
-  display: flex;
+  width: 95%;
+  // display: flex;
   // grid-template-columns: repeat(2, 1fr);
   // gap: rem(50);
+
+  display: grid;
+  grid-template-rows: rem(100) 1fr;
+  grid-template-columns: repeat(2, 1fr);
+  column-gap: rem(30);
+  gap: rem(50);
+
+  @include breakpoint-down(medium){
+    grid-template-rows: repeat(2, rem(100)) repeat(2, 1fr);
+    grid-template-columns: 1fr;
+  }
 }
 
 .graph {
-  h1 {
+  h3 {
     white-space: nowrap;
     margin-bottom: rem(10);
+    text-align: center;
   }
 }
 

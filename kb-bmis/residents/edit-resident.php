@@ -62,27 +62,27 @@ while ($row = mysqli_fetch_array($squery)) {
 
                 <ul class="profile-info__list newresident">
                   <li class="profile-info__item profile-info__item--active">
-                    <a href="#">
+                    <span>
                       Basic Information
-                    </a>
+                    </span>
                   </li>
 
                   <li class="profile-info__item">
-                    <a href="#">
+                    <span>
                       Voting
-                    </a>
+                    </span>
                   </li>
 
                   <li class="profile-info__item">
-                    <a href="#">
+                    <span>
                       Others
-                    </a>
+                    </span>
                   </li>
 
                   <li class="profile-info__item">
-                    <a href="#">
+                    <span>
                       For Emergency
-                    </a>
+                    </span>
                   </li>
 
                 </ul>

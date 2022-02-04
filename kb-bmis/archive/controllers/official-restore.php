@@ -20,10 +20,7 @@ $off_id = $fetch['id'];
 $res_id = $fetch['resident_id'];
 $off_pos = $fetch['off_position'];
 $off_name = $fetch['off_name'];
-$off_contact = $fetch['off_contact'];
-$term = $fetch['term'];
-$img_url = $fetch['img_url'];
-$batch = $fetch['batch_id'];
+
 
 mysqli_query($conn, "INSERT INTO `officials`
  VALUES 
@@ -31,11 +28,7 @@ mysqli_query($conn, "INSERT INTO `officials`
     '$off_id',
     '$res_id',
     '$off_pos',
-    '$off_name',
-    '$off_contact',
-    '$term',
-    '$img_url',
-    '$batch'
+    '$off_name'
 )");
 
 
