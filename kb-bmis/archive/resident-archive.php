@@ -13,7 +13,8 @@ include "../../includes/preloader.php";
             <!-- BUTANG LANG DIRI ☺ -->
             <div class="left">
                 <div>
-                    <a href="index.php" class="button button--md back-btn" style="position: relative; margin-bottom:14px; margin-left:-15px;">
+                    <a href="index.php" class="button button--md back-btn"
+                        style="position: relative; margin-bottom:14px; margin-left:-15px;">
                         <i class='bx bx-left-arrow-circle'></i>
                         Back
                     </a>
@@ -45,7 +46,8 @@ include "../../includes/preloader.php";
                                         <option value="Senior Citizen">Senior Citizens</option>
                                     </select>
                                 </div>
-                                <a href="#" class="button button--primary button--md modal-trigger" data-modal-id="modal-delete" style="white-space: nowrap;">
+                                <a href="#" class="button button--primary button--md modal-trigger"
+                                    data-modal-id="modal-delete" style="white-space: nowrap;">
                                     <i class='bx bxs-trash' data-modal-id="modal-delete"></i>
                                     Empty Archive </a>
 
@@ -59,42 +61,45 @@ include "../../includes/preloader.php";
 
                     <?php
 
-                    $squery =  mysqli_query($conn, "select * from residents_archive ORDER BY residents_archive_id desc ");
+                    $squery =  mysqli_query($conn, "select * from residents_archive ORDER BY residents_archive_id desc");
                     while ($row = mysqli_fetch_array($squery)) {
 
                     ?>
 
-                        <tr>
-                            <td><?php echo $row['4ps_status'] ?></td>
-                            <td><?php echo $row['disability_status'] ?></td>
-                            <td><?php echo $row['voter_status'] ?></td>
-                            <td><?php echo $row['senior_status'] ?></td>
-                            <td><?php echo $row['deceased_status'] ?></td>
-                            <td>
-                                <div class="table__row-img">
-                                    <img src="../residents/images/<?php echo $row["img_url"]; ?>" alt="">
+                    <tr>
+                        <td><?php echo $row['4ps_status'] ?></td>
+                        <td><?php echo $row['disability_status'] ?></td>
+                        <td><?php echo $row['voter_status'] ?></td>
+                        <td><?php echo $row['senior_status'] ?></td>
+                        <td><?php echo $row['deceased_status'] ?></td>
+                        <td>
+                            <div class="table__row-img">
+                                <img src="../residents/images/<?php echo $row["img_url"]; ?>" alt="">
+                            </div>
+                        </td>
+                        <td>
+                            <div class="table__row-text">
+                                <div class="table__row-name">
+                                    <?php echo $row['first_name'] ?> <?php echo $row['mid_name'] ?>
+                                    <?php echo $row['last_name'] ?>
                                 </div>
-                            </td>
-                            <td>
-                                <div class="table__row-text">
-                                    <div class="table__row-name">
-                                        <?php echo $row['first_name'] ?> <?php echo $row['mid_name'] ?>
-                                        <?php echo $row['last_name'] ?>
-                                    </div>
-                                    <div class="table__row-sub">
+                                <div class="table__row-sub">
 
-                                    </div>
                                 </div>
-                            </td>
-                            <td>
-                                <div class="table__action-buttons">
-                                    <a href="view-resident.php?residents_archive_id=<?php echo $row['residents_archive_id'] ?>" class="button button--primary button--sm" data-target="#modal-viewprofile" id="action-view">
-                                        <!-- <i class='bx bxs-show'></i> -->
-                                        <p>VIEW</p>
-                                    </a>
-                                </div>
-                            </td>
-                        </tr>
+                            </div>
+                        </td>
+
+                        <td>
+                            <div class="table__action-buttons">
+                                <a href="view-resident.php?residents_archive_id=<?php echo $row['residents_archive_id'] ?>"
+                                    class="button button--primary button--sm" data-target="#modal-viewprofile"
+                                    id="action-view">
+                                    <!-- <i class='bx bxs-show'></i> -->
+                                    <p>VIEW</p>
+                                </a>
+                            </div>
+                        </td>
+                    </tr>
 
                     <?php
                     }
