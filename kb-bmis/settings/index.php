@@ -36,27 +36,27 @@ include "../../includes/preloader.php";
                                 ?>
                                     <div class="certificates-info__container">
                                         <div class="input__wrapper">
-                                            <label>Barangay Clearance Fee: <span class="settings__cert-price">₱<?php echo $row['barangay_clearance_fee'] ?></span></label>
+                                            <label>Barangay Clearance Fee: <span class="settings__cert-price"></span></label>
                                             <div class="input__inner">
-                                                <input name="barangay_clearance_fee" type="number" class="input--light300 input-viewprofile" value="" required>
+                                                <input name="barangay_clearance_fee" type="number" class="input--light300 input-viewprofile" value="<?php echo $row['barangay_clearance_fee'] ?>" required>
                                             </div>
                                         </div>
                                     </div>
 
                                     <div class="certificates-info__container">
                                         <div class="input__wrapper">
-                                            <label>Small Scale Business Fee: <span class="settings__cert-price">₱<?php echo $row['small_scale_fee'] ?></span></label>
+                                            <label>Small Scale Business Fee: <span class="settings__cert-price"></span></label>
                                             <div class="input__inner">
-                                                <input name="small_scale_fee" type="number" class="input--light300 input-viewprofile" value="" required>
+                                                <input name="small_scale_fee" type="number" class="input--light300 input-viewprofile" value="<?php echo $row['small_scale_fee'] ?>" required>
                                             </div>
                                         </div>
                                     </div>
 
                                     <div class="certificates-info__container">
                                         <div class="input__wrapper">
-                                            <label>Medium Scale Business Fee: <span class="settings__cert-price">₱<?php echo $row['medium_scale_fee'] ?></span></label>
+                                            <label>Medium Scale Business Fee: <span class="settings__cert-price"></span></label>
                                             <div class="input__inner">
-                                                <input name="medium_scale_fee" type="number" class="input--light300 input-viewprofile" value="" required>
+                                                <input name="medium_scale_fee" type="number" class="input--light300 input-viewprofile" value="<?php echo $row['medium_scale_fee'] ?>" required>
                                             </div>
                                         </div>
                                     </div>
@@ -64,9 +64,9 @@ include "../../includes/preloader.php";
 
                                     <div class="certificates-info__container">
                                         <div class="input__wrapper">
-                                            <label>Large Scale Business Fee: <span class="settings__cert-price">₱<?php echo $row['large_scale_fee'] ?></span></label>
+                                            <label>Large Scale Business Fee: <span class="settings__cert-price"></span></label>
                                             <div class="input__inner">
-                                                <input name="large_scale_fee" type="number" class="input--light300 input-viewprofile" value="" required>
+                                                <input name="large_scale_fee" type="number" class="input--light300 input-viewprofile" value="<?php echo $row['large_scale_fee'] ?>" required>
                                             </div>
                                         </div>
                                     </div>

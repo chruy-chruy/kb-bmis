@@ -7,6 +7,7 @@ $off_position = $_POST['off_position'];
 $off_name = $_POST['off_name'];
 $off_contact = $_POST['off_contact'];
 
+//check if barangay chairman is already taken
 if ($off_position == "Barangay Chairman") {
     $squery =  mysqli_query($conn, "SELECT COUNT(occupation) AS 'count' FROM residents where occupation = '$off_position';");
     while ($row = mysqli_fetch_array($squery)) {
@@ -31,7 +32,7 @@ if ($off_position == "Barangay Chairman") {
             mysqli_query($conn, $sql2);
 
             if ($off_position == 'Barangay Secretary') {
-                $sql3 = "UPDATE `users` SET `name`='$off_name' WHERE `role` = '$off_position'";
+                $sql3 = "UPDATE `users` SET `name`='$off_name',`resident_id`='$id' WHERE `role` = '$off_position'";
                 mysqli_query($conn, $sql3);
             }
 
@@ -39,7 +40,8 @@ if ($off_position == "Barangay Chairman") {
             header("location:index.php");
         }
     }
-} else if ($off_position == "Barangay Secretary") {
+} //check if barangay Secretary is already taken
+else if ($off_position == "Barangay Secretary") {
     $squery =  mysqli_query($conn, "SELECT COUNT(occupation) AS 'count' FROM residents where occupation = '$off_position';");
     while ($row = mysqli_fetch_array($squery)) {
         if ($row['count'] == 1) {
@@ -63,7 +65,7 @@ if ($off_position == "Barangay Chairman") {
             mysqli_query($conn, $sql2);
 
             if ($off_position == 'Barangay Secretary') {
-                $sql3 = "UPDATE `users` SET `name`='$off_name' WHERE `role` = '$off_position'";
+                $sql3 = "UPDATE `users` SET `name`='$off_name',`resident_id`='$id' WHERE `role` = '$off_position'";
                 mysqli_query($conn, $sql3);
             }
 
@@ -71,7 +73,8 @@ if ($off_position == "Barangay Chairman") {
             header("location:index.php");
         }
     }
-} else if ($off_position == "Barangay Treasurer") {
+} //check if barangay Treasyrer is already taken
+else if ($off_position == "Barangay Treasurer") {
     $squery =  mysqli_query($conn, "SELECT COUNT(occupation) AS 'count' FROM residents where occupation = '$off_position';");
     while ($row = mysqli_fetch_array($squery)) {
         if ($row['count'] == 1) {
@@ -95,7 +98,7 @@ if ($off_position == "Barangay Chairman") {
             mysqli_query($conn, $sql2);
 
             if ($off_position == 'Barangay Secretary') {
-                $sql3 = "UPDATE `users` SET `name`='$off_name' WHERE `role` = '$off_position'";
+                $sql3 = "UPDATE `users` SET `name`='$off_name',`resident_id`='$id' WHERE `role` = '$off_position'";
                 mysqli_query($conn, $sql3);
             }
 
@@ -122,7 +125,7 @@ if ($off_position == "Barangay Chairman") {
     mysqli_query($conn, $sql2);
 
     if ($off_position == 'Barangay Secretary') {
-        $sql3 = "UPDATE `users` SET `name`='$off_name' WHERE `role` = '$off_position'";
+        $sql3 = "UPDATE `users` SET `name`='$off_name',`resident_id`='$id' WHERE `role` = '$off_position'";
         mysqli_query($conn, $sql3);
     }
 

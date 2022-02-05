@@ -8,7 +8,7 @@ $role = $_GET['role'];
 ?>
 
 <?php
-if ($role == "Barangay Secretary") {
+if ($role == "Barangay Secretary" or "Barangay Clerk") {
   $squery =  mysqli_query($conn, "select * from residents,users where residents.occupation = '$role' and users.role = '$role'; ");
   while ($row = mysqli_fetch_array($squery)) { ?>
     <main>
@@ -144,11 +144,9 @@ if ($role == "Barangay Secretary") {
 
 
     </html>
-<?php
+  <?php
   }
-} ?>
-<?php
-if ($role == "Admin") {
+} else if ($role == "Admin") {
   $squery =  mysqli_query($conn, "select * from users where role = '$role'  ");
   while ($row = mysqli_fetch_array($squery)) { ?>
     <main>

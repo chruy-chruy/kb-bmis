@@ -8,7 +8,7 @@ $role = $_GET['role'];
 ?>
 
 <?php
-if ($role == "Barangay Secretary") {
+if ($role == "Barangay Secretary" or "Barangay Clerk") {
     $squery =  mysqli_query($conn, "select * from residents,users where residents.occupation = '$role' and users.role = '$role'; ");
     while ($row = mysqli_fetch_array($squery)) { ?>
         <form id="add_residents" action="update-user.php" method="post" enctype="multipart/form-data" data-parsley-validate="">
