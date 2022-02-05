@@ -68,7 +68,7 @@ if ($recipients == 'All Residents') {
 
     $ch = curl_init();
     $parameters = array(
-        'apikey' => '96d6238852e5a8483c56a1dcd12f17f5', //API KEY 
+        'apikey' => '', //API KEY 
         'number' => $contacts = implode(', ', $residents),
         'message' => $_POST['message'],
         'sendername' => 'SEMAPHORE'
@@ -106,7 +106,7 @@ if ($recipients == 'Barangay Officials') {
 
     $ch = curl_init();
     $parameters = array(
-        'apikey' => '96d6238852e5a8483c56a1dcd12f17f5', //API KEY 
+        'apikey' => '', //API KEY 
         'number' => $contacts = implode(', ', $officials),
         'message' => $_POST['message'],
         'sendername' => 'SEMAPHORE'
@@ -144,7 +144,7 @@ if ($recipients == 'Senior Citizens') {
 
     $ch = curl_init();
     $parameters = array(
-        'apikey' => '96d6238852e5a8483c56a1dcd12f17f5', //API KEY 
+        'apikey' => '', //API KEY 
         'number' => $contacts = implode(', ', $senior),
         'message' => $_POST['message'],
         'sendername' => 'SEMAPHORE'
@@ -183,7 +183,7 @@ if ($recipients == 'Person with Disability') {
 
     $ch = curl_init();
     $parameters = array(
-        'apikey' => '96d6238852e5a8483c56a1dcd12f17f5', //API KEY 
+        'apikey' => '', //API KEY 
         'number' => $contacts = implode(', ', $disability),
         'message' => $_POST['message'],
         'sendername' => 'SEMAPHORE'
@@ -221,7 +221,7 @@ if ($recipients == 'Registered Voters') {
 
     $ch = curl_init();
     $parameters = array(
-        'apikey' => '96d6238852e5a8483c56a1dcd12f17f5', //API KEY 
+        'apikey' => '', //API KEY 
         'number' => $contacts = implode(', ', $voters),
         'message' => $_POST['message'],
         'sendername' => 'SEMAPHORE'

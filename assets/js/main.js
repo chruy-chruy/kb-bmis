@@ -524,6 +524,68 @@ $('#voter_stat').change(function () {
   $('#precinct_no').prop("disabled", !this.checked);
 }).change()
 
+
+$('#vaccine_stat').change(function () {
+  $('#vaxx1').prop("disabled", !this.checked);
+  $('#vaxx1-date').prop("disabled", !this.checked);
+  $('#vaxx2').prop("disabled", !this.checked);
+  $('#vaxx2-date').prop("disabled", !this.checked);
+  $('#booster_stat').prop("disabled", !this.checked);
+
+
+}).change()
+
+$('#booster_stat').change(function () {
+
+  $('#booster1').prop("disabled", !this.checked);
+  $('#booster1-date').prop("disabled", !this.checked);
+  $('#booster2').prop("disabled", !this.checked);
+  $('#booster2-date').prop("disabled", !this.checked);
+
+}).change()
+
+
+
+let firstdose = document.querySelector("#vaxx1");
+let second_dose = document.querySelector("#vaxx2");
+let secvaxdate = document.querySelector("#vaxx2-date");
+second_dose.disabled = true;
+firstdose.addEventListener("change", stateHandle);
+
+function stateHandle() {
+  if (document.querySelector("#vaxx1").value === "Janssen") {
+    second_dose.disabled = true;
+    secvaxdate.disabled = true;
+
+  } else {
+    second_dose.disabled = false;
+    secvaxdate.disabled = false;
+  }
+
+
+}
+
+
+
+let boostfirstdose = document.querySelector("#booster1");
+let boost_second_dose = document.querySelector("#booster2");
+let boostsecvaxdate = document.querySelector("#booster2-date");
+boost_second_dose.disabled = true;
+boostfirstdose.addEventListener("change", boostStateHandle);
+
+function boostStateHandle() {
+  if (document.querySelector("#booster1").value === "Janssen") {
+    boost_second_dose.disabled = true;
+    boostsecvaxdate.disabled = true;
+
+  } else {
+    boost_second_dose.disabled = false;
+    boostsecvaxdate.disabled = false;
+  }
+}
+
+
+
 // age
 // $('#dob').on('input', function () {
 //   var empty = false;

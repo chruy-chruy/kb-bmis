@@ -34,7 +34,18 @@
                 $voter_id = $_POST['voter_id'];
                 $precinct_number = $_POST['precinct_number'];
                 $national_id = $_POST['national_id'];
-                $vaccine_admin = $_POST['vaccine_admin'];
+                $vaccine_status = $_POST['vaccine_status'];
+                $vaccine_1 = $_POST['vaccine_1'];
+                $vaccine_date_1 = $_POST['vaccine_date_1'];
+                $vaccine_2 = $_POST['vaccine_2'];
+                $vaccine_date_2 = $_POST['vaccine_date_2'];
+                $booster_status = $_POST['booster_status'];
+                $booster_1 = $_POST['booster_1'];
+                $booster_date_1 = $_POST['booster_date_1'];
+                $booster_2 = $_POST['booster_2'];
+                $booster_date_2 = $_POST['booster_date_2'];
+
+
                 $emergency_person = $_POST['emergency_person'];
                 $relationship = $_POST['relationship'];
                 $emergency_address = $_POST['emergency_address'];
@@ -80,7 +91,16 @@
          `voter_id`, 
          `precinct_number`, 
          `national_id`, 
-         `vaccine_admin`, 
+         `vaccine_status`,
+         `vaccine_1`, 
+         `vaccine_date_1`,
+         `vaccine_2`,
+         `vaccine_date_2`,
+         `booster_status`,
+         `booster_1`,
+         `booster_date_1`,
+         `booster_2`,
+         `booster_date_2`,
          `emergency_person`, 
          `relationship`, 
          `emergency_address`, 
@@ -116,7 +136,16 @@ VALUES ('$first_name',
         '$voter_id',
         '$precinct_number',
         '$national_id',
-        '$vaccine_admin',
+        '$vaccine_status',
+        '$vaccine_1',
+        '$vaccine_date_1',
+        '$vaccine_2',
+        '$vaccine_date_2',
+        '$booster_status',
+        '$booster_1',
+        '$booster_date_1',
+        '$booster_2',
+        '$booster_date_2',
         '$emergency_person',
         '$relationship',
         '$emergency_address',
@@ -163,8 +192,17 @@ VALUES ('$first_name',
  `deceased_status`, 
  `voter_id`, 
  `precinct_number`, 
- `national_id`, 
- `vaccine_admin`, 
+ `national_id`,
+ `vaccine_status`, 
+ `vaccine_1`, 
+ `vaccine_date_1`,
+ `vaccine_2`,
+ `vaccine_date_2`,
+ `booster_status`,
+ `booster_1`,
+ `booster_date_1`,
+ `booster_2`,
+ `booster_date_2`,
  `emergency_person`, 
  `relationship`, 
  `emergency_address`, 
@@ -200,7 +238,16 @@ VALUES ('$first_name',
 '$voter_id',
 '$precinct_number',
 '$national_id',
-'$vaccine_admin',
+'$vaccine_status',
+'$vaccine_1',
+'$vaccine_date_1',
+'$vaccine_2',
+'$vaccine_date_2',
+'$booster_status',
+'$booster_1',
+'$booster_date_1',
+'$booster_2',
+'$booster_date_2',
 '$emergency_person',
 '$relationship',
 '$emergency_address',

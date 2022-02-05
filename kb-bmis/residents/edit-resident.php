@@ -517,14 +517,182 @@ while ($row = mysqli_fetch_array($squery)) {
                   <section class="profile-info__others">
 
 
+
+
                     <div class="profile-info__container">
                       <div class="input__wrapper">
-                        <label for="resident-vaccinesadministered">Vaccines Administered</label>
+                        <label for="resident-vaccine">Administered COVID-19 Vaccine?</label>
                         <div class="input__inner">
-                          <input type="text" name="vaccine_admin" class="input--light300" value="<?php echo $row['vaccine_admin'] ?>">
+                          <div class="toggleswitch__wrapper">
+                            <?php if ($row['vaccine_status'] == "") { ?>
+                              <input name="vaccine_status" id="deceased" type="checkbox" unchecked id="" class="toggleswitch toggleswitch--resident-profile input-viewprofile" value="Vaccinated">
+                              <label class="toggleswitch__indicator toggleswitch__indicator--off">No</label>
+                              <label class="toggleswitch__indicator toggleswitch__indicator--on">Yes</label>
+                            <?php } ?>
+
+                            <?php if ($row['vaccine_status'] == "Vaccinated") { ?>
+                              <input name="vaccine_status" id="deceased" type="checkbox" checked id="" class="toggleswitch toggleswitch--resident-profile input-viewprofile" value="Vaccinated">
+                              <label class="toggleswitch__indicator toggleswitch__indicator--off">No</label>
+                              <label class="toggleswitch__indicator toggleswitch__indicator--on">Yes</label>
+                            <?php } ?>
+                          </div>
                         </div>
                       </div>
                     </div>
+
+
+
+
+                    <div class="profile-info__container">
+                      <div class="input__wrapper">
+                        <label for="resident-firstdose">First Dose</label>
+                        <div class="input__inner">
+                          <div class="select__wrapper">
+                            <select name="vaccine_1" id="" class="select select--resident-profile">
+                              <option selected value="<?php echo $row['vaccine_1'] ?>" hidden><?php echo $row['vaccine_1'] ?></option>
+                              <option value="Pfizer">Pfizer</option>
+                              <option value="Astrazeneca">Astrazeneca</option>
+                              <option value="Sinovac">Sinovac</option>
+                              <option value="Moderna">Moderna</option>
+                              <option value="Janssen">Janssen</option>
+                              <option value="Sputnik">Sputnik</option>
+                              <option value="Bharat">Bharat</option>
+                              <option value="Novavax">Novavax</option>
+                            </select>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="profile-info__container">
+                      <div class="input__wrapper">
+                        <label for="resident-firstdosedate">First Dose Date </strong></label>
+                        <div class="input__inner">
+                          <input type="date" id="" name="vaccine_date_1" class="input--light300" value="<?php echo $row['vaccine_date_1'] ?>" required>
+                        </div>
+                      </div>
+                    </div>
+
+
+
+                    <div class="profile-info__container">
+                      <div class="input__wrapper">
+                        <label for="resident-firstdose">Second Dose</label>
+                        <div class="input__inner">
+                          <div class="select__wrapper">
+                            <select name="vaccine_2" id="" class="select select--resident-profile" required>
+                              <option selected value="<?php echo $row['vaccine_2'] ?>" hidden><?php echo $row['vaccine_2'] ?></option>
+                              <option value="Pfizer">Pfizer</option>
+                              <option value="Astrazeneca">Astrazeneca</option>
+                              <option value="Sinovac">Sinovac</option>
+                              <option value="Moderna">Moderna</option>
+                              <option value="Janssen">Janssen</option>
+                              <option value="Sputnik">Sputnik</option>
+                              <option value="Bharat">Bharat</option>
+                              <option value="Novavax">Novavax</option>
+                            </select>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+
+                    <div class="profile-info__container">
+                      <div class="input__wrapper">
+                        <label for="resident-seconddosedate">Second Dose Date</label>
+                        <div class="input__inner">
+                          <input type="date" id="" name="vaccine_date_2" class="input--light300" value="<?php echo $row['vaccine_date_2'] ?>">
+                        </div>
+                      </div>
+                    </div>
+
+                    <!-- booster -->
+                    <div class="profile-info__container">
+                      <div class="input__wrapper">
+                        <label for="resident-vaccine">Administered Booster Shot?</label>
+                        <div class="input__inner">
+                          <div class="toggleswitch__wrapper">
+                            <?php if ($row['booster_status'] == "") { ?>
+                              <input name="booster_status" id="deceased" type="checkbox" unchecked id="" class="toggleswitch toggleswitch--resident-profile input-viewprofile" value="Boostered">
+                              <label class="toggleswitch__indicator toggleswitch__indicator--off">No</label>
+                              <label class="toggleswitch__indicator toggleswitch__indicator--on">Yes</label>
+                            <?php } ?>
+
+                            <?php if ($row['booster_status'] == "Boostered") { ?>
+                              <input name="booster_status" id="deceased" type="checkbox" checked id="" class="toggleswitch toggleswitch--resident-profile input-viewprofile" value="Boostered">
+                              <label class="toggleswitch__indicator toggleswitch__indicator--off">No</label>
+                              <label class="toggleswitch__indicator toggleswitch__indicator--on">Yes</label>
+                            <?php } ?>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="profile-info__container">
+                      <div class="input__wrapper">
+                        <label for="resident-firstdose">First Dose</label>
+                        <div class="input__inner">
+                          <div class="select__wrapper">
+                            <select name="booster_1" id="" class="select select--resident-profile" required>
+                              <option selected value="<?php echo $row['booster_1'] ?>" hidden><?php echo $row['booster_1'] ?></option>
+                              <option value="Pfizer">Pfizer</option>
+                              <option value="Astrazeneca">Astrazeneca</option>
+                              <option value="Sinovac">Sinovac</option>
+                              <option value="Moderna">Moderna</option>
+                              <option value="Janssen">Janssen</option>
+                              <option value="Sputnik">Sputnik</option>
+                              <option value="Bharat">Bharat</option>
+                              <option value="Novavax">Novavax</option>
+                            </select>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="profile-info__container">
+                      <div class="input__wrapper">
+                        <label for="resident-booster1dosedate">First Dose Date </label>
+                        <div class="input__inner">
+                          <input type="date" id="" name="booster_date_1" class="input--light300" value="<?php echo $row['booster_date_1'] ?>">
+                        </div>
+                      </div>
+                    </div>
+
+
+
+                    <div class="profile-info__container">
+                      <div class="input__wrapper">
+                        <label for="resident-firstdose">Second Dose</label>
+                        <div class="input__inner">
+                          <div class="select__wrapper">
+                            <select name="booster_2" id="" class="select select--resident-profile">
+                              <option selected value="<?php echo $row['booster_2'] ?>" hidden><?php echo $row['booster_2'] ?></option>
+                              <option value="Pfizer">Pfizer</option>
+                              <option value="Astrazeneca">Astrazeneca</option>
+                              <option value="Sinovac">Sinovac</option>
+                              <option value="Moderna">Moderna</option>
+                              <option value="Janssen">Janssen</option>
+                              <option value="Sputnik">Sputnik</option>
+                              <option value="Bharat">Bharat</option>
+                              <option value="Novavax">Novavax</option>
+                            </select>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+
+                    <div class="profile-info__container">
+                      <div class="input__wrapper">
+                        <label for="resident-booster2dosedate">Second Dose Date </label>
+                        <div class="input__inner">
+                          <input type="date" id="" name="booster_date_2" class="input--light300" value="<?php echo $row['booster_date_2'] ?>">
+                        </div>
+                      </div>
+                    </div>
+
+
+
 
                   </section>
                 </div>

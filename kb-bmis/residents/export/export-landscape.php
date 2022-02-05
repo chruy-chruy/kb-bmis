@@ -31,7 +31,7 @@ class PDF extends FPDF
         $this->SetDrawColor(198, 69, 69);
         $this->SetLineWidth(2);
         $this->Line(102, 45, 240 - 20, 45);
-      
+
         // Line break
         $this->Ln(45);
     }
@@ -48,14 +48,6 @@ class PDF extends FPDF
         $this->Cell(0, 10, 'Page ' . $this->PageNo() . '/{nb}', 0, 0, 'C');
     }
 
-
-function count()
-{
-    $sql = "SELECT COUNT(*) FROM residents";
-    $stmt = $this->connect()->query($sql);
-    $count = $stmt->fetchColumn();
-    print $count;
-}
 
     function DateRange()
     {
@@ -87,12 +79,12 @@ function count()
         $this->Cell($width_cell[1], 10, 'RESIDENT NAME', 0, 0, 'C', true);
         //Third header column//
         $this->Cell($width_cell[2], 10, 'ADDRESS', 0, 0, 'C', true);
-       
+
 
         //Third header column//
         $this->Cell($width_cell[3], 10, 'CONTACT NO.', 0, 0, 'C', true);
 
-         
+
         //// header ends ///////
         $this->Ln();
     }
@@ -101,7 +93,7 @@ function count()
 
 
 // Instanciation of inherited class
-$pdf = new PDF('L','mm','A4');
+$pdf = new PDF('L', 'mm', 'A4');
 
 $pdf->AddFont('Montserrat-Regular', '', 'Montserrat-Regular.php');
 $pdf->AddFont('Montserrat-Bold', '', 'Montserrat-Bold.php');
@@ -129,8 +121,8 @@ if (mysqli_num_rows($query_run) > 0) {
         $pdf->SetFont('Montserrat-Regular', '', 8);
 
         $pdf->Cell($width_cell[0], 10, $row['id'], 1, 0, 'C');
-        $pdf->Cell($width_cell[1], 10, $row['last_name'].", ". $row['first_name'] ." ". $row['mid_name'] ." ". $row['suffix'], 1, 0, 'L');
-        $pdf->Cell($width_cell[2], 10, $row['house_number'].", ".$row['purok'].", ". $row['street'], 1, 0, 'L');
+        $pdf->Cell($width_cell[1], 10, $row['last_name'] . ", " . $row['first_name'] . " " . $row['mid_name'] . " " . $row['suffix'], 1, 0, 'L');
+        $pdf->Cell($width_cell[2], 10, $row['house_number'] . ", " . $row['purok'] . ", " . $row['street'], 1, 0, 'L');
         $pdf->Cell($width_cell[3], 10, $row['phone_number'], 1, 0, 'L');
         $pdf->Ln();
 
