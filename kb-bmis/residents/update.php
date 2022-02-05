@@ -35,7 +35,19 @@
         $voter_id = $_POST['voter_id'];
         $precinct_number = $_POST['precinct_number'];
         $national_id = $_POST['national_id'];
-        $vaccine_admin = $_POST['vaccine_admin'];
+
+        $vaccine_status = $_POST['vaccine_status'];
+        $vaccine_1 = $_POST['vaccine_1'];
+        $vaccine_date_1 = $_POST['vaccine_date_1'];
+        $vaccine_2 = $_POST['vaccine_2'];
+        $vaccine_date_2 = $_POST['vaccine_date_2'];
+        $booster_status = $_POST['booster_status'];
+        $booster_1 = $_POST['booster_1'];
+        $booster_date_1 = $_POST['booster_date_1'];
+        $booster_2 = $_POST['booster_2'];
+        $booster_date_2 = $_POST['booster_date_2'];
+
+
         $emergency_person = $_POST['emergency_person'];
         $relationship = $_POST['relationship'];
         $emergency_address = $_POST['emergency_address'];
@@ -82,7 +94,16 @@
     `voter_id`='$voter_id',
     `precinct_number`='$precinct_number',
     `national_id`='$national_id',
-    `vaccine_admin`='$vaccine_admin',
+    `vaccine_status` = '$vaccine_status',
+    `vaccine_1`= '$vaccine_1', 
+    `vaccine_date_1`= ' $vaccine_date_1',
+    `vaccine_2`= ' $vaccine_2',
+    `vaccine_date_2`= '$vaccine_date_2',
+    `booster_status`= '$booster_status',
+    `booster_1`= '$booster_1',
+    `booster_date_1`= '$booster_date_1',
+    `booster_2`= '$booster_2',
+    `booster_date_2`= '$booster_date_2',
     `emergency_person`='$emergency_person',
     `relationship`='$relationship',
     `emergency_address`='$emergency_address',
@@ -125,7 +146,19 @@
     `voter_id`='$voter_id',
     `precinct_number`='$precinct_number',
     `national_id`='$national_id',
-    `vaccine_admin`='$vaccine_admin',
+
+    `vaccine_status` = '$vaccine_status',
+    `vaccine_1`= '$vaccine_1', 
+    `vaccine_date_1`= ' $vaccine_date_1',
+    `vaccine_2`= ' $vaccine_2',
+    `vaccine_date_2`= '$vaccine_date_2',
+    `booster_status`= '$booster_status',
+    `booster_1`= '$booster_1',
+    `booster_date_1`= '$booster_date_1',
+    `booster_2`= '$booster_2',
+    `booster_date_2`= '$booster_date_2',
+
+   
     `emergency_person`='$emergency_person',
     `relationship`='$relationship',
     `emergency_address`='$emergency_address',
