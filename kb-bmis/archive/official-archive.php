@@ -1,11 +1,12 @@
 <?php
 
-$page = 'Official Archive';
+$page = 'Archive';
 $headerTitle = 'Official Archive';
 include "../../db_conn.php";
 require_once "../../includes/header.php";
 include "../../includes/preloader.php";
 ?>
+
 
 
 <main>
@@ -47,12 +48,14 @@ include "../../includes/preloader.php";
                                 <tbody>
                                     <tr>
                                         <?php
-                                        $squery =  mysqli_query($conn, "select * from officials_archive where off_position = 'Barangay Chairman'");
+                                        $squery =  mysqli_query($conn, "SELECT officials_archive_id, resident_id, img_url, off_name, off_position
+                                        FROM officials_archive O
+                                        JOIN residents R ON O.resident_id = R.id WHERE off_position = 'Barangay Chairman'");
                                         while ($row = mysqli_fetch_array($squery)) {
                                         ?>
                                         <td>
                                             <div class="table__row-img">
-                                                <img src="../residents/images/<?php echo $row['img_url'] ?>" alt="">
+                                                <img src="../residents/images/<?php echo $row["img_url"]; ?>" alt="">
                                             </div>
                                         </td>
                                         <td>
@@ -80,12 +83,14 @@ include "../../includes/preloader.php";
 
                                     <tr>
                                         <?php
-                                        $squery =  mysqli_query($conn, "select * from officials_archive Where NOT off_position='Barangay Chairman' ORDER BY officials_archive_id desc");
+                                        $squery =  mysqli_query($conn, "SELECT officials_archive_id, resident_id, img_url, off_name, off_position
+                                        FROM officials_archive O
+                                        JOIN residents R ON O.resident_id = R.id WHERE NOT off_position='Barangay Chairman' ORDER BY officials_archive_id desc");
                                         while ($row = mysqli_fetch_array($squery)) {
                                         ?>
                                         <td>
                                             <div class="table__row-img">
-                                                <img src="../residents/images/<?php echo $row['img_url'] ?>" alt="">
+                                                <img src="../residents/images/<?php echo $row["img_url"]; ?>" alt="">
                                             </div>
                                         </td>
                                         <td>
@@ -135,8 +140,6 @@ include "../../includes/preloader.php";
 </main>
 
 <!--=============== MODALS ===============-->
-
-
 <!--=============== MODALS ===============-->
 <div class="modal__wrapper" id="modal-delete">
     <section class="modal__window modal__window--md">
