@@ -11,29 +11,29 @@ class PDF extends FPDF
     function Header()
     {
         // Logo
-        $this->Image('north-logo.png', 10, 6, 50);
+        $this->Image('north-logo.png', 10, 6, 37);
 
         // Font
-        $this->SetFont('Montserrat-Bold', '', 58);
+        $this->SetFont('Montserrat-Bold', '', 38);
 
         // Move to the right
-        $this->Cell(80);
+        $this->Cell(68);
 
         // $this->SetTextColor(217, 185, 62);
         // Title
-        $this->Cell(70, 30, 'RESIDENTS', 0, 0, 'C');
+        $this->Cell(70, 20, 'RESIDENTS', 0, 0, 'C');
 
         // Font
         $this->SetFont('Montserrat-Regular', '', 14);
-        $this->Cell(-75);
-        $this->Cell(80, 60, 'Barangay Dadiangas North, General Santos City ', 0, 0, 'C');
+        $this->Cell(-60);
+        $this->Cell(60, 45, 'Barangay Dadiangas North, General Santos City ', 0, 0, 'C');
 
-        $this->SetDrawColor(198, 69, 69);
-        $this->SetLineWidth(2);
-        $this->Line(60, 45, 210 - 20, 45);
+        // $this->SetDrawColor(198, 69, 69);
+        // $this->SetLineWidth(2);
+        // $this->Line(55, 40, 200 - 20, 40);
 
         // Line break
-        $this->Ln(45);
+        $this->Ln(35);
     }
 
 
@@ -48,6 +48,32 @@ class PDF extends FPDF
         $this->Cell(0, 10, 'Page ' . $this->PageNo() . '/{nb}', 0, 0, 'C');
     }
 
+    function createdDate()
+    {
+        date_default_timezone_set("Asia/Manila");
+        $date = date("m/d/Y");
+        return $date;
+    }
+
+    function residentCount()
+    {
+        require("../../../db_conn.php");
+
+        $populationSql = "SELECT * FROM residents";
+        $populationQuery = $conn->query($populationSql);
+        $countPopulation = $populationQuery->num_rows;
+        return $countPopulation;
+    }
+
+    function Date()
+    {
+
+
+        $this->SetFont('Montserrat-Bold', '', 10);
+        $this->Cell(220);
+        $this->Cell(-408, 14, 'As of ' . $this->createdDate(),  0, 0, 'C');
+        $this->Ln(7);
+    }
 
     function DateRange()
     {
@@ -57,7 +83,7 @@ class PDF extends FPDF
 
         $this->SetFont('Montserrat-Bold', '', 10);
         $this->Cell(220);
-        $this->Cell(0, 0, 'Total Residents:',  0, 0);
+        $this->Cell(-100, 0, 'Total Residents: ' . $this->residentCount(),  0, 0, 'C');
         $this->Ln(7);
     }
 
@@ -73,16 +99,16 @@ class PDF extends FPDF
 
         // Header starts /// 
 
-      //First header column //
-      $this->Cell($width_cell[0], 10, 'ID', 0, 0, 'C', true);
-      //Second header column//
-      $this->Cell($width_cell[1], 10, 'RESIDENT NAME', 0, 0, 'C', true);
-      //Third header column//
-      $this->Cell($width_cell[2], 10, 'ADDRESS', 0, 0, 'C', true);
-     
+        //First header column //
+        $this->Cell($width_cell[0], 9, 'ID', 0, 0, 'C', true);
+        //Second header column//
+        $this->Cell($width_cell[1], 9, 'RESIDENT NAME', 0, 0, 'C', true);
+        //Third header column//
+        $this->Cell($width_cell[2], 9, 'ADDRESS', 0, 0, 'C', true);
 
-      //Third header column//
-      $this->Cell($width_cell[3], 10, 'CONTACT NO.', 0, 0, 'C', true);
+
+        //Third header column//
+        $this->Cell($width_cell[3], 9, 'CONTACT NO.', 0, 0, 'C', true);
         //// header ends ///////
         $this->Ln();
     }
@@ -91,14 +117,15 @@ class PDF extends FPDF
 
 
 // Instanciation of inherited class
-$pdf = new PDF('P','mm','A4');
+$pdf = new PDF('P', 'mm', 'A4');
 
 $pdf->AddFont('Montserrat-Regular', '', 'Montserrat-Regular.php');
 $pdf->AddFont('Montserrat-Bold', '', 'Montserrat-Bold.php');
 
 $pdf->AddPage();
-
+$pdf->Date();
 $pdf->DateRange();
+
 
 $pdf->TableHeader();
 
@@ -116,12 +143,12 @@ $width_cell = array(10, 70, 70, 40, 30);
 if (mysqli_num_rows($query_run) > 0) {
 
     foreach ($query_run as $row) {
-        $pdf->SetFont('Montserrat-Regular', '', 8);
+        $pdf->SetFont('Montserrat-Regular', '', 9);
 
-        $pdf->Cell($width_cell[0], 10, $row['id'], 1, 0, 'C');
-        $pdf->Cell($width_cell[1], 10, $row['last_name'].", ". $row['first_name'] ." ". $row['mid_name'] ." ". $row['suffix'], 1, 0, 'L');
-        $pdf->Cell($width_cell[2], 10, $row['house_number'].", ".$row['purok'].", ". $row['street'], 1, 0, 'L');
-        $pdf->Cell($width_cell[3], 10, $row['phone_number'], 1, 0, 'L');
+        $pdf->Cell($width_cell[0], 6, $row['id'], 1, 0, 'C');
+        $pdf->Cell($width_cell[1], 6, $row['last_name'] . ", " . $row['first_name'] . " " . $row['mid_name'] . " " . $row['suffix'], 1, 0, 'L');
+        $pdf->Cell($width_cell[2], 6, $row['house_number'] . ", " . $row['purok'] . ", " . $row['street'], 1, 0, 'L');
+        $pdf->Cell($width_cell[3], 6, $row['phone_number'], 1, 0, 'L');
         $pdf->Ln();
 
         $pdf->SetFont('Montserrat-Regular', '', 11);
