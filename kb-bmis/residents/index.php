@@ -115,7 +115,7 @@ include "../../includes/preloader.php";
                   </div>
 
 
-                  <a href="view-resident.php?id=<?php echo $row['id'] ?>" class="button button--dark button--sm action__view" data-target="#modal-viewprofile" id="action-view">
+                  <a href="view-resident.php?id=<?php echo $row['id'] ?>" onclick="hideVoting();" class="button button--dark button--sm action__view" data-target="#modal-viewprofile" id="action-view">
                     <i class='bx bxs-show'></i>
                     <p>VIEW</p>
 

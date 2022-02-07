@@ -71,6 +71,16 @@ $(document).ready(function () {
       searchPlaceholder: "Search",
     },
   });
+  
+  $("#announcements-table").DataTable({
+    dom: "ftpr",
+    bSort: false,
+    pageLength: 8,
+    language: {
+      search: "_INPUT_",
+      searchPlaceholder: "Search",
+    },
+  });
 
 
   /*=============== RESIDENTS DROPDOWN FILTER ===============*/
@@ -248,6 +258,23 @@ document.body.addEventListener("keyup", (keyEvent) => {
 //   nav.classList.remove("show");
 // }
 // navLink.forEach((n) => n.addEventListener("click", linkAction));
+
+/*=============== ALERTS ===============*/
+const alert = document.querySelector('.alert');
+// const alertClose = document.querySelector('.alert__close');
+
+
+if(alert){
+// alertClose.addEventListener("click", () => {
+//   alert.classList.add("alert--hide");
+// });
+
+setTimeout(function(){
+  alert.classList.add("alert--hide");
+}, 3000);
+
+}
+
 
 /*=============== PROFILE INFO VIEW TABS ===============*/
 const profileTabs = document.querySelectorAll(
@@ -601,3 +628,66 @@ function boostStateHandle() {
 //     $('#').removeAttr('disabled');
 //   }
 // });
+
+
+/*==================== HIDE VOTING TAB ====================*/
+var result;
+
+function calculateAge() {
+    var dateInput = document.querySelector(".dob").value;
+    var ageInput = document.querySelector("#age");
+    var dob = new Date(dateInput);
+    
+    var month_diff = Date.now() - dob.getTime();
+    var age_dt = new Date(month_diff); 
+    var year = age_dt.getUTCFullYear();
+    var age = Math.abs(year - 1970);
+
+    result = age;
+    ageInput.value = result;
+
+    var votingTab = document.querySelector("#votingTab");
+    var votingTabContent = document.querySelector("#votingTabContent");
+    var voterToggle = document.querySelector(".regVoterToggle");
+ 
+        if (result < 15) {
+            votingTab.style.display = "none";
+            votingTabContent.style.display = "none";
+            voterToggle.disabled = "true";
+        } else {
+          votingTab.style.display = "inline-block";
+          votingTabContent.style.display = "block";
+          voterToggle.disabled = "false";
+
+        }
+
+    // var vaccineTab = document.querySelector("#vaccineTab");
+    // var vaccineTabContent = document.querySelector("#vaccineTabContent");        
+    //     if (result < 12) {
+    //         vaccineTab.style.display = "none";
+    //         vaccineTabContent.style.display = "none";
+    //     } else {
+    //       vaccineTab.style.display = "inline-block";
+    //       vaccineTabContent.style.display = "block";
+    //     }
+};
+
+var ageValue = document.querySelector("#age").value;
+
+function hideVoting(){
+
+if (ageValue < 15) {
+  votingTab.style.display = "none";
+  votingTabContent.style.display = "none";
+  voterToggle.disabled = "true";
+
+  console.log(ageValue);
+} else {
+votingTab.style.display = "inline-block";
+votingTabContent.style.display = "block";
+voterToggle.disabled = "false";
+
+}
+}
+
+

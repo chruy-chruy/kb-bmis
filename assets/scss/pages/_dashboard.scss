@@ -21,7 +21,7 @@
     }
   }
 
-  &__cards-top {
+  &__cards {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     grid-gap: rem(30);
@@ -39,7 +39,8 @@
     }
   }
 
-  &__card-top {
+
+  &__card {
     min-height: rem(130);
     padding: rem(25);
     background: $light100;
@@ -54,7 +55,7 @@
     &:hover {
       background: $primary;
 
-      .dashboard__card-top {
+      .dashboard__card {
         &--value,
         &--label,
         &--icon i {
@@ -100,41 +101,23 @@
     }
   }
 
-  &__cards-bottom {
+  &__charts {
     display: grid;
     grid-gap: rem(30);
-    // grid-template:
-    //   "grid1 grid1 grid3 grid3 grid3 grid3 grid3" rem(350)
-    //   "grid2 grid2 grid3 grid3 grid3 grid3 grid3" rem(350)
-    //   / [col-start] 1fr [col-2] 1fr [col-3] 1fr [col-4] 1fr [col-5] 1fr [col-6] 1fr [col-7] 1fr [col-end];
-
     grid-template-columns: 30% 1fr;
 
     @include breakpoint-down(medium) {
       grid-template-columns: repeat(2, 1fr);
-
-      // grid-template:
-      //   "grid1 grid2" rem(400)
-      //   "grid3 grid3" rem(500)
-      //   / [col-start] 1fr [col-2] 1fr [col-end];
-    }
+ }
 
     @include breakpoint-down(small) {
       grid-template-columns: 1fr;
 
       grid-gap: rem(40);
-      // grid-template:
-      //   "grid1" rem(350)
-      //   "grid2" rem(350)
-      //   "grid3" rem(700)
-      //   / [col-start] 1fr [col-end];
-      // display: flex;
-      // flex-direction: column;
     }
   }
 
-  &__card-bottom {
-    // position: relative;
+  &__chart {
     max-height: rem(420);
     background: $light100;
     padding: rem(20) rem(10);
@@ -153,12 +136,29 @@
       padding: rem(20);
     }
 
-    &--card1,
-    &--card2 {
+    &--chart1 {
+      margin-bottom: rem(30);
+  
+        canvas {
+          max-height: 85%;
+  
+          @include breakpoint-down(medium) {
+            max-height: 93%;
+          }
+  
+          @include breakpoint-down(small) {
+            max-height: 100%;
+          }
+        }
+      }
+
+    &--chart2,
+    &--chart3 {
       canvas {
         max-height: 100%;
       }
     }
+    
   }
 
   &__down-arrow {

@@ -1,6 +1,6 @@
 <?php
 
-$page = 'Official Archive';
+$page = 'Archive';
 $headerTitle = 'Official Archive';
 include "../../db_conn.php";
 require_once "../../includes/header.php";
@@ -18,11 +18,10 @@ include "../../includes/preloader.php";
                     <div class="card__header-content">
 
                         <?php if (isset($_GET['error'])) { ?>
-                        <p class="error-message" style="margin-bottom: 15px;"><?php echo $_GET['error']; ?></p>
+                            <p class="error-message" style="margin-bottom: 15px;"><?php echo $_GET['error']; ?></p>
                         <?php } ?>
                         <div class="card__header-content--right">
-                            <a href="#" class="button button--md button--primary modal-trigger"
-                                data-modal-id="modal-delete">
+                            <a href="#" class="button button--md button--primary modal-trigger" data-modal-id="modal-delete">
                                 <i class='bx bx-trash bx-sm' data-modal-id="modal-delete"></i>
                                 EMPTY ARCHIVE
                             </a>
@@ -50,30 +49,28 @@ include "../../includes/preloader.php";
                                         $squery =  mysqli_query($conn, "select * from officials_archive where off_position = 'Barangay Chairman'");
                                         while ($row = mysqli_fetch_array($squery)) {
                                         ?>
-                                        <td>
-                                            <div class="table__row-img">
-                                                <img src="../residents/images/<?php echo $row['img_url'] ?>" alt="">
-                                            </div>
-                                        </td>
-                                        <td>
-                                            <div class="table__row-text">
-                                                <div class="table__row-name">
-                                                    <?php echo $row['off_name'] ?>
+                                            <td>
+                                                <div class="table__row-img">
+                                                    <img src="../residents/images/<?php echo $row['img_url'] ?>" alt="">
                                                 </div>
-                                                <div class="table__row-sub">
-                                                    <?php echo $row['off_position'] ?>
+                                            </td>
+                                            <td>
+                                                <div class="table__row-text">
+                                                    <div class="table__row-name">
+                                                        <?php echo $row['off_name'] ?>
+                                                    </div>
+                                                    <div class="table__row-sub">
+                                                        <?php echo $row['off_position'] ?>
+                                                    </div>
                                                 </div>
-                                            </div>
-                                        </td>
-                                        <td>
-                                            <div class="table__action-buttons">
-                                                <a href="view-official.php?officials_archive_id=<?php echo $row['officials_archive_id'] ?>&resident_id=<?php echo $row['resident_id'] ?>"
-                                                    class="button button--primary button--sm action__cert"
-                                                    id="action-cert">
-                                                    VIEW
-                                                </a>
-                                            </div>
-                                        </td>
+                                            </td>
+                                            <td>
+                                                <div class="table__action-buttons">
+                                                    <a href="view-official.php?officials_archive_id=<?php echo $row['officials_archive_id'] ?>&resident_id=<?php echo $row['resident_id'] ?>" class="button button--primary button--sm action__cert" id="action-cert">
+                                                        VIEW
+                                                    </a>
+                                                </div>
+                                            </td>
                                         <?php } ?>
                                     </tr>
 
@@ -83,33 +80,31 @@ include "../../includes/preloader.php";
                                         $squery =  mysqli_query($conn, "select * from officials_archive Where NOT off_position='Barangay Chairman' ORDER BY officials_archive_id desc");
                                         while ($row = mysqli_fetch_array($squery)) {
                                         ?>
-                                        <td>
-                                            <div class="table__row-img">
-                                                <img src="../residents/images/<?php echo $row['img_url'] ?>" alt="">
-                                            </div>
-                                        </td>
-                                        <td>
-                                            <div class="table__row-text">
-                                                <div class="table__row-name">
-                                                    <?php echo $row['off_name'] ?>
+                                            <td>
+                                                <div class="table__row-img">
+                                                    <img src="../residents/images/<?php echo $row['img_url'] ?>" alt="">
                                                 </div>
-                                                <div class="table__row-sub">
-                                                    <?php echo $row['off_position'] ?>
+                                            </td>
+                                            <td>
+                                                <div class="table__row-text">
+                                                    <div class="table__row-name">
+                                                        <?php echo $row['off_name'] ?>
+                                                    </div>
+                                                    <div class="table__row-sub">
+                                                        <?php echo $row['off_position'] ?>
+                                                    </div>
                                                 </div>
-                                            </div>
-                                        </td>
-                                        <td>
-                                            <div class="table__action-buttons">
-                                                <a href="view-official.php?officials_archive_id=<?php echo $row['officials_archive_id'] ?>&resident_id=<?php echo $row['resident_id'] ?>"
-                                                    class="button button--primary button--sm action__cert"
-                                                    id="action-cert">
-                                                    VIEW
-                                                </a>
-                                            </div>
-                                        </td>
+                                            </td>
+                                            <td>
+                                                <div class="table__action-buttons">
+                                                    <a href="view-official.php?officials_archive_id=<?php echo $row['officials_archive_id'] ?>&resident_id=<?php echo $row['resident_id'] ?>" class="button button--primary button--sm action__cert" id="action-cert">
+                                                        VIEW
+                                                    </a>
+                                                </div>
+                                            </td>
 
                                     </tr>
-                                    <?php } ?>
+                                <?php } ?>
                                 </tbody>
                             </table>
                             <!-- brgy officials end -->

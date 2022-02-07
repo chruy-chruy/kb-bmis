@@ -50,15 +50,15 @@ while ($row = mysqli_fetch_array($squery)) {
                                 </span>
                             </li>
 
-                            <li class="profile-info__item">
+                            <li class="profile-info__item" id="votingTab" <?php if ($row['age'] < 15) { ?> style="display: none;" <?php   } ?>>
                                 <span>
                                     Voting
                                 </span>
                             </li>
 
-                            <li class="profile-info__item">
+                            <li class="profile-info__item" id="vaccineTab">
                                 <span>
-                                    Others
+                                    Vaccine
                                 </span>
                             </li>
 
@@ -127,11 +127,21 @@ while ($row = mysqli_fetch_array($squery)) {
                                     </div>
                                 </div>
 
+
                                 <div class="profile-info__container">
                                     <div class="input__wrapper">
                                         <label for="resident-birthday">Date of Birth</label>
                                         <div class="input__inner">
-                                            <input disabled name="date_of_birth" type="date" class="input--light300 input-viewprofile" value="<?php echo $row['date_of_birth'] ?>">
+                                            <input disabled name="date_of_birth" type="date" class="input--light300 input-viewprofile dob" value="<?php echo $row['date_of_birth'] ?>">
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="profile-info__container">
+                                    <div class="input__wrapper">
+                                        <label for="resident-age">Age </label>
+                                        <div class="input__inner">
+                                            <input disabled type="number" name="age" class="input--light300" value="<?php echo $row['age'] ?>" id="age">
                                         </div>
                                     </div>
                                 </div>
@@ -465,7 +475,7 @@ while ($row = mysqli_fetch_array($squery)) {
                             </section>
 
                         </div>
-                        <div class="profile-info__content viewprofile">
+                        <div class="profile-info__content viewprofile" id="votingTabContent" <?php if ($row['age'] < 15) { ?> style="display: none;" <?php   } ?>>
                             <section class="profile-info__voting">
 
                                 <div class="profile-info__container">
@@ -508,7 +518,7 @@ while ($row = mysqli_fetch_array($squery)) {
                             </section>
                         </div>
 
-                        <div class="profile-info__content viewprofile">
+                        <div class="profile-info__content viewprofile" id="vaccineTabContent">
                             <section class="profile-info__others">
 
 

@@ -1,62 +1,6 @@
 @use "../util" as *;
 @use "../globals/" as *;
 
-// TABLE
-
-.table {
-  &__row {
-    // margin-bottom: rem(34);
-    // position: relative;
-
-    &-img {
-      @include wh(rem(54));
-      // margin-right: rem(14);
-      border-radius: 50%;
-      position: relative;
-      overflow: hidden;
-
-      img {
-        width: 100%;
-        height: 100%;
-        position: absolute;
-        object-fit: cover;
-      }
-
-      @include breakpoint-down(small) {
-        @include wh(rem(34));
-      }
-    }
-
-    &-text {
-      cursor: pointer;
-    }
-
-    &-name {
-      font-size: rem(20);
-      font-weight: 600;
-      transition: 0.2s;
-
-      &:hover {
-        color: $primary;
-      }
-      @include breakpoint-down(small) {
-        font-size: rem(13);
-      }
-    }
-
-    &-sub {
-      font-size: rem(11);
-      color: $dark200;
-    }
-  }
-
-  &__action-buttons {
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
-    gap: rem(8);
-  }
-}
 
 .residents {
   &__header-actions {
@@ -278,23 +222,3 @@
   }
 }
 
-// .table {
-//   &__item {
-//     &-action {
-//       .button--dark {
-//         @include breakpoint-down(small) {
-//           background: transparent;
-//           color: $dark300;
-
-//           &:hover {
-//             color: lighten($dark300, 8);
-//           }
-
-//           i {
-//             font-size: rem(30);
-//           }
-//         }
-//       }
-//     }
-//   }
-// }

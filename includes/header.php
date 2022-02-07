@@ -169,12 +169,12 @@ $role = $_SESSION['role'];
 
             <?php } ?>
 
-            <li class="nav__item <?php if ($page == 'Settings') {
+            <li class="nav__item <?php if ($page == 'Price Settings') {
                                         echo 'nav__item--active';
                                     } ?>">
                 <a href="../settings/" class="nav__item-link">
                     <i class='bx bxs-cog'></i>
-                    <span class="nav__item-text">Settings</span>
+                    <span class="nav__item-text">Price Settings</span>
                 </a>
             </li>
 

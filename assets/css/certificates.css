@@ -257,6 +257,10 @@ li {
   color: #222;
 }
 
+i {
+  font-style: normal;
+}
+
 .button {
   display: flex;
   align-items: center;

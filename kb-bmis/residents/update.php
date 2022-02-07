@@ -10,6 +10,7 @@
         $last_name = $_POST['last_name'];
         $suffix = $_POST['suffix'];
         $sex = $_POST['sex'];
+        $age = $_POST['age'];
         $date_of_birth = $_POST['date_of_birth'];
         $civil_status = $_POST['civil_status'];
         $voter_status = $_POST['voter_status'];
@@ -74,6 +75,7 @@
     `last_name`='$last_name',
     `suffix`='$suffix',
     `sex`='$sex',
+    `age`='$age',
     `date_of_birth`='$date_of_birth',
     `house_number`='$house_number',
     `street`='$street',
@@ -126,6 +128,7 @@
     `last_name`='$last_name',
     `suffix`='$suffix',
     `sex`='$sex',
+    `age`='$age',
     `date_of_birth`='$date_of_birth',
     `house_number`='$house_number',
     `street`='$street',

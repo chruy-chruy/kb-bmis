@@ -1,9 +1,66 @@
 <script>
-    /*=============== CHARTS ===============*/
+    const chart1 = document.getElementById("myChart1")
+    const myChart1 = new Chart(chart1, {
+        type: "line",
+        data: {
+            labels: [
+                "January",
+                "February",
+                "March",
+                "April",
+                "May",
+                "June",
+                "July",
+                "August",
+                "September",
+                "October",
+                "November",
+                "December",
+            ],
+            datasets: [{
+                label: "Total Sales",
+                data: [
 
-    // CHART 1
-    const ctx = document.getElementById("myChart")
-    const myChart = new Chart(ctx, {
+                    1290,
+                    3125,
+                    2097,
+                    1587,
+                    2937,
+                    3007,
+                    3934,
+                    3148,
+                    3907,
+                    3092,
+                    2343,
+                    3590,
+                    2907
+                ],
+                backgroundColor: [
+                    "#ef6a61",
+                ],
+                borderColor: "#ef6a61",
+                fill: false,
+                tension: 0.3,
+                // stepped: true,
+            }, ],
+        },
+        options: {
+            responsive: true,
+            scales: {
+                y: {
+                    ticks: {
+                        callback: function(value, index, ticks) {
+                            return '₱' + value;
+                        }
+                    }
+                }
+            }
+        },
+    });
+
+    // CHART 2
+    const chart2 = document.getElementById("myChart2")
+    const myChart2 = new Chart(chart2, {
         type: "polarArea",
         data: {
             labels: ["Children", "Adolescents", "Adults", "Senior Citizens"],
@@ -31,9 +88,9 @@
 
 
 
-    // CHART 2
-    const chart2 = document.getElementById("myChart2")
-    const myChart2 = new Chart(chart2, {
+    // CHART 3
+    const chart3 = document.getElementById("myChart3")
+    const myChart3 = new Chart(chart3, {
         type: "bar",
         data: {
             labels: [
