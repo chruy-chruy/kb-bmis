@@ -1,15 +1,15 @@
 <?php
-session_start();
-if ($_SESSION['role'] != 'Admin') {
-  header("Location: ../dashboard/index.php");
-  exit();
-}
+
 $page = 'User Accounts';
 $headerTitle = 'User Accounts';
 include "../../db_conn.php";
 require_once "../../includes/header.php";
 include "../../includes/preloader.php";
-
+session_start();
+if ($_SESSION['role'] != 'Admin') {
+  header("Location: ../dashboard/index.php");
+  exit();
+}
 ?>
 
 <main>
