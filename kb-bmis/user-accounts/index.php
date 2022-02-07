@@ -1,4 +1,9 @@
 <?php
+session_start();
+if ($_SESSION['role'] != 'Admin') {
+  header("Location: ../dashboard/index.php");
+  exit();
+}
 $page = 'User Accounts';
 $headerTitle = 'User Accounts';
 include "../../db_conn.php";
@@ -67,6 +72,36 @@ include "../../includes/preloader.php";
                   </tr>
                 <?php } ?>
 
+
+                <?php $squery =  mysqli_query($conn, "select * from residents,users where users.role = 'Barangay Chairman' AND residents.occupation = 'Barangay Chairman'");
+                while ($row = mysqli_fetch_array($squery)) { ?>
+                  <tr>
+                    <td>
+                      <div class="table__row-img">
+                        <img src="../residents/images/<?php echo $row['img_url'] ?>" alt="">
+                      </div>
+                    </td>
+                    <td>
+                      <div class="table__row-text">
+                        <div class="table__row-name">
+                          <?php echo $row['name'] ?>
+                        </div>
+                        <div class="table__row-sub">
+                          <?php echo $row['role'] ?>
+                        </div>
+                      </div>
+                    </td>
+                    <td>
+                      <div class="table__action-buttons">
+                        <a href="view-user.php?role=<?php echo $row['role'] ?>&res_id=<?php echo $row['resident_id'] ?>" class="button button--primary button--sm action__cert" id="action-cert">
+                          VIEW
+                        </a>
+                      </div>
+                    </td>
+                  </tr>
+                <?php } ?>
+
+
                 <?php $squery =  mysqli_query($conn, "select * from residents,users where users.role = 'Barangay Secretary' AND residents.occupation = 'Barangay Secretary'");
                 while ($row = mysqli_fetch_array($squery)) { ?>
                   <tr>
@@ -87,14 +122,16 @@ include "../../includes/preloader.php";
                     </td>
                     <td>
                       <div class="table__action-buttons">
-                        <a href="view-user.php?role=<?php echo $row['role'] ?>" class="button button--primary button--sm action__cert" id="action-cert">
+                        <a href="view-user.php?role=<?php echo $row['role'] ?>&res_id=<?php echo $row['resident_id'] ?>" class="button button--primary button--sm action__cert" id="action-cert">
                           VIEW
                         </a>
                       </div>
                     </td>
                   </tr>
                 <?php } ?>
-                <?php $squery =  mysqli_query($conn, "select * from residents,users where users.role = 'Barangay Clerk' AND residents.occupation = 'Barangay Clerk'");
+
+
+                <?php $squery =  mysqli_query($conn, "select * from residents,users where users.role = 'Barangay Clerk' AND residents.occupation = 'Barangay Clerk' AND residents.id = users.resident_id");
                 while ($row = mysqli_fetch_array($squery)) { ?>
                   <tr>
                     <td>
@@ -114,7 +151,7 @@ include "../../includes/preloader.php";
                     </td>
                     <td>
                       <div class="table__action-buttons">
-                        <a href="view-user.php?role=<?php echo $row['role'] ?>" class="button button--primary button--sm action__cert" id="action-cert">
+                        <a href="view-user.php?role=<?php echo $row['role'] ?>&res_id=<?php echo $row['resident_id'] ?>" class="button button--primary button--sm action__cert" id="action-cert">
                           VIEW
                         </a>
                       </div>
@@ -153,7 +190,7 @@ include "../../includes/preloader.php";
         </thead>
         <tbody>
           <?php
-          $squery =  mysqli_query($conn, "select * from residents where not (residents.occupation = 'Barangay Clerk')");
+          $squery =  mysqli_query($conn, "select * from residents where not (residents.occupation = 'Barangay Chairman' OR residents.occupation ='Barangay Secretary' OR residents.occupation ='Barangay Treasurer' OR residents.occupation ='Barangay Councilor' OR residents.occupation ='SK Chairperson' OR residents.occupation ='SK Councilor' OR residents.occupation ='Barangay Clerk')");
           while ($row = mysqli_fetch_array($squery)) {
 
           ?>

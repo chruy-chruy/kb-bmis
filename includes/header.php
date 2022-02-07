@@ -1,11 +1,12 @@
 <?php
+include "../../db_conn.php";
 session_start();
 if (!isset($_SESSION['id'])) {
     header("Location: ../../index.php");
     exit();
 }
-include "../../db_conn.php";
 $role = $_SESSION['role'];
+$res_id = $_SESSION['res_id'];
 
 ?>
 <!DOCTYPE html>
@@ -94,25 +95,28 @@ $role = $_SESSION['role'];
             </li>
 
 
-            <li class="nav__item <?php if ($page == 'Residents') {
-                                        echo 'nav__item--active';
-                                    } ?>">
-                <a href="../residents/" class="nav__item-link">
-                    <i class='bx bxs-id-card'></i>
-                    <span class="nav__item-text">Residents</span>
-                </a>
-            </li>
+            <?php if ($role == 'Admin' or $role == 'Barangay Secretary'  or $role == 'Barangay Clerk') { ?>
 
+                <li class="nav__item <?php if ($page == 'Residents') {
+                                            echo 'nav__item--active';
+                                        } ?>">
+                    <a href="../residents/" class="nav__item-link">
+                        <i class='bx bxs-id-card'></i>
+                        <span class="nav__item-text">Residents</span>
+                    </a>
+                </li>
+            <?php } ?>
 
-            <li id="nav-certificates" class="nav__item <?php if ($page == 'Certificates') {
-                                                            echo 'nav__item--active';
-                                                        } ?>">
-                <a href="../certificates/" class="nav__item-link">
-                    <i class='bx bxs-file-blank'></i>
-                    <span class="nav__item-text">Certificates</span>
-                </a>
-            </li>
-
+            <?php if ($role == 'Admin' or $role == 'Barangay Secretary'  or $role == 'Barangay Clerk') { ?>
+                <li id="nav-certificates" class="nav__item <?php if ($page == 'Certificates') {
+                                                                echo 'nav__item--active';
+                                                            } ?>">
+                    <a href="../certificates/" class="nav__item-link">
+                        <i class='bx bxs-file-blank'></i>
+                        <span class="nav__item-text">Certificates</span>
+                    </a>
+                </li>
+            <?php } ?>
 
             <li class="nav__item <?php if ($page == 'Reports') {
                                         echo 'nav__item--active';
@@ -125,36 +129,41 @@ $role = $_SESSION['role'];
 
 
 
-            <li class="nav__item <?php if ($page == 'Announcements') {
-                                        echo 'nav__item--active';
-                                    } ?>">
-                <a href="../announcements/" class="nav__item-link">
-                    <i class='bx bxs-megaphone'></i>
-                    <span class="nav__item-text">Announcements</span>
-                </a>
-            </li>
+            <?php if ($role == 'Admin' or $role == 'Barangay Secretary'  or $role == 'Barangay Clerk') { ?>
+
+                <li class="nav__item <?php if ($page == 'Announcements') {
+                                            echo 'nav__item--active';
+                                        } ?>">
+                    <a href="../announcements/" class="nav__item-link">
+                        <i class='bx bxs-megaphone'></i>
+                        <span class="nav__item-text">Announcements</span>
+                    </a>
+                </li>
 
 
+            <?php } ?>
 
-            <li class="nav__item <?php if ($page == 'Barangay Officials') {
-                                        echo 'nav__item--active';
-                                    } ?>">
-                <a href="../barangay-officials" class="nav__item-link">
-                    <i class='bx bxs-user-voice'></i>
-                    <span class="nav__item-text">Barangay Officials</span>
-                </a>
-            </li>
+            <?php if ($role == 'Admin' or $role == 'Barangay Secretary'  or $role == 'Barangay Clerk') { ?>
+                <li class="nav__item <?php if ($page == 'Barangay Officials') {
+                                            echo 'nav__item--active';
+                                        } ?>">
+                    <a href="../barangay-officials" class="nav__item-link">
+                        <i class='bx bxs-user-voice'></i>
+                        <span class="nav__item-text">Barangay Officials</span>
+                    </a>
+                </li>
+            <?php } ?>
 
-
-
-            <li class="nav__item <?php if ($page == 'Archive') {
-                                        echo 'nav__item--active';
-                                    } ?>">
-                <a href="../archive/" class="nav__item-link">
-                    <i class='bx bxs-archive'></i>
-                    <span class="nav__item-text">Archive</span>
-                </a>
-            </li>
+            <?php if ($role == 'Admin' or $role == 'Barangay Secretary'  or $role == 'Barangay Clerk') { ?>
+                <li class="nav__item <?php if ($page == 'Archive') {
+                                            echo 'nav__item--active';
+                                        } ?>">
+                    <a href="../archive/" class="nav__item-link">
+                        <i class='bx bxs-archive'></i>
+                        <span class="nav__item-text">Archive</span>
+                    </a>
+                </li>
+            <?php } ?>
 
             <?php if ($role == 'Admin') { ?>
 
@@ -168,15 +177,16 @@ $role = $_SESSION['role'];
                 </li>
 
             <?php } ?>
-
-            <li class="nav__item <?php if ($page == 'Settings') {
-                                        echo 'nav__item--active';
-                                    } ?>">
-                <a href="../settings/" class="nav__item-link">
-                    <i class='bx bxs-cog'></i>
-                    <span class="nav__item-text">Settings</span>
-                </a>
-            </li>
+            <?php if ($role == 'Admin' or $role == 'Barangay Secretary'  or $role == 'Barangay Clerk') { ?>
+                <li class="nav__item <?php if ($page == 'Settings') {
+                                            echo 'nav__item--active';
+                                        } ?>">
+                    <a href="../settings/" class="nav__item-link">
+                        <i class='bx bxs-cog'></i>
+                        <span class="nav__item-text">Settings</span>
+                    </a>
+                </li>
+            <?php } ?>
 
         </ul>
     </nav>
@@ -190,33 +200,36 @@ $role = $_SESSION['role'];
         <div class="header__title">
             <?php echo $headerTitle; ?>
         </div>
-        <a href="#" class="header__img">
 
-            <?php
-            if ($role == 'Admin') {
-            ?>
+        <?php
+        if ($role == 'Admin') {
+        ?> <a href="#" class="header__img">
                 <img src="../../assets/img/admin.svg" alt="user" />
-            <?php
-            } ?>
+            </a>
+            <div class="header__role"> <?php echo $role ?></div>
+        <?php
+        } ?>
 
-            <?php
-            if ($role == 'Barangay Secretary') {
-                $sql = mysqli_query($conn, "SELECT * FROM residents WHERE occupation = '$role'");
-                while ($row = mysqli_fetch_array($sql)) { ?>
+        <?php
+        if ($role == 'Barangay Secretary' or 'Barangay Clerk') {
+            $sql = mysqli_query($conn, "SELECT * FROM residents WHERE occupation = '$role' and id = $res_id");
+            while ($row = mysqli_fetch_array($sql)) { ?>
+                <a href="#" class="header__img">
                     <img src="../residents/images/<?php echo $row['img_url'] ?>" alt="user" />
-            <?php
-                }
-            } ?>
+                </a>
+                <div class="header__role"> <?php echo $role ?></div>
+        <?php
+            }
+        } ?>
 
-        </a>
-        <div class="header__role"> <?php echo $role ?></div>
+
         <div class="header__toggle">
             <i class='bx bxs-down-arrow'></i>
         </div>
         <div class="dropdown dropdown--user dropdown--user-show">
             <ul>
                 <li class="dropdown__item">
-                    <a href="../user-accounts/user-profile.php?role=<?php echo $role ?>">
+                    <a href="../user-accounts/view-user.php?role=<?php echo $role ?>&res_id=<?php echo $res_id ?>">
                         <i class='bx bxs-user-circle'></i>
                         User Profile
                     </a>

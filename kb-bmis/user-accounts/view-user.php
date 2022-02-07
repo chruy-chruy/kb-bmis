@@ -3,15 +3,29 @@ $headerTitle = 'View';
 $page = 'User Accounts';
 require_once "../../includes/header.php";
 include "../../db_conn.php";
+include "../../includes/preloader.php";
+session_start();
+if (!isset($_SESSION['id'])) {
+  header("Location: ../../index.php");
+  exit();
+}
+$admin = $_SESSION['role'];
 
 $role = $_GET['role'];
+if (isset($_GET['res_id'])) {
+  $res_id = $_GET['res_id'];
+}
+if (isset($_GET['msg'])) {
+  echo '<script>alert("Save Changes")</script>';
+}
 ?>
 
 <?php
 if ($role == "Barangay Secretary" or "Barangay Clerk") {
-  $squery =  mysqli_query($conn, "select * from residents,users where residents.occupation = '$role' and users.role = '$role'; ");
-  while ($row = mysqli_fetch_array($squery)) { ?>
+  $squery =  mysqli_query($conn, "select * from residents,users where residents.occupation = '$role' and users.role = '$role' and users.resident_id=$res_id and residents.id = $res_id; ");
+  while ($row = mysqli_fetch_array($squery)) {  ?>
     <main>
+
       <div class="content">
         <div class="card">
           <a href="index.php" class="button button--md back-btn">
@@ -34,10 +48,14 @@ if ($role == "Barangay Secretary" or "Barangay Clerk") {
               </div>
 
               <div class="row">
-                <a href="#" class="button button--primary button--sm modal-trigger" data-modal-id="modal-editprofile">
+                <a href="edit-users.php?role=<?php echo $row["role"]; ?>&res_id=<?php echo $row['resident_id'] ?>" class="button button--primary button--sm">
                   <i class='bx bxs-edit' data-modal-id="modal-editprofile"></i>
                   Edit</a>
-
+                <?php if ($admin == 'Admin') { ?>
+                  <a href="#" class="button button--dark button--sm modal-trigger" data-modal-id="modal-delete">
+                    <i class='bx bxs-trash' data-modal-id="modal-delete"></i>
+                    Delete</a></a>
+                <?php } ?>
               </div>
 
 
@@ -55,10 +73,6 @@ if ($role == "Barangay Secretary" or "Barangay Clerk") {
                         <div class="select__wrapper">
                           <select disabled name="off_position" name="civil_status" id="" class="select select--resident-profile input-viewprofile">
                             <option value="<?php echo $row['occupation'] ?>" selected disabled><?php echo $row['occupation'] ?></option>
-                            <option value="Barangay Chairman">Barangay Chairman</option>
-                            <option value="Barangay Councilor">Barangay Councilor</option>
-                            <option value="Barangay Secretary">Barangay Secretary</option>
-                            <option value="Barangay Treasurer">Barangay Treasurer</option>
                           </select>
                         </div>
                       </div>
@@ -98,56 +112,36 @@ if ($role == "Barangay Secretary" or "Barangay Clerk") {
 
             </div>
     </main>
+    </body>
 
-
+    </html>
     <!--=============== MODALS ===============-->
-
-
-    <div class="modal__wrapper" id="modal-editprofile">
-      <section class="modal__window modal__window--sm">
+    <div class="modal__wrapper" id="modal-delete">
+      <section class="modal__window modal__window--md">
         <header class="modal__header">
-          <h3>Login</h3>
+          <h3>Delete Profile</h3>
           <button type="button" class="modal__close close" aria-label="Close modal window">
             <i class='bx bx-x'></i>
           </button>
         </header>
         <div class="modal__body">
-          <div class="input__wrapper input__wrapper--block input__wrapper--login">
-            <div class="input__inner--with-leading-icon input__inner">
-              <i class="bx bxs-user-circle input__icon input__icon--leading"></i>
-              <input name="first_name" type="text" class="input--light300 input--login" value="" placeholder="Username" />
-            </div>
-            <div class="input__message"></div>
-          </div>
-
-          <div class="input__wrapper input__wrapper--block input__wrapper--login">
-            <div class="input__inner--with-leading-icon input__inner">
-              <i class="bx bxs-lock input__icon input__icon--leading"></i>
-              <input name="first_name" type="password" class="input--light300 input--login" value="" placeholder="Password" />
-            </div>
-            <div class="input__message"></div>
-          </div>
+          Are you sure you want delete <?php echo $row["first_name"]; ?> <?php echo $row["last_name"]; ?> (<?php echo $row["role"]; ?>) ?
         </div>
         <footer class="modal__footer">
-          <a href="edit-users.php?role=<?php echo $row["occupation"]; ?>" class="button button--primary button--md" id="login-editprofile">Login</a>
+          <a href="delete-clerk.php?resident_id=<?php echo $row["resident_id"]; ?>&id=<?php echo $row["id"]; ?>&role=<?php echo $row["role"] ?>" class="button button--danger button--md">Delete</a>
           <a href="#" class="button button--dark button--md modal__cancel close">Cancel</a>
 
         </footer>
       </section>
     </div>
-
-
-
-
-
-    </body>
-
-
-    </html>
-  <?php
+<?php
   }
-} else if ($role == "Admin") {
-  $squery =  mysqli_query($conn, "select * from users where role = '$role'  ");
+} ?>
+
+
+
+<?php if ($role == "Admin") {
+  $squery =  mysqli_query($conn, "select * from users where role = '$role'");
   while ($row = mysqli_fetch_array($squery)) { ?>
     <main>
       <div class="content">
@@ -169,12 +163,10 @@ if ($role == "Barangay Secretary" or "Barangay Clerk") {
               </div>
 
               <div class="row">
-                <a href="#" class="button button--primary button--sm modal-trigger" data-modal-id="modal-editprofile">
+                <a href="edit-users.php?role=<?php echo $row["role"]; ?>" class="button button--primary button--sm">
                   <i class='bx bxs-edit' data-modal-id="modal-editprofile"></i>
                   Edit</a>
               </div>
-
-
 
               <div class="profile-info__content viewprofile" style="display: block;">
 
@@ -223,49 +215,6 @@ if ($role == "Barangay Secretary" or "Barangay Clerk") {
 
             </div>
     </main>
-
-
-    <!--=============== MODALS ===============-->
-
-
-
-    <div class="modal__wrapper" id="modal-editprofile">
-      <section class="modal__window modal__window--sm">
-        <header class="modal__header">
-          <h3>Login <?php echo $row['user_name'] ?></h3>
-          <button type="button" class="modal__close close" aria-label="Close modal window">
-            <i class='bx bx-x'></i>
-          </button>
-        </header>
-        <div class="modal__body">
-          <div class="input__wrapper input__wrapper--block input__wrapper--login">
-            <div class="input__inner--with-leading-icon input__inner">
-              <i class="bx bxs-user-circle input__icon input__icon--leading"></i>
-              <input name="first_name" type="text" class="input--light300 input--login" value="" placeholder="Username" />
-            </div>
-            <div class="input__message"></div>
-          </div>
-
-          <div class="input__wrapper input__wrapper--block input__wrapper--login">
-            <div class="input__inner--with-leading-icon input__inner">
-              <i class="bx bxs-lock input__icon input__icon--leading"></i>
-              <input name="first_name" type="password" class="input--light300 input--login" value="" placeholder="Password" />
-            </div>
-            <div class="input__message"></div>
-          </div>
-        </div>
-        <footer class="modal__footer">
-          <a href="edit-users.php?role=<?php echo $row["role"]; ?>" class="button button--primary button--md" id="login-editprofile">Login</a>
-          <a href="#" class="button button--dark button--md modal__cancel close">Cancel</a>
-
-        </footer>
-      </section>
-    </div>
-
-
-
-
-
     </body>
 
 
