@@ -6,12 +6,13 @@ if (isset($_POST['btn_update'])) {
     $user = $_POST['user'];
     $pass = $_POST['pass'];
     $role = $_POST['role'];
+    $res_id = $_POST['res_id'];
 
     $sql = "UPDATE `users` SET
     `user_name`='$user',
     `password`='$pass' 
-    where `role` = '$role'";
+    where `resident_id` = '$res_id'";
 
     mysqli_query($conn, $sql);
-    header("location:view-user.php?role=$role");
+    header("location:view-user.php?role=$role&res_id=$res_id&msg=update");
 }

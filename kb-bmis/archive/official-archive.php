@@ -8,6 +8,7 @@ include "../../includes/preloader.php";
 ?>
 
 
+
 <main>
 
     <div class="content">
@@ -46,38 +47,53 @@ include "../../includes/preloader.php";
                                 <tbody>
                                     <tr>
                                         <?php
-                                        $squery =  mysqli_query($conn, "select * from officials_archive where off_position = 'Barangay Chairman'");
+                                        $squery =  mysqli_query($conn, "SELECT officials_archive_id, resident_id, img_url, off_name, off_position
+                                        FROM officials_archive O
+                                        JOIN residents R ON O.resident_id = R.id WHERE off_position = 'Barangay Chairman'");
                                         while ($row = mysqli_fetch_array($squery)) {
                                         ?>
-                                            <td>
+                                            <<<<<<< HEAD <td>
                                                 <div class="table__row-img">
                                                     <img src="../residents/images/<?php echo $row['img_url'] ?>" alt="">
-                                                </div>
-                                            </td>
-                                            <td>
-                                                <div class="table__row-text">
-                                                    <div class="table__row-name">
-                                                        <?php echo $row['off_name'] ?>
-                                                    </div>
-                                                    <div class="table__row-sub">
-                                                        <?php echo $row['off_position'] ?>
-                                                    </div>
-                                                </div>
-                                            </td>
-                                            <td>
-                                                <div class="table__action-buttons">
-                                                    <a href="view-official.php?officials_archive_id=<?php echo $row['officials_archive_id'] ?>&resident_id=<?php echo $row['resident_id'] ?>" class="button button--primary button--sm action__cert" id="action-cert">
-                                                        VIEW
-                                                    </a>
-                                                </div>
-                                            </td>
-                                        <?php } ?>
+                                                    =======
+                                                    <td>
+                                                        <div class="table__row-img">
+                                                            <img src="../residents/images/<?php echo $row["img_url"]; ?>" alt="">
+                                                        </div>
+                                                    </td>
+                                                    <td>
+                                                        <div class="table__row-text">
+                                                            <div class="table__row-name">
+                                                                <?php echo $row['off_name'] ?>
+                                                                >>>>>>> 2370385c6cecb822fa0f2f0ac8b7940566aae675
+                                                            </div>
+                                                    </td>
+                                                    <td>
+                                                        <div class="table__row-text">
+                                                            <div class="table__row-name">
+                                                                <?php echo $row['off_name'] ?>
+                                                            </div>
+                                                            <div class="table__row-sub">
+                                                                <?php echo $row['off_position'] ?>
+                                                            </div>
+                                                        </div>
+                                                    </td>
+                                                    <td>
+                                                        <div class="table__action-buttons">
+                                                            <a href="view-official.php?officials_archive_id=<?php echo $row['officials_archive_id'] ?>&resident_id=<?php echo $row['resident_id'] ?>" class="button button--primary button--sm action__cert" id="action-cert">
+                                                                VIEW
+                                                            </a>
+                                                        </div>
+                                                    </td>
+                                                <?php } ?>
                                     </tr>
 
 
                                     <tr>
                                         <?php
-                                        $squery =  mysqli_query($conn, "select * from officials_archive Where NOT off_position='Barangay Chairman' ORDER BY officials_archive_id desc");
+                                        $squery =  mysqli_query($conn, "SELECT officials_archive_id, resident_id, img_url, off_name, off_position
+                                        FROM officials_archive O
+                                        JOIN residents R ON O.resident_id = R.id WHERE NOT off_position='Barangay Chairman' ORDER BY officials_archive_id desc");
                                         while ($row = mysqli_fetch_array($squery)) {
                                         ?>
                                             <td>
@@ -130,8 +146,6 @@ include "../../includes/preloader.php";
 </main>
 
 <!--=============== MODALS ===============-->
-
-
 <!--=============== MODALS ===============-->
 <div class="modal__wrapper" id="modal-delete">
     <section class="modal__window modal__window--md">

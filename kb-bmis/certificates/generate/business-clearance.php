@@ -1,16 +1,17 @@
 <?php
 include "../../../db_conn.php";
+if (isset($_POST['btn_save'])) {
 
-$name = $_POST['name'];
-$bus_location = $_POST['bus_location'];
-$bus_name = $_POST['bus_name'];
-$date_issued = $_POST['date_issued'];
-$clearance_number = $_POST['clearance_number'];
-$bus_type = $_POST['bus_type'];
-$date = date("F j, Y", strtotime($date_issued));
-$price = $_POST['price'];
+  $name = $_POST['name'];
+  $bus_location = $_POST['bus_location'];
+  $bus_name = $_POST['bus_name'];
+  $date_issued = $_POST['date_issued'];
+  $clearance_number = $_POST['clearance_number'];
+  $bus_type = $_POST['bus_type'];
+  $date = date("F j, Y", strtotime($date_issued));
+  $price = $_POST['price'];
 
-$sql = "INSERT INTO `business_clearance`
+  $sql = "INSERT INTO business_clearance
 (
   `name`, 
   `location`, 
@@ -30,8 +31,8 @@ VALUES
   '$price'
 )";
 
-mysqli_query($conn, $sql);
-
+  mysqli_query($conn, $sql);
+}
 ?>
 
 <!DOCTYPE html>

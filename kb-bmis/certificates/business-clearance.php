@@ -78,7 +78,7 @@ require_once "../../includes/header.php";
                       <label for="official-position">Business Size <strong style="color:red;">*</strong></label>
                       <div class="input__inner">
                         <div class="select__wrapper">
-                          <select name="off_position" name="civil_status" id="" class="select select--resident-profile input-viewprofile">
+                          <select name="" id="" class="select select--resident-profile input-viewprofile">
                             <option disabled selected value="">Select</option>
                             <option value="Small Scale Business">Small Scale Business</option>
                             <option value="Medium Scale Business">Medium Scale Business</option>

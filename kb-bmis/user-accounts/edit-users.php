@@ -3,13 +3,17 @@ $headerTitle = 'View';
 $page = 'User Accounts';
 require_once "../../includes/header.php";
 include "../../db_conn.php";
+include "../../includes/preloader.php";
 
 $role = $_GET['role'];
+if (isset($_GET['res_id'])) {
+    $res_id = $_GET['res_id'];
+}
 ?>
 
 <?php
 if ($role == "Barangay Secretary" or "Barangay Clerk") {
-    $squery =  mysqli_query($conn, "select * from residents,users where residents.occupation = '$role' and users.role = '$role'; ");
+    $squery =  mysqli_query($conn, "select * from residents,users where residents.occupation = '$role' and users.role = '$role' and residents.id = $res_id and users.resident_id = $res_id ");
     while ($row = mysqli_fetch_array($squery)) { ?>
         <form id="add_residents" action="update-user.php" method="post" enctype="multipart/form-data" data-parsley-validate="">
 
@@ -17,7 +21,7 @@ if ($role == "Barangay Secretary" or "Barangay Clerk") {
 
                 <div class="content">
                     <div class="card">
-                        <a href="index.php" class="button button--md back-btn">
+                        <a href="view-user.php?role=<?php echo $row['role'] ?>&res_id=<?php echo $row['resident_id'] ?>" class="button button--md back-btn">
                             <i class='bx bx-left-arrow-circle'></i>
                             Back
                         </a>
@@ -49,8 +53,9 @@ if ($role == "Barangay Secretary" or "Barangay Clerk") {
                                             <div class="input__wrapper">
                                                 <label for="official-position">Position</label>
                                                 <div class="input__inner">
-                                                    <input disabled name="role" type="text" class="input--light300 input-viewprofile" value="<?php echo $row['occupation'] ?>">
+                                                    <input disabled name="role" type="text" class="input--light300 input-viewprofile" value="<?php echo $row['occupation'] . " " .  $row['resident_id'] ?> ">
                                                     <input hidden name="role" type="text" class="input--light300 input-viewprofile" value="<?php echo $row['occupation'] ?>">
+                                                    <input hidden name="res_id" type="text" class="input--light300 input-viewprofile" value="<?php echo $row['resident_id'] ?>">
                                                 </div>
                                             </div>
                                         </div>
@@ -159,7 +164,7 @@ if ($role == "Admin") {
             <main>
                 <div class="content">
                     <div class="card">
-                        <a href="index.php" class="button button--md back-btn">
+                        <a href="view-user.php?role=<?php echo $row['role'] ?>" class="button button--md back-btn">
                             <i class='bx bx-left-arrow-circle'></i>
                             Back
                         </a>

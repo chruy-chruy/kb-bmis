@@ -31,7 +31,7 @@ if ($off_position == "Barangay Chairman") {
             $sql2 = "UPDATE `residents` SET `occupation`='$off_position' WHERE `id` = '$id'";
             mysqli_query($conn, $sql2);
 
-            if ($off_position == 'Barangay Secretary') {
+            if ($off_position == 'Barangay Chairman') {
                 $sql3 = "UPDATE `users` SET `name`='$off_name',`resident_id`='$id' WHERE `role` = '$off_position'";
                 mysqli_query($conn, $sql3);
             }
@@ -96,11 +96,6 @@ else if ($off_position == "Barangay Treasurer") {
 
             $sql2 = "UPDATE `residents` SET `occupation`='$off_position' WHERE `id` = '$id'";
             mysqli_query($conn, $sql2);
-
-            if ($off_position == 'Barangay Secretary') {
-                $sql3 = "UPDATE `users` SET `name`='$off_name',`resident_id`='$id' WHERE `role` = '$off_position'";
-                mysqli_query($conn, $sql3);
-            }
 
 
             header("location:index.php");
