@@ -8,86 +8,90 @@ include "../../includes/preloader.php";
 
 ?>
 <main>
-  <div class="content">
-    <section class="announcements">
-      <a href="#" class="button button--md button--primary modal-trigger" style="margin-bottom: 20px; margin-left: auto;" data-modal-id="modal-sendmessage">
-        <i class='bx bxs-megaphone' data-modal-id="modal-sendmessage"></i>
-        CREATE ANNOUNCEMENT
-      </a>
+    <div class="content">
+        <section class="announcements">
+            <a href="#" class="button button--md button--primary modal-trigger"
+                style="margin-bottom: 20px; margin-left: auto;" data-modal-id="modal-sendmessage">
+                <i class='bx bxs-megaphone' data-modal-id="modal-sendmessage"></i>
+                CREATE ANNOUNCEMENT
+            </a>
 
-      <table id="announcements-table" class="row-border">
-        <thead>
-          <tr>
-            <th></th>
-            <th></th>
-            <th></th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <?php
+            <table id="announcements-table" class="row-border">
+                <thead>
+                    <tr>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <?php
             $squery =  mysqli_query($conn, "select * from announcements order by id desc");
             while ($row = mysqli_fetch_array($squery)) {
             ?>
-              <td>
-              </td>
-              <td>
-                <div class="table__row-text">
-                  <div class="table__row-name">
-                    Recipients: <strong><?php echo $row["recipients"]; ?></strong>
-                  </div>
-                  <div class="table__row-sub">
-                    <div class="message__date-time"><?php echo date("l, F j Y", strtotime($row["date"])); ?> - <?php echo date("g:i A", strtotime($row["time"])); ?></div>
-                  </div>
-                </div>
-              </td>
-              <td>
-                <div class="table__action-buttons">
-                  <a href="view-announcement.php?id=<?php echo $row['id'] ?>" class="button button--primary button--sm action__cert" id="action-cert">
-                    VIEW
-                  </a>
-                </div>
-              </td>
+                        <td>
+                        </td>
+                        <td>
+                            <div class="table__row-text">
+                                <div class="table__row-name">
+                                    Recipients: <strong><?php echo $row["recipients"]; ?></strong>
+                                </div>
+                                <div class="table__row-sub">
+                                    <div class="message__date-time">
+                                        <?php echo date("l, F j Y", strtotime($row["date"])); ?> -
+                                        <?php echo date("g:i A", strtotime($row["time"])); ?></div>
+                                </div>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="table__action-buttons">
+                                <a href="view-announcement.php?id=<?php echo $row['id'] ?>"
+                                    class="button button--primary button--sm action__cert" id="action-cert">
+                                    VIEW
+                                </a>
+                            </div>
+                        </td>
 
-          </tr>
-        <?php } ?>
+                    </tr>
+                    <?php } ?>
 
-        </tbody>
-      </table>
-      <!-- brgy officials end -->
-    </section>
-  </div>
+                </tbody>
+            </table>
+            <!-- brgy officials end -->
+        </section>
+    </div>
 
 
 </main>
 <form id="send_announcement" action="send.php" method="post" enctype="multipart/form-data" data-parsley-validate="">
-  <!--=============== MODALS ===============-->
-  <div class="modal__wrapper" id="modal-sendmessage">
-    <section class="modal__window">
-      <header class="modal__header">
-        <h3>Announcement</h3>
-        <button type="button" class="modal__close close" aria-label="Close modal window">
-          <i class='bx bx-x'></i>
-        </button>
-      </header>
-      <div class="modal__body" style="align-items: flex-start; padding: 0 20px;">
-        <div class="announcements__contacts">
-          <label>Recipients</label>
-          <div class="input__inner">
-            <div class="select__wrapper select__wrapper--announcements">
-              <select required name="recipients" id="" class="select select--announcements input-viewprofile input-viewprofile">
-                <option value="" disabled selected>Select</option>
-                <option value="All Residents">All residents</option>
-                <option value="Barangay Officials">Barangay Officials</option>
-                <option value="SK Officials">SK Officials</option>
-                <option value="Senior Citizens">Senior Citizens</option>
-                <option value="Persons with Disability">Persons with Disability</option>
-                <option value="Registered Voters">Registered Voters</option>
-              </select>
-            </div>
-          </div>
-          <!-- <label for="">Recipients</label> -->
-          <!-- <div class="announcements__radio">
+    <!--=============== MODALS ===============-->
+    <div class="modal__wrapper" id="modal-sendmessage">
+        <section class="modal__window">
+            <header class="modal__header">
+                <h3>Announcement</h3>
+                <button type="button" class="modal__close close" aria-label="Close modal window">
+                    <i class='bx bx-x'></i>
+                </button>
+            </header>
+            <div class="modal__body" style="align-items: flex-start; padding: 0 20px;">
+                <div class="announcements__contacts">
+                    <label>Recipients</label>
+                    <div class="input__inner">
+                        <div class="select__wrapper select__wrapper--announcements">
+                            <select required name="recipients" id=""
+                                class="select select--announcements input-viewprofile input-viewprofile">
+                                <option value="" disabled selected>Select</option>
+                                <option value="All Residents">All residents</option>
+                                <option value="Barangay Officials">Barangay Officials</option>
+                                <option value="Senior Citizens">Senior Citizens</option>
+                                <option value="Persons with Disability">Persons with Disability</option>
+                                <option value="Registered Voters">Registered Voters</option>
+                            </select>
+                        </div>
+                    </div>
+                    <!-- <label for="">Recipients</label> -->
+                    <!-- <div class="announcements__radio">
               <input type="radio" class="announcements__radio-input" checked name="radio" id="all-residents">
               <label for="all-residents" class="announcements__radio-label">All residents</label>
               <input type="radio" class="announcements__radio-input" name="radio" id="all-brgy-officials">
@@ -97,26 +101,26 @@ include "../../includes/preloader.php";
               <input type="radio" class="announcements__radio-input" name="radio" id="senior-citizens">
               <label for="senior-citizens" class="announcements__radio-label">Senior Citizens</label>
             </div> -->
-        </div>
-        <div class="announcements__message">
-          <label>Message</label>
-          <div class="message__container">
-            <div class="message__field">
-              <textarea required name="message" id="" placeholder="Type your message here"></textarea>
-            </div>
+                </div>
+                <div class="announcements__message">
+                    <label>Message</label>
+                    <div class="message__container">
+                        <div class="message__field">
+                            <textarea required name="message" id="" placeholder="Type your message here"></textarea>
+                        </div>
 
-            <div>
+                        <div>
 
+                        </div>
+                    </div>
+                </div>
             </div>
-          </div>
-        </div>
-      </div>
-      <footer class="modal__footer">
-        <button class="button button--md button--primary send-btn" name="btn_save"><i class='bx bx-send'></i>
-          SEND</button>
-        <a href="#" class="button button--dark button--md modal__cancel close">CANCEL</a>
-      </footer>
-  </div>
+            <footer class="modal__footer">
+                <button class="button button--md button--primary send-btn" name="btn_save"><i class='bx bx-send'></i>
+                    SEND</button>
+                <a href="#" class="button button--dark button--md modal__cancel close">CANCEL</a>
+            </footer>
+    </div>
 </form>
 </section>
 </div>
