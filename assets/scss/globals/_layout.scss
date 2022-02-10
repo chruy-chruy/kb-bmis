@@ -151,8 +151,14 @@ section {
 
   &--row{
   @include flex-center-all;
-
   flex-direction: row;
+
+  &.col{
+    @include breakpoint-down(medium){
+  flex-direction: column;
+
+    }
+  }
   }
 }
 

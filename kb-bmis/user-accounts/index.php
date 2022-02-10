@@ -35,7 +35,7 @@ if ($_SESSION['role'] != 'Admin') {
         <div class="card__body">
           <div class="card__body-content">
 
-            <table id="users-table" class="row-border">
+            <table id="users-table">
               <thead>
                 <tr>
                   <th></th>
@@ -204,9 +204,6 @@ if ($_SESSION['role'] != 'Admin') {
                 <div class="table__row-text">
                   <div class="table__row-name">
                     <?php echo $row['first_name'] ?> <?php echo $row['mid_name'] ?> <?php echo $row['last_name'] ?> <?php echo $row['suffix'] ?>
-                  </div>
-                  <div class="table__row-sub">
-                    <?php echo $row['id'] ?>
                   </div>
                 </div>
               </td>

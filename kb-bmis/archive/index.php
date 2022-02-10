@@ -11,7 +11,7 @@ include "../../includes/preloader.php";
     <div class="content">
         <section class="archive" style="height: 80vh;">
 
-            <div class="center--row" style="gap: 50px;">
+            <div class="center--row col" style="gap: 50px;">
                 <a href="resident-archive.php" class="button button--primary button--xl certificates__button modal-trigger" data-modal-id="modal-brgyclearance">
                     <i class='bx bxs-group'></i>
                     <p>RESIDENTS</p>

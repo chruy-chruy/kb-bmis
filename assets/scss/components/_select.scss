@@ -11,9 +11,7 @@
   outline: none;
   cursor: pointer;
   appearance: none;
-  @media (max-width: 50.625em) {
-    display: none;
-  }
+  
 
   @include breakpoint-down(medium) {
     width: rem(170);
@@ -103,5 +101,11 @@
         }
       }
     }
+  }
+}
+
+#residents__filter{
+  @media (max-width: 50.625em) {
+    display: none;
   }
 }

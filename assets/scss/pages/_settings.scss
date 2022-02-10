@@ -2,7 +2,10 @@
 @use "../globals/" as *;
 
 
-.settings{
+section.settings{
+    display: flex;
+    flex-direction: column;
+
     &__cert-price{
         font-weight: 500;
         color: $primary;

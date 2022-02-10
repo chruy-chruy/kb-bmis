@@ -168,7 +168,7 @@ VALUES
           Print
         </button>
         <button class="button button--sm button--dark" id="back-btn" type="button">
-          <a style="color: #fdfdfd;" href="../">Back</a>
+          <a style="color: #fdfdfd;" onclick="history.back();">Back</a>
         </button>
       </div>
     </div>

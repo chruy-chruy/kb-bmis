@@ -91,7 +91,7 @@ require_once "../../includes/header.php";
                                         <div class="input__wrapper">
                                             <label>Address</label>
                                             <div class="input__inner">
-                                                <input name="address" type="text" required="" class="input--light300 input-viewprofile" value="<?php echo $row['purok'] ?> <?php echo $row['street'] ?> <?php echo $row['house_number'] ?>">
+                                                <input name="address" type="text" required="" class="input--light300 input-viewprofile" value="#<?php echo $row['house_number'] ?> <?php echo $row['street'] ?> Street, <?php echo $row['purok'] ?>">
                                             </div>
                                         </div>
                                     </div>

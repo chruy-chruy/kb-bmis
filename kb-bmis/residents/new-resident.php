@@ -8,8 +8,7 @@ require_once "../../includes/header.php";
     <div class="content">
         <section class="residents">
 
-            <form id="add_residents" action="create.php" method="post" enctype="multipart/form-data"
-                data-parsley-validate="">
+            <form id="add_residents" action="create.php" method="post" enctype="multipart/form-data" data-parsley-validate="">
                 <div>
                     <div class="card">
                         <a href="#" class="button button--md back-btn modal-trigger" data-modal-id="modal-cancel">
@@ -27,9 +26,9 @@ require_once "../../includes/header.php";
 
                                     <input type="hidden" name="default" value="default-img.svg">
 
-                                    <a href="#" class="button button--icon-sm modal-trigger"
-                                        data-modal-id="modal-camera" onclick="open_cam()">
-                                        <i class='bx bx-camera' data-modal-id="modal-camera"></i>
+                                    <a href="#" class="button button--icon-sm modal-trigger" data-modal-id="modal-camera" onclick="open_cam()">
+                                        <i class='bx bxs-image-add' data-modal-id="modal-change-image"></i>
+                                        <!-- <i class='bx bx-camera' data-modal-id="modal-camera"></i> -->
                                     </a>
                                 </div>
 
@@ -40,15 +39,15 @@ require_once "../../includes/header.php";
                                         </span>
                                     </li>
 
-                                    <li class="profile-info__item">
+                                    <li class="profile-info__item votingTab">
                                         <span>
                                             Voting
                                         </span>
                                     </li>
 
-                                    <li class="profile-info__item">
+                                    <li class="profile-info__item vaccineTab">
                                         <span>
-                                            Others
+                                            Vaccine
                                         </span>
                                     </li>
 
@@ -66,39 +65,27 @@ require_once "../../includes/header.php";
 
                                         <div class="profile-info__container">
                                             <div class="input__wrapper">
-                                                <label for="resident-first-name">First Name <strong
-                                                        style="color:red;">*</strong></label>
+                                                <label for="resident-first-name">First Name <strong style="color:red;">*</strong></label>
                                                 <div class="input__inner">
-                                                    <input type="text" name="first_name" class="input--light300"
-                                                        required>
+                                                    <input type="text" name="first_name" class="input--light300" required>
                                                 </div>
                                             </div>
                                         </div>
 
                                         <div class="profile-info__container">
                                             <div class="input__wrapper">
-                                                <label for="resident-last-name">Last Name <strong
-                                                        style="color:red;">*</strong></label>
+                                                <label for="resident-last-name">Last Name <strong style="color:red;">*</strong></label>
                                                 <div class="input__inner">
-                                                    <input type="text" name="last_name" class="input--light300" required
-                                                        pattern="[^0-9]*"
-                                                        oninvalid="this.setCustomValidity('Numbers are not allowed.')"
-                                                        onchange="try{setCustomValidity('')}catch(e){}"
-                                                        oninput="setCustomValidity(' ')">
+                                                    <input type="text" name="last_name" class="input--light300" required pattern="[^0-9]*" oninvalid="this.setCustomValidity('Numbers are not allowed.')" onchange="try{setCustomValidity('')}catch(e){}" oninput="setCustomValidity(' ')">
                                                 </div>
                                             </div>
                                         </div>
 
                                         <div class="profile-info__container">
                                             <div class="input__wrapper">
-                                                <label for="resident-middle-name">Middle Name <strong
-                                                        style="color:red;">*</strong></label>
+                                                <label for="resident-middle-name">Middle Name <strong style="color:red;">*</strong></label>
                                                 <div class="input__inner">
-                                                    <input type="text" name="mid_name" class="input--light300" required
-                                                        pattern="[^0-9]*"
-                                                        oninvalid="this.setCustomValidity('Numbers are not allowed.')"
-                                                        onchange="try{setCustomValidity('')}catch(e){}"
-                                                        oninput="setCustomValidity(' ')">
+                                                    <input type="text" name="mid_name" class="input--light300" required pattern="[^0-9]*" oninvalid="this.setCustomValidity('Numbers are not allowed.')" onchange="try{setCustomValidity('')}catch(e){}" oninput="setCustomValidity(' ')">
                                                 </div>
                                             </div>
                                         </div>
@@ -107,23 +94,17 @@ require_once "../../includes/header.php";
                                             <div class="input__wrapper">
                                                 <label for="resident-suffix">Suffix</label>
                                                 <div class="input__inner">
-                                                    <input type="text" name="suffix" class="input--light300"
-                                                        pattern="[^0-9]*"
-                                                        oninvalid="this.setCustomValidity('Numbers are not allowed.')"
-                                                        onchange="try{setCustomValidity('')}catch(e){}"
-                                                        oninput="setCustomValidity(' ')" maxlength="3">
+                                                    <input type="text" name="suffix" class="input--light300" pattern="[^0-9]*" oninvalid="this.setCustomValidity('Numbers are not allowed.')" onchange="try{setCustomValidity('')}catch(e){}" oninput="setCustomValidity(' ')" maxlength="3">
                                                 </div>
                                             </div>
                                         </div>
 
                                         <div class="profile-info__container">
                                             <div class="input__wrapper">
-                                                <label for="resident-gender">Gender <strong
-                                                        style="color:red;">*</strong></label>
+                                                <label for="resident-gender">Gender <strong style="color:red;">*</strong></label>
                                                 <div class="input__inner">
                                                     <div class="select__wrapper">
-                                                        <select name="sex" id="" class="select select--resident-profile"
-                                                            required>
+                                                        <select name="sex" id="" class="select select--resident-profile" required>
                                                             <option selected disabled hidden value="">Select</option>
                                                             <option value="Male">Male</option>
                                                             <option value="Female">Female</option>
@@ -133,35 +114,34 @@ require_once "../../includes/header.php";
                                             </div>
                                         </div>
 
+
+
+                                        <input type="number" name="age" class="input--light300" value="" id="age" hidden>
+
+
                                         <div class="profile-info__container">
                                             <div class="input__wrapper">
-                                                <label for="resident-birthday">Date of Birth <strong
-                                                        style="color:red;">*</strong></label>
+                                                <label for="resident-birthday">Date of Birth <strong style="color:red;">*</strong></label>
                                                 <div class="input__inner">
-                                                    <input type="date" id="dob" name="date_of_birth"
-                                                        class="input--light300" value="" required>
+                                                    <input type="date" name="date_of_birth" class="input--light300 dob" onchange="calculateAge();" required>
                                                 </div>
                                             </div>
                                         </div>
 
                                         <div class="profile-info__container">
                                             <div class="input__wrapper">
-                                                <label for="resident-housenumber">House Number <strong
-                                                        style="color:red;">*</strong></label>
+                                                <label for="resident-housenumber">House Number <strong style="color:red;">*</strong></label>
                                                 <div class="input__inner">
-                                                    <input type="number" name="house_number" class="input--light300"
-                                                        value="" required>
+                                                    <input type="number" name="house_number" class="input--light300" required>
                                                 </div>
                                             </div>
                                         </div>
 
                                         <div class="profile-info__container">
                                             <div class="input__wrapper">
-                                                <label for="resident-street">Street <strong
-                                                        style="color:red;">*</strong></label>
+                                                <label for="resident-street">Street <strong style="color:red;">*</strong></label>
                                                 <div class="input__inner">
-                                                    <input type="text" name="street" class="input--light300" value=""
-                                                        required>
+                                                    <input type="text" name="street" class="input--light300" value="" required>
                                                 </div>
                                             </div>
                                         </div>
@@ -169,14 +149,12 @@ require_once "../../includes/header.php";
 
                                         <div class="profile-info__container">
                                             <div class="input__wrapper">
-                                                <label for="resident-purok">Purok <strong
-                                                        style="color:red;">*</strong></label>
+                                                <label for="resident-purok">Purok <strong style="color:red;">*</strong></label>
                                                 <div class="input__inner">
                                                     <!-- <input type="text" name="purok" class="input--light300" value="<?php echo $row['purok'] ?>" required> -->
 
                                                     <div class="select__wrapper">
-                                                        <select name="purok" id=""
-                                                            class="select select--resident-profile" required>
+                                                        <select name="purok" id="" class="select select--resident-profile" required>
                                                             <option selected value="" disabled>Select</option>
                                                             <option value="Purok 1">Purok 1</option>
                                                             <option value="Purok 2">Purok 2</option>
@@ -200,23 +178,19 @@ require_once "../../includes/header.php";
 
                                         <div class="profile-info__container">
                                             <div class="input__wrapper">
-                                                <label for="resident-birthplace">Place of Birth <strong
-                                                        style="color:red;">*</strong></label>
+                                                <label for="resident-birthplace">Place of Birth <strong style="color:red;">*</strong></label>
                                                 <div class="input__inner">
-                                                    <input type="text" name="place_of_birth" class="input--light300"
-                                                        value="" required>
+                                                    <input type="text" name="place_of_birth" class="input--light300" value="" required>
                                                 </div>
                                             </div>
                                         </div>
 
                                         <div class="profile-info__container">
                                             <div class="input__wrapper">
-                                                <label for="resident-civilstatus">Civil Status <strong
-                                                        style="color:red;">*</strong></label>
+                                                <label for="resident-civilstatus">Civil Status <strong style="color:red;">*</strong></label>
                                                 <div class="input__inner">
                                                     <div class="select__wrapper">
-                                                        <select name="civil_status" id=""
-                                                            class="select select--resident-profile" required>
+                                                        <select name="civil_status" id="" class="select select--resident-profile" required>
                                                             <option disabled selected>Select</option>
                                                             <option value="Single">Single</option>
                                                             <option value="Married">Married</option>
@@ -234,14 +208,9 @@ require_once "../../includes/header.php";
 
                                         <div class="profile-info__container">
                                             <div class="input__wrapper">
-                                                <label for="resident-nationality">Nationality <strong
-                                                        style="color:red;">*</strong></label>
+                                                <label for="resident-nationality">Nationality <strong style="color:red;">*</strong></label>
                                                 <div class="input__inner">
-                                                    <input type="text" name="citizenship" class="input--light300"
-                                                        value="" required pattern="[^0-9]*"
-                                                        oninvalid="this.setCustomValidity('Numbers are not allowed.')"
-                                                        onchange="try{setCustomValidity('')}catch(e){}"
-                                                        oninput="setCustomValidity(' ')">
+                                                    <input type="text" name="citizenship" class="input--light300" value="" required pattern="[^0-9]*" oninvalid="this.setCustomValidity('Numbers are not allowed.')" onchange="try{setCustomValidity('')}catch(e){}" oninput="setCustomValidity(' ')">
                                                 </div>
                                             </div>
                                         </div>
@@ -252,8 +221,7 @@ require_once "../../includes/header.php";
                                                     <strong style="color:red;">*</strong></label>
                                                 <div class="input__inner">
                                                     <div class="select__wrapper">
-                                                        <select name="education_status" id=""
-                                                            class="select select--resident-profile" required>
+                                                        <select name="education_status" id="" class="select select--resident-profile" required>
                                                             <option disabled selected>Select</option>
                                                             <option value="No Grade Completed">No Grade Completed
                                                             </option>
@@ -282,14 +250,9 @@ require_once "../../includes/header.php";
 
                                         <div class="profile-info__container">
                                             <div class="input__wrapper">
-                                                <label for="resident-occupation">Occupation <strong
-                                                        style="color:red;">*</strong></label>
+                                                <label for="resident-occupation">Occupation <strong style="color:red;">*</strong></label>
                                                 <div class="input__inner">
-                                                    <input type="text" name="occupation" class="input--light300"
-                                                        value="" required pattern="[^0-9]*"
-                                                        oninvalid="this.setCustomValidity('Numbers are not allowed.')"
-                                                        onchange="try{setCustomValidity('')}catch(e){}"
-                                                        oninput="setCustomValidity(' ')">
+                                                    <input type="text" name="occupation" class="input--light300" value="" required pattern="[^0-9]*" oninvalid="this.setCustomValidity('Numbers are not allowed.')" onchange="try{setCustomValidity('')}catch(e){}" oninput="setCustomValidity(' ')">
                                                 </div>
                                             </div>
                                         </div>
@@ -298,11 +261,7 @@ require_once "../../includes/header.php";
                                             <div class="input__wrapper">
                                                 <label for="resident-religion">Religion</label>
                                                 <div class="input__inner">
-                                                    <input type="text" name="religion" class="input--light300" value=""
-                                                        pattern="[^0-9]*"
-                                                        oninvalid="this.setCustomValidity('Numbers are not allowed.')"
-                                                        onchange="try{setCustomValidity('')}catch(e){}"
-                                                        oninput="setCustomValidity(' ')">
+                                                    <input type="text" name="religion" class="input--light300" value="" pattern="[^0-9]*" oninvalid="this.setCustomValidity('Numbers are not allowed.')" onchange="try{setCustomValidity('')}catch(e){}" oninput="setCustomValidity(' ')">
                                                 </div>
                                             </div>
                                         </div>
@@ -312,8 +271,7 @@ require_once "../../includes/header.php";
                                                 <label for="resident-bloodtype">Blood Type</label>
                                                 <div class="input__inner">
                                                     <div class="select__wrapper">
-                                                        <select name="blood_type" id=""
-                                                            class="select select--resident-profile">
+                                                        <select name="blood_type" id="" class="select select--resident-profile">
                                                             <option disabled selected>Select</option>
                                                             <option value="A+">A+</option>
                                                             <option value="A-">A-</option>
@@ -333,12 +291,9 @@ require_once "../../includes/header.php";
 
                                         <div class="profile-info__container">
                                             <div class="input__wrapper">
-                                                <label for="resident-contactnumber">Phone Number <strong
-                                                        style="color:red;">*</strong></label>
+                                                <label for="resident-contactnumber">Phone Number <strong style="color:red;">*</strong></label>
                                                 <div class="input__inner">
-                                                    <input type="text" name="phone_number" class="input--light300"
-                                                        value="" required pattern="09[^a-zA-ZÀ-ž]{9}"
-                                                        title="09XXXXXXXXX" maxlength="11">
+                                                    <input type="text" name="phone_number" class="input--light300" value="" required pattern="09[^a-zA-ZÀ-ž]{9}" title="09XXXXXXXXX" maxlength="11">
                                                 </div>
                                             </div>
                                         </div>
@@ -347,11 +302,7 @@ require_once "../../includes/header.php";
                                             <div class="input__wrapper">
                                                 <label for="resident-contactnumber">Tel. Number</label>
                                                 <div class="input__inner">
-                                                    <input type="text" name="tel_number" class="input--light300"
-                                                        value="" pattern="[^a-zA-ZÀ-ž]*"
-                                                        oninvalid="this.setCustomValidity('Alphabets are not allowed.')"
-                                                        onchange="try{setCustomValidity('')}catch(e){}"
-                                                        oninput="setCustomValidity(' ')">
+                                                    <input type="text" name="tel_number" class="input--light300" value="" pattern="[^a-zA-ZÀ-ž]*" oninvalid="this.setCustomValidity('Alphabets are not allowed.')" onchange="try{setCustomValidity('')}catch(e){}" oninput="setCustomValidity(' ')">
                                                 </div>
                                             </div>
                                         </div>
@@ -370,48 +321,35 @@ require_once "../../includes/header.php";
                                                 <label for="resident-outsidePH">Outside of the Philippines?</label>
                                                 <div class="input__inner">
                                                     <div class="toggleswitch__wrapper">
-                                                        <input type="checkbox" id="" name="alien_status"
-                                                            class="toggleswitch toggleswitch--resident-profile"
-                                                            value="Outside of the Philippines">
-                                                        <label
-                                                            class="toggleswitch__indicator toggleswitch__indicator--off">No</label>
-                                                        <label
-                                                            class="toggleswitch__indicator toggleswitch__indicator--on">Yes</label>
+                                                        <input type="checkbox" id="" name="alien_status" class="toggleswitch toggleswitch--resident-profile" value="Outside of the Philippines">
+                                                        <label class="toggleswitch__indicator toggleswitch__indicator--off">No</label>
+                                                        <label class="toggleswitch__indicator toggleswitch__indicator--on">Yes</label>
                                                     </div>
                                                 </div>
                                             </div>
                                         </div>
 
-                                        <div class="profile-info__container">
+                                        <!-- <div class="profile-info__container">
                                             <div class="input__wrapper">
                                                 <label for="resident-seniorcitizen">Senior Citizen?</label>
                                                 <div class="input__inner">
-                                                    <div class="toggleswitch__wrapper">
-                                                        <input type="checkbox" id="" name="senior_status"
-                                                            class="toggleswitch toggleswitch--resident-profile"
-                                                            value="Senior Citizen">
-                                                        <label
-                                                            class="toggleswitch__indicator toggleswitch__indicator--off">No</label>
-                                                        <label
-                                                            class="toggleswitch__indicator toggleswitch__indicator--on">Yes</label>
+                                                    <div class="toggleswitch__wrapper"> -->
+                                        <input hidden type="checkbox" id="" name="senior_status" class="toggleswitch toggleswitch--resident-profile scToggle" value="Senior Citizen">
+                                        <!-- <label class="toggleswitch__indicator toggleswitch__indicator--off">No</label>
+                                                        <label class="toggleswitch__indicator toggleswitch__indicator--on">Yes</label>
                                                     </div>
                                                 </div>
                                             </div>
-                                        </div>
+                                        </div> -->
 
                                         <div class="profile-info__container">
                                             <div class="input__wrapper">
                                                 <label for="resident-PWD">Person with Disability?</label>
                                                 <div class="input__inner">
                                                     <div class="toggleswitch__wrapper">
-                                                        <input type="checkbox" id="disabilities"
-                                                            name="disability_status"
-                                                            class="toggleswitch toggleswitch--resident-profile"
-                                                            value="Person with Disability">
-                                                        <label
-                                                            class="toggleswitch__indicator toggleswitch__indicator--off">No</label>
-                                                        <label
-                                                            class="toggleswitch__indicator toggleswitch__indicator--on">Yes</label>
+                                                        <input type="checkbox" id="disabilities" name="disability_status" class="toggleswitch toggleswitch--resident-profile" value="Person with Disability">
+                                                        <label class="toggleswitch__indicator toggleswitch__indicator--off">No</label>
+                                                        <label class="toggleswitch__indicator toggleswitch__indicator--on">Yes</label>
                                                     </div>
                                                 </div>
                                             </div>
@@ -422,8 +360,7 @@ require_once "../../includes/header.php";
                                                 <label for="resident-disabilitytype">Type of Disability</label>
                                                 <div class="input__inner">
                                                     <div class="select__wrapper">
-                                                        <select name="type_disability" id="typedisabilities"
-                                                            class="select select--resident-profile">
+                                                        <select name="type_disability" id="typedisabilities" class="select select--resident-profile">
                                                             <option selected value="">Select</option>
                                                             <option value="Psychosocial Disability">Psychosocial
                                                                 Disability</option>
@@ -449,13 +386,9 @@ require_once "../../includes/header.php";
                                                 <label for="resident-4Ps">4Ps?</label>
                                                 <div class="input__inner">
                                                     <div class="toggleswitch__wrapper">
-                                                        <input type="checkbox" name="_4ps_status" id=""
-                                                            class="toggleswitch toggleswitch--resident-profile"
-                                                            value="4Ps">
-                                                        <label
-                                                            class="toggleswitch__indicator toggleswitch__indicator--off">No</label>
-                                                        <label
-                                                            class="toggleswitch__indicator toggleswitch__indicator--on">Yes</label>
+                                                        <input type="checkbox" name="_4ps_status" id="" class="toggleswitch toggleswitch--resident-profile" value="4Ps">
+                                                        <label class="toggleswitch__indicator toggleswitch__indicator--off">No</label>
+                                                        <label class="toggleswitch__indicator toggleswitch__indicator--on">Yes</label>
                                                     </div>
                                                 </div>
                                             </div>
@@ -469,13 +402,9 @@ require_once "../../includes/header.php";
                                                 <label for="resident-deceased">Deceased?</label>
                                                 <div class="input__inner">
                                                     <div class="toggleswitch__wrapper">
-                                                        <input type="checkbox" name="deceased_status" id="deceased"
-                                                            class="toggleswitch toggleswitch--resident-profile"
-                                                            value="Deceased">
-                                                        <label
-                                                            class="toggleswitch__indicator toggleswitch__indicator--off">No</label>
-                                                        <label
-                                                            class="toggleswitch__indicator toggleswitch__indicator--on">Yes</label>
+                                                        <input type="checkbox" name="deceased_status" id="deceased" class="toggleswitch toggleswitch--resident-profile" value="Deceased">
+                                                        <label class="toggleswitch__indicator toggleswitch__indicator--off">No</label>
+                                                        <label class="toggleswitch__indicator toggleswitch__indicator--on">Yes</label>
                                                     </div>
                                                 </div>
                                             </div>
@@ -485,8 +414,7 @@ require_once "../../includes/header.php";
                                             <div class="input__wrapper">
                                                 <label for="resident-deathdate">Date of Death</label>
                                                 <div class="input__inner">
-                                                    <input type="date" id="datedeceased" name="date_of_death"
-                                                        class="input--light300">
+                                                    <input type="date" id="datedeceased" name="date_of_death" class="input--light300">
                                                 </div>
                                             </div>
                                         </div>
@@ -496,7 +424,7 @@ require_once "../../includes/header.php";
                                     </section>
                                 </div>
 
-                                <div class="profile-info__content newresident">
+                                <div class="profile-info__content newresident votingTabContent">
                                     <section class="profile-info__voting">
 
                                         <div class="profile-info__container">
@@ -504,14 +432,9 @@ require_once "../../includes/header.php";
                                                 <label for="resident-deceased">Registered Voter?</label>
                                                 <div class="input__inner">
                                                     <div class="toggleswitch__wrapper">
-                                                        <input type="checkbox" name="voter_status" name=""
-                                                            id="voter_stat"
-                                                            class="toggleswitch toggleswitch--resident-profile"
-                                                            value="Registered Voter">
-                                                        <label
-                                                            class="toggleswitch__indicator toggleswitch__indicator--off">No</label>
-                                                        <label
-                                                            class="toggleswitch__indicator toggleswitch__indicator--on">Yes</label>
+                                                        <input type="checkbox" name="voter_status" name="" id="voter_stat" class="toggleswitch toggleswitch--resident-profile" value="Registered Voter">
+                                                        <label class="toggleswitch__indicator toggleswitch__indicator--off">No</label>
+                                                        <label class="toggleswitch__indicator toggleswitch__indicator--on">Yes</label>
                                                     </div>
                                                 </div>
                                             </div>
@@ -521,8 +444,7 @@ require_once "../../includes/header.php";
                                             <div class="input__wrapper">
                                                 <label for="resident-votersID">Voter's ID</label>
                                                 <div class="input__inner">
-                                                    <input type="text" id="voters_id" name="voter_id"
-                                                        class="input--light300">
+                                                    <input type="text" id="voters_id" name="voter_id" class="input--light300">
                                                 </div>
                                             </div>
                                         </div>
@@ -531,8 +453,7 @@ require_once "../../includes/header.php";
                                             <div class="input__wrapper">
                                                 <label for="resident-precinctnumber">Precinct Number</label>
                                                 <div class="input__inner">
-                                                    <input type="text" id="precinct_no" name="precinct_number"
-                                                        class="input--light300">
+                                                    <input type="text" id="precinct_no" name="precinct_number" class="input--light300">
                                                 </div>
                                             </div>
                                         </div>
@@ -541,22 +462,17 @@ require_once "../../includes/header.php";
                                     </section>
                                 </div>
 
-                                <div class="profile-info__content newresident">
+                                <div class="profile-info__content newresident vaccineTabContent">
                                     <section class="profile-info__others">
 
                                         <div class="profile-info__container">
                                             <div class="input__wrapper">
-                                                <label for="resident-vaccinated">Administered COVID-19 Vaccine?</label>
+                                                <label for="resident-vaccinated">Received COVID-19 Vaccine?</label>
                                                 <div class="input__inner">
                                                     <div class="toggleswitch__wrapper">
-                                                        <input type="checkbox" name="vaccine_status" name=""
-                                                            id="vaccine_stat"
-                                                            class="toggleswitch toggleswitch--resident-profile"
-                                                            value="Vaccinated">
-                                                        <label
-                                                            class="toggleswitch__indicator toggleswitch__indicator--off">No</label>
-                                                        <label
-                                                            class="toggleswitch__indicator toggleswitch__indicator--on">Yes</label>
+                                                        <input type="checkbox" name="vaccine_status" name="" id="vaccine_stat" class="toggleswitch toggleswitch--resident-profile" value="Vaccinated">
+                                                        <label class="toggleswitch__indicator toggleswitch__indicator--off">No</label>
+                                                        <label class="toggleswitch__indicator toggleswitch__indicator--on">Yes</label>
                                                     </div>
                                                 </div>
                                             </div>
@@ -568,17 +484,16 @@ require_once "../../includes/header.php";
                                                 <label for="resident-firstdose">First Dose</label>
                                                 <div class="input__inner">
                                                     <div class="select__wrapper">
-                                                        <select name="vaccine_1" id="vaxx1"
-                                                            class="select select--resident-profile" required>
+                                                        <select name="vaccine_1" id="vaxx1" class="select select--resident-profile" required>
                                                             <option disabled selected>Select</option>
-                                                            <option value="Pfizer">Pfizer</option>
                                                             <option value="Astrazeneca">Astrazeneca</option>
-                                                            <option value="Sinovac">Sinovac</option>
-                                                            <option value="Moderna">Moderna</option>
-                                                            <option value="Janssen">Janssen</option>
-                                                            <option value="Sputnik">Sputnik</option>
                                                             <option value="Bharat">Bharat</option>
+                                                            <option value="Janssen">Janssen</option>
+                                                            <option value="Moderna">Moderna</option>
                                                             <option value="Novavax">Novavax</option>
+                                                            <option value="Pfizer">Pfizer</option>
+                                                            <option value="Sinovac">Sinovac</option>
+                                                            <option value="Sputnik">Sputnik</option>
                                                         </select>
                                                     </div>
                                                 </div>
@@ -589,8 +504,7 @@ require_once "../../includes/header.php";
                                             <div class="input__wrapper">
                                                 <label for="resident-firstdosedate">First Dose Date </strong></label>
                                                 <div class="input__inner">
-                                                    <input type="date" id="vaxx1-date" name="vaccine_date_1"
-                                                        class="input--light300" value="" required>
+                                                    <input type="date" id="vaxx1-date" name="vaccine_date_1" class="input--light300" value="" required>
                                                 </div>
                                             </div>
                                         </div>
@@ -602,17 +516,16 @@ require_once "../../includes/header.php";
                                                 <label for="resident-firstdose">Second Dose</label>
                                                 <div class="input__inner">
                                                     <div class="select__wrapper">
-                                                        <select name="vaccine_2" id="vaxx2"
-                                                            class="select select--resident-profile" required>
+                                                        <select name="vaccine_2" id="vaxx2" class="select select--resident-profile" required>
                                                             <option disabled selected>Select</option>
-                                                            <option value="Pfizer">Pfizer</option>
                                                             <option value="Astrazeneca">Astrazeneca</option>
-                                                            <option value="Sinovac">Sinovac</option>
-                                                            <option value="Moderna">Moderna</option>
-                                                            <option value="Janssen">Janssen</option>
-                                                            <option value="Sputnik">Sputnik</option>
                                                             <option value="Bharat">Bharat</option>
+                                                            <option value="Janssen">Janssen</option>
+                                                            <option value="Moderna">Moderna</option>
                                                             <option value="Novavax">Novavax</option>
+                                                            <option value="Pfizer">Pfizer</option>
+                                                            <option value="Sinovac">Sinovac</option>
+                                                            <option value="Sputnik">Sputnik</option>
                                                         </select>
                                                     </div>
                                                 </div>
@@ -624,8 +537,7 @@ require_once "../../includes/header.php";
                                             <div class="input__wrapper">
                                                 <label for="resident-seconddosedate">Second Dose Date</label>
                                                 <div class="input__inner">
-                                                    <input type="date" id="vaxx2-date" name="vaccine_date_2"
-                                                        class="input--light300" value="">
+                                                    <input type="date" id="vaxx2-date" name="vaccine_date_2" class="input--light300" value="">
                                                 </div>
                                             </div>
                                         </div>
@@ -634,17 +546,12 @@ require_once "../../includes/header.php";
 
                                         <div class="profile-info__container">
                                             <div class="input__wrapper">
-                                                <label for="resident-vaccinated">Administered Booster Shot?</label>
+                                                <label for="resident-vaccinated">Received Booster Shot?</label>
                                                 <div class="input__inner">
                                                     <div class="toggleswitch__wrapper">
-                                                        <input type="checkbox" name="booster_status" name=""
-                                                            id="booster_stat"
-                                                            class="toggleswitch toggleswitch--resident-profile"
-                                                            value="Boostered">
-                                                        <label
-                                                            class="toggleswitch__indicator toggleswitch__indicator--off">No</label>
-                                                        <label
-                                                            class="toggleswitch__indicator toggleswitch__indicator--on">Yes</label>
+                                                        <input type="checkbox" name="booster_status" name="" id="booster_stat" class="toggleswitch toggleswitch--resident-profile" value="Boostered">
+                                                        <label class="toggleswitch__indicator toggleswitch__indicator--off">No</label>
+                                                        <label class="toggleswitch__indicator toggleswitch__indicator--on">Yes</label>
                                                     </div>
                                                 </div>
                                             </div>
@@ -655,17 +562,16 @@ require_once "../../includes/header.php";
                                                 <label for="resident-firstdose">First Dose</label>
                                                 <div class="input__inner">
                                                     <div class="select__wrapper">
-                                                        <select name="booster_1" id="booster1"
-                                                            class="select select--resident-profile" required>
+                                                        <select name="booster_1" id="booster1" class="select select--resident-profile" required>
                                                             <option disabled selected>Select</option>
-                                                            <option value="Pfizer">Pfizer</option>
                                                             <option value="Astrazeneca">Astrazeneca</option>
-                                                            <option value="Sinovac">Sinovac</option>
-                                                            <option value="Moderna">Moderna</option>
-                                                            <option value="Janssen">Janssen</option>
-                                                            <option value="Sputnik">Sputnik</option>
                                                             <option value="Bharat">Bharat</option>
+                                                            <option value="Janssen">Janssen</option>
+                                                            <option value="Moderna">Moderna</option>
                                                             <option value="Novavax">Novavax</option>
+                                                            <option value="Pfizer">Pfizer</option>
+                                                            <option value="Sinovac">Sinovac</option>
+                                                            <option value="Sputnik">Sputnik</option>
                                                         </select>
                                                     </div>
                                                 </div>
@@ -676,8 +582,7 @@ require_once "../../includes/header.php";
                                             <div class="input__wrapper">
                                                 <label for="resident-booster1dosedate">First Dose Date </label>
                                                 <div class="input__inner">
-                                                    <input type="date" id="booster1-date" name="booster_date_1"
-                                                        class="input--light300" value="">
+                                                    <input type="date" id="booster1-date" name="booster_date_1" class="input--light300" value="">
                                                 </div>
                                             </div>
                                         </div>
@@ -689,17 +594,16 @@ require_once "../../includes/header.php";
                                                 <label for="resident-firstdose">Second Dose</label>
                                                 <div class="input__inner">
                                                     <div class="select__wrapper">
-                                                        <select name="booster_2" id="booster2"
-                                                            class="select select--resident-profile" required>
+                                                        <select name="booster_2" id="booster2" class="select select--resident-profile" required>
                                                             <option disabled selected>Select</option>
-                                                            <option value="Pfizer">Pfizer</option>
                                                             <option value="Astrazeneca">Astrazeneca</option>
-                                                            <option value="Sinovac">Sinovac</option>
-                                                            <option value="Moderna">Moderna</option>
-                                                            <option value="Janssen">Janssen</option>
-                                                            <option value="Sputnik">Sputnik</option>
                                                             <option value="Bharat">Bharat</option>
+                                                            <option value="Janssen">Janssen</option>
+                                                            <option value="Moderna">Moderna</option>
                                                             <option value="Novavax">Novavax</option>
+                                                            <option value="Pfizer">Pfizer</option>
+                                                            <option value="Sinovac">Sinovac</option>
+                                                            <option value="Sputnik">Sputnik</option>
                                                         </select>
                                                     </div>
                                                 </div>
@@ -711,8 +615,7 @@ require_once "../../includes/header.php";
                                             <div class="input__wrapper">
                                                 <label for="resident-booster2dosedate">Second Dose Date </label>
                                                 <div class="input__inner">
-                                                    <input type="date" id="booster2-date" name="booster_date_2"
-                                                        class="input--light300" value="">
+                                                    <input type="date" id="booster2-date" name="booster_date_2" class="input--light300" value="">
                                                 </div>
                                             </div>
                                         </div>
@@ -726,48 +629,36 @@ require_once "../../includes/header.php";
 
                                         <div class="profile-info__container">
                                             <div class="input__wrapper">
-                                                <label for="resident-emergencyperson">Emergency Person <strong
-                                                        style="color:red;">*</strong></label>
+                                                <label for="resident-emergencyperson">Emergency Contact Person <strong style="color:red;">*</strong></label>
                                                 <div class="input__inner">
-                                                    <input type="text" name="emergency_person" class="input--light300"
-                                                        required>
+                                                    <input type="text" name="emergency_person" class="input--light300" required>
                                                 </div>
                                             </div>
                                         </div>
 
                                         <div class="profile-info__container viewprofile">
                                             <div class="input__wrapper">
-                                                <label for="resident-emergencyrelationship">Relationship <strong
-                                                        style="color:red;">*</strong></label>
+                                                <label for="resident-emergencyrelationship">Relationship <strong style="color:red;">*</strong></label>
                                                 <div class="input__inner">
-                                                    <input type="text" name="relationship" class="input--light300"
-                                                        required pattern="[^0-9]*"
-                                                        oninvalid="this.setCustomValidity('Numbers are not allowed.')"
-                                                        onchange="try{setCustomValidity('')}catch(e){}"
-                                                        oninput="setCustomValidity(' ')">
+                                                    <input type="text" name="relationship" class="input--light300" required pattern="[^0-9]*" oninvalid="this.setCustomValidity('Numbers are not allowed.')" onchange="try{setCustomValidity('')}catch(e){}" oninput="setCustomValidity(' ')">
                                                 </div>
                                             </div>
                                         </div>
 
                                         <div class="profile-info__container">
                                             <div class="input__wrapper">
-                                                <label for="resident-emergencyaddress">Emergency Address <strong
-                                                        style="color:red;">*</strong></label>
+                                                <label for="resident-emergencyaddress">Address <strong style="color:red;">*</strong></label>
                                                 <div class="input__inner">
-                                                    <input type="text" name="emergency_address" class="input--light300"
-                                                        required>
+                                                    <input type="text" name="emergency_address" class="input--light300" required>
                                                 </div>
                                             </div>
                                         </div>
 
                                         <div class="profile-info__container">
                                             <div class="input__wrapper">
-                                                <label for="resident-emergencycontact">Emergency Contact <strong
-                                                        style="color:red;">*</strong></label>
+                                                <label for="resident-emergencycontact">Contact Number <strong style="color:red;">*</strong></label>
                                                 <div class="input__inner">
-                                                    <input type="text" name="emergency_contact" class="input--light300"
-                                                        required pattern="09[^a-zA-ZÀ-ž]{9}" title="09XXXXXXXXX"
-                                                        maxlength="11">
+                                                    <input type="text" name="emergency_contact" class="input--light300" required pattern="09[^a-zA-ZÀ-ž]{9}" title="09XXXXXXXXX" maxlength="11">
                                                 </div>
                                             </div>
                                         </div>
@@ -783,8 +674,7 @@ require_once "../../includes/header.php";
                         <div class="card__footer">
                             <div class="card__footer-content">
                                 <button class="button button--primary button--md" name="btn_save">SAVE</button>
-                                <a href="#" class="button button--dark button--md modal-trigger"
-                                    data-modal-id="modal-cancel">CANCEL</a>
+                                <a href="#" class="button button--dark button--md modal-trigger" data-modal-id="modal-cancel">CANCEL</a>
                             </div>
 
                             <!-- card end -->
@@ -812,10 +702,37 @@ require_once "../../includes/header.php";
             Are you sure you want to cancel?
         </div>
         <footer class="modal__footer">
-            <a href="index.php" class="button button--primary button--md modal__yes-cancel">YES</a>
+            <a href="index.php" class="button button--primary button--md">YES</a>
             <a href="#" class="button button--dark button--md close">NO</a>
 
         </footer>
+    </section>
+</div>
+
+<div class="modal__wrapper" id="modal-change-image">
+    <section class="modal__window modal__window--sm">
+        <header class="modal__header">
+            <!-- <h3>Camera</h3> -->
+            <button type="button" class="modal__close close" aria-label="Close modal window" onClick="exit_webcam()">
+                <i class='bx bx-x'></i>
+            </button>
+        </header>
+
+        <div class="modal__body">
+            <div class="input__wrapper" style="margin-bottom: 10px;">
+                <div class="input__inner">
+                    <input type="file" class="input--light300">
+                </div>
+            </div>
+            or
+
+            <a class="button button--md button--light modal-trigger" style="margin-top: 10px;" data-modal-id="modal-camera">Open Camera</a>
+        </div>
+
+        <footer class="modal__footer">
+            <input type="button" value="Cancel" class="button button--dark button--md close" onClick="exit_webcam()" />
+        </footer>
+        </form>
     </section>
 </div>
 
@@ -845,8 +762,7 @@ require_once "../../includes/header.php";
         </div>
 
         <footer class="modal__footer">
-            <input type="button" value="Capture" class="button button--primary button--md close "
-                onClick="take_snapshot()" />
+            <input type="button" value="Capture" class="button button--primary button--md close " onClick="take_snapshot()" />
             <input type="button" value="Cancel" class="button button--dark button--md close" onClick="exit_webcam()" />
         </footer>
         </form>

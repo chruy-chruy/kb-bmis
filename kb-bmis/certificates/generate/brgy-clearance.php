@@ -99,7 +99,7 @@ VALUES
                     <b><?php echo $cedula_number ?></b>
                     issued at <b><?php echo $cedula_issued_at ?></b> on
                     <b><?php echo $new_cedula_date ?></b> is a resident of
-                    <b><?php echo $address ?></b>.
+                    <b><?php echo $address ?>, Barangay Dadiangas North, General Santos City.</b>
 
                     <span class="br br--sm"></span>
 
@@ -180,7 +180,7 @@ VALUES
                         Print
                     </button>
                     <button class="button button--sm button--dark" id="back-btn" type="button">
-                        <a style="color: #fdfdfd;" href="../">Back</a>
+                        <a style="color: #fdfdfd;" onclick="history.back()">Back</a>
                     </button>
                 </div>
 

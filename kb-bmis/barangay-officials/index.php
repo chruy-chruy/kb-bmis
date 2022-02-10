@@ -35,7 +35,7 @@ include "../../includes/preloader.php";
           <div class="card__body-content">
 
             <section class="brgy-officials" id="brgy-officials">
-              <table id="officials-table" class="row-border">
+              <table id="officials-table">
                 <thead>
                   <tr>
                     <th></th>
@@ -164,9 +164,6 @@ include "../../includes/preloader.php";
                   <div class="table__row-name">
                     <?php echo $row['first_name'] ?> <?php echo $row['mid_name'] ?> <?php echo $row['last_name'] ?> <?php echo $row['suffix'] ?>
                   </div>
-                  <div class="table__row-sub">
-                    <?php echo $row['id'] ?>
-                  </div>
                 </div>
               </td>
               <td>
@@ -183,6 +180,8 @@ include "../../includes/preloader.php";
     </div>
   </section>
 </div>
+
+
 </body>
 
 </html>

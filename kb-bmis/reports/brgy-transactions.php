@@ -46,15 +46,22 @@ include "../../includes/preloader.php";
                             <form id="reportForm" action="" method="GET">
 
                                 <div class="input-date-range">
-                                    <input type="date" name="from_date" value="<?php if (isset($_GET['from_date'])) {
-                                                                                    echo $_GET['from_date'];
-                                                                                } else {
-                                                                                } ?>" required>
+                                    <div class="input__inner" style="height: 37px;">
+                                        <input class="input--light300" type="date" name="from_date" value="<?php if (isset($_GET['from_date'])) {
+                                                                                                                echo $_GET['from_date'];
+                                                                                                            } else {
+                                                                                                            } ?>" required>
+                                    </div>
+
                                     <h4>TO</h4>
-                                    <input type="date" name="to_date" value="<?php if (isset($_GET['to_date'])) {
-                                                                                    echo $_GET['to_date'];
-                                                                                } else {
-                                                                                } ?>" required>
+                                    <div class="input__inner" style="height: 37px;">
+                                        <input class="input--light300" type="date" name="to_date" value="<?php if (isset($_GET['to_date'])) {
+                                                                                                                echo $_GET['to_date'];
+                                                                                                            } else {
+                                                                                                            } ?>" required>
+                                    </div>
+
+
                                     <button type="Submit" class="button button--sm button--primary" style="margin-left: 12px;">Filter</button>
 
                                 </div>
