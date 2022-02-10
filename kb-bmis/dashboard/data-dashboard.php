@@ -66,6 +66,70 @@ $age_group4 =  mysqli_query(
 $age_group_count4 = mysqli_fetch_array($age_group4);
 
 
+// SQL (TOTAL SALES )//
+
+$janChart =  mysqli_query($conn, "SELECT SUM(price) as janSales, MONTHNAME(date_issued), YEAR(date_issued) from (select id,date_issued, price from barangay_clearance union all
+                                    select id,date_issued, price from business_clearance) ab WHERE MONTHNAME(date_issued) = 'January' AND YEAR(date_issued) = '2022'");
+$jan_count = mysqli_fetch_array($janChart);
+
+
+$febChart =  mysqli_query($conn, "SELECT SUM(price) as janSales, MONTHNAME(date_issued), YEAR(date_issued) from (select id,date_issued, price from barangay_clearance union all
+                                    select id,date_issued, price from business_clearance) ab WHERE MONTHNAME(date_issued) = 'February' AND YEAR(date_issued) = '2022'");
+$feb_count = mysqli_fetch_array($febChart);
+
+
+$marChart =  mysqli_query($conn, "SELECT SUM(price) as janSales, MONTHNAME(date_issued), YEAR(date_issued) from (select id,date_issued, price from barangay_clearance union all
+                                    select id,date_issued, price from business_clearance) ab WHERE MONTHNAME(date_issued) = 'March' AND YEAR(date_issued) = '2022'");
+$mar_count = mysqli_fetch_array($marChart);
+
+$aprChart =  mysqli_query($conn, "SELECT SUM(price) as janSales, MONTHNAME(date_issued), YEAR(date_issued) from (select id,date_issued, price from barangay_clearance union all
+                                select id,date_issued, price from business_clearance) ab WHERE MONTHNAME(date_issued) = 'April' AND YEAR(date_issued) = '2022'");
+$apr_count = mysqli_fetch_array($aprChart);
+
+$mayChart =  mysqli_query($conn, "SELECT SUM(price) as janSales, MONTHNAME(date_issued), YEAR(date_issued) from (select id,date_issued, price from barangay_clearance union all
+                                select id,date_issued, price from business_clearance) ab WHERE MONTHNAME(date_issued) = 'May' AND YEAR(date_issued) = '2022'");
+$may_count = mysqli_fetch_array($mayChart);
+
+
+$junChart =  mysqli_query($conn, "SELECT SUM(price) as janSales, MONTHNAME(date_issued), YEAR(date_issued) from (select id,date_issued, price from barangay_clearance union all
+                                    select id,date_issued, price from business_clearance) ab WHERE MONTHNAME(date_issued) = 'June' AND YEAR(date_issued) = '2022'");
+$jun_count = mysqli_fetch_array($junChart);
+
+$julChart =  mysqli_query($conn, "SELECT SUM(price) as janSales, MONTHNAME(date_issued), YEAR(date_issued) from (select id,date_issued, price from barangay_clearance union all
+                                select id,date_issued, price from business_clearance) ab WHERE MONTHNAME(date_issued) = 'July' AND YEAR(date_issued) = '2022'");
+$jul_count = mysqli_fetch_array($julChart);
+
+$augChart =  mysqli_query($conn, "SELECT SUM(price) as janSales, MONTHNAME(date_issued), YEAR(date_issued) from (select id,date_issued, price from barangay_clearance union all
+                                select id,date_issued, price from business_clearance) ab WHERE MONTHNAME(date_issued) = 'August' AND YEAR(date_issued) = '2022'");
+$aug_count = mysqli_fetch_array($augChart);
+
+$septChart =  mysqli_query($conn, "SELECT SUM(price) as janSales, MONTHNAME(date_issued), YEAR(date_issued) from (select id,date_issued, price from barangay_clearance union all
+                                    select id,date_issued, price from business_clearance) ab WHERE MONTHNAME(date_issued) = 'September' AND YEAR(date_issued) = '2022'");
+$sept_count = mysqli_fetch_array($septChart);
+
+$octChart =  mysqli_query($conn, "SELECT SUM(price) as janSales, MONTHNAME(date_issued), YEAR(date_issued) from (select id,date_issued, price from barangay_clearance union all
+                                    select id,date_issued, price from business_clearance) ab WHERE MONTHNAME(date_issued) = 'October' AND YEAR(date_issued) = '2022'");
+$oct_count = mysqli_fetch_array($octChart);
+
+$novChart =  mysqli_query($conn, "SELECT SUM(price) as janSales, MONTHNAME(date_issued), YEAR(date_issued) from (select id,date_issued, price from barangay_clearance union all
+                                select id,date_issued, price from business_clearance) ab WHERE MONTHNAME(date_issued) = 'November' AND YEAR(date_issued) = '2022'");
+$nov_count = mysqli_fetch_array($novChart);
+
+$decChart =  mysqli_query($conn, "SELECT SUM(price) as janSales, MONTHNAME(date_issued), YEAR(date_issued) from (select id,date_issued, price from barangay_clearance union all
+select id,date_issued, price from business_clearance) ab WHERE MONTHNAME(date_issued) = 'December' AND YEAR(date_issued) = '2022'");
+$dec_count = mysqli_fetch_array($decChart);
+
+
+
+
+
+
+
+
+
+
+
+
 // SQL (Barangay Population Count by Purok)//
 
 $prk1Chart =  mysqli_query($conn, "SELECT COUNT(id) as prk1Count from residents where purok ='Purok 1' ");

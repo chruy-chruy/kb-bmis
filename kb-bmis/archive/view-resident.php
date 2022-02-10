@@ -11,20 +11,46 @@ $archive_id = $_GET['residents_archive_id'];
 $query =  mysqli_query($conn, "select * from residents_archive where residents_archive_id = $archive_id");
 while ($row = mysqli_fetch_array($query)) {
 ?>
+<style>
+.archive-date {
+    position: absolute;
+    top: 1.255rem;
+    right: 1.725rem;
+    font-size: 0.9rem;
+}
+
+@media only screen and (max-width: 678px) {
+    .archive-date h4 {
+        display: none;
+    }
+
+    .archive-date p {
+        font-size: 0.7rem;
+    }
+}
+</style>
 
 <main>
     <div class="content">
         <div class="card">
-            <a href="index.php" class="button button--md back-btn">
+            <a href="#" onclick="history.back()" class="button button--md back-btn">
                 <i class='bx bx-left-arrow-circle'></i>
                 Back
             </a>
+            <?php
+                $sql = mysqli_query($conn, "SELECT * FROM `residents_archive` WHERE residents_archive_id = $archive_id");
+                $resArchive = mysqli_fetch_array($sql);  ?>
+
+            <div class="archive-date">
+                <h4><strong>Date Archived:</strong></h4>
+                <p><?php echo date('m-d-Y h:i:s a ', strtotime($resArchive['archived_date'])); ?></p>
+            </div>
 
 
             <div class="card__body">
                 <div class="card__body-content">
                     <div class="profile__img profile__img--viewprofile">
-                        <img src="images/<?php echo $row["img_url"]; ?>" alt="">
+                        <img src="../residents/images/<?php echo $row["img_url"]; ?>" alt="">
                     </div>
 
                     <div class="profile__name profile__name--viewprofile">

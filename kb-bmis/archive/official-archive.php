@@ -13,16 +13,25 @@ include "../../includes/preloader.php";
 
     <div class="content">
         <section class="barangay-information">
-
+            <div class="left">
+                <div>
+                    <a href="index.php" class="button button--md back-btn"
+                        style="position: relative; margin-bottom:14px; margin-left:-15px;">
+                        <i class='bx bx-left-arrow-circle'></i>
+                        Back
+                    </a>
+                </div>
+            </div>
             <div class="card">
                 <div class="card__header">
                     <div class="card__header-content">
 
                         <?php if (isset($_GET['error'])) { ?>
-                            <p class="error-message" style="margin-bottom: 15px;"><?php echo $_GET['error']; ?></p>
+                        <p class="error-message" style="margin-bottom: 15px;"><?php echo $_GET['error']; ?></p>
                         <?php } ?>
                         <div class="card__header-content--right">
-                            <a href="#" class="button button--md button--primary modal-trigger" data-modal-id="modal-delete">
+                            <a href="#" class="button button--md button--primary modal-trigger"
+                                data-modal-id="modal-delete">
                                 <i class='bx bx-trash bx-sm' data-modal-id="modal-delete"></i>
                                 EMPTY ARCHIVE
                             </a>
@@ -52,40 +61,33 @@ include "../../includes/preloader.php";
                                         JOIN residents R ON O.resident_id = R.id WHERE off_position = 'Barangay Chairman'");
                                         while ($row = mysqli_fetch_array($squery)) {
                                         ?>
-                                            <<<<<<< HEAD <td>
-                                                <div class="table__row-img">
-                                                    <img src="../residents/images/<?php echo $row['img_url'] ?>" alt="">
-                                                    =======
-                                                    <td>
-                                                        <div class="table__row-img">
-                                                            <img src="../residents/images/<?php echo $row["img_url"]; ?>" alt="">
-                                                        </div>
-                                                    </td>
-                                                    <td>
-                                                        <div class="table__row-text">
-                                                            <div class="table__row-name">
-                                                                <?php echo $row['off_name'] ?>
-                                                                >>>>>>> 2370385c6cecb822fa0f2f0ac8b7940566aae675
-                                                            </div>
-                                                    </td>
-                                                    <td>
-                                                        <div class="table__row-text">
-                                                            <div class="table__row-name">
-                                                                <?php echo $row['off_name'] ?>
-                                                            </div>
-                                                            <div class="table__row-sub">
-                                                                <?php echo $row['off_position'] ?>
-                                                            </div>
-                                                        </div>
-                                                    </td>
-                                                    <td>
-                                                        <div class="table__action-buttons">
-                                                            <a href="view-official.php?officials_archive_id=<?php echo $row['officials_archive_id'] ?>&resident_id=<?php echo $row['resident_id'] ?>" class="button button--primary button--sm action__cert" id="action-cert">
-                                                                VIEW
-                                                            </a>
-                                                        </div>
-                                                    </td>
-                                                <?php } ?>
+
+                                        <td>
+                                            <div class="table__row-img">
+                                                <img src="../residents/images/<?php echo $row["img_url"]; ?>" alt="">
+                                            </div>
+                                        </td>
+
+                                        <td>
+                                            <div class="table__row-text">
+                                                <div class="table__row-name">
+                                                    <?php echo $row['off_name'] ?>
+                                                </div>
+                                                <div class="table__row-sub">
+                                                    <?php echo $row['off_position'] ?>
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="table__action-buttons">
+                                                <a href="view-official.php?officials_archive_id=<?php echo $row['officials_archive_id'] ?>&resident_id=<?php echo $row['resident_id'] ?>"
+                                                    class="button button--primary button--sm action__cert"
+                                                    id="action-cert">
+                                                    VIEW
+                                                </a>
+                                            </div>
+                                        </td>
+                                        <?php } ?>
                                     </tr>
 
 
@@ -96,31 +98,33 @@ include "../../includes/preloader.php";
                                         JOIN residents R ON O.resident_id = R.id WHERE NOT off_position='Barangay Chairman' ORDER BY officials_archive_id desc");
                                         while ($row = mysqli_fetch_array($squery)) {
                                         ?>
-                                            <td>
-                                                <div class="table__row-img">
-                                                    <img src="../residents/images/<?php echo $row['img_url'] ?>" alt="">
+                                        <td>
+                                            <div class="table__row-img">
+                                                <img src="../residents/images/<?php echo $row['img_url'] ?>" alt="">
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="table__row-text">
+                                                <div class="table__row-name">
+                                                    <?php echo $row['off_name'] ?>
                                                 </div>
-                                            </td>
-                                            <td>
-                                                <div class="table__row-text">
-                                                    <div class="table__row-name">
-                                                        <?php echo $row['off_name'] ?>
-                                                    </div>
-                                                    <div class="table__row-sub">
-                                                        <?php echo $row['off_position'] ?>
-                                                    </div>
+                                                <div class="table__row-sub">
+                                                    <?php echo $row['off_position'] ?>
                                                 </div>
-                                            </td>
-                                            <td>
-                                                <div class="table__action-buttons">
-                                                    <a href="view-official.php?officials_archive_id=<?php echo $row['officials_archive_id'] ?>&resident_id=<?php echo $row['resident_id'] ?>" class="button button--primary button--sm action__cert" id="action-cert">
-                                                        VIEW
-                                                    </a>
-                                                </div>
-                                            </td>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="table__action-buttons">
+                                                <a href="view-official.php?officials_archive_id=<?php echo $row['officials_archive_id'] ?>&resident_id=<?php echo $row['resident_id'] ?>"
+                                                    class="button button--primary button--sm action__cert"
+                                                    id="action-cert">
+                                                    VIEW
+                                                </a>
+                                            </div>
+                                        </td>
 
                                     </tr>
-                                <?php } ?>
+                                    <?php } ?>
                                 </tbody>
                             </table>
                             <!-- brgy officials end -->
