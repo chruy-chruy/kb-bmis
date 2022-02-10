@@ -87,18 +87,18 @@ if ($recipients == 'All Residents') {
     //Show the server response
     if (!$result) {
 ?>
-        <script>
-            alert('Message not sent!')
-        </script>
-    <?php
+<script>
+alert('Message not sent!')
+</script>
+<?php
     } else {
         // echo $result;
 
     ?>
-        <script>
-            alert('Message sent!')
-        </script>
-    <?php
+<script>
+alert('Message sent!')
+</script>
+<?php
     }
 }
 
@@ -125,18 +125,18 @@ if ($recipients == 'Barangay Officials') {
     //Show the server response
     if (!$result) {
     ?>
-        <script>
-            alert('Message not sent!')
-        </script>
-    <?php
+<script>
+alert('Message not sent!')
+</script>
+<?php
     } else {
         // echo $result;
 
     ?>
-        <script>
-            alert('Message sent!')
-        </script>
-    <?php
+<script>
+alert('Message sent!')
+</script>
+<?php
     }
 }
 
@@ -163,23 +163,23 @@ if ($recipients == 'Senior Citizens') {
     //Show the server response
     if (!$result) {
     ?>
-        <script>
-            alert('Message not sent!')
-        </script>
-    <?php
+<script>
+alert('Message not sent!')
+</script>
+<?php
     } else {
         // echo $result;
 
     ?>
-        <script>
-            alert('Message sent!')
-        </script>
-    <?php
+<script>
+alert('Message sent!')
+</script>
+<?php
     }
 }
 
 
-if ($recipients == 'Person with Disability') {
+if ($recipients == 'Persons with Disability') {
 
     $ch = curl_init();
     $parameters = array(
@@ -202,18 +202,18 @@ if ($recipients == 'Person with Disability') {
     //Show the server response
     if (!$result) {
     ?>
-        <script>
-            alert('Message not sent!')
-        </script>
-    <?php
+<script>
+alert('Message not sent!')
+</script>
+<?php
     } else {
         // echo $result;
 
     ?>
-        <script>
-            alert('Message sent!')
-        </script>
-    <?php
+<script>
+alert('Message sent!')
+</script>
+<?php
     }
 }
 
@@ -240,17 +240,17 @@ if ($recipients == 'Registered Voters') {
     //Show the server response
     if (!$result) {
     ?>
-        <script>
-            alert('Message not sent!')
-        </script>
-    <?php
+<script>
+alert('Message not sent!')
+</script>
+<?php
     } else {
         // echo $result;
 
     ?>
-        <script>
-            alert('Message sent!')
-        </script>
+<script>
+alert('Message sent!')
+</script>
 <?php
     }
 }
