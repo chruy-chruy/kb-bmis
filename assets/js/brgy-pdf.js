@@ -52,7 +52,12 @@ $(document).ready(function () {
                     var rcout = doc.content[doc.content.length - 1].table.body.length - 1;
                     doc.content.splice(0, 1);
                     var now = new Date();
-                    var jsDate = now.getDate() + '/' + (now.getMonth() + 1) + '/' + now.getFullYear() + ' Time: ' + now.getHours() + ':' + now.getMinutes() + ':' + now.getSeconds();
+                    var jsDate = now.toLocaleString('en-US', {
+                        hour: 'numeric',
+                        minute: 'numeric',
+                        second: 'numeric',
+                        hour12: true
+                    })
                     doc.pageMargins = [30, 90, 30, 30];
 
 
@@ -136,15 +141,16 @@ $(document).ready(function () {
                                 },
                                 {
                                     alignment: 'center',
-                                    text: 'Total Barangay Transactions: ' + rcout.toString()
-                                },
-                                {
-                                    alignment: 'right',
                                     text: ['page ', {
                                         text: page.toString()
                                     }, ' of ', {
                                         text: pages.toString()
                                     }]
+
+                                },
+                                {
+                                    alignment: 'right',
+                                    text: 'Total Transactions: ' + rcout.toString()
                                 }
                             ],
                             margin: 10
