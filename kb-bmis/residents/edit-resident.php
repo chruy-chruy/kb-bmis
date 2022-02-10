@@ -68,13 +68,13 @@ while ($row = mysqli_fetch_array($squery)) {
                                         </span>
                                     </li>
 
-                                    <li class="profile-info__item" id="votingTab">
+                                    <li class="profile-info__item votingTab">
                                         <span>
                                             Voting
                                         </span>
                                     </li>
 
-                                    <li class="profile-info__item" id="vaccineTab">
+                                    <li class="profile-info__item vaccineTab">
                                         <span>
                                             Vaccine
                                         </span>
@@ -147,7 +147,7 @@ while ($row = mysqli_fetch_array($squery)) {
                                         </div>
 
 
-                                        <input type="number" name="age" class="input--light300" value="<?php echo $row['age'] ?>" id="age" hidden>
+                                        <!-- <input type="number" name="age" class="input--light300" value="" id="age" hidden> -->
 
 
                                         <div class="profile-info__container">
@@ -345,59 +345,51 @@ while ($row = mysqli_fetch_array($squery)) {
                                                 <label for="resident-outsidePH">Outside of the Philippines?</label>
                                                 <div class="input__inner">
                                                     <div class="toggleswitch__wrapper">
-                                                        <?php if ($row['alien_status'] == "") { ?>
-                                                            <input name="alien_status" type="checkbox" unchecked id="" class="toggleswitch toggleswitch--resident-profile input-viewprofile" value="Outside of the Philippines">
-                                                            <label class="toggleswitch__indicator toggleswitch__indicator--off">No</label>
-                                                            <label class="toggleswitch__indicator toggleswitch__indicator--on">Yes</label>
-                                                        <?php } ?>
+                                                        <input <?php if ($row['alien_status'] == "") {
+                                                                    echo "unchecked";
+                                                                } elseif ($row['alien_status'] == "Outside of the Philippines") {
+                                                                    echo "checked";
+                                                                } ?> name="alien_status" type="checkbox" id="" class="toggleswitch toggleswitch--resident-profile input-viewprofile" value="Outside of the Philippines">
+                                                        <label class="toggleswitch__indicator toggleswitch__indicator--off">No</label>
+                                                        <label class="toggleswitch__indicator toggleswitch__indicator--on">Yes</label>
 
-                                                        <?php if ($row['alien_status'] == "Outside of the Philippines") { ?>
-                                                            <input name="alien_status" type="checkbox" checked id="" class="toggleswitch toggleswitch--resident-profile input-viewprofile" value="Outside of the Philippines">
-                                                            <label class="toggleswitch__indicator toggleswitch__indicator--off">No</label>
-                                                            <label class="toggleswitch__indicator toggleswitch__indicator--on">Yes</label>
-                                                        <?php } ?>
                                                     </div>
                                                 </div>
                                             </div>
                                         </div>
 
-                                        <div class="profile-info__container">
+                                        <!-- <div class="profile-info__container">
                                             <div class="input__wrapper">
                                                 <label for="resident-seniorcitizen">Senior Citizen?</label>
                                                 <div class="input__inner">
-                                                    <div class="toggleswitch__wrapper">
-                                                        <?php if ($row['senior_status'] == "") { ?>
-                                                            <input name="senior_status" type="checkbox" unchecked id="" class="toggleswitch toggleswitch--resident-profile input-viewprofile" value="Senior Citizen">
-                                                            <label class="toggleswitch__indicator toggleswitch__indicator--off">No</label>
-                                                            <label class="toggleswitch__indicator toggleswitch__indicator--on">Yes</label>
-                                                        <?php } ?>
+                                                    <div class="toggleswitch__wrapper"> -->
 
-                                                        <?php if ($row['senior_status'] == "Senior Citizen") { ?>
-                                                            <input name="senior_status" type="checkbox" checked id="" class="toggleswitch toggleswitch--resident-profile input-viewprofile" value="Senior Citizen">
-                                                            <label class="toggleswitch__indicator toggleswitch__indicator--off">No</label>
-                                                            <label class="toggleswitch__indicator toggleswitch__indicator--on">Yes</label>
-                                                        <?php } ?>
+                                        <input <?php if ($row['senior_status'] == "") {
+                                                    echo "unchecked";
+                                                } elseif ($row['senior_status'] == "Senior Citizen") {
+                                                    echo "checked";
+                                                } ?> hidden name="senior_status" type="checkbox" id="" class="toggleswitch toggleswitch--resident-profile input-viewprofile scToggle" value="Senior Citizen">
+                                        <!-- <label class="toggleswitch__indicator toggleswitch__indicator--off">No</label>
+                                                        <label class="toggleswitch__indicator toggleswitch__indicator--on">Yes</label>
+
                                                     </div>
                                                 </div>
                                             </div>
-                                        </div>
+                                        </div> -->
 
                                         <div class="profile-info__container">
                                             <div class="input__wrapper">
                                                 <label for="resident-PWD">Person with Disability?</label>
                                                 <div class="input__inner">
                                                     <div class="toggleswitch__wrapper">
-                                                        <?php if ($row['disability_status'] == "") { ?>
-                                                            <input name="disability_status" id="disabilities" type="checkbox" unchecked id="" class="toggleswitch toggleswitch--resident-profile input-viewprofile" value="Person with Disability">
-                                                            <label class="toggleswitch__indicator toggleswitch__indicator--off">No</label>
-                                                            <label class="toggleswitch__indicator toggleswitch__indicator--on">Yes</label>
-                                                        <?php } ?>
+                                                        <input <?php if ($row['disability_status'] == "") {
+                                                                    echo "unchecked";
+                                                                } elseif ($row['disability_status'] == "Person with Disability") {
+                                                                    echo "checked";
+                                                                } ?> name="disability_status" id="disabilities" type="checkbox" id="" class="toggleswitch toggleswitch--resident-profile input-viewprofile" value="Person with Disability">
+                                                        <label class="toggleswitch__indicator toggleswitch__indicator--off">No</label>
+                                                        <label class="toggleswitch__indicator toggleswitch__indicator--on">Yes</label>
 
-                                                        <?php if ($row['disability_status'] == "Person with Disability") { ?>
-                                                            <input name="disability_status" id="disabilities" type="checkbox" checked id="" class="toggleswitch toggleswitch--resident-profile input-viewprofile" value="Person with Disability">
-                                                            <label class="toggleswitch__indicator toggleswitch__indicator--off">No</label>
-                                                            <label class="toggleswitch__indicator toggleswitch__indicator--on">Yes</label>
-                                                        <?php } ?>
                                                     </div>
                                                 </div>
                                             </div>
@@ -414,7 +406,7 @@ while ($row = mysqli_fetch_array($squery)) {
                                                             <option value="Psychosocial Disability">Psychosocial Disability
                                                             </option>
                                                             <option value="Mental Disability">Mental Disability</option>
-                                                            <option value="Chronic I llness">Chronic Illness</option>
+                                                            <option value="Chronic Illness">Chronic Illness</option>
                                                             <option value="Learning Disability">Learning Disability</option>
                                                             <option value="Visual Disability">Visual Disability</option>
                                                             <option value="Orthopedic Disability">Orthopedic Disability
@@ -434,17 +426,14 @@ while ($row = mysqli_fetch_array($squery)) {
                                                 <label for="resident-4Ps">4Ps?</label>
                                                 <div class="input__inner">
                                                     <div class="toggleswitch__wrapper">
-                                                        <?php if ($row['4ps_status'] == "") { ?>
-                                                            <input name="4ps_status" type="checkbox" unchecked id="" class="toggleswitch toggleswitch--resident-profile input-viewprofile" value="4Ps">
-                                                            <label class="toggleswitch__indicator toggleswitch__indicator--off">No</label>
-                                                            <label class="toggleswitch__indicator toggleswitch__indicator--on">Yes</label>
-                                                        <?php } ?>
+                                                        <input <?php if ($row['4ps_status'] == "") {
+                                                                    echo "unchecked";
+                                                                } elseif ($row['4ps_status'] == "4Ps") {
+                                                                    echo "checked";
+                                                                } ?> name="4ps_status" type="checkbox" id="" class="toggleswitch toggleswitch--resident-profile input-viewprofile" value="4Ps">
+                                                        <label class="toggleswitch__indicator toggleswitch__indicator--off">No</label>
+                                                        <label class="toggleswitch__indicator toggleswitch__indicator--on">Yes</label>
 
-                                                        <?php if ($row['4ps_status'] == "4Ps") { ?>
-                                                            <input name="4ps_status" type="checkbox" checked id="" class="toggleswitch toggleswitch--resident-profile input-viewprofile" value="4Ps">
-                                                            <label class="toggleswitch__indicator toggleswitch__indicator--off">No</label>
-                                                            <label class="toggleswitch__indicator toggleswitch__indicator--on">Yes</label>
-                                                        <?php } ?>
                                                     </div>
                                                 </div>
                                             </div>
@@ -455,17 +444,13 @@ while ($row = mysqli_fetch_array($squery)) {
                                                 <label for="resident-deceased">Deceased?</label>
                                                 <div class="input__inner">
                                                     <div class="toggleswitch__wrapper">
-                                                        <?php if ($row['deceased_status'] == "") { ?>
-                                                            <input name="deceased_status" id="deceased" type="checkbox" unchecked id="" class="toggleswitch toggleswitch--resident-profile input-viewprofile" value="Deceased">
-                                                            <label class="toggleswitch__indicator toggleswitch__indicator--off">No</label>
-                                                            <label class="toggleswitch__indicator toggleswitch__indicator--on">Yes</label>
-                                                        <?php } ?>
-
-                                                        <?php if ($row['deceased_status'] == "Deceased") { ?>
-                                                            <input name="deceased_status" id="deceased" type="checkbox" checked id="" class="toggleswitch toggleswitch--resident-profile input-viewprofile" value="Deceased">
-                                                            <label class="toggleswitch__indicator toggleswitch__indicator--off">No</label>
-                                                            <label class="toggleswitch__indicator toggleswitch__indicator--on">Yes</label>
-                                                        <?php } ?>
+                                                        <input <?php if ($row['deceased_status'] == "") {
+                                                                    echo "unchecked";
+                                                                } elseif ($row['deceased_status'] == "Deceased") {
+                                                                    echo "checked";
+                                                                } ?> name="deceased_status" type="checkbox" id="deceased" class="toggleswitch toggleswitch--resident-profile input-viewprofile" value="Deceased">
+                                                        <label class="toggleswitch__indicator toggleswitch__indicator--off">No</label>
+                                                        <label class="toggleswitch__indicator toggleswitch__indicator--on">Yes</label>
                                                     </div>
                                                 </div>
                                             </div>
@@ -485,7 +470,7 @@ while ($row = mysqli_fetch_array($squery)) {
                                     </section>
                                 </div>
 
-                                <div class="profile-info__content newresident" id="votingTabContent">
+                                <div class="profile-info__content newresident votingTabContent">
                                     <section class="profile-info__voting">
 
                                         <div class="profile-info__container">
@@ -493,17 +478,13 @@ while ($row = mysqli_fetch_array($squery)) {
                                                 <label for="resident-deceased">Registered Voter?</label>
                                                 <div class="input__inner">
                                                     <div class="toggleswitch__wrapper">
-                                                        <?php if ($row['voter_status'] == "") { ?>
-                                                            <input name="voter_status" type="checkbox" unchecked id="" class="toggleswitch toggleswitch--resident-profile input-viewprofile" value="Registered Voter">
-                                                            <label class="toggleswitch__indicator toggleswitch__indicator--off">No</label>
-                                                            <label class="toggleswitch__indicator toggleswitch__indicator--on">Yes</label>
-                                                        <?php } ?>
-
-                                                        <?php if ($row['voter_status'] == "Registered Voter") { ?>
-                                                            <input name="voter_status" type="checkbox" checked id="" class="toggleswitch toggleswitch--resident-profile input-viewprofile regVoterToggle" value="Registered Voter">
-                                                            <label class="toggleswitch__indicator toggleswitch__indicator--off">No</label>
-                                                            <label class="toggleswitch__indicator toggleswitch__indicator--on">Yes</label>
-                                                        <?php } ?>
+                                                        <input <?php if ($row['voter_status'] == "") {
+                                                                    echo "unchecked";
+                                                                } elseif ($row['voter_status'] == "Registered Voter") {
+                                                                    echo "checked";
+                                                                } ?> name="voter_status" type="checkbox" id="voter_stat" class="toggleswitch toggleswitch--resident-profile input-viewprofile regVoterToggle" value="Registered Voter">
+                                                        <label class="toggleswitch__indicator toggleswitch__indicator--off">No</label>
+                                                        <label class="toggleswitch__indicator toggleswitch__indicator--on">Yes</label>
                                                     </div>
                                                 </div>
                                             </div>
@@ -513,7 +494,7 @@ while ($row = mysqli_fetch_array($squery)) {
                                             <div class="input__wrapper">
                                                 <label for="resident-votersID">Voter's ID</label>
                                                 <div class="input__inner">
-                                                    <input type="text" name="voter_id" class="input--light300" value="<?php echo $row['voter_id'] ?>">
+                                                    <input type="text" id="voters_id" name="voter_id" class="input--light300" value="<?php echo $row['voter_id'] ?>">
                                                 </div>
                                             </div>
                                         </div>
@@ -522,7 +503,7 @@ while ($row = mysqli_fetch_array($squery)) {
                                             <div class="input__wrapper">
                                                 <label for="resident-precinctnumber">Precinct Number</label>
                                                 <div class="input__inner">
-                                                    <input type="text" name="precinct_number" class="input--light300" value="<?php echo $row['precinct_number'] ?>">
+                                                    <input type="text" id="precinct_no" name="precinct_number" class="input--light300" value="<?php echo $row['precinct_number'] ?>">
                                                 </div>
                                             </div>
                                         </div>
@@ -531,7 +512,7 @@ while ($row = mysqli_fetch_array($squery)) {
                                     </section>
                                 </div>
 
-                                <div class="profile-info__content newresident" id="vaccineTabContent">
+                                <div class="profile-info__content newresident vaccineTabContent">
                                     <section class="profile-info__others">
 
 
@@ -539,25 +520,20 @@ while ($row = mysqli_fetch_array($squery)) {
 
                                         <div class="profile-info__container">
                                             <div class="input__wrapper">
-                                                <label for="resident-vaccine">Administered COVID-19 Vaccine?</label>
+                                                <label for="resident-vaccine">Received COVID-19 Vaccine?</label>
                                                 <div class="input__inner">
                                                     <div class="toggleswitch__wrapper">
-                                                        <?php if ($row['vaccine_status'] == "") { ?>
-                                                            <input name="vaccine_status" id="vaccine_stat" type="checkbox" unchecked id="" class="toggleswitch toggleswitch--resident-profile input-viewprofile" value="Vaccinated">
-                                                            <label class="toggleswitch__indicator toggleswitch__indicator--off">No</label>
-                                                            <label class="toggleswitch__indicator toggleswitch__indicator--on">Yes</label>
-                                                        <?php } ?>
-
-                                                        <?php if ($row['vaccine_status'] == "Vaccinated") { ?>
-                                                            <input name="vaccine_status" id="vaccine_stat" type="checkbox" checked id="" class="toggleswitch toggleswitch--resident-profile input-viewprofile" value="Vaccinated">
-                                                            <label class="toggleswitch__indicator toggleswitch__indicator--off">No</label>
-                                                            <label class="toggleswitch__indicator toggleswitch__indicator--on">Yes</label>
-                                                        <?php } ?>
+                                                        <input <?php if ($row['vaccine_status'] == "") {
+                                                                    echo "unchecked";
+                                                                } elseif ($row['vaccine_status'] == "Vaccinated") {
+                                                                    echo "checked";
+                                                                } ?> name="vaccine_status" id="vaccine_stat" type="checkbox" id="vaccine_stat" class="toggleswitch toggleswitch--resident-profile input-viewprofile" value="Vaccinated">
+                                                        <label class="toggleswitch__indicator toggleswitch__indicator--off">No</label>
+                                                        <label class="toggleswitch__indicator toggleswitch__indicator--on">Yes</label>
                                                     </div>
                                                 </div>
                                             </div>
                                         </div>
-
 
 
 
@@ -569,19 +545,21 @@ while ($row = mysqli_fetch_array($squery)) {
                                                         <select name="vaccine_1" id="vaxx1" class="select select--resident-profile">
                                                             <option selected value="<?php echo $row['vaccine_1'] ?>" hidden>
                                                                 <?php echo $row['vaccine_1'] ?></option>
-                                                            <option value="Pfizer">Pfizer</option>
                                                             <option value="Astrazeneca">Astrazeneca</option>
-                                                            <option value="Sinovac">Sinovac</option>
-                                                            <option value="Moderna">Moderna</option>
-                                                            <option value="Janssen">Janssen</option>
-                                                            <option value="Sputnik">Sputnik</option>
                                                             <option value="Bharat">Bharat</option>
+                                                            <option value="Janssen">Janssen</option>
+                                                            <option value="Moderna">Moderna</option>
                                                             <option value="Novavax">Novavax</option>
+                                                            <option value="Pfizer">Pfizer</option>
+                                                            <option value="Sinovac">Sinovac</option>
+                                                            <option value="Sputnik">Sputnik</option>
                                                         </select>
                                                     </div>
                                                 </div>
                                             </div>
                                         </div>
+
+
 
                                         <div class="profile-info__container">
                                             <div class="input__wrapper">
@@ -593,23 +571,22 @@ while ($row = mysqli_fetch_array($squery)) {
                                         </div>
 
 
-
                                         <div class="profile-info__container">
                                             <div class="input__wrapper">
                                                 <label for="resident-firstdose">Second Dose</label>
                                                 <div class="input__inner">
                                                     <div class="select__wrapper">
-                                                        <select name="vaccine_2" id="vaxx2" class="select select--resident-profile" required>
+                                                        <select name="vaccine_2" id="vaxx2" class="select select--resident-profile">
                                                             <option selected value="<?php echo $row['vaccine_2'] ?>" hidden>
                                                                 <?php echo $row['vaccine_2'] ?></option>
-                                                            <option value="Pfizer">Pfizer</option>
                                                             <option value="Astrazeneca">Astrazeneca</option>
-                                                            <option value="Sinovac">Sinovac</option>
-                                                            <option value="Moderna">Moderna</option>
-                                                            <option value="Janssen">Janssen</option>
-                                                            <option value="Sputnik">Sputnik</option>
                                                             <option value="Bharat">Bharat</option>
+                                                            <option value="Janssen">Janssen</option>
+                                                            <option value="Moderna">Moderna</option>
                                                             <option value="Novavax">Novavax</option>
+                                                            <option value="Pfizer">Pfizer</option>
+                                                            <option value="Sinovac">Sinovac</option>
+                                                            <option value="Sputnik">Sputnik</option>
                                                         </select>
                                                     </div>
                                                 </div>
@@ -629,7 +606,7 @@ while ($row = mysqli_fetch_array($squery)) {
                                         <!-- booster -->
                                         <div class="profile-info__container">
                                             <div class="input__wrapper">
-                                                <label for="resident-vaccine">Administered Booster Shot?</label>
+                                                <label for="resident-vaccine">Received Booster Shot?</label>
                                                 <div class="input__inner">
                                                     <div class="toggleswitch__wrapper">
                                                         <?php if ($row['booster_status'] == "") { ?>
@@ -656,14 +633,14 @@ while ($row = mysqli_fetch_array($squery)) {
                                                         <select name="booster_1" id="booster1" class="select select--resident-profile" required>
                                                             <option selected value="<?php echo $row['booster_1'] ?>" hidden>
                                                                 <?php echo $row['booster_1'] ?></option>
-                                                            <option value="Pfizer">Pfizer</option>
                                                             <option value="Astrazeneca">Astrazeneca</option>
-                                                            <option value="Sinovac">Sinovac</option>
-                                                            <option value="Moderna">Moderna</option>
-                                                            <option value="Janssen">Janssen</option>
-                                                            <option value="Sputnik">Sputnik</option>
                                                             <option value="Bharat">Bharat</option>
+                                                            <option value="Janssen">Janssen</option>
+                                                            <option value="Moderna">Moderna</option>
                                                             <option value="Novavax">Novavax</option>
+                                                            <option value="Pfizer">Pfizer</option>
+                                                            <option value="Sinovac">Sinovac</option>
+                                                            <option value="Sputnik">Sputnik</option>
                                                         </select>
                                                     </div>
                                                 </div>
@@ -689,14 +666,14 @@ while ($row = mysqli_fetch_array($squery)) {
                                                         <select name="booster_2" id="booster2" class="select select--resident-profile">
                                                             <option selected value="<?php echo $row['booster_2'] ?>" hidden>
                                                                 <?php echo $row['booster_2'] ?></option>
-                                                            <option value="Pfizer">Pfizer</option>
                                                             <option value="Astrazeneca">Astrazeneca</option>
-                                                            <option value="Sinovac">Sinovac</option>
-                                                            <option value="Moderna">Moderna</option>
-                                                            <option value="Janssen">Janssen</option>
-                                                            <option value="Sputnik">Sputnik</option>
                                                             <option value="Bharat">Bharat</option>
+                                                            <option value="Janssen">Janssen</option>
+                                                            <option value="Moderna">Moderna</option>
                                                             <option value="Novavax">Novavax</option>
+                                                            <option value="Pfizer">Pfizer</option>
+                                                            <option value="Sinovac">Sinovac</option>
+                                                            <option value="Sputnik">Sputnik</option>
                                                         </select>
                                                     </div>
                                                 </div>
@@ -724,7 +701,7 @@ while ($row = mysqli_fetch_array($squery)) {
 
                                         <div class="profile-info__container">
                                             <div class="input__wrapper">
-                                                <label for="resident-emergencyperson">Emergency Person <strong style="color:red;">*</strong></label>
+                                                <label for="resident-emergencyperson">Emergency Contact Person <strong style="color:red;">*</strong></label>
                                                 <div class="input__inner">
                                                     <input type="text" name="emergency_person" class="input--light300" value="<?php echo $row['emergency_person'] ?>" required>
                                                 </div>
@@ -742,7 +719,7 @@ while ($row = mysqli_fetch_array($squery)) {
 
                                         <div class="profile-info__container">
                                             <div class="input__wrapper">
-                                                <label for="resident-emergencyaddress">Emergency Address <strong style="color:red;">*</strong></label>
+                                                <label for="resident-emergencyaddress">Address <strong style="color:red;">*</strong></label>
                                                 <div class="input__inner">
                                                     <input type="text" name="emergency_address" class="input--light300" value="<?php echo $row['emergency_address'] ?>" required>
                                                 </div>
@@ -751,7 +728,7 @@ while ($row = mysqli_fetch_array($squery)) {
 
                                         <div class="profile-info__container">
                                             <div class="input__wrapper">
-                                                <label for="resident-emergencycontact">Emergency Contact <strong style="color:red;">*</strong></label>
+                                                <label for="resident-emergencycontact">Contact Number <strong style="color:red;">*</strong></label>
                                                 <div class="input__inner">
                                                     <input type="text" name="emergency_contact" class="input--light300" value="<?php echo $row['emergency_contact'] ?>" required pattern="09[^a-zA-ZÀ-ž]{9}" title="09XXXXXXXXX" maxlength="11">
                                                 </div>
@@ -780,7 +757,7 @@ while ($row = mysqli_fetch_array($squery)) {
 
 
 
-
+                </form>
             </section>
         </div>
     </main>

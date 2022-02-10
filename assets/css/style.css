@@ -188,6 +188,11 @@ section {
   justify-content: center;
   flex-direction: row;
 }
+@media (max-width: 71.8125em) {
+  .center--row.col {
+    flex-direction: column;
+  }
+}
 
 .left {
   display: flex;

@@ -39,13 +39,13 @@ require_once "../../includes/header.php";
                                         </span>
                                     </li>
 
-                                    <li class="profile-info__item" id="votingTab">
+                                    <li class="profile-info__item votingTab">
                                         <span>
                                             Voting
                                         </span>
                                     </li>
 
-                                    <li class="profile-info__item" id="vaccineTab">
+                                    <li class="profile-info__item vaccineTab">
                                         <span>
                                             Vaccine
                                         </span>
@@ -329,18 +329,18 @@ require_once "../../includes/header.php";
                                             </div>
                                         </div>
 
-                                        <div class="profile-info__container">
+                                        <!-- <div class="profile-info__container">
                                             <div class="input__wrapper">
                                                 <label for="resident-seniorcitizen">Senior Citizen?</label>
                                                 <div class="input__inner">
-                                                    <div class="toggleswitch__wrapper">
-                                                        <input type="checkbox" id="" name="senior_status" class="toggleswitch toggleswitch--resident-profile" value="Senior Citizen">
-                                                        <label class="toggleswitch__indicator toggleswitch__indicator--off">No</label>
+                                                    <div class="toggleswitch__wrapper"> -->
+                                        <input hidden type="checkbox" id="" name="senior_status" class="toggleswitch toggleswitch--resident-profile scToggle" value="Senior Citizen">
+                                        <!-- <label class="toggleswitch__indicator toggleswitch__indicator--off">No</label>
                                                         <label class="toggleswitch__indicator toggleswitch__indicator--on">Yes</label>
                                                     </div>
                                                 </div>
                                             </div>
-                                        </div>
+                                        </div> -->
 
                                         <div class="profile-info__container">
                                             <div class="input__wrapper">
@@ -424,7 +424,7 @@ require_once "../../includes/header.php";
                                     </section>
                                 </div>
 
-                                <div class="profile-info__content newresident" id="votingTabContent">
+                                <div class="profile-info__content newresident votingTabContent">
                                     <section class="profile-info__voting">
 
                                         <div class="profile-info__container">
@@ -462,12 +462,12 @@ require_once "../../includes/header.php";
                                     </section>
                                 </div>
 
-                                <div class="profile-info__content newresident" id="vaccineTabContent">
+                                <div class="profile-info__content newresident vaccineTabContent">
                                     <section class="profile-info__others">
 
                                         <div class="profile-info__container">
                                             <div class="input__wrapper">
-                                                <label for="resident-vaccinated">Administered COVID-19 Vaccine?</label>
+                                                <label for="resident-vaccinated">Received COVID-19 Vaccine?</label>
                                                 <div class="input__inner">
                                                     <div class="toggleswitch__wrapper">
                                                         <input type="checkbox" name="vaccine_status" name="" id="vaccine_stat" class="toggleswitch toggleswitch--resident-profile" value="Vaccinated">
@@ -486,14 +486,14 @@ require_once "../../includes/header.php";
                                                     <div class="select__wrapper">
                                                         <select name="vaccine_1" id="vaxx1" class="select select--resident-profile" required>
                                                             <option disabled selected>Select</option>
-                                                            <option value="Pfizer">Pfizer</option>
                                                             <option value="Astrazeneca">Astrazeneca</option>
-                                                            <option value="Sinovac">Sinovac</option>
-                                                            <option value="Moderna">Moderna</option>
-                                                            <option value="Janssen">Janssen</option>
-                                                            <option value="Sputnik">Sputnik</option>
                                                             <option value="Bharat">Bharat</option>
+                                                            <option value="Janssen">Janssen</option>
+                                                            <option value="Moderna">Moderna</option>
                                                             <option value="Novavax">Novavax</option>
+                                                            <option value="Pfizer">Pfizer</option>
+                                                            <option value="Sinovac">Sinovac</option>
+                                                            <option value="Sputnik">Sputnik</option>
                                                         </select>
                                                     </div>
                                                 </div>
@@ -518,14 +518,14 @@ require_once "../../includes/header.php";
                                                     <div class="select__wrapper">
                                                         <select name="vaccine_2" id="vaxx2" class="select select--resident-profile" required>
                                                             <option disabled selected>Select</option>
-                                                            <option value="Pfizer">Pfizer</option>
                                                             <option value="Astrazeneca">Astrazeneca</option>
-                                                            <option value="Sinovac">Sinovac</option>
-                                                            <option value="Moderna">Moderna</option>
-                                                            <option value="Janssen">Janssen</option>
-                                                            <option value="Sputnik">Sputnik</option>
                                                             <option value="Bharat">Bharat</option>
+                                                            <option value="Janssen">Janssen</option>
+                                                            <option value="Moderna">Moderna</option>
                                                             <option value="Novavax">Novavax</option>
+                                                            <option value="Pfizer">Pfizer</option>
+                                                            <option value="Sinovac">Sinovac</option>
+                                                            <option value="Sputnik">Sputnik</option>
                                                         </select>
                                                     </div>
                                                 </div>
@@ -546,7 +546,7 @@ require_once "../../includes/header.php";
 
                                         <div class="profile-info__container">
                                             <div class="input__wrapper">
-                                                <label for="resident-vaccinated">Administered Booster Shot?</label>
+                                                <label for="resident-vaccinated">Received Booster Shot?</label>
                                                 <div class="input__inner">
                                                     <div class="toggleswitch__wrapper">
                                                         <input type="checkbox" name="booster_status" name="" id="booster_stat" class="toggleswitch toggleswitch--resident-profile" value="Boostered">
@@ -564,14 +564,14 @@ require_once "../../includes/header.php";
                                                     <div class="select__wrapper">
                                                         <select name="booster_1" id="booster1" class="select select--resident-profile" required>
                                                             <option disabled selected>Select</option>
-                                                            <option value="Pfizer">Pfizer</option>
                                                             <option value="Astrazeneca">Astrazeneca</option>
-                                                            <option value="Sinovac">Sinovac</option>
-                                                            <option value="Moderna">Moderna</option>
-                                                            <option value="Janssen">Janssen</option>
-                                                            <option value="Sputnik">Sputnik</option>
                                                             <option value="Bharat">Bharat</option>
+                                                            <option value="Janssen">Janssen</option>
+                                                            <option value="Moderna">Moderna</option>
                                                             <option value="Novavax">Novavax</option>
+                                                            <option value="Pfizer">Pfizer</option>
+                                                            <option value="Sinovac">Sinovac</option>
+                                                            <option value="Sputnik">Sputnik</option>
                                                         </select>
                                                     </div>
                                                 </div>
@@ -596,14 +596,14 @@ require_once "../../includes/header.php";
                                                     <div class="select__wrapper">
                                                         <select name="booster_2" id="booster2" class="select select--resident-profile" required>
                                                             <option disabled selected>Select</option>
-                                                            <option value="Pfizer">Pfizer</option>
                                                             <option value="Astrazeneca">Astrazeneca</option>
-                                                            <option value="Sinovac">Sinovac</option>
-                                                            <option value="Moderna">Moderna</option>
-                                                            <option value="Janssen">Janssen</option>
-                                                            <option value="Sputnik">Sputnik</option>
                                                             <option value="Bharat">Bharat</option>
+                                                            <option value="Janssen">Janssen</option>
+                                                            <option value="Moderna">Moderna</option>
                                                             <option value="Novavax">Novavax</option>
+                                                            <option value="Pfizer">Pfizer</option>
+                                                            <option value="Sinovac">Sinovac</option>
+                                                            <option value="Sputnik">Sputnik</option>
                                                         </select>
                                                     </div>
                                                 </div>
@@ -629,7 +629,7 @@ require_once "../../includes/header.php";
 
                                         <div class="profile-info__container">
                                             <div class="input__wrapper">
-                                                <label for="resident-emergencyperson">Emergency Person <strong style="color:red;">*</strong></label>
+                                                <label for="resident-emergencyperson">Emergency Contact Person <strong style="color:red;">*</strong></label>
                                                 <div class="input__inner">
                                                     <input type="text" name="emergency_person" class="input--light300" required>
                                                 </div>
@@ -647,7 +647,7 @@ require_once "../../includes/header.php";
 
                                         <div class="profile-info__container">
                                             <div class="input__wrapper">
-                                                <label for="resident-emergencyaddress">Emergency Address <strong style="color:red;">*</strong></label>
+                                                <label for="resident-emergencyaddress">Address <strong style="color:red;">*</strong></label>
                                                 <div class="input__inner">
                                                     <input type="text" name="emergency_address" class="input--light300" required>
                                                 </div>
@@ -656,7 +656,7 @@ require_once "../../includes/header.php";
 
                                         <div class="profile-info__container">
                                             <div class="input__wrapper">
-                                                <label for="resident-emergencycontact">Emergency Contact <strong style="color:red;">*</strong></label>
+                                                <label for="resident-emergencycontact">Contact Number <strong style="color:red;">*</strong></label>
                                                 <div class="input__inner">
                                                     <input type="text" name="emergency_contact" class="input--light300" required pattern="09[^a-zA-ZÀ-ž]{9}" title="09XXXXXXXXX" maxlength="11">
                                                 </div>

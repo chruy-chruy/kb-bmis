@@ -11,7 +11,7 @@ include "../../includes/preloader.php";
     <div class="content">
         <section class="reports" style="height: 80vh;">
 
-            <div class="center--row" style="gap: 50px;">
+            <div class="center--row col" style="gap: 50px;">
                 <a href="graphical-view.php" class="button button--primary button--xl certificates__button modal-trigger" data-modal-id="modal-brgyclearance">
                     <i class='bx bxs-bar-chart-square'></i>
                     <p>GRAPHICAL VIEW</p>
