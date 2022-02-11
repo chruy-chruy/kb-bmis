@@ -111,6 +111,31 @@
       }
     }
   }
+ 
+  &--light-outline {
+    color: $dark400;
+    border: rem(1) solid $dark200;
+
+    &:hover {
+      background: $light400;
+      color: $dark400;
+
+      p {
+        color: $dark400;
+      }
+    }
+  }
+
+  &--xs {
+    padding: rem(6) rem(8);
+    font-size: rem(9);
+    // font-weight: 400;
+    letter-spacing: rem(1);
+
+    i {
+      font-size: rem(12);
+    }
+  }
 
   &--sm {
     padding: rem(8) rem(10);
@@ -163,8 +188,14 @@
   }
 
   &--icon {
-    padding: rem(6);
+    padding: rem(7) rem(7) 0 rem(7);
+    border-radius: rem(5);
     cursor: pointer;
+
+    @include breakpoint-down(small){
+        padding: rem(3) rem(6) 0 rem(6);
+
+        }
 
     .bx {
       font-size: rem(45);
@@ -174,7 +205,7 @@
 
       &:hover {
         color: darken($dark200, 15);
-        transform: scale(1.05);
+        // transform: scale(1.05);
       }
 
       @include breakpoint-down(small) {
@@ -184,7 +215,12 @@
 
     &-sm {
       .bx {
-        font-size: rem(28);
+        font-size: rem(20);
+
+        @include breakpoint-down(small){
+        font-size: rem(16);
+
+        }
       }
     }
 

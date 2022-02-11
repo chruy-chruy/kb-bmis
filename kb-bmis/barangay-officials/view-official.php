@@ -156,7 +156,7 @@ while ($row = mysqli_fetch_array($squery)) {
 
                 <div class="profile-info__container">
                   <div class="input__wrapper">
-                    <label for="resident-emergencyperson">Emergency Person</label>
+                    <label for="resident-emergencyperson">Emergency Contact Person</label>
                     <div class="input__inner">
                       <input disabled name="emergency_person" type="text" class="input--light300 input-viewprofile" value="<?php echo $row['emergency_person'] ?>">
                     </div>
@@ -174,7 +174,7 @@ while ($row = mysqli_fetch_array($squery)) {
 
                 <div class="profile-info__container">
                   <div class="input__wrapper">
-                    <label for="resident-emergencyaddress">Emergency Address</label>
+                    <label for="resident-emergencyaddress">Address</label>
                     <div class="input__inner">
                       <input disabled name="emergency_address" type="text" class="input--light300 input-viewprofile" value="<?php echo $row['emergency_address'] ?>">
                     </div>
@@ -183,7 +183,7 @@ while ($row = mysqli_fetch_array($squery)) {
 
                 <div class="profile-info__container">
                   <div class="input__wrapper">
-                    <label for="resident-emergencycontact">Emergency Contact</label>
+                    <label for="resident-emergencycontact">Contact Number</label>
                     <div class="input__inner">
                       <input disabled name="emergency_contact" type="text" class="input--light300 input-viewprofile" value="<?php echo $row['emergency_contact'] ?>">
                     </div>

@@ -264,6 +264,7 @@ li {
 
 i {
   font-style: normal;
+  pointer-events: none;
 }
 
 .alert {
@@ -504,6 +505,25 @@ i {
 .button--dark-outline:hover p {
   color: #fdfdfd;
 }
+.button--light-outline {
+  color: #222;
+  border: 0.0625rem solid #707070;
+}
+.button--light-outline:hover {
+  background: #f1f1f1;
+  color: #222;
+}
+.button--light-outline:hover p {
+  color: #222;
+}
+.button--xs {
+  padding: 0.375rem 0.5rem;
+  font-size: 0.5625rem;
+  letter-spacing: 0.0625rem;
+}
+.button--xs i {
+  font-size: 0.75rem;
+}
 .button--sm {
   padding: 0.5rem 0.625rem;
   font-size: 0.6875rem;
@@ -544,8 +564,14 @@ i {
   font-size: 1.125rem;
 }
 .button--icon {
-  padding: 0.375rem;
+  padding: 0.4375rem 0.4375rem 0 0.4375rem;
+  border-radius: 0.3125rem;
   cursor: pointer;
+}
+@media (max-width: 39.9375em) {
+  .button--icon {
+    padding: 0.1875rem 0.375rem 0 0.375rem;
+  }
 }
 .button--icon .bx {
   font-size: 2.8125rem;
@@ -555,7 +581,6 @@ i {
 }
 .button--icon .bx:hover {
   color: #4a4a4a;
-  transform: scale(1.05);
 }
 @media (max-width: 39.9375em) {
   .button--icon .bx {
@@ -563,7 +588,12 @@ i {
   }
 }
 .button--icon-sm .bx {
-  font-size: 1.75rem;
+  font-size: 1.25rem;
+}
+@media (max-width: 39.9375em) {
+  .button--icon-sm .bx {
+    font-size: 1rem;
+  }
 }
 .button--icon-primary .bx {
   color: #ef6a61;
@@ -1144,6 +1174,9 @@ table.dataTable td {
   opacity: 0;
   transition: 300ms;
 }
+.dropdown ul {
+  pointer-events: none;
+}
 .dropdown--user {
   top: 3.125rem;
   right: 2rem;
@@ -1220,6 +1253,12 @@ table.dataTable td {
 .dropdown li a i {
   font-size: 1.5rem;
   margin-right: 0.625rem;
+}
+
+.dropdownContent--show {
+  top: 4rem;
+  visibility: visible;
+  opacity: 1;
 }
 
 .header {
@@ -2143,7 +2182,6 @@ table.dataTable td {
   }
 }
 .dashboard__card {
-  min-height: 8.125rem;
   padding: 1.5625rem;
   background: #fdfdfd;
   border-radius: 1.25rem;
@@ -2210,9 +2248,9 @@ table.dataTable td {
   }
 }
 .dashboard__chart {
-  max-height: 26.25rem;
+  max-height: 25rem;
   background: #fdfdfd;
-  padding: 1.25rem 0.625rem;
+  padding: 0.9375rem 0.625rem;
   border-radius: 1.25rem;
   display: flex;
   align-items: center;
@@ -2231,10 +2269,10 @@ table.dataTable td {
   }
 }
 .dashboard__chart--chart1 {
-  margin-bottom: 1.875rem;
+  margin-top: 1.875rem;
 }
 .dashboard__chart--chart1 canvas {
-  max-height: 85%;
+  max-height: 90%;
 }
 @media (max-width: 71.8125em) {
   .dashboard__chart--chart1 canvas {
@@ -2247,7 +2285,7 @@ table.dataTable td {
   }
 }
 .dashboard__chart--chart2 canvas, .dashboard__chart--chart3 canvas {
-  max-height: 100%;
+  max-height: 92%;
 }
 .dashboard__down-arrow {
   font-size: 0.9375rem;
@@ -2535,33 +2573,11 @@ table.dataTable td {
   -o-object-fit: cover;
      object-fit: cover;
 }
-.profile__img--change {
-  transition: 300ms;
-}
-.profile__img--change img {
-  transition: 150ms;
-}
-.profile__img--change a {
-  position: absolute;
-  display: none;
-}
-.profile__img--change .bx {
-  margin: 0;
-  color: #fdfdfd;
-  transition: 200ms;
-}
-.profile__img--change .bx:hover {
-  transform: scale(1.2);
-}
-.profile__img--change:hover img {
-  mix-blend-mode: multiply;
-  background: rgba(34, 34, 34, 0.4);
-}
-.profile__img--change:hover a {
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+.profile__img--buttons {
   display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.625rem;
 }
 .profile__name {
   font-size: 1.75rem;
@@ -2578,7 +2594,7 @@ table.dataTable td {
   margin: 1.875rem 0 2.5rem 0;
 }
 .profile-info__list.newresident {
-  margin-top: 1.25rem;
+  margin-top: 2.1875rem;
 }
 .profile-info__item {
   display: inline-block;

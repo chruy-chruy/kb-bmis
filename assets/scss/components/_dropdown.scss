@@ -11,6 +11,10 @@
   opacity: 0;
   transition: 300ms;
 
+  ul{
+    pointer-events: none;
+  }
+
   &--user {
     top: rem(50);
     right: rem(32);
@@ -104,5 +108,14 @@
         margin-right: rem(10);
       }
     }
+  }
+}
+
+
+.dropdownContent{
+  &--show{
+    top: rem(64);
+      visibility: visible;
+      opacity: 1;
   }
 }

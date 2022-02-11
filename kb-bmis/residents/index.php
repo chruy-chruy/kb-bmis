@@ -41,7 +41,7 @@ include "../../includes/preloader.php";
                   <p>EXPORT</p>
                 </a>
 
-                <div class="dropdown dropdown--export">
+                <div class="dropdown dropdown--export dropdown">
                   <ul>
                     <li class="dropdown__item">
                       <a href="export/export-excel.php">
@@ -92,12 +92,12 @@ include "../../includes/preloader.php";
               </td>
               <td>
                 <div class="table__action-buttons">
-                  <button class="button button--primary button--sm action__cert" id="action-cert">
+                  <button class="button button--primary button--sm action__cert dropdownBtn" id="action-cert">
                     <i class='bx bxs-file-blank'></i>
                     CERTIFICATE
                   </button>
 
-                  <div class="dropdown dropdown--cert">
+                  <div class="dropdown dropdown--cert dropdownContent">
                     <ul>
                       <li class="dropdown__item">
                         <a href="../certificates/brgy-clearance.php?id=<?php echo $row['id'] ?>" class="link-brgycert">
