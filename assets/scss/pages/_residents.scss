@@ -76,6 +76,7 @@
     overflow: hidden;
     border-radius: 50%;
     margin-top: rem(20);
+    // border: dashed rem(1) $dark100;
 
     @include breakpoint-down(small) {
       @include wh(rem(100));
@@ -87,49 +88,56 @@
       top: 0;
       left: 0;
       object-fit: cover;
+
     }
 
-    &--change {
+   
 
-      transition: 300ms;
-
-      img {
-        transition: 150ms;
-        // cursor: pointer;
-      }
-
-      a {
-        position: absolute;
-        display: none;
-      }
-
-      .bx {
-        margin: 0;
-        color: $light100;
-        transition: 200ms;
-
-        &:hover {
-          // color: darken($primary, 10);
-          transform: scale(1.2);
-        }
-      }
-
-      &:hover {
-        img {
-          // background: rgba($dark400, 0.5);
-          mix-blend-mode: multiply;
-      background: rgba($dark400, 0.4);
-
-        }
-
-        a {
-          top: 50%;
-          left: 50%;
-          transform: translate(-50%, -50%);
-          display: flex;
-        }
-      }
+    &--buttons {
+       @include flex-center-all;
+          gap: rem(10);
     }
+
+    // &--change {
+
+    //   transition: 300ms;
+
+    //   img {
+    //     transition: 150ms;
+    //     // cursor: pointer;
+    //   }
+
+      
+
+    //   // .bx {
+    //   //   margin: 0;
+    //   //   color: $light100;
+    //   //   transition: 200ms;
+
+    //   //   &:hover {
+    //   //     // color: darken($primary, 10);
+    //   //     transform: scale(1.2);
+    //   //   }
+    //   // }
+
+    //   &:hover {
+    //     img {
+    //       // background: rgba($dark400, 0.5);
+    //       mix-blend-mode: multiply;
+    //   background: rgba($dark400, 0.4);
+
+    //     }
+
+    //     .img-buttons {
+    //       top: 50%;
+    //       left: 50%;
+    //       transform: translate(-50%, -50%);
+    //       @include flex-center-all;
+    //       flex-direction: column;
+    //       gap: rem(8);
+    //     }
+    //   }
+    // }
   }
 
   &__name {
@@ -148,7 +156,7 @@
     margin: rem(30) 0 rem(40) 0;
 
     &.newresident {
-      margin-top: rem(20);
+      margin-top: rem(35);
       // display: none;
     }
   }

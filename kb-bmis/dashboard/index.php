@@ -69,11 +69,6 @@ include "../../includes/preloader.php";
 
 
             <!-- CHARTS -->
-
-            <div class="dashboard__chart dashboard__chart--chart1">
-                <canvas id="myChart1"></canvas>
-            </div>
-
             <div class="dashboard__charts">
                 <div class="dashboard__chart dashboard__chart--chart2">
                     <canvas id="myChart2"></canvas>
@@ -81,6 +76,10 @@ include "../../includes/preloader.php";
                 <div class="dashboard__chart dashboard__chart--chart3">
                     <canvas id="myChart3"></canvas>
                 </div>
+            </div>
+
+            <div class="dashboard__chart dashboard__chart--chart1">
+                <canvas id="myChart1"></canvas>
             </div>
 
 
