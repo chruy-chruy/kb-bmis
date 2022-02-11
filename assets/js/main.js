@@ -125,61 +125,32 @@ $(document).ready(function () {
 
 
 /*=============== DROPDOWN ===============*/
-// const headerToggle = document.querySelector(".header__toggle");
-// const dropdownUser = document.querySelector(".dropdown--user");
+const headerToggle = document.querySelector(".header__toggle");
+const dropdownUser = document.querySelector(".dropdown--user");
 
-// if (headerToggle) {
-//   headerToggle.addEventListener("click", () => {
-//     headerToggle.classList.add("header__toggle--rotate");
-//     dropdownUser.classList.toggle("dropdown--user--show");
-//   });
-// }
-
-// //cert dropdown
-// const certActions = document.querySelectorAll(
-//   "table tbody td .table__action-buttons .action__cert"
-// );
-// const certDropdowns = document.querySelectorAll(
-//   "table tbody td .table__action-buttons .dropdown"
-// );
-
-// certActions.forEach(function (certAction, certAction_index) {
-//   certAction.addEventListener("click", function () {
-//     certDropdowns.forEach(function (certDropdown, certDropdown_index) {
-//       if (certDropdown_index == certAction_index) {
-//         certDropdown.classList.toggle("dropdown--cert--show");
-//       }
-//     });
-//   });
-// });
-
-const dropdownBtns = document.querySelectorAll(".dropdownBtn");
-// const dropdownContents = document.querySelectorAll(".dropdownContent");
-
-dropdownBtns.forEach((dropdownBtn) => {
-const dropdownContent = dropdownBtn.nextElementSibling;
-
-dropdownBtn.addEventListener("click", () => {
-  if (dropdownContent.classList.contains("dropdownContent--show")) {
-    dropdownContent.classList.remove("dropdownContent--show");
-  } else {
-    const currentActive = document.querySelector(".dropdownContent.dropdownContent--show");
-    
-    if (currentActive) {
-      currentActive.classList.remove("dropdownContent--show");
-    }
-
-    dropdownContent.classList.add("dropdownContent--show");
+if (headerToggle) {
+  headerToggle.addEventListener("click", () => {
+    headerToggle.classList.toggle("header__toggle--rotate");
+    dropdownUser.classList.toggle("dropdown--user--show");
+  });
 }
 
+const certActions = document.querySelectorAll(
+  "table tbody td .table__action-buttons .action__cert"
+);
+const certDropdowns = document.querySelectorAll(
+  "table tbody td .table__action-buttons .dropdown"
+);
 
-})
-})
-
-
-
-
-
+certActions.forEach(function (certAction, certAction_index) {
+  certAction.addEventListener("click", function () {
+    certDropdowns.forEach(function (certDropdown, certDropdown_index) {
+      if (certDropdown_index == certAction_index) {
+        certDropdown.classList.toggle("dropdown--cert--show");
+      }
+    });
+  });
+});
 
 // export dropdown
 const exportBtn = document.querySelector("#export-resident"),
@@ -519,7 +490,7 @@ function printPage() {
   window.print();
   printBtn.style.visibility = "visible";
   backBtn.style.visibility = "visible";
-  // document.location.href = "save-brgy-clearance.php";
+  
 }
 
 /*==================== PRELOADER ====================*/
@@ -668,14 +639,6 @@ function boostStateHandle() {
 //   }
 // });
 
-
-/*==================== IMG BROWSE BUTTON ====================*/
-const browseBtn = document.querySelector(".imgBrowseBtn");
-const uploadInput = document.querySelector(".uploadInput");
-
-browseBtn.onclick = () => {
-  uploadInput.click();
-}
 
 /*==================== HIDE VOTING TAB ====================*/
 var result;
