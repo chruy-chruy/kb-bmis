@@ -490,7 +490,7 @@ function printPage() {
   window.print();
   printBtn.style.visibility = "visible";
   backBtn.style.visibility = "visible";
-  document.location.href = "../";
+  // document.location.href = "save-brgy-clearance.php";
 }
 
 /*==================== PRELOADER ====================*/
