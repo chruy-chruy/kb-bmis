@@ -2,7 +2,7 @@
 
 ## Synopsis
 
-<!-- KBSystem is a reports system for the Barangay. The aim of this program is to export the generated reports into PDF and Excel files while providing a minimalistic design. -->
+KBSystem is a reports system for the Barangay. The aim of this program is to export the generated reports into PDF and Excel files while providing a minimalistic design.
 
 ## Dependencies
 
@@ -14,9 +14,11 @@
 
 ## Features
 
-### Modules
+### Reports Module
 
-**Reports** Bar charts are generated from the sales and presented in the reports tab. The system is able to let the user to choose between PDF and Excel file in exporting.
+**Chart Generation.** Pie charts are generated from the sample data from the resident records and presented in the reports tab.
+
+**Export Files.** The system is able to let the user to choose between PDF and Excel file in exporting.
 
 ### Data Storage
 
@@ -25,3 +27,9 @@
 ### Security Mechanism
 
 **Log in / Log out.** User authentication is implemented to access the system.
+
+## Login Credentials
+
+**Username:** kbsherry
+
+**Password:** 123456

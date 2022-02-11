@@ -24,7 +24,7 @@ while ($row = mysqli_fetch_array($squery)) {
 
                         <div class="card__body">
                             <div class="card__body-content">
-                                <div class="profile__img">
+                                <div class="profile__img profile__img--change">
                                     <div id="profile">
                                         <img src="../residents/images/<?php echo $row['img_url'] ?>" alt="">
                                     </div>
@@ -34,19 +34,11 @@ while ($row = mysqli_fetch_array($squery)) {
                             <i class='bx bx-camera' data-modal-id="modal-camera"></i>
                             Open Camera
                           </a> -->
-                                </div>
 
-                                <div class="profile__img--buttons">
-                                    <a class="button--icon button--icon-sm button--light imgBrowseBtn" style="white-space: nowrap;">
-                                        <i class='bx bx-upload'></i>
+                                    <a href="#" class="button button--icon-sm modal-trigger" data-modal-id="modal-camera" onclick="open_cam()">
+                                        <i class='bx bxs-image-add' data-modal-id="modal-change-image"></i>
+                                        <!-- <i class='bx bx-camera' data-modal-id="modal-camera"></i> -->
                                     </a>
-
-                                    <input type="file" name="" class="uploadInput" hidden>
-
-                                    <a href="#" class="button--icon button--icon-sm button--light modal-trigger" data-modal-id="modal-camera" onclick="open_cam();" style="white-space: nowrap;">
-                                        <i class='bx bx-camera' data-modal-id="modal-camera"></i>
-                                    </a>
-
                                 </div>
 
                                 <!-- <div class="row">
@@ -61,7 +53,7 @@ while ($row = mysqli_fetch_array($squery)) {
                               </a>
                             </div> -->
 
-                                <div class="profile__name profile__name--viewprofile" style="margin-top: 10px;">
+                                <div class="profile__name profile__name--viewprofile" style="margin-bottom: 0;">
                                     <?php echo $row["first_name"]; ?>
                                     <?php echo $row["mid_name"]; ?>
                                     <?php echo $row["last_name"]; ?>
@@ -794,7 +786,7 @@ while ($row = mysqli_fetch_array($squery)) {
         <section class="modal__window modal__window--sm">
             <header class="modal__header">
                 <!-- <h3>Camera</h3> -->
-                <button type="button" class="modal__close close" aria-label="Close modal window" onClick="exit_webcam();">
+                <button type="button" class="modal__close close" aria-label="Close modal window" onClick="exit_webcam()">
                     <i class='bx bx-x'></i>
                 </button>
             </header>
@@ -807,7 +799,7 @@ while ($row = mysqli_fetch_array($squery)) {
                 </div>
                 or
 
-                <a class="button button--md button--light modal-trigger" style="margin-top: 10px;" data-modal-id="modal-camera" onclick="open_cam()">Open Camera</a>
+                <a class="button button--md button--light modal-trigger" style="margin-top: 10px;" data-modal-id="modal-camera">Open Camera</a>
             </div>
 
             <footer class="modal__footer">
@@ -843,8 +835,8 @@ while ($row = mysqli_fetch_array($squery)) {
             </div>
 
             <footer class="modal__footer">
-                <input type="button" value="Capture" class="button button--primary button--md close" onClick="take_snapshot();" />
-                <input type="button" value="Cancel" class="button button--dark button--md close" onClick="exit_webcam();" />
+                <input type="button" value="Capture" class="button button--primary button--md close" onClick="take_snapshot()" />
+                <input type="button" value="Cancel" class="button button--dark button--md close" onClick="exit_webcam()" />
             </footer>
             </form>
         </section>

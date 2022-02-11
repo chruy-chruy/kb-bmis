@@ -223,10 +223,10 @@ $res_id = $_SESSION['res_id'];
         } ?>
 
 
-        <span class="header__toggle dropdownBtn">
+        <div class="header__toggle">
             <i class='bx bxs-down-arrow'></i>
-        </span>
-        <div class="dropdown dropdown--user dropdownContent">
+        </div>
+        <div class="dropdown dropdown--user dropdown--user-show">
             <ul>
                 <li class="dropdown__item">
                     <a href="../user-accounts/view-user.php?role=<?php echo $role ?>&res_id=<?php echo $res_id ?>">

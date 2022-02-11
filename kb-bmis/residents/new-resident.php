@@ -18,7 +18,7 @@ require_once "../../includes/header.php";
 
                         <div class="card__body">
                             <div class="card__body-content">
-                                <div class="profile__img">
+                                <div class="profile__img profile__img--change">
                                     <div id="profile">
                                         <img src="../residents/images/default-img.svg" alt="">
                                     </div>
@@ -26,22 +26,10 @@ require_once "../../includes/header.php";
 
                                     <input type="hidden" name="default" value="default-img.svg">
 
-                                    <!-- <a href="#" class="button button--icon-sm modal-trigger" data-modal-id="modal-change-image">
+                                    <a href="#" class="button button--icon-sm modal-trigger" data-modal-id="modal-camera" onclick="open_cam()">
                                         <i class='bx bxs-image-add' data-modal-id="modal-change-image"></i>
-                                    </a> -->
-                                </div>
-
-                                <div class="profile__img--buttons">
-                                    <a class="button--icon button--icon-sm button--light imgBrowseBtn" style="white-space: nowrap;">
-                                        <i class='bx bx-upload'></i>
+                                        <!-- <i class='bx bx-camera' data-modal-id="modal-camera"></i> -->
                                     </a>
-
-                                    <input type="file" name="" class="uploadInput" hidden>
-
-                                    <a href="#" class="button--icon button--icon-sm button--light modal-trigger" data-modal-id="modal-camera" onclick="open_cam();" style="white-space: nowrap;">
-                                        <i class='bx bx-camera' data-modal-id="modal-camera"></i>
-                                    </a>
-
                                 </div>
 
                                 <ul class="profile-info__list newresident">
@@ -738,7 +726,7 @@ require_once "../../includes/header.php";
             </div>
             or
 
-            <a class="button button--md button--light modal-trigger" style="margin-top: 10px;" data-modal-id="modal-camera" onclick="open_cam()">Open Camera</a>
+            <a class="button button--md button--light modal-trigger" style="margin-top: 10px;" data-modal-id="modal-camera">Open Camera</a>
         </div>
 
         <footer class="modal__footer">
